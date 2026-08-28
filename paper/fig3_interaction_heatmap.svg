@@ -1,0 +1,329 @@
+<svg viewBox="0 0 700 479" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interaction residual heat map">
+<defs><style>.lb{font:9px Georgia,serif;fill:#2c3138}.sm{font:7.6px Georgia,serif;fill:#5a626c}.ti{font:bold 9.5px Georgia,serif;fill:#111418}.cw{font:7.4px Georgia,serif}.cw2{font:8.4px Georgia,serif}</style></defs>
+<text class="ti" x="8" y="15">(a) This work: 24 workload-configurations x 5 accelerators, interaction 2.5% of variance</text>
+<text class="sm" x="8" y="28">Warm = the pair costs more than the additive model predicts; cool = less. Rows grouped by numerical precision.</text>
+<text class="sm" x="8" y="40">Extremes differ by 1.94x in energy; 18 of 40 accelerator pairs invert somewhere in the grid.</text>
+<text class="lb" x="216.0" y="54" text-anchor="middle">A100</text>
+<text class="lb" x="304.0" y="54" text-anchor="middle">A10</text>
+<text class="lb" x="392.0" y="54" text-anchor="middle">L4</text>
+<text class="lb" x="480.0" y="54" text-anchor="middle">L40S</text>
+<text class="lb" x="568.0" y="54" text-anchor="middle">T4</text>
+<text class="ti" x="8" y="67.4">fp16</text>
+<text class="sm" x="166" y="67.4" text-anchor="end">ConvNeXt-T b8</text>
+<rect x="172.0" y="60.0" width="88" height="9.9" fill="#b9929a" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="67.2" text-anchor="middle" fill="#111418">+0.06</text>
+<rect x="260.0" y="60.0" width="88" height="9.9" fill="#d4bcc2" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="67.2" text-anchor="middle" fill="#111418">+0.03</text>
+<rect x="348.0" y="60.0" width="88" height="9.9" fill="#8195a8" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="67.2" text-anchor="middle" fill="#111418">-0.06</text>
+<rect x="436.0" y="60.0" width="88" height="9.9" fill="#f5f7f8" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="67.2" text-anchor="middle" fill="#111418">-0.00</text>
+<rect x="524.0" y="60.0" width="88" height="9.9" fill="#bac4cf" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="67.2" text-anchor="middle" fill="#111418">-0.03</text>
+<text class="sm" x="166" y="77.3" text-anchor="end">ConvNeXt-T b32</text>
+<rect x="172.0" y="69.9" width="88" height="9.9" fill="#b6c1cc" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="77.1" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="260.0" y="69.9" width="88" height="9.9" fill="#c8aab0" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="77.1" text-anchor="middle" fill="#111418">+0.05</text>
+<rect x="348.0" y="69.9" width="88" height="9.9" fill="#ddcbcf" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="77.1" text-anchor="middle" fill="#111418">+0.02</text>
+<rect x="436.0" y="69.9" width="88" height="9.9" fill="#b9c4ce" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="77.1" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="524.0" y="69.9" width="88" height="9.9" fill="#e4e8ec" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="77.1" text-anchor="middle" fill="#111418">-0.01</text>
+<text class="sm" x="166" y="87.2" text-anchor="end">ConvNeXt-T b128</text>
+<rect x="172.0" y="79.8" width="88" height="9.9" fill="#acb8c5" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="87.0" text-anchor="middle" fill="#111418">-0.04</text>
+<rect x="260.0" y="79.8" width="88" height="9.9" fill="#c1cad4" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="87.0" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="348.0" y="79.8" width="88" height="9.9" fill="#ba949c" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="87.0" text-anchor="middle" fill="#111418">+0.06</text>
+<rect x="436.0" y="79.8" width="88" height="9.9" fill="#b9929a" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="87.0" text-anchor="middle" fill="#111418">+0.06</text>
+<rect x="524.0" y="79.8" width="88" height="9.9" fill="#8598aa" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="87.0" text-anchor="middle" fill="#111418">-0.06</text>
+<text class="sm" x="166" y="97.1" text-anchor="end">ResNet-50 b8</text>
+<rect x="172.0" y="89.7" width="88" height="9.9" fill="#af828c" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="96.9" text-anchor="middle" fill="#111418">+0.08</text>
+<rect x="260.0" y="89.7" width="88" height="9.9" fill="#f1e9ea" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="96.9" text-anchor="middle" fill="#111418">+0.01</text>
+<rect x="348.0" y="89.7" width="88" height="9.9" fill="#e2e7eb" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="96.9" text-anchor="middle" fill="#111418">-0.01</text>
+<rect x="436.0" y="89.7" width="88" height="9.9" fill="#8497aa" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="96.9" text-anchor="middle" fill="#111418">-0.06</text>
+<rect x="524.0" y="89.7" width="88" height="9.9" fill="#dde2e7" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="96.9" text-anchor="middle" fill="#111418">-0.01</text>
+<text class="sm" x="166" y="107.0" text-anchor="end">ResNet-50 b32</text>
+<rect x="172.0" y="99.6" width="88" height="9.9" fill="#94a4b5" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="106.8" text-anchor="middle" fill="#111418">-0.05</text>
+<rect x="260.0" y="99.6" width="88" height="9.9" fill="#d1b8bd" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="106.8" text-anchor="middle" fill="#111418">+0.04</text>
+<rect x="348.0" y="99.6" width="88" height="9.9" fill="#dac5c9" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="106.8" text-anchor="middle" fill="#111418">+0.03</text>
+<rect x="436.0" y="99.6" width="88" height="9.9" fill="#b9c3ce" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="106.8" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="524.0" y="99.6" width="88" height="9.9" fill="#e2d2d6" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="106.8" text-anchor="middle" fill="#111418">+0.02</text>
+<text class="sm" x="166" y="116.9" text-anchor="end">ResNet-50 b128</text>
+<rect x="172.0" y="109.5" width="88" height="9.9" fill="#5b748d" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="116.7" text-anchor="middle" fill="#fff">-0.09</text>
+<rect x="260.0" y="109.5" width="88" height="9.9" fill="#cfd7de" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="116.7" text-anchor="middle" fill="#111418">-0.02</text>
+<rect x="348.0" y="109.5" width="88" height="9.9" fill="#aa7a84" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="116.7" text-anchor="middle" fill="#111418">+0.08</text>
+<rect x="436.0" y="109.5" width="88" height="9.9" fill="#b89099" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="116.7" text-anchor="middle" fill="#111418">+0.06</text>
+<rect x="524.0" y="109.5" width="88" height="9.9" fill="#adb9c6" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="116.7" text-anchor="middle" fill="#111418">-0.04</text>
+<text class="sm" x="166" y="126.8" text-anchor="end">Transformer b8</text>
+<rect x="172.0" y="119.4" width="88" height="9.9" fill="#627a92" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="126.6" text-anchor="middle" fill="#fff">-0.09</text>
+<rect x="260.0" y="119.4" width="88" height="9.9" fill="#fefefe" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="126.6" text-anchor="middle" fill="#111418">+0.00</text>
+<rect x="348.0" y="119.4" width="88" height="9.9" fill="#e6eaee" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="126.6" text-anchor="middle" fill="#111418">-0.01</text>
+<rect x="436.0" y="119.4" width="88" height="9.9" fill="#c29fa7" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="126.6" text-anchor="middle" fill="#111418">+0.05</text>
+<rect x="524.0" y="119.4" width="88" height="9.9" fill="#ccafb5" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="126.6" text-anchor="middle" fill="#111418">+0.04</text>
+<text class="sm" x="166" y="136.7" text-anchor="end">Transformer b32</text>
+<rect x="172.0" y="129.3" width="88" height="9.9" fill="#4f6a85" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="136.5" text-anchor="middle" fill="#fff">-0.10</text>
+<rect x="260.0" y="129.3" width="88" height="9.9" fill="#cbaeb4" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="136.5" text-anchor="middle" fill="#111418">+0.04</text>
+<rect x="348.0" y="129.3" width="88" height="9.9" fill="#cfb3b9" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="136.5" text-anchor="middle" fill="#111418">+0.04</text>
+<rect x="436.0" y="129.3" width="88" height="9.9" fill="#f3f5f6" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="136.5" text-anchor="middle" fill="#111418">-0.00</text>
+<rect x="524.0" y="129.3" width="88" height="9.9" fill="#ddcbcf" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="136.5" text-anchor="middle" fill="#111418">+0.02</text>
+<text class="sm" x="166" y="146.6" text-anchor="end">Transformer b128</text>
+<rect x="172.0" y="139.2" width="88" height="9.9" fill="#5e768f" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="146.4" text-anchor="middle" fill="#fff">-0.09</text>
+<rect x="260.0" y="139.2" width="88" height="9.9" fill="#c6ced7" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="146.4" text-anchor="middle" fill="#111418">-0.02</text>
+<rect x="348.0" y="139.2" width="88" height="9.9" fill="#b89099" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="146.4" text-anchor="middle" fill="#111418">+0.06</text>
+<rect x="436.0" y="139.2" width="88" height="9.9" fill="#c5a5ac" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="146.4" text-anchor="middle" fill="#111418">+0.05</text>
+<rect x="524.0" y="139.2" width="88" height="9.9" fill="#fefefe" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="146.4" text-anchor="middle" fill="#111418">-0.00</text>
+<text class="sm" x="166" y="156.5" text-anchor="end">ViT-B/16 b8</text>
+<rect x="172.0" y="149.1" width="88" height="9.9" fill="#93a3b4" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="156.3" text-anchor="middle" fill="#111418">-0.05</text>
+<rect x="260.0" y="149.1" width="88" height="9.9" fill="#ddcbcf" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="156.3" text-anchor="middle" fill="#111418">+0.02</text>
+<rect x="348.0" y="149.1" width="88" height="9.9" fill="#dbe0e6" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="156.3" text-anchor="middle" fill="#111418">-0.01</text>
+<rect x="436.0" y="149.1" width="88" height="9.9" fill="#b78e97" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="156.3" text-anchor="middle" fill="#111418">+0.07</text>
+<rect x="524.0" y="149.1" width="88" height="9.9" fill="#c3ccd5" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="156.3" text-anchor="middle" fill="#111418">-0.02</text>
+<text class="sm" x="166" y="166.4" text-anchor="end">ViT-B/16 b32</text>
+<rect x="172.0" y="159.0" width="88" height="9.9" fill="#99a8b8" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="166.2" text-anchor="middle" fill="#111418">-0.05</text>
+<rect x="260.0" y="159.0" width="88" height="9.9" fill="#ceb3b8" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="166.2" text-anchor="middle" fill="#111418">+0.04</text>
+<rect x="348.0" y="159.0" width="88" height="9.9" fill="#f6f2f3" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="166.2" text-anchor="middle" fill="#111418">+0.00</text>
+<rect x="436.0" y="159.0" width="88" height="9.9" fill="#e5d7da" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="166.2" text-anchor="middle" fill="#111418">+0.02</text>
+<rect x="524.0" y="159.0" width="88" height="9.9" fill="#dfe4e9" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="166.2" text-anchor="middle" fill="#111418">-0.01</text>
+<text class="sm" x="166" y="176.3" text-anchor="end">ViT-B/16 b128</text>
+<rect x="172.0" y="168.9" width="88" height="9.9" fill="#798da2" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="176.1" text-anchor="middle" fill="#111418">-0.07</text>
+<rect x="260.0" y="168.9" width="88" height="9.9" fill="#b2beca" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="176.1" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="348.0" y="168.9" width="88" height="9.9" fill="#c5a4ab" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="176.1" text-anchor="middle" fill="#111418">+0.05</text>
+<rect x="436.0" y="168.9" width="88" height="9.9" fill="#b38992" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="176.1" text-anchor="middle" fill="#111418">+0.07</text>
+<rect x="524.0" y="168.9" width="88" height="9.9" fill="#d4dbe1" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="176.1" text-anchor="middle" fill="#111418">-0.02</text>
+<text class="ti" x="8" y="186.2">fp32</text>
+<text class="sm" x="166" y="186.2" text-anchor="end">ConvNeXt-T b8</text>
+<rect x="172.0" y="178.8" width="88" height="9.9" fill="#a6747f" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="186.0" text-anchor="middle" fill="#fff">+0.09</text>
+<rect x="260.0" y="178.8" width="88" height="9.9" fill="#e1d1d4" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="186.0" text-anchor="middle" fill="#111418">+0.02</text>
+<rect x="348.0" y="178.8" width="88" height="9.9" fill="#8295a8" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="186.0" text-anchor="middle" fill="#111418">-0.06</text>
+<rect x="436.0" y="178.8" width="88" height="9.9" fill="#a7b4c2" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="186.0" text-anchor="middle" fill="#111418">-0.04</text>
+<rect x="524.0" y="178.8" width="88" height="9.9" fill="#f4f6f7" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="186.0" text-anchor="middle" fill="#111418">-0.00</text>
+<text class="sm" x="166" y="196.1" text-anchor="end">ConvNeXt-T b32</text>
+<rect x="172.0" y="188.7" width="88" height="9.9" fill="#bb959d" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="195.9" text-anchor="middle" fill="#111418">+0.06</text>
+<rect x="260.0" y="188.7" width="88" height="9.9" fill="#dee3e8" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="195.9" text-anchor="middle" fill="#111418">-0.01</text>
+<rect x="348.0" y="188.7" width="88" height="9.9" fill="#d8dee4" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="195.9" text-anchor="middle" fill="#111418">-0.01</text>
+<rect x="436.0" y="188.7" width="88" height="9.9" fill="#b2bec9" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="195.9" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="524.0" y="188.7" width="88" height="9.9" fill="#f3f5f6" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="195.9" text-anchor="middle" fill="#111418">-0.00</text>
+<text class="sm" x="166" y="206.0" text-anchor="end">ConvNeXt-T b128</text>
+<rect x="172.0" y="198.6" width="88" height="9.9" fill="#c8aab0" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="205.8" text-anchor="middle" fill="#111418">+0.05</text>
+<rect x="260.0" y="198.6" width="88" height="9.9" fill="#c3ccd5" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="205.8" text-anchor="middle" fill="#111418">-0.02</text>
+<rect x="348.0" y="198.6" width="88" height="9.9" fill="#ede3e5" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="205.8" text-anchor="middle" fill="#111418">+0.01</text>
+<rect x="436.0" y="198.6" width="88" height="9.9" fill="#dde2e7" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="205.8" text-anchor="middle" fill="#111418">-0.01</text>
+<rect x="524.0" y="198.6" width="88" height="9.9" fill="#cad2da" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="205.8" text-anchor="middle" fill="#111418">-0.02</text>
+<text class="sm" x="166" y="215.9" text-anchor="end">ResNet-50 b8</text>
+<rect x="172.0" y="208.5" width="88" height="9.9" fill="#a5b3c0" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="215.7" text-anchor="middle" fill="#111418">-0.04</text>
+<rect x="260.0" y="208.5" width="88" height="9.9" fill="#c6a6ad" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="215.7" text-anchor="middle" fill="#111418">+0.05</text>
+<rect x="348.0" y="208.5" width="88" height="9.9" fill="#698097" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="215.7" text-anchor="middle" fill="#111418">-0.08</text>
+<rect x="436.0" y="208.5" width="88" height="9.9" fill="#7a8ea2" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="215.7" text-anchor="middle" fill="#111418">-0.07</text>
+<rect x="524.0" y="208.5" width="88" height="9.9" fill="#7c3343" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="215.7" text-anchor="middle" fill="#fff">+0.15</text>
+<text class="sm" x="166" y="225.8" text-anchor="end">ResNet-50 b32</text>
+<rect x="172.0" y="218.4" width="88" height="9.9" fill="#315170" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="225.6" text-anchor="middle" fill="#fff">-0.13</text>
+<rect x="260.0" y="218.4" width="88" height="9.9" fill="#efe6e8" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="225.6" text-anchor="middle" fill="#111418">+0.01</text>
+<rect x="348.0" y="218.4" width="88" height="9.9" fill="#bf9ba3" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="225.6" text-anchor="middle" fill="#111418">+0.06</text>
+<rect x="436.0" y="218.4" width="88" height="9.9" fill="#fbf9fa" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="225.6" text-anchor="middle" fill="#111418">+0.00</text>
+<rect x="524.0" y="218.4" width="88" height="9.9" fill="#bc969e" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="225.6" text-anchor="middle" fill="#111418">+0.06</text>
+<text class="sm" x="166" y="235.7" text-anchor="end">ResNet-50 b128</text>
+<rect x="172.0" y="228.3" width="88" height="9.9" fill="#1c3e61" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="235.5" text-anchor="middle" fill="#fff">-0.14</text>
+<rect x="260.0" y="228.3" width="88" height="9.9" fill="#a6b3c1" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="235.5" text-anchor="middle" fill="#111418">-0.04</text>
+<rect x="348.0" y="228.3" width="88" height="9.9" fill="#a36f7a" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="235.5" text-anchor="middle" fill="#fff">+0.09</text>
+<rect x="436.0" y="228.3" width="88" height="9.9" fill="#b1858e" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="235.5" text-anchor="middle" fill="#111418">+0.07</text>
+<rect x="524.0" y="228.3" width="88" height="9.9" fill="#e2d1d5" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="235.5" text-anchor="middle" fill="#111418">+0.02</text>
+<text class="sm" x="166" y="245.6" text-anchor="end">Transformer b8</text>
+<rect x="172.0" y="238.2" width="88" height="9.9" fill="#813a49" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="245.4" text-anchor="middle" fill="#fff">+0.14</text>
+<rect x="260.0" y="238.2" width="88" height="9.9" fill="#d8dee4" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="245.4" text-anchor="middle" fill="#111418">-0.01</text>
+<rect x="348.0" y="238.2" width="88" height="9.9" fill="#8497a9" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="245.4" text-anchor="middle" fill="#111418">-0.06</text>
+<rect x="436.0" y="238.2" width="88" height="9.9" fill="#9faebd" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="245.4" text-anchor="middle" fill="#111418">-0.04</text>
+<rect x="524.0" y="238.2" width="88" height="9.9" fill="#d0d7de" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="245.4" text-anchor="middle" fill="#111418">-0.02</text>
+<text class="sm" x="166" y="255.5" text-anchor="end">Transformer b32</text>
+<rect x="172.0" y="248.1" width="88" height="9.9" fill="#8f505e" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="255.3" text-anchor="middle" fill="#fff">+0.12</text>
+<rect x="260.0" y="248.1" width="88" height="9.9" fill="#f4f6f7" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="255.3" text-anchor="middle" fill="#111418">-0.00</text>
+<rect x="348.0" y="248.1" width="88" height="9.9" fill="#b3bfca" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="255.3" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="436.0" y="248.1" width="88" height="9.9" fill="#9dacbb" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="255.3" text-anchor="middle" fill="#111418">-0.05</text>
+<rect x="524.0" y="248.1" width="88" height="9.9" fill="#acb9c5" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="255.3" text-anchor="middle" fill="#111418">-0.04</text>
+<text class="sm" x="166" y="265.4" text-anchor="end">Transformer b128</text>
+<rect x="172.0" y="258.0" width="88" height="9.9" fill="#a06b76" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="265.2" text-anchor="middle" fill="#fff">+0.09</text>
+<rect x="260.0" y="258.0" width="88" height="9.9" fill="#b0bcc8" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="265.2" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="348.0" y="258.0" width="88" height="9.9" fill="#9cabba" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="265.2" text-anchor="middle" fill="#111418">-0.05</text>
+<rect x="436.0" y="258.0" width="88" height="9.9" fill="#d6dce2" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="265.2" text-anchor="middle" fill="#111418">-0.01</text>
+<rect x="524.0" y="258.0" width="88" height="9.9" fill="#fbf9f9" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="265.2" text-anchor="middle" fill="#111418">+0.00</text>
+<text class="sm" x="166" y="275.3" text-anchor="end">ViT-B/16 b8</text>
+<rect x="172.0" y="267.9" width="88" height="9.9" fill="#9c6571" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="275.1" text-anchor="middle" fill="#fff">+0.10</text>
+<rect x="260.0" y="267.9" width="88" height="9.9" fill="#ced5dd" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="275.1" text-anchor="middle" fill="#111418">-0.02</text>
+<rect x="348.0" y="267.9" width="88" height="9.9" fill="#a6b4c1" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="275.1" text-anchor="middle" fill="#111418">-0.04</text>
+<rect x="436.0" y="267.9" width="88" height="9.9" fill="#bfc9d3" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="275.1" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="524.0" y="267.9" width="88" height="9.9" fill="#d4dbe1" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="275.1" text-anchor="middle" fill="#111418">-0.02</text>
+<text class="sm" x="166" y="285.2" text-anchor="end">ViT-B/16 b32</text>
+<rect x="172.0" y="277.8" width="88" height="9.9" fill="#9a616d" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="285.0" text-anchor="middle" fill="#fff">+0.10</text>
+<rect x="260.0" y="277.8" width="88" height="9.9" fill="#bfc9d3" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="285.0" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="348.0" y="277.8" width="88" height="9.9" fill="#a9b7c4" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="285.0" text-anchor="middle" fill="#111418">-0.04</text>
+<rect x="436.0" y="277.8" width="88" height="9.9" fill="#adb9c6" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="285.0" text-anchor="middle" fill="#111418">-0.04</text>
+<rect x="524.0" y="277.8" width="88" height="9.9" fill="#f4f5f7" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="285.0" text-anchor="middle" fill="#111418">-0.00</text>
+<text class="sm" x="166" y="295.1" text-anchor="end">ViT-B/16 b128</text>
+<rect x="172.0" y="287.7" width="88" height="9.9" fill="#a6747f" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="216.0" y="294.9" text-anchor="middle" fill="#fff">+0.09</text>
+<rect x="260.0" y="287.7" width="88" height="9.9" fill="#b3beca" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="304.0" y="294.9" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="348.0" y="287.7" width="88" height="9.9" fill="#b4c0cb" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="392.0" y="294.9" text-anchor="middle" fill="#111418">-0.03</text>
+<rect x="436.0" y="287.7" width="88" height="9.9" fill="#eaedf0" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="480.0" y="294.9" text-anchor="middle" fill="#111418">-0.01</text>
+<rect x="524.0" y="287.7" width="88" height="9.9" fill="#d2d9e0" stroke="#fff" stroke-width=".6"/>
+<text class="cw" x="568.0" y="294.9" text-anchor="middle" fill="#111418">-0.02</text>
+<text class="ti" x="8" y="329.6">(b) llm-perf leaderboard: mean residual by quantisation scheme, interaction 9.0% of variance</text>
+<text class="sm" x="8" y="341.6">Same three GPUs throughout; only the software changes. Every column changes sign across schemes, and all three GPU pairs invert.</text>
+<text class="lb" x="262.0" y="355.6" text-anchor="middle">A10</text>
+<text class="lb" x="358.0" y="355.6" text-anchor="middle">A100</text>
+<text class="lb" x="454.0" y="355.6" text-anchor="middle">T4</text>
+<text class="sm" x="208" y="373.1" text-anchor="end">none (n=21)</text>
+<rect x="214.0" y="359.6" width="96" height="20" fill="#ebe0e2" stroke="#fff" stroke-width=".7"/>
+<text class="cw2" x="262.0" y="373.1" text-anchor="middle" fill="#111418">+0.018</text>
+<rect x="310.0" y="359.6" width="96" height="20" fill="#788ca1" stroke="#fff" stroke-width=".7"/>
+<text class="cw2" x="358.0" y="373.1" text-anchor="middle" fill="#111418">-0.110</text>
+<rect x="406.0" y="359.6" width="96" height="20" fill="#bc969e" stroke="#fff" stroke-width=".7"/>
+<text class="cw2" x="454.0" y="373.1" text-anchor="middle" fill="#111418">+0.092</text>
+<text class="sm" x="208" y="393.1" text-anchor="end">bitsandbytes 8-bit (n=32)</text>
+<rect x="214.0" y="379.6" width="96" height="20" fill="#dadfe5" stroke="#fff" stroke-width=".7"/>
+<text class="cw2" x="262.0" y="393.1" text-anchor="middle" fill="#111418">-0.019</text>
+<rect x="310.0" y="379.6" width="96" height="20" fill="#a0afbd" stroke="#fff" stroke-width=".7"/>
+<text class="cw2" x="358.0" y="393.1" text-anchor="middle" fill="#111418">-0.068</text>
+<rect x="406.0" y="379.6" width="96" height="20" fill="#be9aa2" stroke="#fff" stroke-width=".7"/>
+<text class="cw2" x="454.0" y="393.1" text-anchor="middle" fill="#111418">+0.087</text>
+<text class="sm" x="208" y="413.1" text-anchor="end">GPTQ 4-bit (n=21)</text>
+<rect x="214.0" y="399.6" width="96" height="20" fill="#f0e9ea" stroke="#fff" stroke-width=".7"/>
+<text class="cw2" x="262.0" y="413.1" text-anchor="middle" fill="#111418">+0.011</text>
+<rect x="310.0" y="399.6" width="96" height="20" fill="#813a49" stroke="#fff" stroke-width=".7"/>
+<text class="cw2" x="358.0" y="413.1" text-anchor="middle" fill="#fff">+0.213</text>
+<rect x="406.0" y="399.6" width="96" height="20" fill="#183b5e" stroke="#fff" stroke-width=".7"/>
+<text class="cw2" x="454.0" y="413.1" text-anchor="middle" fill="#fff">-0.225</text>
+<text class="sm" x="214" y="433.6">under GPTQ the A100 and T4 swap by 2.74x in energy</text>
+<rect x="214.0" y="449.6" width="6.2" height="8" fill="#14385c"/>
+<rect x="220.0" y="449.6" width="6.2" height="8" fill="#254768"/>
+<rect x="226.0" y="449.6" width="6.2" height="8" fill="#385675"/>
+<rect x="232.0" y="449.6" width="6.2" height="8" fill="#4b6682"/>
+<rect x="238.0" y="449.6" width="6.2" height="8" fill="#5e778f"/>
+<rect x="244.0" y="449.6" width="6.2" height="8" fill="#73889e"/>
+<rect x="250.0" y="449.6" width="6.2" height="8" fill="#889aad"/>
+<rect x="256.0" y="449.6" width="6.2" height="8" fill="#9faebc"/>
+<rect x="262.0" y="449.6" width="6.2" height="8" fill="#b8c3ce"/>
+<rect x="268.0" y="449.6" width="6.2" height="8" fill="#d5dbe2"/>
+<rect x="274.0" y="449.6" width="6.2" height="8" fill="#ffffff"/>
+<rect x="280.0" y="449.6" width="6.2" height="8" fill="#e7dadc"/>
+<rect x="286.0" y="449.6" width="6.2" height="8" fill="#d7c0c5"/>
+<rect x="292.0" y="449.6" width="6.2" height="8" fill="#c9aab1"/>
+<rect x="298.0" y="449.6" width="6.2" height="8" fill="#bc969e"/>
+<rect x="304.0" y="449.6" width="6.2" height="8" fill="#af838c"/>
+<rect x="310.0" y="449.6" width="6.2" height="8" fill="#a4717c"/>
+<rect x="316.0" y="449.6" width="6.2" height="8" fill="#995f6c"/>
+<rect x="322.0" y="449.6" width="6.2" height="8" fill="#8e4f5c"/>
+<rect x="328.0" y="449.6" width="6.2" height="8" fill="#843e4d"/>
+<rect x="334.0" y="449.6" width="6.2" height="8" fill="#7a2f3f"/>
+<text class="sm" x="208" y="456.6" text-anchor="end">residual (log10 J)</text>
+<text class="sm" x="240.0" y="467.6" text-anchor="middle">cheaper than additive</text>
+<text class="sm" x="277.0" y="467.6" text-anchor="middle">0</text>
+<text class="sm" x="314.0" y="467.6" text-anchor="middle">dearer than additive</text>
+</svg>

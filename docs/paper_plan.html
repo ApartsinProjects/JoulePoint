@@ -1,0 +1,1436 @@
+<title>Power Shaping Paper Plan</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root{--bg:#f7f8fa;--surface:#fff;--surface2:#eef1f6;--ink:#1a1d24;--soft:#414753;--muted:#6b7280;
+--line:#e2e6ee;--line2:#cfd5e2;--accent:#1f6feb;--accent-ink:#0b4fc4;--accent-s:#e7f0ff;--green:#137a4b;
+--amber:#9a6700;--amber-s:#fbf3d9;--code:#f3f5f9;--mono:ui-monospace,'Cascadia Code',Consolas,monospace;
+--sans:-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;--shadow:0 1px 2px rgba(20,25,40,.06),0 4px 16px rgba(20,25,40,.05);}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0e1117;--surface:#161b22;--surface2:#1c222b;
+--ink:#e6e9ef;--soft:#b7becb;--muted:#8b94a3;--line:#262c36;--line2:#333b47;--accent:#589bff;--accent-ink:#8fbaff;
+--accent-s:#132844;--green:#4ac585;--amber:#e0b036;--amber-s:#2c2510;--code:#0f141b;
+--shadow:0 1px 2px rgba(0,0,0,.4),0 6px 24px rgba(0,0,0,.35);}}
+:root[data-theme=dark]{--bg:#0e1117;--surface:#161b22;--surface2:#1c222b;--ink:#e6e9ef;--soft:#b7becb;--muted:#8b94a3;
+--line:#262c36;--line2:#333b47;--accent:#589bff;--accent-ink:#8fbaff;--accent-s:#132844;--green:#4ac585;--amber:#e0b036;
+--amber-s:#2c2510;--code:#0f141b;}
+*{box-sizing:border-box}body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.65;margin:0;font-size:16px}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px}
+header.hero{background:linear-gradient(135deg,var(--surface),var(--surface2));border-bottom:1px solid var(--line);padding:48px 0 36px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-ink);margin:0 0 12px}
+h1.title{font-size:clamp(26px,4vw,40px);line-height:1.14;margin:0 0 14px;letter-spacing:-.02em;font-weight:750}
+.lede{font-size:clamp(15px,2vw,18px);color:var(--soft);max-width:80ch;margin:0}
+.layout{display:grid;grid-template-columns:250px minmax(0,1fr);gap:44px;align-items:start}
+@media(max-width:900px){.layout{grid-template-columns:1fr}.toc{display:none}}
+.toc{position:sticky;top:18px;font-size:13px;max-height:calc(100vh - 36px);overflow-y:auto;padding:8px 0}
+.toc h4{font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);margin:0 0 10px}
+.toc a{display:block;color:var(--soft);text-decoration:none;padding:3px 10px;border-left:2px solid transparent;border-radius:0 6px 6px 0}
+.toc a:hover{color:var(--accent-ink);background:var(--accent-s);border-left-color:var(--accent)}
+.toc a.lvl2{padding-left:20px;font-size:12.5px;color:var(--muted)}
+main{padding:40px 0 90px;min-width:0}
+h1,h2,h3,h4{scroll-margin-top:18px}
+h1{font-size:26px;margin:44px 0 10px;padding-bottom:9px;border-bottom:2px solid var(--line);font-weight:720;letter-spacing:-.01em}
+h2{font-size:21px;margin:34px 0 8px;font-weight:680}
+h3{font-size:17px;margin:24px 0 6px;font-weight:650;color:var(--soft)}
+h4{font-size:15px;margin:18px 0 6px;font-weight:650;color:var(--muted)}
+p{margin:12px 0}a{color:var(--accent-ink)}
+ul,ol{padding-left:22px}li{margin:5px 0}
+strong{font-weight:660}
+blockquote{margin:16px 0;padding:12px 18px;border-left:3px solid var(--accent);background:var(--accent-s);border-radius:0 8px 8px 0;color:var(--ink);font-size:15.5px}
+blockquote p{margin:6px 0}
+code{font-family:var(--mono);font-size:.86em;background:var(--code);padding:2px 6px;border-radius:5px;border:1px solid var(--line)}
+pre{background:var(--code);border:1px solid var(--line);border-radius:9px;padding:14px 16px;overflow-x:auto;margin:16px 0}
+pre code{background:none;border:none;padding:0;font-size:12.8px;line-height:1.55}
+.eq{font-family:var(--mono);font-size:.9em;background:var(--code);border:1px solid var(--line);border-radius:6px;padding:2px 7px;color:var(--accent-ink);white-space:nowrap}
+.eqblock{font-family:var(--mono);font-size:1em;background:var(--surface2);border:1px solid var(--line2);border-radius:10px;padding:14px 18px;margin:18px 0;text-align:center;color:var(--ink);overflow-x:auto;box-shadow:var(--shadow)}
+.boxed{display:inline-block;border:2px solid var(--accent);border-radius:8px;padding:6px 14px;background:var(--accent-s);font-weight:600}
+.tbl-wrap,table{margin:0}
+table{border-collapse:collapse;width:100%;font-size:13.8px;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin:18px 0;display:block;overflow-x:auto}
+th,td{text-align:left;padding:9px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--surface2);font-weight:650;font-size:12.7px;white-space:nowrap}
+tbody tr:last-child td{border-bottom:none}
+hr{border:none;border-top:1px solid var(--line);margin:34px 0}
+.anchor{color:var(--muted);text-decoration:none;opacity:0;margin-left:8px;font-weight:400}
+h1:hover .anchor,h2:hover .anchor,h3:hover .anchor{opacity:1}
+.docfoot{border-top:1px solid var(--line);padding:22px 0;color:var(--muted);font-size:13px}
+</style>
+<header class="hero"><div class="wrap">
+<p class="eyebrow">AI Data-Center Power Shaping</p>
+<h1 class="title">Power Shaping Paper Plan</h1>
+<p class="lede">A detailed manuscript plan for a computer-systems + energy paper: predicting the power flexibility of unseen AI workloads (without per-job profiling) and exploiting it to shape data-center power under a grid envelope — story arc, contributions, research questions RQ1–RQ8, section-by-section plan, results/figures/tables, kill criteria, and go/no-go logic.</p>
+</div></header>
+<div class="wrap"><div class="layout">
+<nav class="toc"><h4>Contents</h4>
+<a class="lvl1" href="#predicting-and-exploiting-ai-workload-power-flexibility-without-per-job-profiling">Predicting and Exploiting AI Workload Power Flexibility Without Per-Job Profiling</a>
+<a class="lvl1" href="#0-working-paper-positioning">0. Working Paper Positioning</a>
+<a class="lvl1" href="#recommended-working-title">Recommended working title</a>
+<a class="lvl1" href="#central-scientific-claim">Central scientific claim</a>
+<a class="lvl1" href="#central-systems-claim">Central systems claim</a>
+<a class="lvl1" href="#application-claim">Application claim</a>
+<a class="lvl1" href="#what-the-paper-is-not">What the paper is NOT</a>
+<a class="lvl1" href="#1-core-story-arc">1. Core Story Arc</a>
+<a class="lvl1" href="#step-1-establish-the-physical-computational-phenomenon">Step 1 — Establish the physical/computational phenomenon</a>
+<a class="lvl1" href="#step-2-establish-decision-relevance">Step 2 — Establish decision relevance</a>
+<a class="lvl1" href="#step-3-establish-the-practical-gap">Step 3 — Establish the practical gap</a>
+<a class="lvl1" href="#step-4-evaluate-prediction-on-truly-unseen-workloads">Step 4 — Evaluate prediction on truly unseen workloads</a>
+<a class="lvl1" href="#step-5-put-prediction-inside-the-controller">Step 5 — Put prediction inside the controller</a>
+<a class="lvl1" href="#step-6-add-uncertainty-and-temporal-effects">Step 6 — Add uncertainty and temporal effects</a>
+<a class="lvl1" href="#step-7-demonstrate-realistic-workload-scale-behavior">Step 7 — Demonstrate realistic workload-scale behavior</a>
+<a class="lvl1" href="#step-8-translate-to-the-electricity-system-application">Step 8 — Translate to the electricity-system application</a>
+<a class="lvl1" href="#2-recommended-contributions">2. Recommended Contributions</a>
+<a class="lvl1" href="#c1-empirical-characterization">C1 — Empirical characterization</a>
+<a class="lvl1" href="#c2-generalizable-intervention-response-model">C2 — Generalizable intervention-response model</a>
+<a class="lvl1" href="#c3-workload-aware-power-shaping-controller">C3 — Workload-aware power-shaping controller</a>
+<a class="lvl1" href="#c4-safety-reliability-layer">C4 — Safety/reliability layer</a>
+<a class="lvl1" href="#c5-trace-driven-grid-application">C5 — Trace-driven grid application</a>
+<a class="lvl1" href="#3-research-questions">3. Research Questions</a>
+<a class="lvl1" href="#rq1-is-ai-workload-power-flexibility-heterogeneous">RQ1 — Is AI workload power flexibility heterogeneous?</a>
+<a class="lvl1" href="#h1">H1</a>
+<a class="lvl1" href="#evidence">Evidence</a>
+<a class="lvl1" href="#rq2-is-the-heterogeneity-decision-relevant">RQ2 — Is the heterogeneity decision-relevant?</a>
+<a class="lvl1" href="#h2">H2</a>
+<a class="lvl1" href="#evidence">Evidence</a>
+<a class="lvl1" href="#kill-test">Kill test</a>
+<a class="lvl1" href="#rq3-can-flexibility-be-predicted-for-unseen-workloads">RQ3 — Can flexibility be predicted for unseen workloads?</a>
+<a class="lvl1" href="#h3">H3</a>
+<a class="lvl1" href="#rq4-does-learned-flexibility-improve-control">RQ4 — Does learned flexibility improve control?</a>
+<a class="lvl1" href="#h4">H4</a>
+<a class="lvl1" href="#rq5-does-the-approach-survive-realistic-workload-traces">RQ5 — Does the approach survive realistic workload traces?</a>
+<a class="lvl1" href="#rq6-can-flexibility-be-promised-safely">RQ6 — Can flexibility be promised safely?</a>
+<a class="lvl1" href="#rq7-does-rebound-matter">RQ7 — Does rebound matter?</a>
+<a class="lvl1" href="#rq8-what-is-the-application-value-for-grid-constrained-ai-infrastructure">RQ8 — What is the application value for grid-constrained AI infrastructure?</a>
+<a class="lvl1" href="#4-section-by-section-manuscript-plan">4. Section-by-Section Manuscript Plan</a>
+<a class="lvl1" href="#4-1-abstract">4.1 Abstract</a>
+<a class="lvl1" href="#4-2-introduction">4.2 Introduction</a>
+<a class="lvl1" href="#paragraph-1-power-is-becoming-a-compute-constraint">Paragraph 1 — Power is becoming a compute constraint</a>
+<a class="lvl1" href="#paragraph-2-workload-shaping-exists-but-requires-knowledge">Paragraph 2 — Workload shaping exists, but requires knowledge</a>
+<a class="lvl1" href="#paragraph-3-scalability-problem">Paragraph 3 — Scalability problem</a>
+<a class="lvl1" href="#paragraph-4-core-idea">Paragraph 4 — Core idea</a>
+<a class="lvl1" href="#paragraph-5-controller">Paragraph 5 — Controller</a>
+<a class="lvl1" href="#paragraph-6-contributions">Paragraph 6 — Contributions</a>
+<a class="lvl1" href="#4-3-background-and-related-work">4.3 Background and Related Work</a>
+<a class="lvl1" href="#4-3-1-grid-responsive-data-centers">4.3.1 Grid-responsive data centers</a>
+<a class="lvl1" href="#4-3-2-gpu-and-cluster-power-control">4.3.2 GPU and cluster power control</a>
+<a class="lvl1" href="#4-3-3-ai-workload-energy-performance-prediction">4.3.3 AI workload energy/performance prediction</a>
+<a class="lvl1" href="#4-3-4-digital-twins-simulation">4.3.4 Digital twins / simulation</a>
+<a class="lvl1" href="#4-3-5-gap-statement">4.3.5 Gap statement</a>
+<a class="lvl1" href="#4-4-problem-formulation">4.4 Problem Formulation</a>
+<a class="lvl1" href="#workload-state">Workload state</a>
+<a class="lvl1" href="#action-space">Action space</a>
+<a class="lvl1" href="#response-model">Response model</a>
+<a class="lvl1" href="#service-cost">Service cost</a>
+<a class="lvl1" href="#power-constraint">Power constraint</a>
+<a class="lvl1" href="#safe-flexibility">Safe flexibility</a>
+<a class="lvl1" href="#4-5-data-and-experimental-platform">4.5 Data and Experimental Platform</a>
+<a class="lvl1" href="#physical-measurements">Physical measurements</a>
+<a class="lvl1" href="#phoenix-emerald">Phoenix/Emerald</a>
+<a class="lvl1" href="#production-workload-traces">Production workload traces</a>
+<a class="lvl1" href="#synthetic-counterfactual-data">Synthetic counterfactual data</a>
+<a class="lvl1" href="#5-results-plan">5. Results Plan</a>
+<a class="lvl1" href="#5-1-rq1-characterizing-workload-power-flexibility">5.1 RQ1 — Characterizing Workload Power Flexibility</a>
+<a class="lvl1" href="#e1-power-cap-response">E1 — Power-cap response</a>
+<a class="lvl1" href="#e2-alternative-actions">E2 — Alternative actions</a>
+<a class="lvl1" href="#metric">Metric</a>
+<a class="lvl1" href="#figure-2">Figure 2</a>
+<a class="lvl1" href="#figure-3">Figure 3</a>
+<a class="lvl1" href="#table-2">Table 2</a>
+<a class="lvl1" href="#required-conclusion">Required conclusion</a>
+<a class="lvl1" href="#5-2-rq2-decision-headroom">5.2 RQ2 — Decision Headroom</a>
+<a class="lvl1" href="#e3">E3</a>
+<a class="lvl1" href="#main-metric">Main metric</a>
+<a class="lvl1" href="#figure-4-kill-figure">Figure 4 — Kill Figure</a>
+<a class="lvl1" href="#decision-headroom">Decision headroom</a>
+<a class="lvl1" href="#kill-conditions">Kill conditions</a>
+<a class="lvl1" href="#5-3-rq3-predicting-flexibility-of-unseen-workloads">5.3 RQ3 — Predicting Flexibility of Unseen Workloads</a>
+<a class="lvl1" href="#models">Models</a>
+<a class="lvl1" href="#inputs">Inputs</a>
+<a class="lvl1" href="#targets">Targets</a>
+<a class="lvl1" href="#splits">Splits</a>
+<a class="lvl1" href="#metrics">Metrics</a>
+<a class="lvl1" href="#figure-5">Figure 5</a>
+<a class="lvl1" href="#figure-6">Figure 6</a>
+<a class="lvl1" href="#table-3">Table 3</a>
+<a class="lvl1" href="#5-4-rq4-learned-power-shaping-control">5.4 RQ4 — Learned Power-Shaping Control</a>
+<a class="lvl1" href="#candidate-score">Candidate score</a>
+<a class="lvl1" href="#greedy-controller">Greedy controller</a>
+<a class="lvl1" href="#optional-mpc">Optional MPC</a>
+<a class="lvl1" href="#compare">Compare</a>
+<a class="lvl1" href="#figure-7">Figure 7</a>
+<a class="lvl1" href="#oracle-capture">Oracle Capture</a>
+<a class="lvl1" href="#table-4">Table 4</a>
+<a class="lvl1" href="#5-5-rq5-production-trace-replay">5.5 RQ5 — Production Trace Replay</a>
+<a class="lvl1" href="#azure-inference-track">Azure inference track</a>
+<a class="lvl1" href="#alibaba-mixed-workload-track">Alibaba mixed-workload track</a>
+<a class="lvl1" href="#figure-8">Figure 8</a>
+<a class="lvl1" href="#figure-9">Figure 9</a>
+<a class="lvl1" href="#5-6-rq6-uncertainty-and-safe-flexibility">5.6 RQ6 — Uncertainty and Safe Flexibility</a>
+<a class="lvl1" href="#method">Method</a>
+<a class="lvl1" href="#metrics">Metrics</a>
+<a class="lvl1" href="#figure-10">Figure 10</a>
+<a class="lvl1" href="#5-7-rq7-rebound-aware-planning">5.7 RQ7 — Rebound-Aware Planning</a>
+<a class="lvl1" href="#computational-debt">Computational debt</a>
+<a class="lvl1" href="#figure-11">Figure 11</a>
+<a class="lvl1" href="#5-8-rq8-israeli-grid-application-case-study">5.8 RQ8 — Israeli Grid Application Case Study</a>
+<a class="lvl1" href="#input">Input</a>
+<a class="lvl1" href="#virtual-facility-sizes">Virtual facility sizes</a>
+<a class="lvl1" href="#workload-mixes">Workload mixes</a>
+<a class="lvl1" href="#scenarios">Scenarios</a>
+<a class="lvl1" href="#metrics">Metrics</a>
+<a class="lvl1" href="#figure-12">Figure 12</a>
+<a class="lvl1" href="#figure-13">Figure 13</a>
+<a class="lvl1" href="#claim-limit">Claim limit</a>
+<a class="lvl1" href="#6-experimental-platform">6. Experimental Platform</a>
+<a class="lvl1" href="#physical-testbed">Physical testbed</a>
+<a class="lvl1" href="#workloads">Workloads</a>
+<a class="lvl1" href="#initial-actions">Initial actions</a>
+<a class="lvl1" href="#7-synthetic-data-role">7. Synthetic Data Role</a>
+<a class="lvl1" href="#sim-to-real-experiment">Sim-to-real experiment</a>
+<a class="lvl1" href="#figure-14">Figure 14</a>
+<a class="lvl1" href="#8-baselines">8. Baselines</a>
+<a class="lvl1" href="#prediction">Prediction</a>
+<a class="lvl1" href="#control">Control</a>
+<a class="lvl1" href="#temporal">Temporal</a>
+<a class="lvl1" href="#9-ablations">9. Ablations</a>
+<a class="lvl1" href="#a1-remove-workload-semantic-features">A1 — Remove workload semantic features</a>
+<a class="lvl1" href="#a2-remove-runtime-state">A2 — Remove runtime state</a>
+<a class="lvl1" href="#a3-remove-priority">A3 — Remove priority</a>
+<a class="lvl1" href="#a4-remove-action-identity">A4 — Remove action identity</a>
+<a class="lvl1" href="#a5-remove-uncertainty">A5 — Remove uncertainty</a>
+<a class="lvl1" href="#a6-remove-rebound">A6 — Remove rebound</a>
+<a class="lvl1" href="#a7-remove-synthetic-training-data">A7 — Remove synthetic training data</a>
+<a class="lvl1" href="#a8-remove-physical-calibration">A8 — Remove physical calibration</a>
+<a class="lvl1" href="#10-statistical-analysis">10. Statistical Analysis</a>
+<a class="lvl1" href="#11-kill-criteria">11. Kill Criteria</a>
+<a class="lvl1" href="#k1-no-elasticity-heterogeneity">K1 — No elasticity heterogeneity</a>
+<a class="lvl1" href="#k2-no-decision-headroom">K2 — No decision headroom</a>
+<a class="lvl1" href="#k3-poor-unseen-workload-generalization">K3 — Poor unseen-workload generalization</a>
+<a class="lvl1" href="#k4-good-prediction-but-no-control-gain">K4 — Good prediction but no control gain</a>
+<a class="lvl1" href="#k5-priority-dominates">K5 — Priority dominates</a>
+<a class="lvl1" href="#k6-rebound-removes-the-benefit">K6 — Rebound removes the benefit</a>
+<a class="lvl1" href="#12-possible-pivots">12. Possible Pivots</a>
+<a class="lvl1" href="#p1-few-shot-flexibility-profiling">P1 — Few-shot flexibility profiling</a>
+<a class="lvl1" href="#p2-active-profiling">P2 — Active profiling</a>
+<a class="lvl1" href="#p3-ranking-instead-of-exact-regression">P3 — Ranking instead of exact regression</a>
+<a class="lvl1" href="#p4-open-control-standard">P4 — Open control standard</a>
+<a class="lvl1" href="#13-expected-tables">13. Expected Tables</a>
+<a class="lvl1" href="#table-1-related-systems">Table 1 — Related systems</a>
+<a class="lvl1" href="#table-2-workload-measurement-set">Table 2 — Workload measurement set</a>
+<a class="lvl1" href="#table-3-intervention-response">Table 3 — Intervention response</a>
+<a class="lvl1" href="#table-4-prediction">Table 4 — Prediction</a>
+<a class="lvl1" href="#table-5-control">Table 5 — Control</a>
+<a class="lvl1" href="#table-6-production-traces">Table 6 — Production traces</a>
+<a class="lvl1" href="#table-7-israeli-scenarios">Table 7 — Israeli scenarios</a>
+<a class="lvl1" href="#14-figure-plan">14. Figure Plan</a>
+<a class="lvl1" href="#15-main-metrics">15. Main Metrics</a>
+<a class="lvl1" href="#electrical">Electrical</a>
+<a class="lvl1" href="#service">Service</a>
+<a class="lvl1" href="#decision">Decision</a>
+<a class="lvl1" href="#reliability">Reliability</a>
+<a class="lvl1" href="#16-strongest-possible-headline-result">16. Strongest Possible Headline Result</a>
+<a class="lvl1" href="#17-discussion">17. Discussion</a>
+<a class="lvl1" href="#18-limitations">18. Limitations</a>
+<a class="lvl1" href="#19-reproducibility-package">19. Reproducibility Package</a>
+<a class="lvl1" href="#20-target-venues">20. Target Venues</a>
+<a class="lvl1" href="#systems-oriented">Systems-oriented</a>
+<a class="lvl1" href="#energy-computing-intersection">Energy/computing intersection</a>
+<a class="lvl1" href="#power-grid-oriented">Power/grid-oriented</a>
+<a class="lvl1" href="#21-recommended-paper-identity">21. Recommended Paper Identity</a>
+<a class="lvl1" href="#22-one-sentence-paper-arc">22. One-Sentence Paper Arc</a>
+<a class="lvl1" href="#23-minimal-result-set-required-for-a-strong-paper">23. Minimal Result Set Required for a Strong Paper</a>
+<a class="lvl1" href="#24-final-go-no-go-logic">24. Final Go/No-Go Logic</a>
+</nav>
+<main>
+<h1 id="predicting-and-exploiting-ai-workload-power-flexibility-without-per-job-profiling">Predicting and Exploiting AI Workload Power Flexibility Without Per-Job Profiling<a class="anchor" href="#predicting-and-exploiting-ai-workload-power-flexibility-without-per-job-profiling">#</a></h1>
+<h1 id="0-working-paper-positioning">0. Working Paper Positioning<a class="anchor" href="#0-working-paper-positioning">#</a></h1>
+<h1 id="recommended-working-title">Recommended working title<a class="anchor" href="#recommended-working-title">#</a></h1>
+<p><strong>Predicting AI Workload Power Flexibility for Grid-Constrained Data Centers</strong></p>
+<p>Alternative titles:
+1. <strong>From Unprofiled AI Jobs to Flexible MW: Learning Workload Power Response for Data-Center Power Shaping</strong>
+2. <strong>Learning Computational Flexibility: Workload-Aware Power Shaping for AI Data Centers</strong>
+3. <strong>A World Model of AI Workload Flexibility for Data-Center Power Control</strong>
+4. <strong>Predicting Counterfactual Power–Performance Response of AI Workloads for Grid-Aware Scheduling</strong>
+5. <strong>Toward Flexible AI Data Centers: Predicting Which Workloads to Shape Under Power Constraints</strong></p>
+<h1 id="central-scientific-claim">Central scientific claim<a class="anchor" href="#central-scientific-claim">#</a></h1>
+<blockquote>
+<p><strong>The power flexibility of an unseen AI workload can be predicted from workload attributes, hardware information, and runtime state well enough to make better power-shaping decisions than workload-agnostic or priority-only policies, without exhaustive per-job profiling.</strong></p>
+</blockquote>
+<h1 id="central-systems-claim">Central systems claim<a class="anchor" href="#central-systems-claim">#</a></h1>
+<blockquote>
+<p><strong>A controller using predicted workload flexibility can track a facility power envelope with lower service degradation than simple uniform power capping or static priority heuristics.</strong></p>
+</blockquote>
+<h1 id="application-claim">Application claim<a class="anchor" href="#application-claim">#</a></h1>
+<blockquote>
+<p><strong>Predictive workload flexibility can translate part of installed AI computing demand from apparently firm electrical load into measurable, controllable load under explicit service guarantees.</strong></p>
+</blockquote>
+<h1 id="what-the-paper-is-not">What the paper is NOT<a class="anchor" href="#what-the-paper-is-not">#</a></h1>
+<p>The paper should not claim:
+- first AI workload-shaping system;
+- first digital twin for AI power;
+- first grid-responsive AI data center;
+- first GPU power-capping controller;
+- first data-center demand-response system;
+- guaranteed reduction in total energy;
+- direct proof that a real 100 MW Israeli facility can operate behind a smaller connection.</p>
+<p>The paper should instead focus on:</p>
+<div class="eqblock"><span class="boxed">
+Can flexibility of previously unseen AI workloads be predicted accurately enough to improve power-control decisions?
+</span></div>
+<hr />
+<h1 id="1-core-story-arc">1. Core Story Arc<a class="anchor" href="#1-core-story-arc">#</a></h1>
+<h1 id="step-1-establish-the-physical-computational-phenomenon">Step 1 — Establish the physical/computational phenomenon<a class="anchor" href="#step-1-establish-the-physical-computational-phenomenon">#</a></h1>
+<p>Different AI workloads must react differently to the same intervention.</p>
+<p>Question:</p>
+<blockquote>
+<p><strong>Is workload power flexibility heterogeneous enough to matter?</strong></p>
+</blockquote>
+<p>If not, there is no need for workload-aware prediction.</p>
+<h1 id="step-2-establish-decision-relevance">Step 2 — Establish decision relevance<a class="anchor" href="#step-2-establish-decision-relevance">#</a></h1>
+<p>Even if workloads differ, a simple heuristic may capture nearly all useful flexibility.</p>
+<p>Question:</p>
+<blockquote>
+<p><strong>Does knowing workload-specific response improve the actual control decision?</strong></p>
+</blockquote>
+<p>This is the first major kill test.</p>
+<h1 id="step-3-establish-the-practical-gap">Step 3 — Establish the practical gap<a class="anchor" href="#step-3-establish-the-practical-gap">#</a></h1>
+<p>Existing profiled controllers can exploit known workload flexibility, but profiling every new workload/configuration is costly or impractical.</p>
+<p>Question:</p>
+<blockquote>
+<p><strong>Can response be predicted from attributes and state instead?</strong></p>
+</blockquote>
+<h1 id="step-4-evaluate-prediction-on-truly-unseen-workloads">Step 4 — Evaluate prediction on truly unseen workloads<a class="anchor" href="#step-4-evaluate-prediction-on-truly-unseen-workloads">#</a></h1>
+<p>Random row-level train/test splits are insufficient.</p>
+<p>Question:</p>
+<blockquote>
+<p><strong>Can the model generalize to jobs it has never seen or profiled?</strong></p>
+</blockquote>
+<h1 id="step-5-put-prediction-inside-the-controller">Step 5 — Put prediction inside the controller<a class="anchor" href="#step-5-put-prediction-inside-the-controller">#</a></h1>
+<p>Prediction accuracy alone is not enough.</p>
+<p>Question:</p>
+<blockquote>
+<p><strong>Does prediction improve power-envelope control?</strong></p>
+</blockquote>
+<h1 id="step-6-add-uncertainty-and-temporal-effects">Step 6 — Add uncertainty and temporal effects<a class="anchor" href="#step-6-add-uncertainty-and-temporal-effects">#</a></h1>
+<p>A grid-facing system must not promise flexibility it cannot deliver.</p>
+<p>Questions:</p>
+<blockquote>
+<p><strong>Can uncertainty calibration reduce under-delivery?</strong></p>
+<p><strong>Does rebound-aware planning prevent shifted peaks?</strong></p>
+</blockquote>
+<h1 id="step-7-demonstrate-realistic-workload-scale-behavior">Step 7 — Demonstrate realistic workload-scale behavior<a class="anchor" href="#step-7-demonstrate-realistic-workload-scale-behavior">#</a></h1>
+<p>Replay production traces.</p>
+<p>Question:</p>
+<blockquote>
+<p><strong>Does the advantage survive burstiness, workload mixtures, and priorities?</strong></p>
+</blockquote>
+<h1 id="step-8-translate-to-the-electricity-system-application">Step 8 — Translate to the electricity-system application<a class="anchor" href="#step-8-translate-to-the-electricity-system-application">#</a></h1>
+<p>Use Israeli grid traces as an application case study.</p>
+<p>Question:</p>
+<blockquote>
+<p><strong>What amount of firm electrical capacity would be required for a given installed AI workload under explicit assumptions?</strong></p>
+</blockquote>
+<hr />
+<h1 id="2-recommended-contributions">2. Recommended Contributions<a class="anchor" href="#2-recommended-contributions">#</a></h1>
+<h1 id="c1-empirical-characterization">C1 — Empirical characterization<a class="anchor" href="#c1-empirical-characterization">#</a></h1>
+<p>A measurement and simulation study showing that AI workloads exhibit heterogeneous, state-dependent power–performance response under common control interventions.</p>
+<p>Possible wording:</p>
+<blockquote>
+<p>We characterize the power elasticity of representative AI workloads and show when identical power-management actions produce substantially different service costs.</p>
+</blockquote>
+<h1 id="c2-generalizable-intervention-response-model">C2 — Generalizable intervention-response model<a class="anchor" href="#c2-generalizable-intervention-response-model">#</a></h1>
+<p>A model predicting:</p>
+<div class="eqblock">(	workload,	state,	hardware,	action)
+\r&rarr;
+(&Delta; P,&Delta; QoS,&Delta; E,&Delta; T)</div>
+<p>for workloads withheld from profiling.</p>
+<p>This is the main scientific contribution.</p>
+<h1 id="c3-workload-aware-power-shaping-controller">C3 — Workload-aware power-shaping controller<a class="anchor" href="#c3-workload-aware-power-shaping-controller">#</a></h1>
+<p>A controller that uses predicted response to select the least damaging set of interventions required to satisfy:</p>
+<div class="eqblock">P(t)&le; C(t).</div>
+<h1 id="c4-safety-reliability-layer">C4 — Safety/reliability layer<a class="anchor" href="#c4-safety-reliability-layer">#</a></h1>
+<p>An uncertainty-aware version that uses conservative predicted flexibility rather than mean response, and optionally models deferred work/rebound.</p>
+<h1 id="c5-trace-driven-grid-application">C5 — Trace-driven grid application<a class="anchor" href="#c5-trace-driven-grid-application">#</a></h1>
+<p>Evaluation under production AI workload traces and Israeli electricity-system scenarios, translating workload flexibility into a firm-capacity / flexible-capacity interpretation.</p>
+<hr />
+<h1 id="3-research-questions">3. Research Questions<a class="anchor" href="#3-research-questions">#</a></h1>
+<h1 id="rq1-is-ai-workload-power-flexibility-heterogeneous">RQ1 — Is AI workload power flexibility heterogeneous?<a class="anchor" href="#rq1-is-ai-workload-power-flexibility-heterogeneous">#</a></h1>
+<blockquote>
+<p>How much do power reduction and service degradation vary across workloads, states, hardware, and actions?</p>
+</blockquote>
+<h1 id="h1">H1<a class="anchor" href="#h1">#</a></h1>
+<div class="eqblock">\frac{-&Delta; P}{&Delta; C<sub>	service</sub>}</div>
+<p>varies materially across workloads and workload states.</p>
+<h1 id="evidence">Evidence<a class="anchor" href="#evidence">#</a></h1>
+<ul>
+<li>intervention sweeps;</li>
+<li>distributions;</li>
+<li>variance decomposition;</li>
+<li>pairwise comparison of response curves.</li>
+</ul>
+<h1 id="rq2-is-the-heterogeneity-decision-relevant">RQ2 — Is the heterogeneity decision-relevant?<a class="anchor" href="#rq2-is-the-heterogeneity-decision-relevant">#</a></h1>
+<blockquote>
+<p>How much better can a controller perform if it knows the true flexibility of every workload?</p>
+</blockquote>
+<h1 id="h2">H2<a class="anchor" href="#h2">#</a></h1>
+<p>A profiled/oracle workload-aware policy significantly outperforms:
+- uniform power capping;
+- priority-first;
+- largest-power-first;
+- static workload-class rules.</p>
+<h1 id="evidence">Evidence<a class="anchor" href="#evidence">#</a></h1>
+<p>Power-reduction vs service-cost curves.</p>
+<h1 id="kill-test">Kill test<a class="anchor" href="#kill-test">#</a></h1>
+<p>If simple heuristics capture nearly all oracle value, predictive ML is not justified.</p>
+<h1 id="rq3-can-flexibility-be-predicted-for-unseen-workloads">RQ3 — Can flexibility be predicted for unseen workloads?<a class="anchor" href="#rq3-can-flexibility-be-predicted-for-unseen-workloads">#</a></h1>
+<blockquote>
+<p>Can a model trained on other workloads predict <span class="eq">&Delta; P</span>, <span class="eq">&Delta; QoS</span>, and <span class="eq">&Delta; E</span> for a held-out workload without profiling that workload under the candidate intervention?</p>
+</blockquote>
+<h1 id="h3">H3<a class="anchor" href="#h3">#</a></h1>
+<p>Workload attributes + runtime state provide predictive value beyond:
+- global average;
+- job class;
+- current power/utilization only.</p>
+<h1 id="rq4-does-learned-flexibility-improve-control">RQ4 — Does learned flexibility improve control?<a class="anchor" href="#rq4-does-learned-flexibility-improve-control">#</a></h1>
+<blockquote>
+<p>Does a learned controller reduce service cost for a required power reduction compared with simple policies?</p>
+</blockquote>
+<h1 id="h4">H4<a class="anchor" href="#h4">#</a></h1>
+<p>The learned controller captures a substantial fraction of the value achieved by a controller with true profiles.</p>
+<div class="eqblock">Oracle Capture =
+\frac{
+C<sub>	simple</sub>-C<sub>	learned</sub>
+}{
+C<sub>	simple</sub>-C<sub>	oracle</sub>
+}</div>
+<h1 id="rq5-does-the-approach-survive-realistic-workload-traces">RQ5 — Does the approach survive realistic workload traces?<a class="anchor" href="#rq5-does-the-approach-survive-realistic-workload-traces">#</a></h1>
+<blockquote>
+<p>Does the benefit persist under bursty online inference and mixed production AI workloads?</p>
+</blockquote>
+<p>Use:
+- Azure LLM traces;
+- Alibaba GPU traces.</p>
+<h1 id="rq6-can-flexibility-be-promised-safely">RQ6 — Can flexibility be promised safely?<a class="anchor" href="#rq6-can-flexibility-be-promised-safely">#</a></h1>
+<blockquote>
+<p>Does uncertainty calibration reduce the rate at which actual delivered power reduction is less than promised?</p>
+</blockquote>
+<div class="eqblock">UFR =
+Pr(
+&Delta; P<sub>	actual</sub>
+<
+&Delta; P<sub>	promised</sub>
+)</div>
+<h1 id="rq7-does-rebound-matter">RQ7 — Does rebound matter?<a class="anchor" href="#rq7-does-rebound-matter">#</a></h1>
+<blockquote>
+<p>Does ignoring deferred work create secondary power peaks or deadline failures?</p>
+</blockquote>
+<h1 id="rq8-what-is-the-application-value-for-grid-constrained-ai-infrastructure">RQ8 — What is the application value for grid-constrained AI infrastructure?<a class="anchor" href="#rq8-what-is-the-application-value-for-grid-constrained-ai-infrastructure">#</a></h1>
+<blockquote>
+<p>Under realistic workload mixes, how does workload flexibility affect the firm electrical capacity required for a virtual 10–100 MW AI facility?</p>
+</blockquote>
+<hr />
+<h1 id="4-section-by-section-manuscript-plan">4. Section-by-Section Manuscript Plan<a class="anchor" href="#4-section-by-section-manuscript-plan">#</a></h1>
+<h1 id="4-1-abstract">4.1 Abstract<a class="anchor" href="#4-1-abstract">#</a></h1>
+<p>Target: 180–250 words.</p>
+<p>Structure:
+1. Electrical capacity is becoming a constraint for AI data centers.
+2. Software workload shaping can provide flexibility, but existing methods often assume known flexibility/profiles.
+3. New workloads/configurations continuously arrive; exhaustive profiling is impractical.
+4. Learn action-conditioned power/performance response from workload attributes and runtime state.
+5. Use model inside a controller to select least-cost interventions under a power envelope.
+6. Evaluate with physical measurements, public measured data, production traces, and simulation.
+7. Insert quantitative results only after experiments.
+8. End with implications for flexible data-center demand.</p>
+<h1 id="4-2-introduction">4.2 Introduction<a class="anchor" href="#4-2-introduction">#</a></h1>
+<p>Target: 1–1.5 pages.</p>
+<h1 id="paragraph-1-power-is-becoming-a-compute-constraint">Paragraph 1 — Power is becoming a compute constraint<a class="anchor" href="#paragraph-1-power-is-becoming-a-compute-constraint">#</a></h1>
+<p>Explain:
+- electrical capacity can constrain AI deployment;
+- local interconnection limits matter independently of annual MWh;
+- computation is programmable and therefore potentially flexible.</p>
+<p>Key framing:</p>
+<blockquote>
+<p>The key question is no longer only how efficiently AI consumes energy, but how flexibly computational demand can be shaped under a time-varying power constraint.</p>
+</blockquote>
+<h1 id="paragraph-2-workload-shaping-exists-but-requires-knowledge">Paragraph 2 — Workload shaping exists, but requires knowledge<a class="anchor" href="#paragraph-2-workload-shaping-exists-but-requires-knowledge">#</a></h1>
+<p>Briefly position:
+- Google demand response;
+- Phoenix/Emerald;
+- GPU power capping;
+- scheduler priorities;
+- grid-interactive computing.</p>
+<p>Then:</p>
+<blockquote>
+<p>These systems demonstrate that computational load can be shaped. They do not eliminate the need to know which workload is safe and efficient to modify.</p>
+</blockquote>
+<h1 id="paragraph-3-scalability-problem">Paragraph 3 — Scalability problem<a class="anchor" href="#paragraph-3-scalability-problem">#</a></h1>
+<p>A modern AI cluster continuously receives new:
+- models;
+- hardware combinations;
+- sequence lengths;
+- batch sizes;
+- parallelism settings;
+- training configurations;
+- serving loads.</p>
+<p>Therefore exhaustive workload-specific profiling is difficult to scale.</p>
+<h1 id="paragraph-4-core-idea">Paragraph 4 — Core idea<a class="anchor" href="#paragraph-4-core-idea">#</a></h1>
+<div class="eqblock">f_	heta(S,a)
+\r&rarr;
+(&Delta; P,&Delta; QoS,&Delta; E,&Delta; T)</div>
+<h1 id="paragraph-5-controller">Paragraph 5 — Controller<a class="anchor" href="#paragraph-5-controller">#</a></h1>
+<div class="eqblock">D(t)=P(t)-C(t)</div>
+<p>and select actions minimizing service cost while covering the deficit.</p>
+<h1 id="paragraph-6-contributions">Paragraph 6 — Contributions<a class="anchor" href="#paragraph-6-contributions">#</a></h1>
+<p>List C1–C5.</p>
+<hr />
+<h1 id="4-3-background-and-related-work">4.3 Background and Related Work<a class="anchor" href="#4-3-background-and-related-work">#</a></h1>
+<p>Target: 1.5–2 pages.</p>
+<h1 id="4-3-1-grid-responsive-data-centers">4.3.1 Grid-responsive data centers<a class="anchor" href="#4-3-1-grid-responsive-data-centers">#</a></h1>
+<p>Cover hyperscaler demand response, Phoenix/Emerald, flexible loads, and interconnection constraints.</p>
+<p>Conclusion:</p>
+<blockquote>
+<p>The feasibility of compute-driven grid response is established.</p>
+</blockquote>
+<h1 id="4-3-2-gpu-and-cluster-power-control">4.3.2 GPU and cluster power control<a class="anchor" href="#4-3-2-gpu-and-cluster-power-control">#</a></h1>
+<p>Cover GPU power capping, DVFS, cooperative caps, NVIDIA power reservation, training stabilization, and oversubscription.</p>
+<p>Conclusion:</p>
+<blockquote>
+<p>Existing systems provide actuators and control methods but typically assume known performance/power behavior or restricted action spaces.</p>
+</blockquote>
+<h1 id="4-3-3-ai-workload-energy-performance-prediction">4.3.3 AI workload energy/performance prediction<a class="anchor" href="#4-3-3-ai-workload-energy-performance-prediction">#</a></h1>
+<p>Cover Watt Counts, MLPerf Power, Zeus, BEAM, and inference energy modeling.</p>
+<p>Conclusion:</p>
+<blockquote>
+<p>Static power or energy prediction differs from predicting response to an intervention.</p>
+</blockquote>
+<h1 id="4-3-4-digital-twins-simulation">4.3.4 Digital twins / simulation<a class="anchor" href="#4-3-4-digital-twins-simulation">#</a></h1>
+<p>Cover OpenDT/OpenDC, HPC digital twins, SchedTwin, SimGrid/Batsim, LLMServingSim, Opal/APEX+.</p>
+<p>Conclusion:</p>
+<blockquote>
+<p>Simulators enable counterfactual branching but require calibration and independent physical validation.</p>
+</blockquote>
+<h1 id="4-3-5-gap-statement">4.3.5 Gap statement<a class="anchor" href="#4-3-5-gap-statement">#</a></h1>
+<blockquote>
+<p><strong>Gap:</strong> We study generalization of action-conditioned power–service response to workloads whose intervention profiles are not observed during training, and quantify whether that prediction creates decision value under facility-level power constraints.</p>
+</blockquote>
+<hr />
+<h1 id="4-4-problem-formulation">4.4 Problem Formulation<a class="anchor" href="#4-4-problem-formulation">#</a></h1>
+<p>Target: 1 page.</p>
+<h1 id="workload-state">Workload state<a class="anchor" href="#workload-state">#</a></h1>
+<div class="eqblock">x<sub>i</sub> =
+[
+	job type,
+	model features,
+	hardware,
+	batch,
+	tokens,
+	priority,
+	deadline,
+s
+]</div>
+<div class="eqblock">s<sub>i</sub>(t)=
+[
+P<sub>i</sub>,
+U<sub>i</sub>,
+Q<sub>i</sub>,
+	phase,
+	remaining work,
+	queue state
+]</div>
+<h1 id="action-space">Action space<a class="anchor" href="#action-space">#</a></h1>
+<div class="eqblock">a<sub>i</sub>&isin;
+{
+	do nothing,
+	power cap,
+	delay,
+	pause,
+	batch adjustment,
+	queue adjustment
+}</div>
+<h1 id="response-model">Response model<a class="anchor" href="#response-model">#</a></h1>
+<div class="eqblock">f_	heta(x<sub>i</sub>,s<sub>i</sub>,a<sub>i</sub>)
+=
+(&Delta; P<sub>i</sub>&#770;,
+&Delta; E<sub>i</sub>&#770;,
+&Delta; Q<sub>i</sub>&#770;,
+&Delta; T<sub>i</sub>&#770;)</div>
+<h1 id="service-cost">Service cost<a class="anchor" href="#service-cost">#</a></h1>
+<div class="eqblock">C<sub>i</sub>(a<sub>i</sub>)=
+w<sub>i</sub>
+[
+&alpha; L<sub>i</sub>
++
+&beta; S<sub>i</sub>
++
+&gamma; D<sub>i</sub>
+]</div>
+<h1 id="power-constraint">Power constraint<a class="anchor" href="#power-constraint">#</a></h1>
+<div class="eqblock">P<sub>	facility</sub>(t)&le; C(t)</div>
+<p>Optionally:</p>
+<div class="eqblock">| P(t)|&le; R<sub>max</sub></div>
+<h1 id="safe-flexibility">Safe flexibility<a class="anchor" href="#safe-flexibility">#</a></h1>
+<div class="eqblock">&Delta; P<sub>i</sub><sup>safe</sup>
+=
+LCB<sub>1-&alpha;</sub>(&Delta; P<sub>i</sub>)</div>
+<hr />
+<h1 id="4-5-data-and-experimental-platform">4.5 Data and Experimental Platform<a class="anchor" href="#4-5-data-and-experimental-platform">#</a></h1>
+<p>Target: 1.5–2 pages.</p>
+<h1 id="physical-measurements">Physical measurements<a class="anchor" href="#physical-measurements">#</a></h1>
+<p>Describe:
+- GPUs;
+- server;
+- power monitoring;
+- workload set;
+- intervention sweeps;
+- repetitions;
+- sample rate.</p>
+<h1 id="phoenix-emerald">Phoenix/Emerald<a class="anchor" href="#phoenix-emerald">#</a></h1>
+<p>Use for:
+- public measured response;
+- external validation;
+- initial kill test.</p>
+<h1 id="production-workload-traces">Production workload traces<a class="anchor" href="#production-workload-traces">#</a></h1>
+<p>Azure:
+- inference arrival rate;
+- input/output tokens;
+- burstiness.</p>
+<p>Alibaba:
+- mixed workload population;
+- priority;
+- GPU requests;
+- training/inference mix.</p>
+<h1 id="synthetic-counterfactual-data">Synthetic counterfactual data<a class="anchor" href="#synthetic-counterfactual-data">#</a></h1>
+<p>Use:
+- OpenDT/OpenDC;
+- LLMServingSim;
+- Batsim/SimGrid;
+- optionally Opal/APEX+.</p>
+<p>State explicitly:</p>
+<blockquote>
+<p>Synthetic data expand action coverage but are not treated as independent physical ground truth.</p>
+</blockquote>
+<hr />
+<h1 id="5-results-plan">5. Results Plan<a class="anchor" href="#5-results-plan">#</a></h1>
+<h1 id="5-1-rq1-characterizing-workload-power-flexibility">5.1 RQ1 — Characterizing Workload Power Flexibility<a class="anchor" href="#5-1-rq1-characterizing-workload-power-flexibility">#</a></h1>
+<h1 id="e1-power-cap-response">E1 — Power-cap response<a class="anchor" href="#e1-power-cap-response">#</a></h1>
+<p>For each workload:</p>
+<div class="eqblock">u&isin;{100%,90%,80%,70%,60%}</div>
+<p>Measure:
+- power;
+- throughput;
+- latency;
+- runtime;
+- energy.</p>
+<h1 id="e2-alternative-actions">E2 — Alternative actions<a class="anchor" href="#e2-alternative-actions">#</a></h1>
+<p>For selected jobs:
+- delay;
+- batching;
+- pause/resume;
+- queue slack.</p>
+<h1 id="metric">Metric<a class="anchor" href="#metric">#</a></h1>
+<div class="eqblock">FE =
+\frac{-&Delta; P/P}
+{&Delta; C<sub>	service</sub>+&epsilon;}</div>
+<h1 id="figure-2">Figure 2<a class="anchor" href="#figure-2">#</a></h1>
+<p>Power reduction vs service degradation by workload.</p>
+<h1 id="figure-3">Figure 3<a class="anchor" href="#figure-3">#</a></h1>
+<p>Flexibility heatmap: workloads × actions.</p>
+<h1 id="table-2">Table 2<a class="anchor" href="#table-2">#</a></h1>
+<table>
+<thead>
+<tr>
+<th>Workload</th>
+<th>Action</th>
+<th style="text-align: right;">ΔPower</th>
+<th style="text-align: right;">ΔEnergy</th>
+<th style="text-align: right;">ΔThroughput</th>
+<th style="text-align: right;">ΔLatency</th>
+<th style="text-align: right;">Flexibility efficiency</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h1 id="required-conclusion">Required conclusion<a class="anchor" href="#required-conclusion">#</a></h1>
+<p>Only if supported:</p>
+<blockquote>
+<p>Workload flexibility is heterogeneous enough that intervention choice can matter.</p>
+</blockquote>
+<hr />
+<h1 id="5-2-rq2-decision-headroom">5.2 RQ2 — Decision Headroom<a class="anchor" href="#5-2-rq2-decision-headroom">#</a></h1>
+<h1 id="e3">E3<a class="anchor" href="#e3">#</a></h1>
+<p>Impose:</p>
+<div class="eqblock">P<sub>max</sub>=
+{95,90,85,80,75,70}%</div>
+<p>of unconstrained power.</p>
+<p>Compare:
+- no control;
+- uniform cap;
+- priority-first;
+- largest-power-first;
+- static workload-class heuristic;
+- profiled response-aware controller;
+- oracle.</p>
+<h1 id="main-metric">Main metric<a class="anchor" href="#main-metric">#</a></h1>
+<p>Weighted service cost at a required power reduction.</p>
+<h1 id="figure-4-kill-figure">Figure 4 — Kill Figure<a class="anchor" href="#figure-4-kill-figure">#</a></h1>
+<p>X-axis: required power reduction.<br />
+Y-axis: service cost.</p>
+<h1 id="decision-headroom">Decision headroom<a class="anchor" href="#decision-headroom">#</a></h1>
+<div class="eqblock">H =
+\frac{
+C<sub>	simple</sub>-C<sub>	oracle</sub>
+}{
+C<sub>	simple</sub>
+}</div>
+<h1 id="kill-conditions">Kill conditions<a class="anchor" href="#kill-conditions">#</a></h1>
+<ul>
+<li><span class="eq">H < 5%-10%</span> across meaningful operating points;</li>
+<li>priority-only captures &gt;90–95% of oracle value.</li>
+</ul>
+<p>These are project-management thresholds.</p>
+<hr />
+<h1 id="5-3-rq3-predicting-flexibility-of-unseen-workloads">5.3 RQ3 — Predicting Flexibility of Unseen Workloads<a class="anchor" href="#5-3-rq3-predicting-flexibility-of-unseen-workloads">#</a></h1>
+<h1 id="models">Models<a class="anchor" href="#models">#</a></h1>
+<ul>
+<li>M0 global mean;</li>
+<li>M1 workload-class lookup;</li>
+<li>M2 linear model;</li>
+<li>M3 gradient-boosted trees;</li>
+<li>M4 neural model/embedding if justified;</li>
+<li>M5 uncertainty-aware model.</li>
+</ul>
+<h1 id="inputs">Inputs<a class="anchor" href="#inputs">#</a></h1>
+<p>Static:
+- workload class;
+- model size;
+- batch;
+- sequence length;
+- precision;
+- hardware;
+- GPU count.</p>
+<p>Dynamic:
+- utilization;
+- current power;
+- queue length;
+- throughput;
+- execution phase;
+- remaining work;
+- deadline slack.</p>
+<p>Action:
+- type;
+- magnitude.</p>
+<h1 id="targets">Targets<a class="anchor" href="#targets">#</a></h1>
+<p>At minimum:</p>
+<div class="eqblock">&Delta; P, &nbsp;  &Delta; C<sub>	service</sub></div>
+<p>Optional:</p>
+<div class="eqblock">&Delta; E,&Delta; T,	rebound</div>
+<h1 id="splits">Splits<a class="anchor" href="#splits">#</a></h1>
+<ul>
+<li>S1 random interpolation;</li>
+<li>S2 leave-model-out;</li>
+<li>S3 leave-workload-family-out;</li>
+<li>S4 leave-hardware-out;</li>
+<li>S5 leave-action-level-out.</li>
+</ul>
+<h1 id="metrics">Metrics<a class="anchor" href="#metrics">#</a></h1>
+<ul>
+<li>MAE;</li>
+<li>normalized MAE;</li>
+<li>RMSE;</li>
+<li>calibration;</li>
+<li>ranking accuracy;</li>
+<li>top-k action recall;</li>
+<li>control regret.</li>
+</ul>
+<h1 id="figure-5">Figure 5<a class="anchor" href="#figure-5">#</a></h1>
+<p>Measured vs predicted <span class="eq">&Delta; P</span> for seen and unseen cases.</p>
+<h1 id="figure-6">Figure 6<a class="anchor" href="#figure-6">#</a></h1>
+<p>Predicted action ranking vs true ranking.</p>
+<h1 id="table-3">Table 3<a class="anchor" href="#table-3">#</a></h1>
+<table>
+<thead>
+<tr>
+<th>Model</th>
+<th style="text-align: right;">Seen MAE</th>
+<th style="text-align: right;">Unseen-model MAE</th>
+<th style="text-align: right;">Unseen-hardware MAE</th>
+<th style="text-align: right;">Service-cost MAE</th>
+<th style="text-align: right;">Top-1 action accuracy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="5-4-rq4-learned-power-shaping-control">5.4 RQ4 — Learned Power-Shaping Control<a class="anchor" href="#5-4-rq4-learned-power-shaping-control">#</a></h1>
+<h1 id="candidate-score">Candidate score<a class="anchor" href="#candidate-score">#</a></h1>
+<div class="eqblock">V<sub>i,a</sub>
+=
+\frac{
+&Delta; P<sup>safe</sup><sub>i,a</sub>
+}{
+C<sub>i,a</sub>+&epsilon;
+}</div>
+<h1 id="greedy-controller">Greedy controller<a class="anchor" href="#greedy-controller">#</a></h1>
+<ol>
+<li>calculate deficit:</li>
+</ol>
+<div class="eqblock">D=P<sub>	current</sub>-C(t)</div>
+<ol start="2">
+<li>generate candidate actions;</li>
+<li>rank by value;</li>
+<li>apply until safe predicted reduction covers deficit;</li>
+<li>observe actual power;</li>
+<li>correct at next tick.</li>
+</ol>
+<h1 id="optional-mpc">Optional MPC<a class="anchor" href="#optional-mpc">#</a></h1>
+<p>Use only if temporal effects justify it.</p>
+<h1 id="compare">Compare<a class="anchor" href="#compare">#</a></h1>
+<ul>
+<li>uniform;</li>
+<li>priority;</li>
+<li>static;</li>
+<li>learned;</li>
+<li>profiled;</li>
+<li>oracle.</li>
+</ul>
+<h1 id="figure-7">Figure 7<a class="anchor" href="#figure-7">#</a></h1>
+<p>Service cost vs requested curtailment.</p>
+<h1 id="oracle-capture">Oracle Capture<a class="anchor" href="#oracle-capture">#</a></h1>
+<div class="eqblock">OC =
+\frac{
+C<sub>	simple</sub>-C<sub>	learned</sub>
+}{
+C<sub>	simple</sub>-C<sub>	oracle</sub>
+}</div>
+<h1 id="table-4">Table 4<a class="anchor" href="#table-4">#</a></h1>
+<table>
+<thead>
+<tr>
+<th>Controller</th>
+<th style="text-align: right;">Envelope violation</th>
+<th style="text-align: right;">Service cost</th>
+<th style="text-align: right;">HP SLA violations</th>
+<th style="text-align: right;">Energy change</th>
+<th style="text-align: right;">Oracle capture</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="5-5-rq5-production-trace-replay">5.5 RQ5 — Production Trace Replay<a class="anchor" href="#5-5-rq5-production-trace-replay">#</a></h1>
+<h1 id="azure-inference-track">Azure inference track<a class="anchor" href="#azure-inference-track">#</a></h1>
+<p>Replay:
+- timestamps;
+- input tokens;
+- output tokens.</p>
+<p>Assign service classes with explicit synthetic assumptions.</p>
+<p>Measure:
+- TTFT;
+- p95/p99 latency;
+- throughput;
+- envelope violations;
+- delayed requests.</p>
+<h1 id="alibaba-mixed-workload-track">Alibaba mixed-workload track<a class="anchor" href="#alibaba-mixed-workload-track">#</a></h1>
+<p>Replay:
+- training;
+- online inference;
+- offline inference;
+- development;
+- priority;
+- GPU requirements.</p>
+<h1 id="figure-8">Figure 8<a class="anchor" href="#figure-8">#</a></h1>
+<p>Dynamic trace with arrivals, envelope, controlled power, and service state.</p>
+<h1 id="figure-9">Figure 9<a class="anchor" href="#figure-9">#</a></h1>
+<p>Stacked power by workload class, showing which classes provide curtailment.</p>
+<hr />
+<h1 id="5-6-rq6-uncertainty-and-safe-flexibility">5.6 RQ6 — Uncertainty and Safe Flexibility<a class="anchor" href="#5-6-rq6-uncertainty-and-safe-flexibility">#</a></h1>
+<h1 id="method">Method<a class="anchor" href="#method">#</a></h1>
+<div class="eqblock">&Delta; P<sup>safe</sup>
+=
+Q_&alpha;(&Delta; P)</div>
+<p>Compare:
+- mean-prediction controller;
+- safe controller.</p>
+<h1 id="metrics">Metrics<a class="anchor" href="#metrics">#</a></h1>
+<div class="eqblock">UFR =
+\frac{
+#(&Delta; P<sub>	actual</sub> < &Delta; P<sub>	promised</sub>)
+}{
+N
+}</div>
+<p>Also quantify over-conservatism.</p>
+<h1 id="figure-10">Figure 10<a class="anchor" href="#figure-10">#</a></h1>
+<p>Confidence level vs:
+- delivered compliance;
+- usable promised MW.</p>
+<hr />
+<h1 id="5-7-rq7-rebound-aware-planning">5.7 RQ7 — Rebound-Aware Planning<a class="anchor" href="#5-7-rq7-rebound-aware-planning">#</a></h1>
+<h1 id="computational-debt">Computational debt<a class="anchor" href="#computational-debt">#</a></h1>
+<div class="eqblock">D<sub>i</sub>(t)
+=
+W<sub>i</sub><sup>expected</sup>(t)-W<sub>i</sub><sup>completed</sup>(t)</div>
+<p>Compare:
+- controller ignoring debt;
+- rebound-aware controller.</p>
+<p>Metrics:
+- maximum rebound power;
+- energy debt;
+- recovery duration;
+- deadline misses;
+- secondary peak.</p>
+<h1 id="figure-11">Figure 11<a class="anchor" href="#figure-11">#</a></h1>
+<p>Power time series before, during, and after event.</p>
+<hr />
+<h1 id="5-8-rq8-israeli-grid-application-case-study">5.8 RQ8 — Israeli Grid Application Case Study<a class="anchor" href="#5-8-rq8-israeli-grid-application-case-study">#</a></h1>
+<h1 id="input">Input<a class="anchor" href="#input">#</a></h1>
+<p>Use public Israeli:
+- national demand;
+- PV generation;
+- representative high-demand days.</p>
+<h1 id="virtual-facility-sizes">Virtual facility sizes<a class="anchor" href="#virtual-facility-sizes">#</a></h1>
+<div class="eqblock">10,\ 25,\ 50,\ 100	 MW</div>
+<h1 id="workload-mixes">Workload mixes<a class="anchor" href="#workload-mixes">#</a></h1>
+<ul>
+<li>inference-heavy;</li>
+<li>balanced;</li>
+<li>training-heavy.</li>
+</ul>
+<h1 id="scenarios">Scenarios<a class="anchor" href="#scenarios">#</a></h1>
+<ul>
+<li>IL1 fixed connection cap;</li>
+<li>IL2 evening constrained period;</li>
+<li>IL3 PV-aware shifting.</li>
+</ul>
+<h1 id="metrics">Metrics<a class="anchor" href="#metrics">#</a></h1>
+<p>Firm Capacity Ratio:</p>
+<div class="eqblock">FCR=
+\frac{
+P<sub>	firm</sub>
+}{
+P<sub>	installed</sub>
+}</div>
+<p>Compute Capacity Multiplier:</p>
+<div class="eqblock">CCM=
+\frac{
+P<sub>	installed</sub>
+}{
+P<sub>	firm</sub>
+}</div>
+<h1 id="figure-12">Figure 12<a class="anchor" href="#figure-12">#</a></h1>
+<p>Israeli demand + PV + virtual AI facility load.</p>
+<h1 id="figure-13">Figure 13<a class="anchor" href="#figure-13">#</a></h1>
+<p>Firm grid capacity vs useful AI work completed within SLO.</p>
+<h1 id="claim-limit">Claim limit<a class="anchor" href="#claim-limit">#</a></h1>
+<p>Do not say:</p>
+<blockquote>
+<p>Israel can connect X% more data centers.</p>
+</blockquote>
+<p>Say:</p>
+<blockquote>
+<p>Under the modeled workload and service assumptions, the controller changes the firm-capacity requirement by X relative to the unconstrained baseline.</p>
+</blockquote>
+<hr />
+<h1 id="6-experimental-platform">6. Experimental Platform<a class="anchor" href="#6-experimental-platform">#</a></h1>
+<h1 id="physical-testbed">Physical testbed<a class="anchor" href="#physical-testbed">#</a></h1>
+<p>Minimum:
+- 1–4 NVIDIA GPUs;
+- Linux;
+- NVML;
+- optional PDU/wall meter.</p>
+<p>Preferred:
+- heterogeneous GPU types;
+- server-level AC measurement.</p>
+<h1 id="workloads">Workloads<a class="anchor" href="#workloads">#</a></h1>
+<p>Inference:
+- small LLM;
+- medium LLM;
+- larger model if feasible.</p>
+<p>Vary:
+- input length;
+- output length;
+- batch;
+- concurrency.</p>
+<p>Training:
+- transformer fine-tuning;
+- vision training;
+- embedding/encoder workload.</p>
+<h1 id="initial-actions">Initial actions<a class="anchor" href="#initial-actions">#</a></h1>
+<ol>
+<li>GPU power cap;</li>
+<li>bounded delay;</li>
+<li>pause/resume;</li>
+<li>batching / queue slack.</li>
+</ol>
+<p>Keep action space modest in the first paper.</p>
+<hr />
+<h1 id="7-synthetic-data-role">7. Synthetic Data Role<a class="anchor" href="#7-synthetic-data-role">#</a></h1>
+<p>Synthetic data should support, not replace, physical evidence.</p>
+<p>Training:</p>
+<div class="eqblock">D<sub>	sim</sub>
++
+D<sub>	public measured</sub></div>
+<p>Calibration:</p>
+<div class="eqblock">D<sub>	own measured,cal</sub></div>
+<p>Final test:</p>
+<div class="eqblock">D<sub>	own measured,test</sub></div>
+<h1 id="sim-to-real-experiment">Sim-to-real experiment<a class="anchor" href="#sim-to-real-experiment">#</a></h1>
+<p>Train with:
+- 0% real data;
+- 1%;
+- 5%;
+- 20%;
+- real-only.</p>
+<p>Test on unseen physical workloads.</p>
+<h1 id="figure-14">Figure 14<a class="anchor" href="#figure-14">#</a></h1>
+<p>Real calibration fraction vs physical-test prediction/control error.</p>
+<hr />
+<h1 id="8-baselines">8. Baselines<a class="anchor" href="#8-baselines">#</a></h1>
+<h1 id="prediction">Prediction<a class="anchor" href="#prediction">#</a></h1>
+<ul>
+<li>global mean;</li>
+<li>workload class;</li>
+<li>current power only;</li>
+<li>linear regression;</li>
+<li>GBDT;</li>
+<li>profiled lookup.</li>
+</ul>
+<h1 id="control">Control<a class="anchor" href="#control">#</a></h1>
+<ul>
+<li>no shaping;</li>
+<li>uniform power capping;</li>
+<li>priority-first;</li>
+<li>largest-power-first;</li>
+<li>static class rule;</li>
+<li>profiled controller;</li>
+<li>oracle.</li>
+</ul>
+<h1 id="temporal">Temporal<a class="anchor" href="#temporal">#</a></h1>
+<ul>
+<li>greedy;</li>
+<li>rebound-aware;</li>
+<li>optional MPC.</li>
+</ul>
+<hr />
+<h1 id="9-ablations">9. Ablations<a class="anchor" href="#9-ablations">#</a></h1>
+<h1 id="a1-remove-workload-semantic-features">A1 — Remove workload semantic features<a class="anchor" href="#a1-remove-workload-semantic-features">#</a></h1>
+<p>Keep only current power/utilization.</p>
+<h1 id="a2-remove-runtime-state">A2 — Remove runtime state<a class="anchor" href="#a2-remove-runtime-state">#</a></h1>
+<p>Use static attributes only.</p>
+<h1 id="a3-remove-priority">A3 — Remove priority<a class="anchor" href="#a3-remove-priority">#</a></h1>
+<p>Test whether gains merely sacrifice low-priority jobs.</p>
+<h1 id="a4-remove-action-identity">A4 — Remove action identity<a class="anchor" href="#a4-remove-action-identity">#</a></h1>
+<p>Test whether explicit intervention type matters.</p>
+<h1 id="a5-remove-uncertainty">A5 — Remove uncertainty<a class="anchor" href="#a5-remove-uncertainty">#</a></h1>
+<p>Use mean response prediction.</p>
+<h1 id="a6-remove-rebound">A6 — Remove rebound<a class="anchor" href="#a6-remove-rebound">#</a></h1>
+<p>Test whether control only moves the peak.</p>
+<h1 id="a7-remove-synthetic-training-data">A7 — Remove synthetic training data<a class="anchor" href="#a7-remove-synthetic-training-data">#</a></h1>
+<p>Train only on physical data.</p>
+<h1 id="a8-remove-physical-calibration">A8 — Remove physical calibration<a class="anchor" href="#a8-remove-physical-calibration">#</a></h1>
+<p>Simulation-only model.</p>
+<hr />
+<h1 id="10-statistical-analysis">10. Statistical Analysis<a class="anchor" href="#10-statistical-analysis">#</a></h1>
+<p>For key metrics report:
+- mean;
+- median;
+- 95% confidence interval;
+- distribution across workload families;
+- per-hardware breakdown.</p>
+<p>Use paired comparisons where identical traces are replayed under multiple policies.</p>
+<p>For stochastic serving:
+- fixed request traces;
+- common seeds;
+- identical arrival sequences.</p>
+<p>For physical runs:
+- randomized intervention order;
+- at least 3 repetitions;
+- controlled warm-up;
+- thermal stabilization.</p>
+<hr />
+<h1 id="11-kill-criteria">11. Kill Criteria<a class="anchor" href="#11-kill-criteria">#</a></h1>
+<h1 id="k1-no-elasticity-heterogeneity">K1 — No elasticity heterogeneity<a class="anchor" href="#k1-no-elasticity-heterogeneity">#</a></h1>
+<p>Pivot away from workload-aware prediction.</p>
+<h1 id="k2-no-decision-headroom">K2 — No decision headroom<a class="anchor" href="#k2-no-decision-headroom">#</a></h1>
+<p>If oracle/profiled controller barely beats uniform/priority, do not pursue complex ML.</p>
+<h1 id="k3-poor-unseen-workload-generalization">K3 — Poor unseen-workload generalization<a class="anchor" href="#k3-poor-unseen-workload-generalization">#</a></h1>
+<p>Pivot to:</p>
+<blockquote>
+<p>few-shot calibration or active profiling.</p>
+</blockquote>
+<h1 id="k4-good-prediction-but-no-control-gain">K4 — Good prediction but no control gain<a class="anchor" href="#k4-good-prediction-but-no-control-gain">#</a></h1>
+<p>Move from regression to decision-aware ranking.</p>
+<h1 id="k5-priority-dominates">K5 — Priority dominates<a class="anchor" href="#k5-priority-dominates">#</a></h1>
+<p>Pivot toward open policy/control architecture.</p>
+<h1 id="k6-rebound-removes-the-benefit">K6 — Rebound removes the benefit<a class="anchor" href="#k6-rebound-removes-the-benefit">#</a></h1>
+<p>Shift toward longer-horizon scheduling / flexible interconnection.</p>
+<hr />
+<h1 id="12-possible-pivots">12. Possible Pivots<a class="anchor" href="#12-possible-pivots">#</a></h1>
+<h1 id="p1-few-shot-flexibility-profiling">P1 — Few-shot flexibility profiling<a class="anchor" href="#p1-few-shot-flexibility-profiling">#</a></h1>
+<p>Question:</p>
+<blockquote>
+<p>Can 1–5 short intervention probes characterize a new workload?</p>
+</blockquote>
+<h1 id="p2-active-profiling">P2 — Active profiling<a class="anchor" href="#p2-active-profiling">#</a></h1>
+<p>Use model uncertainty to select the next physical measurement.</p>
+<h1 id="p3-ranking-instead-of-exact-regression">P3 — Ranking instead of exact regression<a class="anchor" href="#p3-ranking-instead-of-exact-regression">#</a></h1>
+<p>Predict:</p>
+<blockquote>
+<p>which job/action is cheapest to shape?</p>
+</blockquote>
+<h1 id="p4-open-control-standard">P4 — Open control standard<a class="anchor" href="#p4-open-control-standard">#</a></h1>
+<p>If predictive novelty is weak, focus on:
+- PowerEnvelope;
+- FlexibilityOffer;
+- DeliveryRecord;
+- scheduler adapters;
+- measurement and verification.</p>
+<hr />
+<h1 id="13-expected-tables">13. Expected Tables<a class="anchor" href="#13-expected-tables">#</a></h1>
+<h1 id="table-1-related-systems">Table 1 — Related systems<a class="anchor" href="#table-1-related-systems">#</a></h1>
+<p>Columns:
+- system;
+- grid-responsive;
+- workload-aware;
+- requires profiling;
+- action space;
+- open source;
+- real deployment;
+- predicts unseen workload response.</p>
+<h1 id="table-2-workload-measurement-set">Table 2 — Workload measurement set<a class="anchor" href="#table-2-workload-measurement-set">#</a></h1>
+<p>Columns:
+- workload;
+- model;
+- task;
+- hardware;
+- batch;
+- sequence;
+- baseline power;
+- baseline throughput.</p>
+<h1 id="table-3-intervention-response">Table 3 — Intervention response<a class="anchor" href="#table-3-intervention-response">#</a></h1>
+<p>Columns:
+- workload;
+- action;
+- power reduction;
+- energy change;
+- service impact;
+- response time.</p>
+<h1 id="table-4-prediction">Table 4 — Prediction<a class="anchor" href="#table-4-prediction">#</a></h1>
+<p>Columns:
+- model;
+- seen MAE;
+- unseen-workload MAE;
+- unseen-hardware MAE;
+- ranking accuracy;
+- calibration.</p>
+<h1 id="table-5-control">Table 5 — Control<a class="anchor" href="#table-5-control">#</a></h1>
+<p>Columns:
+- policy;
+- envelope violations;
+- service cost;
+- SLA violations;
+- energy;
+- rebound;
+- oracle capture.</p>
+<h1 id="table-6-production-traces">Table 6 — Production traces<a class="anchor" href="#table-6-production-traces">#</a></h1>
+<p>Columns:
+- trace;
+- workload mix;
+- duration;
+- jobs/requests;
+- peak power;
+- flexibility;
+- service cost.</p>
+<h1 id="table-7-israeli-scenarios">Table 7 — Israeli scenarios<a class="anchor" href="#table-7-israeli-scenarios">#</a></h1>
+<p>Columns:
+- day/scenario;
+- virtual facility size;
+- firm cap;
+- delivered flexibility;
+- workload completion;
+- rebound;
+- CCM.</p>
+<hr />
+<h1 id="14-figure-plan">14. Figure Plan<a class="anchor" href="#14-figure-plan">#</a></h1>
+<ol>
+<li><strong>Architecture</strong> — power envelope → predictor/world model → planner → scheduler/runtime → workloads → telemetry.</li>
+<li><strong>Elasticity curves</strong> — heterogeneous workload response.</li>
+<li><strong>Flexibility heatmap</strong> — workloads × actions.</li>
+<li><strong>Oracle headroom / kill figure</strong> — simple vs profiled vs oracle.</li>
+<li><strong>Prediction on unseen workloads</strong> — measured vs predicted <span class="eq">&Delta; P</span>.</li>
+<li><strong>Action ranking</strong> — predicted vs optimal.</li>
+<li><strong>Control performance</strong> — service cost vs required curtailment.</li>
+<li><strong>Production trace replay</strong> — dynamic envelope tracking.</li>
+<li><strong>Workload composition during shaping</strong> — which jobs are modified.</li>
+<li><strong>Safe flexibility</strong> — promised vs delivered MW.</li>
+<li><strong>Rebound</strong> — naive vs rebound-aware.</li>
+<li><strong>Israeli system day</strong> — national demand + PV + virtual AI facility.</li>
+<li><strong>Firm capacity vs useful work</strong> — main application result.</li>
+<li><strong>Sim-to-real</strong> — optional calibration curve.</li>
+</ol>
+<hr />
+<h1 id="15-main-metrics">15. Main Metrics<a class="anchor" href="#15-main-metrics">#</a></h1>
+<h1 id="electrical">Electrical<a class="anchor" href="#electrical">#</a></h1>
+<p>Envelope violation energy:</p>
+<div class="eqblock">V<sub>E</sub>=
+&int; max(0,P(t)-C(t))dt</div>
+<p>Maximum violation:</p>
+<div class="eqblock">V<sub>P</sub>=
+max<sub>t</sub>(P(t)-C(t))_+</div>
+<p>Peak reduction:</p>
+<div class="eqblock">PR=
+1-\frac{P<sub>max</sub><sup>control</sup>}{P<sub>max</sub><sup>baseline</sup>}</div>
+<p>Ramp:</p>
+<div class="eqblock">R<sub>max</sub>=
+max<sub>t</sub> |&Delta; P/&Delta; t|</div>
+<p>Energy change:</p>
+<div class="eqblock">&Delta; E=
+\frac{E<sub>control</sub>-E<sub>baseline</sub>}{E<sub>baseline</sub>}</div>
+<h1 id="service">Service<a class="anchor" href="#service">#</a></h1>
+<p>Inference:
+- throughput;
+- TTFT;
+- TPOT;
+- p95/p99 latency;
+- SLO violation.</p>
+<p>Training:
+- completion time;
+- deadline miss;
+- slowdown;
+- pause overhead.</p>
+<h1 id="decision">Decision<a class="anchor" href="#decision">#</a></h1>
+<p>Oracle Capture:</p>
+<div class="eqblock">OC=
+\frac{C<sub>simple</sub>-C<sub>learned</sub>}
+{C<sub>simple</sub>-C<sub>oracle</sub>}</div>
+<p>Decision regret:</p>
+<div class="eqblock">Regret=
+C(a<sub>	predicted</sub>)
+-
+C(a<sub>	optimal</sub>)</div>
+<h1 id="reliability">Reliability<a class="anchor" href="#reliability">#</a></h1>
+<p>Under-delivery frequency:</p>
+<div class="eqblock">UFR=
+Pr(
+&Delta; P<sub>	actual</sub><
+&Delta; P<sub>	promised</sub>
+)</div>
+<hr />
+<h1 id="16-strongest-possible-headline-result">16. Strongest Possible Headline Result<a class="anchor" href="#16-strongest-possible-headline-result">#</a></h1>
+<p>The ideal result is not:</p>
+<blockquote>
+<p>Prediction RMSE = X%.</p>
+</blockquote>
+<p>The strongest result is:</p>
+<blockquote>
+<p><strong>On workloads completely withheld from power profiling, the learned controller recovers most of the decision benefit of workload-specific profiling while substantially reducing service degradation relative to uniform and priority-only control.</strong></p>
+</blockquote>
+<p>The main plot:</p>
+<div class="eqblock">x=	required power reduction</div>
+<div class="eqblock">y=	service cost</div>
+<p>Curves:
+- Oracle;
+- Profiled;
+- Learned-unprofiled;
+- Priority;
+- Uniform.</p>
+<p>The paper is compelling if:
+- learned-unprofiled is close to profiled;
+- profiled materially beats priority/uniform;
+- the result survives realistic traces.</p>
+<hr />
+<h1 id="17-discussion">17. Discussion<a class="anchor" href="#17-discussion">#</a></h1>
+<p>Discuss:
+1. what features the model actually relies on;
+2. where generalization fails;
+3. deployment integration:</p>
+<div class="eqblock">grid/DCIM
+   
+&rarr;
+   	PowerEnvelope
+   
+&rarr;
+   	controller
+   
+&rarr;
+   	Slurm/Kueue
+   
+&rarr;
+   	GPU/runtime</div>
+<ol start="4">
+<li>policy relevance:
+   - transparent flexibility measurement;
+   - firm vs conditional capacity;
+   - vendor-neutral external interface.</li>
+</ol>
+<p>Do not overclaim regulation.</p>
+<hr />
+<h1 id="18-limitations">18. Limitations<a class="anchor" href="#18-limitations">#</a></h1>
+<p>Must include:
+1. small physical testbed vs hyperscale extrapolation;
+2. simulator bias;
+3. synthetic SLO assumptions in production traces;
+4. incomplete cooling/facility modeling;
+5. GPU-centric actuation;
+6. limited hardware diversity;
+7. mismatch between academic and proprietary workloads;
+8. no direct validation on an Israeli production data center;
+9. market/tariff rules not modeled;
+10. service-cost weights are operator-dependent.</p>
+<hr />
+<h1 id="19-reproducibility-package">19. Reproducibility Package<a class="anchor" href="#19-reproducibility-package">#</a></h1>
+<p>Recommended structure:</p>
+<pre><code class="language-text">data/
+  public-source manifests
+  processed traces
+  measured intervention summaries
+
+simulator/
+  OpenDT_OpenDC adapters
+  LLMServingSim adapter
+  workload replay
+
+models/
+  baselines
+  response predictor
+  uncertainty calibration
+
+controllers/
+  uniform
+  priority
+  learned
+  profiled
+  oracle
+
+experiments/
+  rq1_heterogeneity
+  rq2_headroom
+  rq3_prediction
+  rq4_control
+  rq5_traces
+  rq6_uncertainty
+  rq7_rebound
+  rq8_israel
+
+figures/
+tables/
+</code></pre>
+<hr />
+<h1 id="20-target-venues">20. Target Venues<a class="anchor" href="#20-target-venues">#</a></h1>
+<h1 id="systems-oriented">Systems-oriented<a class="anchor" href="#systems-oriented">#</a></h1>
+<ul>
+<li>ACM e-Energy</li>
+<li>IEEE/ACM CCGrid</li>
+<li>IEEE Cluster</li>
+<li>HPDC</li>
+<li>MLSys if the ML-systems contribution is strong</li>
+<li>SC workshops / main SC if scale and systems evidence are strong</li>
+</ul>
+<h1 id="energy-computing-intersection">Energy/computing intersection<a class="anchor" href="#energy-computing-intersection">#</a></h1>
+<ul>
+<li>ACM e-Energy</li>
+<li>Sustainable Computing: Informatics and Systems</li>
+<li>Future Generation Computer Systems</li>
+<li>IEEE Transactions on Sustainable Computing</li>
+</ul>
+<h1 id="power-grid-oriented">Power/grid-oriented<a class="anchor" href="#power-grid-oriented">#</a></h1>
+<p>Only if the grid model becomes substantially deeper:
+- Applied Energy
+- IEEE Transactions on Smart Grid
+- Energy and AI</p>
+<p>The first manuscript should likely remain a <strong>computer-systems + energy</strong> paper.</p>
+<hr />
+<h1 id="21-recommended-paper-identity">21. Recommended Paper Identity<a class="anchor" href="#21-recommended-paper-identity">#</a></h1>
+<p>The strongest identity is:</p>
+<blockquote>
+<p><strong>An empirical and systems paper about generalizing power-flexibility knowledge across AI workloads.</strong></p>
+</blockquote>
+<p>Not:
+- a digital-twin paper;
+- an Israeli energy-policy paper;
+- a pure regression paper;
+- a scheduler paper alone.</p>
+<p>The digital twin, synthetic data, predictor, controller, and Israeli case study should all serve the central question:</p>
+<div class="eqblock"><span class="boxed">
+	extbf{Can we avoid exhaustive workload profiling while still making high-quality power-shaping decisions?}
+</span></div>
+<hr />
+<h1 id="22-one-sentence-paper-arc">22. One-Sentence Paper Arc<a class="anchor" href="#22-one-sentence-paper-arc">#</a></h1>
+<blockquote>
+<p><strong>We first show that AI workloads differ substantially in the electrical flexibility they provide, then establish that this heterogeneity creates real scheduling headroom, learn to predict the intervention response of workloads withheld from profiling, use those predictions to control a time-varying data-center power envelope, and finally evaluate the resulting flexible-load capability under realistic production traces and Israeli grid conditions.</strong></p>
+</blockquote>
+<hr />
+<h1 id="23-minimal-result-set-required-for-a-strong-paper">23. Minimal Result Set Required for a Strong Paper<a class="anchor" href="#23-minimal-result-set-required-for-a-strong-paper">#</a></h1>
+<p>The paper should ideally have all five:</p>
+<ol>
+<li><strong>Heterogeneity</strong> — response curves differ materially.</li>
+<li><strong>Decision headroom</strong> — oracle/profiled control beats simple policies.</li>
+<li><strong>Generalization</strong> — unseen workload response can be predicted.</li>
+<li><strong>Control value</strong> — learned controller captures substantial oracle/profiled benefit.</li>
+<li><strong>Realistic application</strong> — result survives production workload replay.</li>
+</ol>
+<p>Uncertainty, rebound, sim-to-real, and Israeli grid evaluation strengthen the paper but cannot compensate if items 1–4 fail.</p>
+<hr />
+<h1 id="24-final-go-no-go-logic">24. Final Go/No-Go Logic<a class="anchor" href="#24-final-go-no-go-logic">#</a></h1>
+<pre><code class="language-text">Do workloads respond differently?
+        |
+       NO --&gt; stop ML framing
+        |
+       YES
+        |
+Does response knowledge improve control?
+        |
+       NO --&gt; use simple policy / pivot
+        |
+       YES
+        |
+Can unseen workload response be predicted?
+        |
+       NO --&gt; pivot to few-shot profiling
+        |
+       YES
+        |
+Does learned controller recover decision value?
+        |
+       NO --&gt; prediction is not operationally useful
+        |
+       YES
+        |
+Does it survive realistic traces?
+        |
+       NO --&gt; narrow scope / revise assumptions
+        |
+       YES
+        |
+Add uncertainty + rebound + Israeli case study
+        |
+        v
+Strong paper
+</code></pre>
+<p>This decision tree should guide the research itself, not merely the manuscript.</p>
+<div class="docfoot">Converted from <code>paper_plan.md</code>. Reference document for the AI workload power-shaping project.</div>
+</main>
+</div></div>

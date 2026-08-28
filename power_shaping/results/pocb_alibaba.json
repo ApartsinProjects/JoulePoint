@@ -1,0 +1,69 @@
+{
+  "n_hours": 48,
+  "spot_power_frac": 0.03815232714613639,
+  "firm_frac_to_protect_HP": 0.9606666548098017,
+  "ccm_real_priorities": 1.040943801883064,
+  "curtailment": [
+    {
+      "priority": {
+        "hp_delivered_frac": 0.9992736056271908,
+        "spot_delivered_frac": 0.51428360898047,
+        "hp_fully_protected": false
+      },
+      "uniform": {
+        "hp_delivered_frac": 0.9808596893109849,
+        "spot_delivered_frac": 0.9785117146220468
+      },
+      "firm_frac": 0.95
+    },
+    {
+      "priority": {
+        "hp_delivered_frac": 0.9873673581662035,
+        "spot_delivered_frac": 0.06606571800904325,
+        "hp_fully_protected": false
+      },
+      "uniform": {
+        "hp_delivered_frac": 0.9523384721000546,
+        "spot_delivered_frac": 0.949169189425995
+      },
+      "firm_frac": 0.92
+    },
+    {
+      "priority": {
+        "hp_delivered_frac": 0.9685447293966782,
+        "spot_delivered_frac": 0.009006577048549463,
+        "hp_fully_protected": false
+      },
+      "uniform": {
+        "hp_delivered_frac": 0.9320652698249791,
+        "spot_delivered_frac": 0.9286800523154092
+      },
+      "firm_frac": 0.9
+    },
+    {
+      "priority": {
+        "hp_delivered_frac": 0.9475203785356846,
+        "spot_delivered_frac": 0.0,
+        "hp_fully_protected": false
+      },
+      "uniform": {
+        "hp_delivered_frac": 0.9115002861887553,
+        "spot_delivered_frac": 0.908092496354673
+      },
+      "firm_frac": 0.88
+    },
+    {
+      "priority": {
+        "hp_delivered_frac": 0.9259858244780553,
+        "spot_delivered_frac": 0.0,
+        "hp_fully_protected": false
+      },
+      "uniform": {
+        "hp_delivered_frac": 0.8907843705935564,
+        "spot_delivered_frac": 0.8874540305284304
+      },
+      "firm_frac": 0.86
+    }
+  ],
+  "invariant_priority_ge_uniform_HP": true
+}

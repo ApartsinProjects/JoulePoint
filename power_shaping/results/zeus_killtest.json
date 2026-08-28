@@ -1,0 +1,51 @@
+{
+  "zeus_weighted": {
+    "heterogeneity_spread": 0.1416871547288987,
+    "n_pool": 30,
+    "rows": [
+      {
+        "curt": 10,
+        "oracle_gain_vs_uniform_pct": 12.274686922327687,
+        "shared_capture_pct": 5.579759155631908,
+        "per_workload_elasticity_gain_pct": 11.669714592999727
+      },
+      {
+        "curt": 20,
+        "oracle_gain_vs_uniform_pct": 11.02870500701578,
+        "shared_capture_pct": 1.6716854756466075,
+        "per_workload_elasticity_gain_pct": 10.864369870994903
+      },
+      {
+        "curt": 30,
+        "oracle_gain_vs_uniform_pct": 4.723879402130688,
+        "shared_capture_pct": -31.512802025492917,
+        "per_workload_elasticity_gain_pct": 6.1213816406233805
+      }
+    ]
+  },
+  "zeus_equalweight": {
+    "heterogeneity_spread": 0.1416871547288987,
+    "n_pool": 30,
+    "rows": [
+      {
+        "curt": 10,
+        "oracle_gain_vs_uniform_pct": 11.725079452840765,
+        "shared_capture_pct": -119.43067927710766,
+        "per_workload_elasticity_gain_pct": 22.568129170243946
+      },
+      {
+        "curt": 20,
+        "oracle_gain_vs_uniform_pct": 4.427355694955811,
+        "shared_capture_pct": -18.41427509356589,
+        "per_workload_elasticity_gain_pct": 5.200225509726657
+      },
+      {
+        "curt": 30,
+        "oracle_gain_vs_uniform_pct": 4.368128932831857,
+        "shared_capture_pct": -118.21872757432695,
+        "per_workload_elasticity_gain_pct": 9.064014520584843
+      }
+    ]
+  },
+  "emerald_equalweight_spread": 0.0897832388763935
+}

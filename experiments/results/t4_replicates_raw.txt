@@ -1,0 +1,173 @@
+✓ Initialized. View run at 
+https://modal.com/apps/apartsin/main/ap-g5TIloYTqg70vKfMNK5tUa
+Building image im-1fG5x5YyFbaG0VooAqJmry
+
+Using legacy Image Builder version. We suggest upgrading at https://modal.com/settings/image-config.
+
+=> Step 0: FROM base
+
+=> Step 1: RUN python -m pip install numpy nvidia-ml-py==12.560.30
+Looking in indexes: http://pypi-mirror.modal.local:5555/simple
+Requirement already satisfied: numpy in ./opt/conda/lib/python3.11/site-packages (1.26.4)
+Collecting nvidia-ml-py==12.560.30
+  Downloading nvidia_ml_py-12.560.30-py3-none-any.whl.metadata (8.6 kB)
+Downloading nvidia_ml_py-12.560.30-py3-none-any.whl (40 kB)
+Installing collected packages: nvidia-ml-py
+Successfully installed nvidia-ml-py-12.560.30
+Saving image...
+Image saved, took 1.93s
+
+Built image im-1fG5x5YyFbaG0VooAqJmry in 4.47s
+
+
+✓ Created objects.
+├── 🔨 Created mount 
+│   E:\Projects\Grants\energey\experiments\modal_t4_replicates.py
+└── 🔨 Created function rep.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+[c0] Tesla T4 uuid=4e396573f15b cap=70.0W ok=5
+[c1] Tesla T4 uuid=6e99858dfcfd cap=70.0W ok=5
+[c2] Tesla T4 uuid=7bbdfa9b61b9 cap=70.0W ok=5
+[c3] Tesla T4 uuid=dd6a1c41af5f cap=70.0W ok=5
+[c4] Tesla T4 uuid=f549e066200f cap=70.0W ok=5
+[c5] Tesla T4 uuid=8954d6222df6 cap=70.0W ok=5
+[c6] Tesla T4 uuid=52964de72463 cap=70.0W ok=5
+[c7] Tesla T4 uuid=d69b5dc79883 cap=70.0W ok=5
+[{"container": "c0", "device": "Tesla T4", "uuid": "GPU-9ce80f56-5aab-fc49-871e-4e396573f15b", "serial": "1653722007745", "power_cap_w": 70.0, "rows": [{"container": "c0", "device": "Tesla T4", "uuid": "GPU-9ce80f56-5aab-fc49-871e-4e396573f15b", "serial": "1653722007745", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.0659, "iters": 140, "energy_j": 284.145, "samples": 1120, "energy_per_sample_mj": 253.7009, "throughput_sps": 275.46, "mean_power_w": 69.4, "energy_source": "nvml_counter"}, {"container": "c0", "device": "Tesla T4", "uuid": "GPU-9ce80f56-5aab-fc49-871e-4e396573f15b", "serial": "1653722007745", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 128, "status": "ok", "runtime_s": 4.3009, "iters": 10, "energy_j": 295.125, "samples": 1280, "energy_per_sample_mj": 230.5664, "throughput_sps": 297.61, "mean_power_w": 70.4, "energy_source": "nvml_counter"}, {"container": "c0", "device": "Tesla T4", "uuid": "GPU-9ce80f56-5aab-fc49-871e-4e396573f15b", "serial": "1653722007745", "power_cap_w": 70.0, "load": "vit_b16", "precision": "fp16", "batch": 128, "status": "ok", "runtime_s": 4.7557, "iters": 15, "energy_j": 330.333, "samples": 1920, "energy_per_sample_mj": 172.0484, "throughput_sps": 403.73, "mean_power_w": 69.4, "energy_source": "nvml_counter"}, {"container": "c0", "device": "Tesla T4", "uuid": "GPU-9ce80f56-5aab-fc49-871e-4e396573f15b", "serial": "1653722007745", "power_cap_w": 70.0, "load": "transformer", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.0365, "iters": 50, "energy_j": 281.326, "samples": 400, "energy_per_sample_mj": 703.315, "throughput_sps": 99.09, "mean_power_w": 69.0, "energy_source": "nvml_counter"}, {"container": "c0", "device": "Tesla T4", "uuid": "GPU-9ce80f56-5aab-fc49-871e-4e396573f15b", "serial": "1653722007745", "power_cap_w": 70.0, "load": "resnet50", "precision": "fp16", "batch": 32, "status": "ok", "runtime_s": 4.0678, "iters": 105, "energy_j": 288.853, "samples": 3360, "energy_per_sample_mj": 85.9682, "throughput_sps": 826.01, "mean_power_w": 68.7, "energy_source": "nvml_counter"}]}, {"container": "c1", "device": "Tesla T4", "uuid": "GPU-fa1ee222-769c-2d16-3dd1-6e99858dfcfd", "serial": "1560321020388", "power_cap_w": 70.0, "rows": [{"container": "c1", "device": "Tesla T4", "uuid": "GPU-fa1ee222-769c-2d16-3dd1-6e99858dfcfd", "serial": "1560321020388", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.1204, "iters": 135, "energy_j": 273.763, "samples": 1080, "energy_per_sample_mj": 253.4843, "throughput_sps": 262.11, "mean_power_w": 67.5, "energy_source": "nvml_counter"}, {"container": "c1", "device": "Tesla T4", "uuid": "GPU-fa1ee222-769c-2d16-3dd1-6e99858dfcfd", "serial": "1560321020388", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 128, "status": "ok", "runtime_s": 4.637, "iters": 10, "energy_j": 315.624, "samples": 1280, "energy_per_sample_mj": 246.5813, "throughput_sps": 276.04, "mean_power_w": 67.3, "energy_source": "nvml_counter"}, {"container": "c1", "device": "Tesla T4", "uuid": "GPU-fa1ee222-769c-2d16-3dd1-6e99858dfcfd", "serial": "1560321020388", "power_cap_w": 70.0, "load": "vit_b16", "precision": "fp16", "batch": 128, "status": "ok", "runtime_s": 5.2454, "iters": 15, "energy_j": 351.25, "samples": 1920, "energy_per_sample_mj": 182.9427, "throughput_sps": 366.04, "mean_power_w": 69.4, "energy_source": "nvml_counter"}, {"container": "c1", "device": "Tesla T4", "uuid": "GPU-fa1ee222-769c-2d16-3dd1-6e99858dfcfd", "serial": "1560321020388", "power_cap_w": 70.0, "load": "transformer", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.4457, "iters": 50, "energy_j": 303.842, "samples": 400, "energy_per_sample_mj": 759.605, "throughput_sps": 89.97, "mean_power_w": 68.3, "energy_source": "nvml_counter"}, {"container": "c1", "device": "Tesla T4", "uuid": "GPU-fa1ee222-769c-2d16-3dd1-6e99858dfcfd", "serial": "1560321020388", "power_cap_w": 70.0, "load": "resnet50", "precision": "fp16", "batch": 32, "status": "ok", "runtime_s": 4.055, "iters": 100, "energy_j": 274.649, "samples": 3200, "energy_per_sample_mj": 85.8278, "throughput_sps": 789.14, "mean_power_w": 68.7, "energy_source": "nvml_counter"}]}, {"container": "c2", "device": "Tesla T4", "uuid": "GPU-0d12b6cf-17cc-ed43-1ba6-7bbdfa9b61b9", "serial": "1565019035301", "power_cap_w": 70.0, "rows": [{"container": "c2", "device": "Tesla T4", "uuid": "GPU-0d12b6cf-17cc-ed43-1ba6-7bbdfa9b61b9", "serial": "1565019035301", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.1531, "iters": 120, "energy_j": 273.564, "samples": 960, "energy_per_sample_mj": 284.9625, "throughput_sps": 231.15, "mean_power_w": 67.2, "energy_source": "nvml_counter"}, {"container": "c2", "device": "Tesla T4", "uuid": "GPU-0d12b6cf-17cc-ed43-1ba6-7bbdfa9b61b9", "serial": "1565019035301", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 128, "status": "ok", "runtime_s": 5.6687, "iters": 10, "energy_j": 371.954, "samples": 1280, "energy_per_sample_mj": 290.5891, "throughput_sps": 225.8, "mean_power_w": 66.3, "energy_source": "nvml_counter"}, {"container": "c2", "device": "Tesla T4", "uuid": "GPU-0d12b6cf-17cc-ed43-1ba6-7bbdfa9b61b9", "serial": "1565019035301", "power_cap_w": 70.0, "load": "vit_b16", "precision": "fp16", "batch": 128, "status": "ok", "runtime_s": 4.6237, "iters": 10, "energy_j": 305.476, "samples": 1280, "energy_per_sample_mj": 238.6531, "throughput_sps": 276.83, "mean_power_w": 63.8, "energy_source": "nvml_counter"}, {"container": "c2", "device": "Tesla T4", "uuid": "GPU-0d12b6cf-17cc-ed43-1ba6-7bbdfa9b61b9", "serial": "1565019035301", "power_cap_w": 70.0, "load": "transformer", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.1044, "iters": 35, "energy_j": 270.789, "samples": 280, "energy_per_sample_mj": 967.1036, "throughput_sps": 68.22, "mean_power_w": 64.5, "energy_source": "nvml_counter"}, {"container": "c2", "device": "Tesla T4", "uuid": "GPU-0d12b6cf-17cc-ed43-1ba6-7bbdfa9b61b9", "serial": "1565019035301", "power_cap_w": 70.0, "load": "resnet50", "precision": "fp16", "batch": 32, "status": "ok", "runtime_s": 4.1283, "iters": 85, "energy_j": 264.87, "samples": 2720, "energy_per_sample_mj": 97.3787, "throughput_sps": 658.87, "mean_power_w": 65.1, "energy_source": "nvml_counter"}]}, {"container": "c3", "device": "Tesla T4", "uuid": "GPU-b6b52284-c785-b274-267d-dd6a1c41af5f", "serial": "1565019035869", "power_cap_w": 70.0, "rows": [{"container": "c3", "device": "Tesla T4", "uuid": "GPU-b6b52284-c785-b274-267d-dd6a1c41af5f", "serial": "1565019035869", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.055, "iters": 115, "energy_j": 268.92, "samples": 920, "energy_per_sample_mj": 292.3043, "throughput_sps": 226.88, "mean_power_w": 67.0, "energy_source": "nvml_counter"}, {"container": "c3", "device": "Tesla T4", "uuid": "GPU-b6b52284-c785-b274-267d-dd6a1c41af5f", "serial": "1565019035869", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 128, "status": "ok", "runtime_s": 5.733, "iters": 10, "energy_j": 375.307, "samples": 1280, "energy_per_sample_mj": 293.2086, "throughput_sps": 223.27, "mean_power_w": 66.9, "energy_source": "nvml_counter"}, {"container": "c3", "device": "Tesla T4", "uuid": "GPU-b6b52284-c785-b274-267d-dd6a1c41af5f", "serial": "1565019035869", "power_cap_w": 70.0, "load": "vit_b16", "precision": "fp16", "batch": 128, "status": "ok", "runtime_s": 4.6201, "iters": 10, "energy_j": 307.573, "samples": 1280, "energy_per_sample_mj": 240.2914, "throughput_sps": 277.05, "mean_power_w": 64.7, "energy_source": "nvml_counter"}, {"container": "c3", "device": "Tesla T4", "uuid": "GPU-b6b52284-c785-b274-267d-dd6a1c41af5f", "serial": "1565019035869", "power_cap_w": 70.0, "load": "transformer", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.0241, "iters": 35, "energy_j": 267.923, "samples": 280, "energy_per_sample_mj": 956.8679, "throughput_sps": 69.58, "mean_power_w": 66.1, "energy_source": "nvml_counter"}, {"container": "c3", "device": "Tesla T4", "uuid": "GPU-b6b52284-c785-b274-267d-dd6a1c41af5f", "serial": "1565019035869", "power_cap_w": 70.0, "load": "resnet50", "precision": "fp16", "batch": 32, "status": "ok", "runtime_s": 4.2044, "iters": 90, "energy_j": 274.542, "samples": 2880, "energy_per_sample_mj": 95.3271, "throughput_sps": 684.99, "mean_power_w": 64.8, "energy_source": "nvml_counter"}]}, {"container": "c4", "device": "Tesla T4", "uuid": "GPU-6fcf21bd-2749-dd62-fdbb-f549e066200f", "serial": "1320220056450", "power_cap_w": 70.0, "rows": [{"container": "c4", "device": "Tesla T4", "uuid": "GPU-6fcf21bd-2749-dd62-fdbb-f549e066200f", "serial": "1320220056450", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.122, "iters": 145, "energy_j": 286.934, "samples": 1160, "energy_per_sample_mj": 247.3569, "throughput_sps": 281.42, "mean_power_w": 70.1, "energy_source": "nvml_counter"}, {"container": "c4", "device": "Tesla T4", "uuid": "GPU-6fcf21bd-2749-dd62-fdbb-f549e066200f", "serial": "1320220056450", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 128, "status": "ok", "runtime_s": 4.2576, "iters": 10, "energy_j": 293.618, "samples": 1280, "energy_per_sample_mj": 229.3891, "throughput_sps": 300.64, "mean_power_w": 67.7, "energy_source": "nvml_counter"}, {"container": "c4", "device": "Tesla T4", "uuid": "GPU-6fcf21bd-2749-dd62-fdbb-f549e066200f", "serial": "1320220056450", "power_cap_w": 70.0, "load": "vit_b16", "precision": "fp16", "batch": 128, "status": "ok", "runtime_s": 4.7878, "iters": 15, "energy_j": 328.755, "samples": 1920, "energy_per_sample_mj": 171.2266, "throughput_sps": 401.02, "mean_power_w": 68.9, "energy_source": "nvml_counter"}, {"container": "c4", "device": "Tesla T4", "uuid": "GPU-6fcf21bd-2749-dd62-fdbb-f549e066200f", "serial": "1320220056450", "power_cap_w": 70.0, "load": "transformer", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.0623, "iters": 50, "energy_j": 280.536, "samples": 400, "energy_per_sample_mj": 701.34, "throughput_sps": 98.47, "mean_power_w": 69.6, "energy_source": "nvml_counter"}, {"container": "c4", "device": "Tesla T4", "uuid": "GPU-6fcf21bd-2749-dd62-fdbb-f549e066200f", "serial": "1320220056450", "power_cap_w": 70.0, "load": "resnet50", "precision": "fp16", "batch": 32, "status": "ok", "runtime_s": 4.1046, "iters": 105, "energy_j": 279.083, "samples": 3360, "energy_per_sample_mj": 83.0604, "throughput_sps": 818.6, "mean_power_w": 70.0, "energy_source": "nvml_counter"}]}, {"container": "c5", "device": "Tesla T4", "uuid": "GPU-0aef81ef-b71a-8c5c-59d7-8954d6222df6", "serial": "1322619054870", "power_cap_w": 70.0, "rows": [{"container": "c5", "device": "Tesla T4", "uuid": "GPU-0aef81ef-b71a-8c5c-59d7-8954d6222df6", "serial": "1322619054870", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.0677, "iters": 140, "energy_j": 276.709, "samples": 1120, "energy_per_sample_mj": 247.0616, "throughput_sps": 275.34, "mean_power_w": 68.9, "energy_source": "nvml_counter"}, {"container": "c5", "device": "Tesla T4", "uuid": "GPU-0aef81ef-b71a-8c5c-59d7-8954d6222df6", "serial": "1322619054870", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 128, "status": "ok", "runtime_s": 4.3275, "iters": 10, "energy_j": 299.566, "samples": 1280, "energy_per_sample_mj": 234.0359, "throughput_sps": 295.78, "mean_power_w": 68.3, "energy_source": "nvml_counter"}, {"container": "c5", "device": "Tesla T4", "uuid": "GPU-0aef81ef-b71a-8c5c-59d7-8954d6222df6", "serial": "1322619054870", "power_cap_w": 70.0, "load": "vit_b16", "precision": "fp16", "batch": 128, "status": "ok", "runtime_s": 4.8273, "iters": 15, "energy_j": 335.212, "samples": 1920, "energy_per_sample_mj": 174.5896, "throughput_sps": 397.74, "mean_power_w": 68.8, "energy_source": "nvml_counter"}, {"container": "c5", "device": "Tesla T4", "uuid": "GPU-0aef81ef-b71a-8c5c-59d7-8954d6222df6", "serial": "1322619054870", "power_cap_w": 70.0, "load": "transformer", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.0911, "iters": 50, "energy_j": 287.089, "samples": 400, "energy_per_sample_mj": 717.7225, "throughput_sps": 97.77, "mean_power_w": 69.4, "energy_source": "nvml_counter"}, {"container": "c5", "device": "Tesla T4", "uuid": "GPU-0aef81ef-b71a-8c5c-59d7-8954d6222df6", "serial": "1322619054870", "power_cap_w": 70.0, "load": "resnet50", "precision": "fp16", "batch": 32, "status": "ok", "runtime_s": 4.1003, "iters": 105, "energy_j": 285.404, "samples": 3360, "energy_per_sample_mj": 84.9417, "throughput_sps": 819.44, "mean_power_w": 69.1, "energy_source": "nvml_counter"}]}, {"container": "c6", "device": "Tesla T4", "uuid": "GPU-e9da56b0-2227-b0ef-81bf-52964de72463", "serial": "1560220013318", "power_cap_w": 70.0, "rows": [{"container": "c6", "device": "Tesla T4", "uuid": "GPU-e9da56b0-2227-b0ef-81bf-52964de72463", "serial": "1560220013318", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.1022, "iters": 140, "energy_j": 286.45, "samples": 1120, "energy_per_sample_mj": 255.7589, "throughput_sps": 273.02, "mean_power_w": 70.0, "energy_source": "nvml_counter"}, {"container": "c6", "device": "Tesla T4", "uuid": "GPU-e9da56b0-2227-b0ef-81bf-52964de72463", "serial": "1560220013318", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 128, "status": "ok", "runtime_s": 4.3695, "iters": 10, "energy_j": 308.306, "samples": 1280, "energy_per_sample_mj": 240.8641, "throughput_sps": 292.94, "mean_power_w": 69.4, "energy_source": "nvml_counter"}, {"container": "c6", "device": "Tesla T4", "uuid": "GPU-e9da56b0-2227-b0ef-81bf-52964de72463", "serial": "1560220013318", "power_cap_w": 70.0, "load": "vit_b16", "precision": "fp16", "batch": 128, "status": "ok", "runtime_s": 4.8362, "iters": 15, "energy_j": 336.983, "samples": 1920, "energy_per_sample_mj": 175.512, "throughput_sps": 397.01, "mean_power_w": 69.5, "energy_source": "nvml_counter"}, {"container": "c6", "device": "Tesla T4", "uuid": "GPU-e9da56b0-2227-b0ef-81bf-52964de72463", "serial": "1560220013318", "power_cap_w": 70.0, "load": "transformer", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.1271, "iters": 50, "energy_j": 287.808, "samples": 400, "energy_per_sample_mj": 719.52, "throughput_sps": 96.92, "mean_power_w": 69.4, "energy_source": "nvml_counter"}, {"container": "c6", "device": "Tesla T4", "uuid": "GPU-e9da56b0-2227-b0ef-81bf-52964de72463", "serial": "1560220013318", "power_cap_w": 70.0, "load": "resnet50", "precision": "fp16", "batch": 32, "status": "ok", "runtime_s": 4.1368, "iters": 105, "energy_j": 279.805, "samples": 3360, "energy_per_sample_mj": 83.2753, "throughput_sps": 812.22, "mean_power_w": 69.1, "energy_source": "nvml_counter"}]}, {"container": "c7", "device": "Tesla T4", "uuid": "GPU-5f36f025-c057-e62b-f9bc-d69b5dc79883", "serial": "1560220013487", "power_cap_w": 70.0, "rows": [{"container": "c7", "device": "Tesla T4", "uuid": "GPU-5f36f025-c057-e62b-f9bc-d69b5dc79883", "serial": "1560220013487", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.0283, "iters": 140, "energy_j": 275.96, "samples": 1120, "energy_per_sample_mj": 246.3929, "throughput_sps": 278.04, "mean_power_w": 69.6, "energy_source": "nvml_counter"}, {"container": "c7", "device": "Tesla T4", "uuid": "GPU-5f36f025-c057-e62b-f9bc-d69b5dc79883", "serial": "1560220013487", "power_cap_w": 70.0, "load": "convnext_t", "precision": "fp32", "batch": 128, "status": "ok", "runtime_s": 4.3051, "iters": 10, "energy_j": 292.623, "samples": 1280, "energy_per_sample_mj": 228.6117, "throughput_sps": 297.32, "mean_power_w": 68.0, "energy_source": "nvml_counter"}, {"container": "c7", "device": "Tesla T4", "uuid": "GPU-5f36f025-c057-e62b-f9bc-d69b5dc79883", "serial": "1560220013487", "power_cap_w": 70.0, "load": "vit_b16", "precision": "fp16", "batch": 128, "status": "ok", "runtime_s": 4.8229, "iters": 15, "energy_j": 335.973, "samples": 1920, "energy_per_sample_mj": 174.9859, "throughput_sps": 398.1, "mean_power_w": 68.1, "energy_source": "nvml_counter"}, {"container": "c7", "device": "Tesla T4", "uuid": "GPU-5f36f025-c057-e62b-f9bc-d69b5dc79883", "serial": "1560220013487", "power_cap_w": 70.0, "load": "transformer", "precision": "fp32", "batch": 8, "status": "ok", "runtime_s": 4.0868, "iters": 50, "energy_j": 287.735, "samples": 400, "energy_per_sample_mj": 719.3375, "throughput_sps": 97.88, "mean_power_w": 69.7, "energy_source": "nvml_counter"}, {"container": "c7", "device": "Tesla T4", "uuid": "GPU-5f36f025-c057-e62b-f9bc-d69b5dc79883", "serial": "1560220013487", "power_cap_w": 70.0, "load": "resnet50", "precision": "fp16", "batch": 32, "status": "ok", "runtime_s": 4.0537, "iters": 105, "energy_j": 279.479, "samples": 3360, "energy_per_sample_mj": 83.1783, "throughput_sps": 828.88, "mean_power_w": 69.2, "energy_source": "nvml_counter"}]}]
+Stopping app - local entrypoint completed.
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+✓ App completed. View run at 
+https://modal.com/apps/apartsin/main/ap-g5TIloYTqg70vKfMNK5tUa

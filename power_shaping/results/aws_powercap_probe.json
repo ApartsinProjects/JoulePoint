@@ -1,0 +1,12 @@
+{
+  "gpu_info": "NVIDIA A10G, 300.00, 100.00, 300.00, 62.17",
+  "persistence": "on",
+  "set_pl_target_w": "195",
+  "set_pl_rc": 0,
+  "set_pl_msg": "Power limit for GPU 00000000:00:1E.0 was set to 195.00 W from 300.00 W.",
+  "enforced_after_w": "195.00",
+  "set_lgc_rc": 0,
+  "set_lgc_msg": "GPU clocks set to \"(gpuClkMin 0, gpuClkMax 855)\" for GPU 00000000:00:1E.0",
+  "power_cap_works": true,
+  "locked_clocks_work": true
+}

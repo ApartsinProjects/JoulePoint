@@ -1,0 +1,60 @@
+{
+  "n_measurements": 346,
+  "n_gpus": 7,
+  "gpus": [
+    "NVIDIA A10",
+    "NVIDIA A100-SXM4-40GB",
+    "NVIDIA H100 80GB HBM3",
+    "NVIDIA H200",
+    "NVIDIA L4",
+    "NVIDIA L40S",
+    "Tesla T4"
+  ],
+  "batching_elasticity": {
+    "n_jobs": 70,
+    "rows": [
+      {
+        "curt": 10,
+        "oracle_gain_vs_uniform_pct": 72.18381514149195,
+        "per_workload_elasticity_gain_pct": 30.50685825562643
+      },
+      {
+        "curt": 15,
+        "oracle_gain_vs_uniform_pct": 71.39680737006694,
+        "per_workload_elasticity_gain_pct": 24.76494730557311
+      },
+      {
+        "curt": 20,
+        "oracle_gain_vs_uniform_pct": 67.82181724218863,
+        "per_workload_elasticity_gain_pct": 18.213821205973407
+      },
+      {
+        "curt": 25,
+        "oracle_gain_vs_uniform_pct": 61.33404760300965,
+        "per_workload_elasticity_gain_pct": 13.521662312344413
+      },
+      {
+        "curt": 30,
+        "oracle_gain_vs_uniform_pct": 53.65061707119466,
+        "per_workload_elasticity_gain_pct": 10.467971971363745
+      }
+    ]
+  },
+  "unseen_gpu_S3": {
+    "mean_abs_err_w": 38.41422614143938,
+    "global_mean_baseline_w": 187.3235928472399,
+    "per_gpu_mae_w": {
+      "Tesla T4": 21.1,
+      "NVIDIA L4": 5.3,
+      "NVIDIA A10": 76.9,
+      "NVIDIA L40S": 32.0,
+      "NVIDIA A100-SXM4-40GB": 46.6,
+      "NVIDIA H100 80GB HBM3": 45.2,
+      "NVIDIA H200": 41.7
+    }
+  },
+  "invariants": {
+    "batching_oracle_le_uniform": true,
+    "S3_beats_global_mean": true
+  }
+}

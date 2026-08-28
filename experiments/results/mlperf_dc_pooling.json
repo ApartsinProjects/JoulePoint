@@ -1,0 +1,32 @@
+{
+ "results": {
+  "mlperf_datacenter_only": {
+   "no column information": {
+    "pair_acc": 64.48195257696032,
+    "regret": 1.0934691695070675
+   },
+   "hybrid with specifications": {
+    "pair_acc": 91.2205359384152,
+    "regret": 1.0411421679398558
+   }
+  },
+  "cross_corpus_machine_effect_corr": NaN
+ },
+ "sanity": [
+  {
+   "check": "edge devices were winning datacenter rows in the original matrix",
+   "passed": true,
+   "detail": "4 of 9 rows"
+  },
+  {
+   "check": "hardware specifications still help after removing edge parts",
+   "passed": true,
+   "detail": "hybrid 91.2% vs none 64.5%"
+  },
+  {
+   "check": "machine effects agree in sign across independently collected corpora",
+   "passed": false,
+   "detail": "correlation +nan over 2 shared accelerators"
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Energy Model: Joules per FLOP</title>
+<script>
+  MathJax = { tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] } };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+<style>
+  :root{
+    --ink:#111418; --soft:#2c3138; --muted:#5a626c; --navy:#14385c;
+    --rule:#d1d4d8; --codebg:#f4f5f7; --box:#f7f9fb; --bg:#ffffff;
+  }
+  html,body{background:var(--bg);color:var(--ink);}
+  body{
+    font-family:"Charter","Iowan Old Style","Source Serif Pro",Georgia,"Times New Roman",serif;
+    font-size:11.5pt; line-height:1.6; margin:0; padding:2.4rem 1rem;
+  }
+  .wrap{max-width:720px;margin:0 auto;}
+  h1{font-size:20pt;font-weight:600;text-align:center;margin:0 0 .2rem;letter-spacing:-0.01em;}
+  .sub{text-align:center;color:var(--muted);font-size:10.5pt;margin:0 0 2rem;}
+  h2{font-size:13pt;font-weight:700;color:var(--navy);margin:2rem 0 .5rem;
+     border-bottom:1px solid var(--rule);padding-bottom:.2rem;}
+  p{margin:.65rem 0;text-align:justify;hyphens:auto;}
+  .lead{font-size:12pt;}
+  dl{margin:.6rem 0 .6rem 0;}
+  dt{font-weight:700;color:var(--soft);float:left;clear:left;width:5.2rem;}
+  dd{margin:0 0 .35rem 6rem;color:var(--soft);}
+  .keybox{background:var(--box);border:1px solid var(--rule);border-left:3px solid var(--navy);
+     border-radius:6px;padding:.4rem 1rem;margin:1.1rem 0;}
+  .note{color:var(--muted);font-size:10pt;}
+  mjx-container{overflow-x:auto;overflow-y:hidden;max-width:100%;}
+  .foot{margin-top:2.4rem;border-top:1px solid var(--rule);padding-top:.6rem;color:var(--muted);font-size:9.5pt;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>The Energy Model</h1>
+<p class="sub">Joules per FLOP: fixed overhead + intrinsic compute, and the energy-optimal rate &mdash; From GPUs to Joules</p>
+
+<p class="lead">A job's total energy splits into two physically distinct parts: energy spent because the machine is <em>on</em> for the duration of the job, and energy spent to actually <em>perform the arithmetic</em>. Both scale with the job's total work, not with the hardware's peak FLOPS.</p>
+
+<div class="keybox">
+\[
+E_{\text{job}}
+\;=\;
+\underbrace{\frac{F_{\text{job}}}{R_{\text{hw}}}\,P_{\text{fixed}}}_{\text{fixed overhead energy}}
+\;+\;
+\underbrace{F_{\text{job}}\,e_{\text{compute}}}_{\text{variable compute energy}}
+\]
+</div>
+
+<h2>Terms</h2>
+<dl>
+  <dt>\(E_{\text{job}}\)</dt><dd>total job energy (J)</dd>
+  <dt>\(F_{\text{job}}\)</dt><dd>total computational work (FLOPs)</dd>
+  <dt>\(R_{\text{hw}}\)</dt><dd>achieved hardware compute rate (FLOPS = FLOPs/s)</dd>
+  <dt>\(P_{\text{fixed}}\)</dt><dd>fixed/base power while the job runs (W = J/s)</dd>
+  <dt>\(e_{\text{compute}}\)</dt><dd>variable energy per executed FLOP (J/FLOP)</dd>
+</dl>
+
+<h2>Derivation</h2>
+<p>The execution time is the work divided by the achieved rate:</p>
+\[
+T_{\text{job}} \;=\; \frac{F_{\text{job}}}{R_{\text{hw}}}.
+\]
+<p>So the fixed-overhead energy is just base power integrated over that time,</p>
+\[
+E_{\text{fixed}} \;=\; T_{\text{job}}\,P_{\text{fixed}} \;=\; \frac{F_{\text{job}}}{R_{\text{hw}}}\,P_{\text{fixed}},
+\]
+<p>and the variable energy to perform the arithmetic is</p>
+\[
+E_{\text{compute}} \;=\; F_{\text{job}}\,e_{\text{compute}}.
+\]
+
+<h2>A cleaner form</h2>
+<p>Factoring out the total work exposes the structure:</p>
+<div class="keybox">
+\[
+E_{\text{job}} \;=\; F_{\text{job}}\left(\frac{P_{\text{fixed}}}{R_{\text{hw}}} + e_{\text{compute}}\right)
+\qquad\Longrightarrow\qquad
+\frac{E_{\text{job}}}{F_{\text{job}}} \;=\; \frac{P_{\text{fixed}}}{R_{\text{hw}}} + e_{\text{compute}}.
+\]
+</div>
+<p>That is <strong>joules per FLOP</strong>, and it is a sum of two competing terms.</p>
+
+<h2>The two terms</h2>
+<p>The first term, \(\dfrac{P_{\text{fixed}}}{R_{\text{hw}}}\), is the fixed power <em>amortized</em> over how much compute the machine does per second. It <em>falls</em> as the hardware runs faster: more FLOPs per second means the always-on base power is spread over more useful work.</p>
+<p>The second term, \(e_{\text{compute}}\), is the intrinsic/dynamic energy cost of performing the computation itself.</p>
+<p>If \(e_{\text{compute}}\) were constant, faster hardware would <em>always</em> lower total energy:</p>
+\[
+R_{\text{hw}}\uparrow \quad\Rightarrow\quad \frac{P_{\text{fixed}}}{R_{\text{hw}}}\downarrow .
+\]
+
+<h2>The interesting case: \(e_{\text{compute}}\) rises with rate</h2>
+<p>In reality the per-FLOP dynamic cost is itself a function of the operating rate, \(e_{\text{compute}} = e_{\text{compute}}(R_{\text{hw}})\), and it typically <em>increases</em> at high performance/power states (higher voltage and frequency cost disproportionately more energy per operation). Then:</p>
+<div class="keybox">
+\[
+E_{\text{job}}(R) \;=\; F_{\text{job}}\left[\frac{P_{\text{fixed}}}{R} + e_{\text{compute}}(R)\right].
+\]
+</div>
+<p>This captures the fundamental tradeoff: <strong>going faster reduces fixed-overhead energy but can increase dynamic energy per FLOP.</strong> The sum of a decreasing term and an increasing term has a minimum, so there is naturally an <strong>energy-optimal compute rate \(R^{\star}\)</strong>:</p>
+\[
+\frac{d}{dR}\!\left[\frac{P_{\text{fixed}}}{R} + e_{\text{compute}}(R)\right]_{R=R^{\star}} = 0
+\qquad\Longleftrightarrow\qquad
+e_{\text{compute}}'(R^{\star}) \;=\; \frac{P_{\text{fixed}}}{{R^{\star}}^{2}}.
+\]
+<p>At \(R^{\star}\) the marginal dynamic cost of running one FLOP/s faster exactly equals the marginal fixed-overhead saving from finishing sooner.</p>
+
+<h2>Connection to the measurements</h2>
+<p class="note">Each point in the sweep (model &times; GPU &times; power cap) measures a realized \((R_{\text{hw}}, P)\): the power cap moves the GPU along its \(R\) axis, throughput gives \(R_{\text{hw}}\), and NVML power gives \(P = P_{\text{fixed}} + R_{\text{hw}}\,e_{\text{compute}}(R_{\text{hw}})\). The \(\sim\tfrac12\)TDP driver floor is essentially \(P_{\text{fixed}}\) (leakage + clock tree + idle memory, the part no cap can remove), and the slope of drain vs. rate recovers \(e_{\text{compute}}(R)\). A workload whose \(e_{\text{compute}}(R)\) rises steeply has a low energy-optimal rate; a memory-bound workload, whose rate barely responds to power, sits near \(P_{\text{fixed}}\) with little dynamic term. This per-workload \(R^{\star}\) is precisely what energy-space scheduling allocates around.</p>
+
+<div class="foot">Energy model for the From GPUs to Joules project. Rendered with MathJax.</div>
+</div>
+</body>
+</html>

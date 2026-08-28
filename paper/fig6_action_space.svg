@@ -1,0 +1,47 @@
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Decision ceiling as the action space widens">
+<defs><style>.lb{font:10px Georgia,serif;fill:#111418}.sm{font:8.4px Georgia,serif;fill:#5a626c}.ti{font:bold 9.5px Georgia,serif;fill:#111418}.vn{font:bold 11.5px Georgia,serif}.tick{font:8.4px Georgia,serif;fill:#5a626c}</style></defs>
+<text class="ti" x="10" y="16">Energy available to a perfect chooser, as the facility is allowed to decide more</text>
+<text class="sm" x="10" y="29">Each bar is an expected value of perfect information: the best single fixed choice against an oracle choosing per workload.</text>
+<line x1="258.0" y1="44" x2="258.0" y2="254" stroke="#e8eaec" stroke-width=".7"/>
+<text class="tick" x="258.0" y="268" text-anchor="middle">0%</text>
+<line x1="384.0" y1="44" x2="384.0" y2="254" stroke="#e8eaec" stroke-width=".7"/>
+<text class="tick" x="384.0" y="268" text-anchor="middle">10%</text>
+<line x1="510.0" y1="44" x2="510.0" y2="254" stroke="#e8eaec" stroke-width=".7"/>
+<text class="tick" x="510.0" y="268" text-anchor="middle">20%</text>
+<line x1="636.0" y1="44" x2="636.0" y2="254" stroke="#e8eaec" stroke-width=".7"/>
+<text class="tick" x="636.0" y="268" text-anchor="middle">30%</text>
+<text class="lb" x="246" y="69" text-anchor="end">Fix one accelerator for everything</text>
+<text class="sm" x="246" y="81" text-anchor="end">the baseline every comparison is against</text>
+<rect x="258" y="56" width="1.2" height="20" fill="#9aa2ab" opacity=".92"/>
+<text class="vn" x="267.2" y="71" fill="#9aa2ab">0</text>
+<text class="lb" x="246" y="121" text-anchor="end">Choose the accelerator per workload</text>
+<text class="sm" x="246" y="133" text-anchor="end">eight corpora, median 2.0, range 0.00 to 8.33</text>
+<rect x="258" y="108" width="25.2" height="20" fill="#8a5a1e" opacity=".92"/>
+<line x1="258.0" y1="118" x2="363.0" y2="118" stroke="#111418" stroke-width="1.1"/>
+<line x1="258.0" y1="113" x2="258.0" y2="123" stroke="#111418" stroke-width="1.1"/>
+<line x1="363.0" y1="113" x2="363.0" y2="123" stroke="#111418" stroke-width="1.1"/>
+<text class="vn" x="291.2" y="123" fill="#8a5a1e">2.00%</text>
+<text class="lb" x="246" y="173" text-anchor="end">Choose accelerator and configuration</text>
+<text class="sm" x="246" y="185" text-anchor="end">same hardware, precision and quantisation now decidable</text>
+<rect x="258" y="160" width="114.0" height="20" fill="#3d6b4a" opacity=".92"/>
+<text class="vn" x="380.0" y="175" fill="#3d6b4a">9.05%</text>
+<text class="lb" x="246" y="225" text-anchor="end">Choose the fleet itself</text>
+<text class="sm" x="246" y="237" text-anchor="end">twelve seeds, sd 0.4, identical fleet in all twelve</text>
+<rect x="258" y="212" width="434.7" height="20" fill="#14385c" opacity=".92"/>
+<line x1="686.4" y1="222" x2="705.3" y2="222" stroke="#111418" stroke-width="1.1"/>
+<line x1="686.4" y1="217" x2="686.4" y2="227" stroke="#111418" stroke-width="1.1"/>
+<line x1="705.3" y1="217" x2="705.3" y2="227" stroke="#111418" stroke-width="1.1"/>
+<text class="vn" x="700.7" y="227" fill="#14385c">34.5%</text>
+<text class="sm" x="258" y="144">individual corpora:</text>
+<circle cx="258.0" cy="140" r="2.6" fill="#8a5a1e" stroke="#fff" stroke-width=".7"/>
+<circle cx="258.0" cy="140" r="2.6" fill="#8a5a1e" stroke="#fff" stroke-width=".7"/>
+<circle cx="277.8" cy="140" r="2.6" fill="#8a5a1e" stroke="#fff" stroke-width=".7"/>
+<circle cx="280.8" cy="140" r="2.6" fill="#8a5a1e" stroke="#fff" stroke-width=".7"/>
+<circle cx="282.8" cy="140" r="2.6" fill="#8a5a1e" stroke="#fff" stroke-width=".7"/>
+<circle cx="283.2" cy="140" r="2.6" fill="#8a5a1e" stroke="#fff" stroke-width=".7"/>
+<circle cx="287.6" cy="140" r="2.6" fill="#8a5a1e" stroke="#fff" stroke-width=".7"/>
+<circle cx="363.0" cy="140" r="2.6" fill="#8a5a1e" stroke="#fff" stroke-width=".7"/>
+<text class="sm" x="371.0" y="143">Grid'5000, the widest at 18 platforms</text>
+<line x1="258" y1="44" x2="258" y2="254" stroke="#111418" stroke-width=".9"/>
+<text class="sm" x="10" y="288">Reading downward is the recommendation: the lever a facility exercises once, at purchase, dominates the two it exercises continuously.</text>
+</svg>

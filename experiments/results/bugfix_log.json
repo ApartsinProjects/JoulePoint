@@ -1,0 +1,52 @@
+[
+ {
+  "tag": "B1 coldstart metric",
+  "file": "experiments/mlperf_experiment.py",
+  "status": "PATCHED"
+ },
+ {
+  "tag": "B3 cold-row imputation",
+  "file": "experiments/mlperf_experiment.py",
+  "status": "PATCHED"
+ },
+ {
+  "tag": "B2 spec-only-for-unseen",
+  "file": "experiments/mlperf_experiment.py",
+  "status": "PATCHED"
+ },
+ {
+  "tag": "B2b interaction factors",
+  "file": "experiments/mlperf_experiment.py",
+  "status": "PATCHED"
+ },
+ {
+  "tag": "B4 DCN alpha",
+  "file": "experiments/e4_e5_models.py",
+  "status": "PATCHED"
+ },
+ {
+  "tag": "B5 MLP config",
+  "file": "experiments/e4_e5_models.py",
+  "status": "PATCHED"
+ },
+ {
+  "tag": "B6 deterministic p_random",
+  "file": "experiments/e6_contention.py",
+  "status": "PATCHED"
+ },
+ {
+  "tag": "B7a dead import",
+  "file": "experiments/e6_contention.py",
+  "status": "PATCHED"
+ },
+ {
+  "tag": "B7b dead variable",
+  "file": "experiments/e6_contention.py",
+  "status": "PATCHED"
+ },
+ {
+  "tag": "B7c",
+  "file": "experiments/e6_contention.py",
+  "status": "PATCHED"
+ }
+]

@@ -1,0 +1,69 @@
+{
+ "results": {
+  "load_sweep": [
+   {
+    "lam": 0.1,
+    "greedy_true": 8531.001585423197,
+    "joint_true": 8531.001585423197,
+    "greedy_pred": 8535.495156498662,
+    "joint_pred": 8535.495156498662,
+    "joint_gain_pct": 0.0,
+    "delay_s": 0.0
+   },
+   {
+    "lam": 0.5,
+    "greedy_true": 4928.412523097064,
+    "joint_true": 4928.412523097064,
+    "greedy_pred": 4941.553118840619,
+    "joint_pred": 4941.553118840619,
+    "joint_gain_pct": 0.0,
+    "delay_s": 661.429638940729
+   },
+   {
+    "lam": 1.0,
+    "greedy_true": 4366.8559916983,
+    "joint_true": 4366.8559916983,
+    "greedy_pred": 4369.902228147302,
+    "joint_pred": 4369.902228147302,
+    "joint_gain_pct": 0.0,
+    "delay_s": 3092.9513224258058
+   },
+   {
+    "lam": 2.0,
+    "greedy_true": 4119.709982778918,
+    "joint_true": 4119.709982778918,
+    "greedy_pred": 4119.613652827579,
+    "joint_pred": 4119.613652827579,
+    "joint_gain_pct": 0.0,
+    "delay_s": 8094.731718588298
+   },
+   {
+    "lam": 4.0,
+    "greedy_true": 3978.1167559808546,
+    "joint_true": 3978.1167559808546,
+    "greedy_pred": 3977.225458250374,
+    "joint_pred": 3977.225458250374,
+    "joint_gain_pct": 0.0,
+    "delay_s": 18058.776331717014
+   }
+  ],
+  "decomposition_lam0.5": {
+   "total_gap_j": 13.140595743555423,
+   "policy_j": 0.0,
+   "prediction_j": 13.140595743555423,
+   "total_gap_pct": 0.2666293797845019
+  }
+ },
+ "sanity": [
+  {
+   "check": "joint assignment never loses to greedy under perfect information",
+   "passed": true,
+   "detail": "max shortfall 0.000 J/job"
+  },
+  {
+   "check": "both error sources are small relative to the facility bill",
+   "passed": true,
+   "detail": "total gap 0.27% of energy per job"
+  }
+ ]
+}

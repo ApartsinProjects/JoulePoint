@@ -1,0 +1,54 @@
+{
+  "n_residuals": 36,
+  "resid_mae": 36.96,
+  "conformal_frontier": [
+    {
+      "alpha": 0.3,
+      "q": 0.97,
+      "reliability_pct": 72.2,
+      "usable_flex_pct": 99.4,
+      "cover_ok": true
+    },
+    {
+      "alpha": 0.2,
+      "q": 5.19,
+      "reliability_pct": 80.6,
+      "usable_flex_pct": 93.3,
+      "cover_ok": true
+    },
+    {
+      "alpha": 0.15,
+      "q": 11.88,
+      "reliability_pct": 86.1,
+      "usable_flex_pct": 84.0,
+      "cover_ok": true
+    },
+    {
+      "alpha": 0.1,
+      "q": 30.71,
+      "reliability_pct": 91.7,
+      "usable_flex_pct": 61.1,
+      "cover_ok": true
+    },
+    {
+      "alpha": 0.05,
+      "q": 50.94,
+      "reliability_pct": 97.2,
+      "usable_flex_pct": 41.0,
+      "cover_ok": true
+    }
+  ],
+  "point_predictor": {
+    "reliability_pct": 66.7,
+    "usable_flex_pct": 100.8
+  },
+  "fixed_margin_2mae": {
+    "reliability_pct": 100.0,
+    "usable_flex_pct": 21.7
+  },
+  "invariants": {
+    "COVER": true,
+    "MONO": true,
+    "DEGEN": true
+  }
+}

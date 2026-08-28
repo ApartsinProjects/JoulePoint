@@ -1,0 +1,188 @@
+{
+ "matrix": {
+  "rows": 30,
+  "machines": 7,
+  "cells": 210,
+  "source": "C1 extended grid"
+ },
+ "densities": [
+  0.05,
+  0.1,
+  0.15,
+  0.2,
+  0.3,
+  0.5,
+  0.7,
+  0.9
+ ],
+ "seeds": 24,
+ "sweep": [
+  {
+   "density": 0.05,
+   "cells": 10,
+   "fixed_regret": 1.5428539334636089,
+   "fixed_regret_sd": 0.33820932032315776,
+   "fixed_acc": 0.5824579564664828,
+   "fixed_acc_sd": 0.11459578401767506,
+   "rowmean_regret": 1.7416440573241692,
+   "rowmean_regret_sd": 0.07967785266669808,
+   "rowmean_acc": 0.5583780102347504,
+   "rowmean_acc_sd": 0.022978560151666425,
+   "bilinear_regret": 1.5428539334636089,
+   "bilinear_regret_sd": 0.33820932032315776,
+   "bilinear_acc": 0.5824579564664828,
+   "bilinear_acc_sd": 0.11459578401767506
+  },
+  {
+   "density": 0.1,
+   "cells": 21,
+   "fixed_regret": 1.2424687867866162,
+   "fixed_regret_sd": 0.23013563371411086,
+   "fixed_acc": 0.7016683492879093,
+   "fixed_acc_sd": 0.07960205861473209,
+   "rowmean_regret": 1.6054780784145457,
+   "rowmean_regret_sd": 0.09378989663183106,
+   "rowmean_acc": 0.5866286364502548,
+   "rowmean_acc_sd": 0.03203637431768727,
+   "bilinear_regret": 1.2424687867866162,
+   "bilinear_regret_sd": 0.23013563371411086,
+   "bilinear_acc": 0.7026869829256509,
+   "bilinear_acc_sd": 0.07803514491369097
+  },
+  {
+   "density": 0.15,
+   "cells": 32,
+   "fixed_regret": 1.0764404306271889,
+   "fixed_regret_sd": 0.13592642691118395,
+   "fixed_acc": 0.7729287665849957,
+   "fixed_acc_sd": 0.054981393572412496,
+   "rowmean_regret": 1.5030780500146579,
+   "rowmean_regret_sd": 0.04633952656828534,
+   "rowmean_acc": 0.6044477056439539,
+   "rowmean_acc_sd": 0.02270683808806861,
+   "bilinear_regret": 1.0813416701260057,
+   "bilinear_regret_sd": 0.13578502326498035,
+   "bilinear_acc": 0.7681694091264936,
+   "bilinear_acc_sd": 0.053558528056120935
+  },
+  {
+   "density": 0.2,
+   "cells": 42,
+   "fixed_regret": 1.057136005136571,
+   "fixed_regret_sd": 0.10597009132141329,
+   "fixed_acc": 0.8038250506501097,
+   "fixed_acc_sd": 0.03134588871889991,
+   "rowmean_regret": 1.4688681116735427,
+   "rowmean_regret_sd": 0.08576199973656154,
+   "rowmean_acc": 0.6123516932007428,
+   "rowmean_acc_sd": 0.0262830984755713,
+   "bilinear_regret": 1.0498142234926136,
+   "bilinear_regret_sd": 0.08911483454302681,
+   "bilinear_acc": 0.807175743322525,
+   "bilinear_acc_sd": 0.03299294743195519
+  },
+  {
+   "density": 0.3,
+   "cells": 63,
+   "fixed_regret": 1.0235494944304468,
+   "fixed_regret_sd": 0.006745797390566414,
+   "fixed_acc": 0.8192871492602262,
+   "fixed_acc_sd": 0.01581903482074615,
+   "rowmean_regret": 1.371147309219331,
+   "rowmean_regret_sd": 0.05753707822208225,
+   "rowmean_acc": 0.6294376975259791,
+   "rowmean_acc_sd": 0.02525972116665421,
+   "bilinear_regret": 1.0257348056990483,
+   "bilinear_regret_sd": 0.014372366388175094,
+   "bilinear_acc": 0.8317470183177708,
+   "bilinear_acc_sd": 0.022774773634993178
+  },
+  {
+   "density": 0.5,
+   "cells": 105,
+   "fixed_regret": 1.0196765002551595,
+   "fixed_regret_sd": 0.00776317631980207,
+   "fixed_acc": 0.8330097475496521,
+   "fixed_acc_sd": 0.01877150560342219,
+   "rowmean_regret": 1.2237517581558688,
+   "rowmean_regret_sd": 0.06022125756994262,
+   "rowmean_acc": 0.6664408126575205,
+   "rowmean_acc_sd": 0.027137799729154585,
+   "bilinear_regret": 1.0210015297434933,
+   "bilinear_regret_sd": 0.012038641635471014,
+   "bilinear_acc": 0.8570781104148338,
+   "bilinear_acc_sd": 0.018516097611081007
+  },
+  {
+   "density": 0.7,
+   "cells": 147,
+   "fixed_regret": 1.0112210880677275,
+   "fixed_regret_sd": 0.007223920615613132,
+   "fixed_acc": 0.8581296648319156,
+   "fixed_acc_sd": 0.01991274189157743,
+   "rowmean_regret": 1.1457209233959909,
+   "rowmean_regret_sd": 0.05450986699094992,
+   "rowmean_acc": 0.6975959929332186,
+   "rowmean_acc_sd": 0.024772544924783445,
+   "bilinear_regret": 1.0099113134759774,
+   "bilinear_regret_sd": 0.007256825759736044,
+   "bilinear_acc": 0.8862139605382108,
+   "bilinear_acc_sd": 0.019260531421062377
+  },
+  {
+   "density": 0.9,
+   "cells": 189,
+   "fixed_regret": 1.0106831219574584,
+   "fixed_regret_sd": 0.01452293573634654,
+   "fixed_acc": 0.8433659666298555,
+   "fixed_acc_sd": 0.05063784565416321,
+   "rowmean_regret": 1.0667782369939918,
+   "rowmean_regret_sd": 0.07059438113078638,
+   "rowmean_acc": 0.717880881682965,
+   "rowmean_acc_sd": 0.07034952921344527,
+   "bilinear_regret": 1.0088076538920763,
+   "bilinear_regret_sd": 0.012929239423730058,
+   "bilinear_acc": 0.8772628409781188,
+   "bilinear_acc_sd": 0.053589668932916855
+  }
+ ],
+ "target_regret": 1.01,
+ "cf_density_to_target": 0.7,
+ "fixed_density_to_target": null,
+ "best_advantage": {
+  "density": 0.2,
+  "regret_gap": 0.00732178164395747
+ },
+ "sanity": [
+  {
+   "check": "S2 oracle regret is 1.000 by construction",
+   "passed": true,
+   "detail": "reference for all rows"
+  },
+  {
+   "check": "H1 CF regret improves with density",
+   "passed": true,
+   "detail": "1.5429 at 5% -> 1.0088 at 90%"
+  },
+  {
+   "check": "H2 the fixed ranking asymptotes ABOVE the oracle",
+   "passed": true,
+   "detail": "fixed ranking still 1.0107 at 90% density; Proposition 1 says measurement cannot close this because the gap is representational"
+  },
+  {
+   "check": "H3 a density band exists where CF wins clearly",
+   "passed": true,
+   "detail": "largest advantage 0.0073 at 20% density"
+  },
+  {
+   "check": "H4 CF is not worse than the fixed ranking at the sparsest setting",
+   "passed": true,
+   "detail": "CF 1.5429 vs fixed 1.5429 at 5% density"
+  },
+  {
+   "check": "S1 at high density CF is at least as good as the fixed ranking",
+   "passed": true,
+   "detail": "CF 1.0088 vs fixed 1.0107"
+  }
+ ]
+}

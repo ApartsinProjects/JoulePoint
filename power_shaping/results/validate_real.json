@@ -1,0 +1,40 @@
+{
+  "base_kw": 94.02184421799014,
+  "sustained_kw": 64.76766226134775,
+  "cluster_reduction_pct": 31.1142396747892,
+  "real_mean_perf": 0.8859091666666666,
+  "model_mean_perf": 0.8288133785228644,
+  "per_workload_MAE": 0.05709578814380221,
+  "rows": [
+    {
+      "workload": "ft_llama_8b_p3",
+      "real_perf": 0.939635,
+      "model_perf": 0.8766351604316681
+    },
+    {
+      "workload": "infer_llama_8b_32g",
+      "real_perf": 0.973165,
+      "model_perf": 0.9325215400322086
+    },
+    {
+      "workload": "infer_llama_8b_48g",
+      "real_perf": 1.0,
+      "model_perf": 0.952483863664518
+    },
+    {
+      "workload": "infer_llama_8b_48g",
+      "real_perf": 0.992455,
+      "model_perf": 0.952483863664518
+    },
+    {
+      "workload": "pt_mpt_13b_sm",
+      "real_perf": 0.666923,
+      "model_perf": 0.6358143810097555
+    },
+    {
+      "workload": "pt_mpt_7b_fast",
+      "real_perf": 0.743277,
+      "model_perf": 0.6229414623345185
+    }
+  ]
+}

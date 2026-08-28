@@ -1,0 +1,83 @@
+{
+  "paper_assignment": {
+    "elasticity_close_pct": 46.8,
+    "priority_close_pct": 53.2
+  },
+  "random_assignments": {
+    "n": 300,
+    "mean": 56.8,
+    "std": 16.2,
+    "p10": 37.9,
+    "p50": 54.5,
+    "p90": 77.4,
+    "min": 22.1,
+    "max": 119.8
+  },
+  "weight_sweep": [
+    {
+      "weights": [
+        4,
+        2,
+        1,
+        0.3
+      ],
+      "elasticity_close_pct": 65.1,
+      "priority_close_pct": 34.9
+    },
+    {
+      "weights": [
+        8,
+        4,
+        1,
+        0.3
+      ],
+      "elasticity_close_pct": 46.8,
+      "priority_close_pct": 53.2
+    },
+    {
+      "weights": [
+        16,
+        4,
+        1,
+        0.1
+      ],
+      "elasticity_close_pct": 23.1,
+      "priority_close_pct": 76.9
+    },
+    {
+      "weights": [
+        8,
+        4,
+        2,
+        1
+      ],
+      "elasticity_close_pct": 81.3,
+      "priority_close_pct": 18.7
+    },
+    {
+      "weights": [
+        2,
+        2,
+        1,
+        1
+      ],
+      "elasticity_close_pct": 185.1,
+      "priority_close_pct": -85.1
+    },
+    {
+      "weights": [
+        4,
+        4,
+        4,
+        4
+      ],
+      "elasticity_close_pct": 268.9,
+      "priority_close_pct": -168.9
+    }
+  ],
+  "equal_weight_invariant": {
+    "priority_close_pct": -168.9,
+    "elasticity_close_pct": 268.9,
+    "ok": false
+  }
+}

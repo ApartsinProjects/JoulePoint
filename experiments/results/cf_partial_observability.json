@@ -1,0 +1,113 @@
+{
+ "shape": [
+  24,
+  5
+ ],
+ "sweep": [
+  {
+   "obs_per_row": 0,
+   "fixed": 0.5083333333333333,
+   "fixed_sd": 0.0,
+   "partial": 0.5083333333333333,
+   "partial_sd": 0.0,
+   "hybrid": 0.5083333333333333,
+   "hybrid_sd": 0.0,
+   "full": 0.5083333333333333,
+   "full_sd": 0.0
+  },
+  {
+   "obs_per_row": 1,
+   "fixed": 0.5083333333333333,
+   "fixed_sd": 0.0,
+   "partial": 0.5083333333333333,
+   "partial_sd": 0.0,
+   "hybrid": 0.5083333333333333,
+   "hybrid_sd": 0.0,
+   "full": 0.5083333333333333,
+   "full_sd": 0.0
+  },
+  {
+   "obs_per_row": 2,
+   "fixed": 0.8221064814814814,
+   "fixed_sd": 0.029113110368041803,
+   "partial": 0.8274305555555557,
+   "partial_sd": 0.02723205250512666,
+   "hybrid": 0.8354166666666666,
+   "hybrid_sd": 0.03255505387680706,
+   "full": 0.8461805555555554,
+   "full_sd": 0.03194926661134404
+  },
+  {
+   "obs_per_row": 3,
+   "fixed": 0.8296130952380952,
+   "fixed_sd": 0.015617912224629635,
+   "partial": 0.8464285714285715,
+   "partial_sd": 0.015646951700112995,
+   "hybrid": 0.8703869047619047,
+   "hybrid_sd": 0.02408646600038609,
+   "full": 0.8681547619047618,
+   "full_sd": 0.019676648423887614
+  },
+  {
+   "obs_per_row": 4,
+   "fixed": 0.8346354166666666,
+   "fixed_sd": 0.03518517328749189,
+   "partial": 0.8552083333333332,
+   "partial_sd": 0.029536347664078807,
+   "hybrid": 0.89921875,
+   "hybrid_sd": 0.031456565554635094,
+   "full": 0.8783854166666668,
+   "full_sd": 0.028181607769839096
+  }
+ ],
+ "recovered_fraction": [
+  [
+   0,
+   NaN
+  ],
+  [
+   1,
+   NaN
+  ],
+  [
+   2,
+   0.4259259259259221
+  ],
+  [
+   3,
+   1.1027397260274003
+  ],
+  [
+   4,
+   1.898876404494365
+  ]
+ ],
+ "sanity": [
+  {
+   "check": "S2 the partial descriptor set genuinely excludes precision",
+   "passed": true,
+   "detail": "6 features with precision, 5 without"
+  },
+  {
+   "check": "H1 features without precision sit at the fixed-ranking ceiling",
+   "passed": true,
+   "detail": "partial 50.8% vs fixed 50.8% at one observation; Table 5 reports both at 81.7%"
+  },
+  {
+   "check": "H2 the hybrid climbs above features-only as history accumulates",
+   "passed": true,
+   "detail": "largest gain +4.4 points at 4 observations per workload"
+  },
+  {
+   "check": "H3 with no history the hybrid equals features-only exactly",
+   "passed": true,
+   "detail": "hybrid 0.5083 vs partial 0.5083"
+  },
+  {
+   "check": "H4 the hybrid approaches but does not greatly exceed being told the descriptor",
+   "passed": true,
+   "detail": "best hybrid 89.9% against full-descriptor 87.8% at the same density"
+  }
+ ],
+ "note": "partial descriptors withhold numerical precision, the descriptor Table 5 identifies as decisive and Table 10 says orchestrated containers do not declare"
+}

@@ -1,0 +1,480 @@
+{
+ "files": 59,
+ "orphans": [
+  "c1_config_collapse.json",
+  "exec_idle_n4.json",
+  "k3_deepen_verdict.json",
+  "n3_probe.json",
+  "t4_replicates.json"
+ ],
+ "no_per_datapoint": [
+  "b1_b2.json",
+  "b1_memory_model.json",
+  "b8_stochastic_program.json",
+  "bugfix_log.json",
+  "cf_advanced.json",
+  "cf_online_stream.json",
+  "e1_facility_runs.json",
+  "e5_model_comparison.json",
+  "e6_inputs.json",
+  "e6_jobs.json",
+  "e6_runs.json",
+  "exec_idle_n4.json",
+  "fig2_pareto.json",
+  "fig_perf_vs_energy.json",
+  "fleet_vs_mix.json",
+  "g2_refresh.json",
+  "g4_cost_sharing.json",
+  "k3_deepen_verdict.json",
+  "n3_probe.json",
+  "n4_regret.json",
+  "n_fixes.json",
+  "paper_coverage_audit.json",
+  "shapley_fleet.json"
+ ],
+ "no_sanity": [
+  "audit_mlperf_bugs.json",
+  "audit_negatives.json",
+  "bugfix_log.json",
+  "c1_bridge.json",
+  "c1_config_collapse.json",
+  "c4_training_grid.json",
+  "e0_replicates.json",
+  "e1_facility_runs.json",
+  "e4_machine_cold_start.json",
+  "e5_model_comparison.json",
+  "e6_inputs.json",
+  "e6_jobs.json",
+  "e6_runs.json",
+  "exec_idle_n4.json",
+  "exec_idle_workload.json",
+  "fig2_pareto.json",
+  "fig_perf_vs_energy.json",
+  "interaction_matrix.json",
+  "k3_deepen_verdict.json",
+  "n3_probe.json",
+  "n4_redesign.json",
+  "paper_coverage_audit.json",
+  "t4_replicates.json"
+ ],
+ "paper_numbers": 155,
+ "unmatched": [
+  9.5,
+  10.9
+ ],
+ "table": [
+  {
+   "file": "audit_mlperf_bugs.json",
+   "producer": "ok",
+   "by": "audit_mlperf_bugs.py",
+   "per_dp": "yes",
+   "sanity": "none"
+  },
+  {
+   "file": "audit_negatives.json",
+   "producer": "ok",
+   "by": "audit_negatives.py",
+   "per_dp": "yes",
+   "sanity": "none"
+  },
+  {
+   "file": "b1_b2.json",
+   "producer": "ok",
+   "by": "b1_b2.py",
+   "per_dp": "NO",
+   "sanity": "2/3"
+  },
+  {
+   "file": "b1_memory_model.json",
+   "producer": "ok",
+   "by": "b1_fix.py",
+   "per_dp": "NO",
+   "sanity": "3/3"
+  },
+  {
+   "file": "b3_mix_inference.json",
+   "producer": "ok",
+   "by": "b3_mix_inference.py",
+   "per_dp": "yes",
+   "sanity": "27/28"
+  },
+  {
+   "file": "b4_active_probing.json",
+   "producer": "ok",
+   "by": "b4_active_probing.py",
+   "per_dp": "yes",
+   "sanity": "55/60"
+  },
+  {
+   "file": "b5_shapley_sla_sweep.json",
+   "producer": "ok",
+   "by": "b5_shapley_sla_sweep.py",
+   "per_dp": "yes",
+   "sanity": "24/24"
+  },
+  {
+   "file": "b7_assignment.json",
+   "producer": "ok",
+   "by": "b7_assignment_baseline.py",
+   "per_dp": "yes",
+   "sanity": "2/2"
+  },
+  {
+   "file": "b8_stochastic_program.json",
+   "producer": "ok",
+   "by": "b8_stochastic_program.py",
+   "per_dp": "NO",
+   "sanity": "5/5"
+  },
+  {
+   "file": "bugfix_log.json",
+   "producer": "ok",
+   "by": "apply_bugfixes.py",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "c1_analysis.json",
+   "producer": "ok",
+   "by": "c1_analysis.py",
+   "per_dp": "yes",
+   "sanity": "7/7"
+  },
+  {
+   "file": "c1_bridge.json",
+   "producer": "ok",
+   "by": "c1_analysis.py",
+   "per_dp": "yes",
+   "sanity": "none"
+  },
+  {
+   "file": "c1_config_collapse.json",
+   "producer": "ORPHAN",
+   "by": "",
+   "per_dp": "yes",
+   "sanity": "none"
+  },
+  {
+   "file": "c1_transfer_test.json",
+   "producer": "ok",
+   "by": "c1_transfer_test.py",
+   "per_dp": "yes",
+   "sanity": "6/7"
+  },
+  {
+   "file": "c4_analysis.json",
+   "producer": "ok",
+   "by": "c4_analysis.py",
+   "per_dp": "yes",
+   "sanity": "5/5"
+  },
+  {
+   "file": "c4_training_grid.json",
+   "producer": "ok",
+   "by": "c4_analysis.py",
+   "per_dp": "yes",
+   "sanity": "none"
+  },
+  {
+   "file": "cf_advanced.json",
+   "producer": "ok",
+   "by": "cf_advanced.py",
+   "per_dp": "NO",
+   "sanity": "2/2"
+  },
+  {
+   "file": "cf_free_embedding.json",
+   "producer": "ok",
+   "by": "cf_free_embedding.py",
+   "per_dp": "yes",
+   "sanity": "3/5"
+  },
+  {
+   "file": "cf_multicorpus.json",
+   "producer": "ok",
+   "by": "cf_multicorpus.py",
+   "per_dp": "yes",
+   "sanity": "56/56"
+  },
+  {
+   "file": "cf_online_stream.json",
+   "producer": "ok",
+   "by": "cf_online_stream.py",
+   "per_dp": "NO",
+   "sanity": "10/10"
+  },
+  {
+   "file": "cf_partial_observability.json",
+   "producer": "ok",
+   "by": "cf_partial_observability.py",
+   "per_dp": "yes",
+   "sanity": "5/5"
+  },
+  {
+   "file": "cf_pivot_config.json",
+   "producer": "ok",
+   "by": "cf_pivot_config.py",
+   "per_dp": "yes",
+   "sanity": "11/11"
+  },
+  {
+   "file": "cf_sample_complexity.json",
+   "producer": "ok",
+   "by": "cf_sample_complexity.py",
+   "per_dp": "yes",
+   "sanity": "6/6"
+  },
+  {
+   "file": "e0_replicates.json",
+   "producer": "ok",
+   "by": "cf_advanced.py",
+   "per_dp": "yes",
+   "sanity": "none"
+  },
+  {
+   "file": "e1_facility_runs.json",
+   "producer": "ok",
+   "by": "e1_facility.py",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "e4_machine_cold_start.json",
+   "producer": "ok",
+   "by": "e4_e5_models.py",
+   "per_dp": "yes",
+   "sanity": "none"
+  },
+  {
+   "file": "e5_model_comparison.json",
+   "producer": "ok",
+   "by": "e4_e5_models.py",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "e6_inputs.json",
+   "producer": "ok",
+   "by": "e6_contention.py",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "e6_jobs.json",
+   "producer": "ok",
+   "by": "e6_contention.py",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "e6_runs.json",
+   "producer": "ok",
+   "by": "e6_contention.py",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "ejhusom_corpus.json",
+   "producer": "ok",
+   "by": "cf_multicorpus.py",
+   "per_dp": "yes",
+   "sanity": "6/6"
+  },
+  {
+   "file": "exec_idle_n4.json",
+   "producer": "ORPHAN",
+   "by": "",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "exec_idle_workload.json",
+   "producer": "ok",
+   "by": "b1_b2.py",
+   "per_dp": "yes",
+   "sanity": "none"
+  },
+  {
+   "file": "fig2_pareto.json",
+   "producer": "ok",
+   "by": "fig2_pareto.py",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "fig_perf_vs_energy.json",
+   "producer": "ok",
+   "by": "make_fig1.py",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "fleet_vs_mix.json",
+   "producer": "ok",
+   "by": "fleet_vs_mix.py",
+   "per_dp": "NO",
+   "sanity": "4/4"
+  },
+  {
+   "file": "g1_g3_carbon.json",
+   "producer": "ok",
+   "by": "g1_g3_carbon.py",
+   "per_dp": "yes",
+   "sanity": "16/16"
+  },
+  {
+   "file": "g2_refresh.json",
+   "producer": "ok",
+   "by": "g2_refresh.py",
+   "per_dp": "NO",
+   "sanity": "6/6"
+  },
+  {
+   "file": "g4_cost_sharing.json",
+   "producer": "ok",
+   "by": "g4_cost_sharing.py",
+   "per_dp": "NO",
+   "sanity": "10/10"
+  },
+  {
+   "file": "g5_descriptors.json",
+   "producer": "ok",
+   "by": "g5_descriptors.py",
+   "per_dp": "yes",
+   "sanity": "8/8"
+  },
+  {
+   "file": "g6_utilisation.json",
+   "producer": "ok",
+   "by": "g6_utilisation.py",
+   "per_dp": "yes",
+   "sanity": "8/8"
+  },
+  {
+   "file": "interaction_matrix.json",
+   "producer": "ok",
+   "by": "j2_make_fig3.py",
+   "per_dp": "yes",
+   "sanity": "none"
+  },
+  {
+   "file": "j2_llmperf_matrix.json",
+   "producer": "ok",
+   "by": "cf_free_embedding.py",
+   "per_dp": "yes",
+   "sanity": "4/4"
+  },
+  {
+   "file": "k2_grid5000.json",
+   "producer": "ok",
+   "by": "cf_multicorpus.py",
+   "per_dp": "yes",
+   "sanity": "14/15"
+  },
+  {
+   "file": "k3_deepen_verdict.json",
+   "producer": "ORPHAN",
+   "by": "",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "k6_seed_variance.json",
+   "producer": "ok",
+   "by": "fold_k6_wilkins.py",
+   "per_dp": "yes",
+   "sanity": "5/5"
+  },
+  {
+   "file": "llm_perf.json",
+   "producer": "ok",
+   "by": "j2_llmperf_panel.py",
+   "per_dp": "yes",
+   "sanity": "2/3"
+  },
+  {
+   "file": "mlenergy_v3.json",
+   "producer": "ok",
+   "by": "mlenergy_v3.py",
+   "per_dp": "yes",
+   "sanity": "13/13"
+  },
+  {
+   "file": "mlperf_dc_pooling.json",
+   "producer": "ok",
+   "by": "mlperf_dc_and_pooling.py",
+   "per_dp": "yes",
+   "sanity": "2/3"
+  },
+  {
+   "file": "n1_n2_n6_n7.json",
+   "producer": "ok",
+   "by": "n1_n2_n6_n7.py",
+   "per_dp": "yes",
+   "sanity": "5/5"
+  },
+  {
+   "file": "n3_probe.json",
+   "producer": "ORPHAN",
+   "by": "",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "n4_redesign.json",
+   "producer": "ok",
+   "by": "b1_b2.py",
+   "per_dp": "yes",
+   "sanity": "none"
+  },
+  {
+   "file": "n4_regret.json",
+   "producer": "ok",
+   "by": "n4_regret.py",
+   "per_dp": "NO",
+   "sanity": "3/3"
+  },
+  {
+   "file": "n_fixes.json",
+   "producer": "ok",
+   "by": "n_fixes.py",
+   "per_dp": "NO",
+   "sanity": "4/4"
+  },
+  {
+   "file": "paper_coverage_audit.json",
+   "producer": "ok",
+   "by": "audit_paper_coverage.py",
+   "per_dp": "NO",
+   "sanity": "none"
+  },
+  {
+   "file": "shapley_fleet.json",
+   "producer": "ok",
+   "by": "g1_g3_carbon.py",
+   "per_dp": "NO",
+   "sanity": "5/5"
+  },
+  {
+   "file": "sweat_corpus.json",
+   "producer": "ok",
+   "by": "sweat_corpus.py",
+   "per_dp": "yes",
+   "sanity": "5/6"
+  },
+  {
+   "file": "t4_replicates.json",
+   "producer": "ORPHAN",
+   "by": "",
+   "per_dp": "yes",
+   "sanity": "none"
+  },
+  {
+   "file": "wilkins_corpus.json",
+   "producer": "ok",
+   "by": "cf_multicorpus.py",
+   "per_dp": "yes",
+   "sanity": "8/11"
+  }
+ ]
+}

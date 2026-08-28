@@ -1,0 +1,122 @@
+{
+  "policies": {
+    "feat_mean": {
+      "UFR_pct": 47.22222222222222,
+      "usable_flexibility_frac": 1.2292518898484737
+    },
+    "feat_quant": {
+      "UFR_pct": 47.22222222222222,
+      "usable_flexibility_frac": 1.125039188328028
+    },
+    "obs_bound": {
+      "UFR_pct": 0.0,
+      "usable_flexibility_frac": 0.6959757102704218
+    },
+    "hybrid": {
+      "UFR_pct": 0.0,
+      "usable_flexibility_frac": 0.6539766884065187
+    }
+  },
+  "per_workload": {
+    "bert_base_uncased/sentiment140": {
+      "range_w": 120.80777974406854,
+      "under": {
+        "feat_mean": 0,
+        "feat_quant": 0,
+        "obs_bound": 0,
+        "hybrid": 0
+      }
+    },
+    "bert_base_uncased/squad": {
+      "range_w": 126.42681370185238,
+      "under": {
+        "feat_mean": 0,
+        "feat_quant": 0,
+        "obs_bound": 0,
+        "hybrid": 0
+      }
+    },
+    "deepspeech2/librispeech": {
+      "range_w": 80.79745103630422,
+      "under": {
+        "feat_mean": 5,
+        "feat_quant": 5,
+        "obs_bound": 0,
+        "hybrid": 0
+      }
+    },
+    "ncf/movielens-1m": {
+      "range_w": 0.4607626414485395,
+      "under": {
+        "feat_mean": 6,
+        "feat_quant": 6,
+        "obs_bound": 0,
+        "hybrid": 0
+      }
+    },
+    "resnet50/imagenet": {
+      "range_w": 123.40474270059367,
+      "under": {
+        "feat_mean": 0,
+        "feat_quant": 0,
+        "obs_bound": 0,
+        "hybrid": 0
+      }
+    },
+    "shufflenetv2/cifar100": {
+      "range_w": 52.30888802250003,
+      "under": {
+        "feat_mean": 6,
+        "feat_quant": 6,
+        "obs_bound": 0,
+        "hybrid": 0
+      }
+    }
+  },
+  "margin": 0.9,
+  "frontier_obs": [
+    {
+      "margin": 1.0,
+      "compliance_pct": 100.0,
+      "usable_flex_frac": 0.7733063447449134
+    },
+    {
+      "margin": 0.95,
+      "compliance_pct": 100.0,
+      "usable_flex_frac": 0.7346410275076676
+    },
+    {
+      "margin": 0.9,
+      "compliance_pct": 100.0,
+      "usable_flex_frac": 0.6959757102704218
+    },
+    {
+      "margin": 0.85,
+      "compliance_pct": 100.0,
+      "usable_flex_frac": 0.6573103930331765
+    },
+    {
+      "margin": 0.8,
+      "compliance_pct": 100.0,
+      "usable_flex_frac": 0.6186450757959304
+    },
+    {
+      "margin": 0.75,
+      "compliance_pct": 100.0,
+      "usable_flex_frac": 0.579979758558685
+    },
+    {
+      "margin": 0.7,
+      "compliance_pct": 100.0,
+      "usable_flex_frac": 0.5413144413214392
+    }
+  ],
+  "feat_mean_point": {
+    "compliance_pct": 52.77777777777778,
+    "usable_flex_frac": 1.2292518898484737
+  },
+  "invariants": {
+    "obs_UFR_le_feat": true,
+    "obs_usable_gt_half": true
+  }
+}

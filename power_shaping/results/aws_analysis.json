@@ -1,0 +1,71 @@
+{
+  "platform": "AWS EC2 g5.xlarge (NVIDIA A10G), measured power-cap sweep",
+  "n_workloads": 7,
+  "heterogeneity_spread": 0.09517437034110199,
+  "n_memory_bound": 3,
+  "n_compute_bound": 4,
+  "per_workload": {
+    "decode_like": {
+      "draw_range_w": 32.0,
+      "thr_at_min_cap": 0.9454220689613063,
+      "kind": "memory-bound"
+    },
+    "embed_gather": {
+      "draw_range_w": 24.866666666666646,
+      "thr_at_min_cap": 0.9893292121003009,
+      "kind": "memory-bound"
+    },
+    "gemm_fp16": {
+      "draw_range_w": 114.80000000000004,
+      "thr_at_min_cap": 0.7695498048721587,
+      "kind": "compute-bound"
+    },
+    "gemm_fp32": {
+      "draw_range_w": 117.73333333333332,
+      "thr_at_min_cap": 0.771937804309541,
+      "kind": "compute-bound"
+    },
+    "membw": {
+      "draw_range_w": 4.2333333333333485,
+      "thr_at_min_cap": 0.9999786225836839,
+      "kind": "memory-bound"
+    },
+    "resnet50": {
+      "draw_range_w": 44.16666666666666,
+      "thr_at_min_cap": 0.9602223422395639,
+      "kind": "compute-bound"
+    },
+    "vit_b16": {
+      "draw_range_w": 83.76666666666662,
+      "thr_at_min_cap": 0.8790343599411645,
+      "kind": "compute-bound"
+    }
+  },
+  "decomposition": [
+    {
+      "curt": 10,
+      "oracle_gain_vs_uniform_pct": 20.56400478498243,
+      "per_workload_elasticity_gain_pct": 36.63174271566861
+    },
+    {
+      "curt": 15,
+      "oracle_gain_vs_uniform_pct": 10.778766431137171,
+      "per_workload_elasticity_gain_pct": 28.832061978006152
+    },
+    {
+      "curt": 20,
+      "oracle_gain_vs_uniform_pct": 6.2641458697092585,
+      "per_workload_elasticity_gain_pct": 21.937501043097807
+    },
+    {
+      "curt": 25,
+      "oracle_gain_vs_uniform_pct": 0.9495447823581944,
+      "per_workload_elasticity_gain_pct": 3.3750080222961603
+    },
+    {
+      "curt": 30,
+      "oracle_gain_vs_uniform_pct": 7.676928707589397e-12,
+      "per_workload_elasticity_gain_pct": 6.790297504741104e-12
+    }
+  ]
+}

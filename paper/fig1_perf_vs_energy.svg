@@ -1,0 +1,96 @@
+<svg viewBox="0 0 700 268" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Peak performance does not predict measured energy efficiency">
+<defs><style>.ax{stroke:#111418;stroke-width:.9;fill:none}.gr{stroke:#e6e8ea;stroke-width:.7}.lb{font:9.5px Georgia,serif;fill:#2c3138}.sm{font:8.5px Georgia,serif;fill:#5a626c}.ti{font:bold 9.5px Georgia,serif;fill:#111418}.pt{stroke:#fff;stroke-width:1.1}</style></defs>
+<text class="ti" x="62" y="16">(a) Vendor peak throughput vs measured energy</text>
+<line class="gr" x1="73.0" y1="34" x2="73.0" y2="224"/>
+<text class="sm" x="73.0" y="237" text-anchor="middle">60</text>
+<line class="gr" x1="137.9" y1="34" x2="137.9" y2="224"/>
+<text class="sm" x="137.9" y="237" text-anchor="middle">100</text>
+<line class="gr" x1="225.8" y1="34" x2="225.8" y2="224"/>
+<text class="sm" x="225.8" y="237" text-anchor="middle">200</text>
+<line class="gr" x1="313.8" y1="34" x2="313.8" y2="224"/>
+<text class="sm" x="313.8" y="237" text-anchor="middle">400</text>
+<line class="gr" x1="62" y1="217.0" x2="320" y2="217.0"/>
+<text class="sm" x="56" y="220.0" text-anchor="end">80</text>
+<line class="gr" x1="62" y1="155.3" x2="320" y2="155.3"/>
+<text class="sm" x="56" y="158.3" text-anchor="end">100</text>
+<line class="gr" x1="62" y1="104.8" x2="320" y2="104.8"/>
+<text class="sm" x="56" y="107.8" text-anchor="end">120</text>
+<line class="gr" x1="62" y1="43.1" x2="320" y2="43.1"/>
+<text class="sm" x="56" y="46.1" text-anchor="end">150</text>
+<line class="ax" x1="62" y1="224" x2="320" y2="224"/>
+<line class="ax" x1="62" y1="34" x2="62" y2="224"/>
+<text class="lb" x="191.0" y="251" text-anchor="middle">peak fp16 throughput (TFLOP/s, log)</text>
+<text class="lb" x="16" y="129.0" text-anchor="middle" transform="rotate(-90 16 129.0)">energy per sample (mJ, log)</text>
+<line x1="62" y1="105.5" x2="320" y2="108.0" stroke="#9aa2ab" stroke-width="1" stroke-dasharray="4,3"/>
+<circle class="pt" cx="83.2" cy="60.9" r="5" fill="#14385c"/>
+<text class="lb" x="83.2" y="50.9" text-anchor="middle">T4</text>
+<text class="sm" x="83.2" y="60.9" text-anchor="middle">70 W</text>
+<circle class="pt" cx="162.1" cy="199.1" r="5" fill="#14385c"/>
+<text class="lb" x="162.1" y="189.1" text-anchor="middle">L4</text>
+<text class="sm" x="162.1" y="199.1" text-anchor="middle">72 W</text>
+<circle class="pt" cx="166.2" cy="87.2" r="5" fill="#14385c"/>
+<text class="lb" x="166.2" y="102.2" text-anchor="middle">A10</text>
+<text class="sm" x="166.2" y="112.2" text-anchor="middle">150 W</text>
+<circle class="pt" cx="301.1" cy="106.2" r="5" fill="#14385c"/>
+<text class="lb" x="301.1" y="96.2" text-anchor="middle">L40S</text>
+<text class="sm" x="301.1" y="106.2" text-anchor="middle">350 W</text>
+<circle class="pt" cx="282.3" cy="80.7" r="5" fill="#14385c"/>
+<text class="lb" x="282.3" y="70.7" text-anchor="middle">A100</text>
+<text class="sm" x="282.3" y="80.7" text-anchor="middle">400 W</text>
+<text class="lb" x="316" y="50" text-anchor="end">r = -0.016</text>
+<text class="sm" x="316" y="62" text-anchor="end">5.6x range in peak, no trend in energy</text>
+<text class="ti" x="400" y="16">(b) Measured throughput vs energy, per workload</text>
+<line class="gr" x1="406.5" y1="34" x2="406.5" y2="224"/>
+<text class="sm" x="406.5" y="237" text-anchor="middle">300</text>
+<line class="gr" x1="503.0" y1="34" x2="503.0" y2="224"/>
+<text class="sm" x="503.0" y="237" text-anchor="middle">1000</text>
+<line class="gr" x1="591.0" y1="34" x2="591.0" y2="224"/>
+<text class="sm" x="591.0" y="237" text-anchor="middle">3000</text>
+<line class="gr" x1="400" y1="202.2" x2="658" y2="202.2"/>
+<text class="sm" x="394" y="205.2" text-anchor="end">50</text>
+<line class="gr" x1="400" y1="129.0" x2="658" y2="129.0"/>
+<text class="sm" x="394" y="132.0" text-anchor="end">100</text>
+<line class="gr" x1="400" y1="55.9" x2="658" y2="55.9"/>
+<text class="sm" x="394" y="58.9" text-anchor="end">200</text>
+<line class="ax" x1="400" y1="224" x2="658" y2="224"/>
+<line class="ax" x1="400" y1="34" x2="400" y2="224"/>
+<text class="lb" x="529.0" y="251" text-anchor="middle">measured throughput (samples/s, log)</text>
+<path d="M472.9,127.7 L519.4,186.7 L534.8,128.0 L599.2,139.1 L624.4,162.0" stroke="#3d6b4a" stroke-width="1.3" fill="none" opacity=".75"/>
+<circle cx="472.9" cy="127.7" r="3" fill="#3d6b4a" stroke="#fff" stroke-width=".8"/>
+<circle cx="519.4" cy="186.7" r="3" fill="#3d6b4a" stroke="#fff" stroke-width=".8"/>
+<circle cx="534.8" cy="128.0" r="3" fill="#3d6b4a" stroke="#fff" stroke-width=".8"/>
+<circle cx="599.2" cy="139.1" r="3" fill="#3d6b4a" stroke="#fff" stroke-width=".8"/>
+<circle cx="624.4" cy="162.0" r="3" fill="#3d6b4a" stroke="#fff" stroke-width=".8"/>
+<circle cx="519.4" cy="186.7" r="6" fill="none" stroke="#3d6b4a" stroke-width="1.4"/>
+<path d="M486.5,145.8 L539.2,210.5 L554.2,155.0 L619.9,168.9 L643.4,186.8" stroke="#14385c" stroke-width="1.3" fill="none" opacity=".75"/>
+<circle cx="486.5" cy="145.8" r="3" fill="#14385c" stroke="#fff" stroke-width=".8"/>
+<circle cx="539.2" cy="210.5" r="3" fill="#14385c" stroke="#fff" stroke-width=".8"/>
+<circle cx="554.2" cy="155.0" r="3" fill="#14385c" stroke="#fff" stroke-width=".8"/>
+<circle cx="619.9" cy="168.9" r="3" fill="#14385c" stroke="#fff" stroke-width=".8"/>
+<circle cx="643.4" cy="186.8" r="3" fill="#14385c" stroke="#fff" stroke-width=".8"/>
+<circle cx="539.2" cy="210.5" r="6" fill="none" stroke="#14385c" stroke-width="1.4"/>
+<path d="M413.0,48.8 L463.6,111.7 L479.5,57.5 L569.7,84.2 L580.3,85.0" stroke="#7a2f3f" stroke-width="1.3" fill="none" opacity=".75"/>
+<circle cx="413.0" cy="48.8" r="3" fill="#7a2f3f" stroke="#fff" stroke-width=".8"/>
+<circle cx="463.6" cy="111.7" r="3" fill="#7a2f3f" stroke="#fff" stroke-width=".8"/>
+<circle cx="479.5" cy="57.5" r="3" fill="#7a2f3f" stroke="#fff" stroke-width=".8"/>
+<circle cx="569.7" cy="84.2" r="3" fill="#7a2f3f" stroke="#fff" stroke-width=".8"/>
+<circle cx="580.3" cy="85.0" r="3" fill="#7a2f3f" stroke="#fff" stroke-width=".8"/>
+<circle cx="463.6" cy="111.7" r="6" fill="none" stroke="#7a2f3f" stroke-width="1.4"/>
+<path d="M414.3,51.1 L465.7,114.3 L478.0,52.4 L558.6,73.6 L565.5,66.3" stroke="#8a5a1e" stroke-width="1.3" fill="none" opacity=".75"/>
+<circle cx="414.3" cy="51.1" r="3" fill="#8a5a1e" stroke="#fff" stroke-width=".8"/>
+<circle cx="465.7" cy="114.3" r="3" fill="#8a5a1e" stroke="#fff" stroke-width=".8"/>
+<circle cx="478.0" cy="52.4" r="3" fill="#8a5a1e" stroke="#fff" stroke-width=".8"/>
+<circle cx="558.6" cy="73.6" r="3" fill="#8a5a1e" stroke="#fff" stroke-width=".8"/>
+<circle cx="565.5" cy="66.3" r="3" fill="#8a5a1e" stroke="#fff" stroke-width=".8"/>
+<circle cx="465.7" cy="114.3" r="6" fill="none" stroke="#8a5a1e" stroke-width="1.4"/>
+<line x1="408" y1="42" x2="424" y2="42" stroke="#14385c" stroke-width="1.6"/>
+<text class="sm" x="428" y="45">ResNet-50</text>
+<line x1="408" y1="54" x2="424" y2="54" stroke="#8a5a1e" stroke-width="1.6"/>
+<text class="sm" x="428" y="57">ViT-B/16</text>
+<line x1="408" y1="66" x2="424" y2="66" stroke="#3d6b4a" stroke-width="1.6"/>
+<text class="sm" x="428" y="69">ConvNeXt-T</text>
+<line x1="408" y1="78" x2="424" y2="78" stroke="#7a2f3f" stroke-width="1.6"/>
+<text class="sm" x="428" y="81">Transformer</text>
+<text class="sm" x="654" y="216" text-anchor="end">circled = lowest energy</text>
+<text class="sm" x="654" y="226" text-anchor="end">rightmost = fastest</text>
+</svg>

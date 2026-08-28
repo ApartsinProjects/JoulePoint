@@ -1,0 +1,68 @@
+{
+ "results": {
+  "q2": {
+   "perf_oracle_pair_acc": 59.166666666666664,
+   "power_range": [
+    67.80215712200001,
+    403.6984976280002
+   ],
+   "corr_logT_logP": 0.608416576860291
+  },
+  "q1": [
+   {
+    "parameter": "FLOPs/sample",
+    "corr_level": 0.6961751944931367,
+    "corr_interaction": -0.15552200394837243
+   },
+   {
+    "parameter": "parameters",
+    "corr_level": 0.7306502120935597,
+    "corr_interaction": -0.18159030509585727
+   },
+   {
+    "parameter": "batch size",
+    "corr_level": -0.12484873249154275,
+    "corr_interaction": 0.3944452917582455
+   },
+   {
+    "parameter": "precision (fp32)",
+    "corr_level": 0.6126804713764984,
+    "corr_interaction": -0.5148394695561789
+   },
+   {
+    "parameter": "memory footprint",
+    "corr_level": 0.15253230816312813,
+    "corr_interaction": 0.3754886561652403
+   },
+   {
+    "parameter": "arith. intensity proxy",
+    "corr_level": 0.5694852221931832,
+    "corr_interaction": -0.3963270742105667
+   }
+  ],
+  "cf1": {
+   "squared error (baseline)": 87.91666666666666,
+   "ranking loss": 85.41666666666666
+  },
+  "cf2": {
+   "unweighted": 87.91666666666666,
+   "noise-weighted": 87.08333333333334
+  },
+  "cf3": {
+   "energy only": 87.91666666666666,
+   "joint (energy+runtime+power)": 86.66666666666666
+  }
+ },
+ "sanity": [
+  {
+   "check": "power derived from the energy counter is physically plausible against the caps",
+   "passed": true,
+   "detail": "derived 68-404 W; max fraction of enforced cap 1.02"
+  },
+  {
+   "check": "the parameter that predicts the level is not the one that predicts the interaction",
+   "passed": true,
+   "detail": "level -> parameters, interaction -> precision (fp32)"
+  }
+ ]
+}

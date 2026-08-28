@@ -1,0 +1,29 @@
+{
+ "results": {
+  "memory_model": {
+   "median_rel_err": 0.0931230093833001,
+   "margin": 1.1,
+   "caught": 19,
+   "infeasible_total": 19,
+   "false_excl": 3,
+   "feasible_total": 141
+  }
+ },
+ "sanity": [
+  {
+   "check": "memory is predictable from parameter count for an unseen model size",
+   "passed": true,
+   "detail": "median relative error 9.3% (was 72.6% with a load one-hot)"
+  },
+  {
+   "check": "the corrected memory model excludes most genuinely infeasible machines",
+   "passed": true,
+   "detail": "19/19 caught at margin 1.10"
+  },
+  {
+   "check": "it does not wrongly exclude many feasible machines",
+   "passed": true,
+   "detail": "3/141 feasible wrongly excluded"
+  }
+ ]
+}

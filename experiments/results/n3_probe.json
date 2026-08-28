@@ -1,0 +1,96 @@
+[
+ {
+  "machine": "L4",
+  "device": "NVIDIA L4",
+  "cap_now_w": 72.0,
+  "cap_range_w": [
+   40.0,
+   72.0
+  ],
+  "persistence": {
+   "rc": 0,
+   "out": "Failed to parse --display/-d flags",
+   "err": ""
+  },
+  "set_cap_nvml": {
+   "rc": 4,
+   "out": "Failed to set power management limit for GPU 00000000:00:06.0: Insufficient Permissions\nTerminating early due to previous errors.",
+   "err": ""
+  },
+  "set_cap_nvml_api": "DENIED: Insufficient Permissions",
+  "mig_mode": {
+   "rc": 0,
+   "out": "MIG Mode\n        Current                           : N/A\n        Pending                           : N/A",
+   "err": ""
+  },
+  "mig_enable": {
+   "rc": 0,
+   "out": "Unable to enable MIG Mode for GPU 00000000:00:06.0: Not Supported\nTreating as warning and moving on.\nAll done.",
+   "err": ""
+  },
+  "clocks": {
+   "rc": 0,
+   "out": "==============NVSMI LOG==============\n\nTimestamp                                 : Wed Aug 19 03:18:45 2026\nDriver Version                            : 580.95.05\nCUDA Version                              : 13.0\n\nAttached GPUs                             : 1",
+   "err": ""
+  },
+  "set_clock": {
+   "rc": 4,
+   "out": "The current user does not have permission to change clocks for GPU 00000000:00:06.0.\nTerminating early due to previous errors.",
+   "err": ""
+  },
+  "in_process_levers": {
+   "batch_size": true,
+   "precision_autocast": true,
+   "cuda_streams": true,
+   "torch_compile": true,
+   "sm_partition_via_MPS": "needs daemon, untested here"
+  }
+ },
+ {
+  "machine": "A100-40GB",
+  "device": "NVIDIA A100-SXM4-40GB",
+  "cap_now_w": 400.0,
+  "cap_range_w": [
+   100.0,
+   400.0
+  ],
+  "persistence": {
+   "rc": 0,
+   "out": "Failed to parse --display/-d flags",
+   "err": ""
+  },
+  "set_cap_nvml": {
+   "rc": 4,
+   "out": "Failed to set power management limit for GPU 00000000:00:05.0: Insufficient Permissions\nTerminating early due to previous errors.",
+   "err": ""
+  },
+  "set_cap_nvml_api": "DENIED: Insufficient Permissions",
+  "mig_mode": {
+   "rc": 0,
+   "out": "MIG Mode\n        Current                           : Disabled\n        Pending                           : Disabled",
+   "err": ""
+  },
+  "mig_enable": {
+   "rc": 0,
+   "out": "Unable to enable MIG Mode for GPU 00000000:00:05.0: Not Supported\nTreating as warning and moving on.\nAll done.",
+   "err": ""
+  },
+  "clocks": {
+   "rc": 0,
+   "out": "==============NVSMI LOG==============\n\nTimestamp                                 : Wed Aug 19 03:19:15 2026\nDriver Version                            : 580.95.05\nCUDA Version                              : 13.0\n\nAttached GPUs                             : 1",
+   "err": ""
+  },
+  "set_clock": {
+   "rc": 4,
+   "out": "The current user does not have permission to change clocks for GPU 00000000:00:05.0.\nTerminating early due to previous errors.",
+   "err": ""
+  },
+  "in_process_levers": {
+   "batch_size": true,
+   "precision_autocast": true,
+   "cuda_streams": true,
+   "torch_compile": true,
+   "sm_partition_via_MPS": "needs daemon, untested here"
+  }
+ }
+]

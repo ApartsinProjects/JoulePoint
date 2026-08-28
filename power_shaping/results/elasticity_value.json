@@ -1,0 +1,20 @@
+{
+  "emerald": {
+    "n_workloads": 8,
+    "elasticity_spread": 0.012,
+    "elasticity_value_pct": 11.8,
+    "oracle_capture_classmean_pct": 77.0
+  },
+  "zeus": {
+    "n_workloads": 6,
+    "elasticity_spread": 0.187,
+    "elasticity_value_pct": 7.1,
+    "oracle_capture_classmean_pct": -421.0
+  },
+  "aws26": {
+    "n_workloads": 26,
+    "elasticity_spread": 0.116,
+    "elasticity_value_pct": 31.1,
+    "oracle_capture_classmean_pct": 48.0
+  }
+}

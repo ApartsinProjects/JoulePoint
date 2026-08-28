@@ -1,0 +1,1859 @@
+{
+ "paper_prose_discrepancy": {
+  "paper_prose_j": 4476.267016200247,
+  "canonical_j": 4391.351705007852,
+  "gap_pct": -1.8970117485189015,
+  "note": "the paper's 4,476 J/job and 34.3 per cent correspond to the rng.integers arrival-sampling variant; the shipped simulators and stored JSON use rng.choice and give 4,391 J/job and 33.73 per cent. This experiment is reported against the latter."
+ },
+ "S0_calibration": {
+  "fleet": "4xL4 + 6xL40S",
+  "energy_j": 4391.351705007852,
+  "saving_pct_seed0": 33.727251437609,
+  "reference_j": 6626.1801423155275,
+  "n_feasible_10slot": 169,
+  "seed_savings": [
+   33.727251437609,
+   34.14219559760626,
+   35.04013545296921,
+   34.70690379343028,
+   32.33734179941385,
+   34.18074561855943,
+   34.099121025135595,
+   34.843091104795874
+  ],
+  "seed_fleets": [
+   "4xL4 + 6xL40S",
+   "4xL4 + 6xL40S",
+   "4xL4 + 6xL40S",
+   "4xL4 + 6xL40S",
+   "3xL4 + 7xL40S",
+   "4xL4 + 6xL40S",
+   "4xL4 + 6xL40S",
+   "4xL4 + 6xL40S"
+  ]
+ },
+ "G1": {
+  "rows": [
+   {
+    "intensity_gco2e_per_kwh": 20,
+    "modal_fleet": "10xL4 + 4xL40S",
+    "modal_agreement": "3/8",
+    "mean_ntypes": 2.0,
+    "mean_ndev": 12.75,
+    "mean_saving_pct": 34.58656843806144,
+    "sd_saving_pct": 0.7234884254725534,
+    "per_seed": [
+     {
+      "seed": 0,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 35.28626592400613,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.032516667499201055,
+      "delay_s": 47.50725524053597
+     },
+     {
+      "seed": 1,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 35.54801398000512,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.03265839645047188,
+      "delay_s": 36.48825170955755
+     },
+     {
+      "seed": 2,
+      "fleet": "7xL4 + 5xL40S",
+      "saving_pct": 34.385868744926285,
+      "ntypes": 2,
+      "ndev": 12,
+      "carbon_g_per_job": 0.033942166084356004,
+      "delay_s": 56.0258769497234
+     },
+     {
+      "seed": 3,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 34.77062992837718,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.03375402845406357,
+      "delay_s": 51.89283581868248
+     },
+     {
+      "seed": 4,
+      "fleet": "8xL4 + 5xL40S",
+      "saving_pct": 33.19479846471879,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.03525298762899604,
+      "delay_s": 33.025278217107775
+     },
+     {
+      "seed": 5,
+      "fleet": "3xL4 + 6xL40S",
+      "saving_pct": 34.354634468086836,
+      "ntypes": 2,
+      "ndev": 9,
+      "carbon_g_per_job": 0.03344720473488147,
+      "delay_s": 53.834826726034144
+     },
+     {
+      "seed": 6,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 34.27211039731382,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.032859957191393535,
+      "delay_s": 46.68313539783284
+     },
+     {
+      "seed": 7,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 34.88022559705736,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.03416904905954513,
+      "delay_s": 47.26615716883191
+     }
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 50,
+    "modal_fleet": "10xL4 + 4xL40S",
+    "modal_agreement": "4/8",
+    "mean_ntypes": 2.125,
+    "mean_ndev": 13.625,
+    "mean_saving_pct": 37.43486731062392,
+    "sd_saving_pct": 0.8231684610367674,
+    "per_seed": [
+     {
+      "seed": 0,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 37.83965384469704,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.06555747262390949,
+      "delay_s": 47.50725524053597
+     },
+     {
+      "seed": 1,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 38.123797469470006,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.0659206047423576,
+      "delay_s": 36.48825170955755
+     },
+     {
+      "seed": 2,
+      "fleet": "9xL4 + 1xA10G + 4xL40S",
+      "saving_pct": 36.651031749407665,
+      "ntypes": 3,
+      "ndev": 14,
+      "carbon_g_per_job": 0.06960164456418767,
+      "delay_s": 54.855816642620674
+     },
+     {
+      "seed": 3,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 38.005142874711446,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.06787308981685117,
+      "delay_s": 51.89283581868248
+     },
+     {
+      "seed": 4,
+      "fleet": "8xL4 + 5xL40S",
+      "saving_pct": 35.791096763057695,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.07196762395328585,
+      "delay_s": 33.025278217107775
+     },
+     {
+      "seed": 5,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 37.510080232889635,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.06711048365960325,
+      "delay_s": 25.69228750726978
+     },
+     {
+      "seed": 6,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 37.44697713853015,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.0660647157007139,
+      "delay_s": 46.68313539783284
+     },
+     {
+      "seed": 7,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 38.11115841222772,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.06878185707514767,
+      "delay_s": 47.26615716883191
+     }
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 100,
+    "modal_fleet": "10xL4 + 4xL40S",
+    "modal_agreement": "4/8",
+    "mean_ntypes": 2.125,
+    "mean_ndev": 13.625,
+    "mean_saving_pct": 38.67771490259903,
+    "sd_saving_pct": 0.8686077959769214,
+    "per_seed": [
+     {
+      "seed": 0,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 38.922378868578505,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.12062548116509021,
+      "delay_s": 47.50725524053597
+     },
+     {
+      "seed": 1,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 39.213373778116186,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.12135761856216713,
+      "delay_s": 36.48825170955755
+     },
+     {
+      "seed": 2,
+      "fleet": "9xL4 + 1xA10G + 4xL40S",
+      "saving_pct": 37.9376620787633,
+      "ntypes": 3,
+      "ndev": 14,
+      "carbon_g_per_job": 0.12832668182442014,
+      "delay_s": 54.855816642620674
+     },
+     {
+      "seed": 3,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.36124043461858,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.12473819208816384,
+      "delay_s": 51.89283581868248
+     },
+     {
+      "seed": 4,
+      "fleet": "8xL4 + 5xL40S",
+      "saving_pct": 36.87360321417958,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.13315868449376886,
+      "delay_s": 33.025278217107775
+     },
+     {
+      "seed": 5,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 38.8689142930891,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.12315793983594028,
+      "delay_s": 25.69228750726978
+     },
+     {
+      "seed": 6,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 38.78092315350655,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.12140597988291453,
+      "delay_s": 46.68313539783284
+     },
+     {
+      "seed": 7,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.463623399940424,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.1264698704344852,
+      "delay_s": 47.26615716883191
+     }
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 150,
+    "modal_fleet": "10xL4 + 4xL40S",
+    "modal_agreement": "4/8",
+    "mean_ntypes": 2.125,
+    "mean_ndev": 13.625,
+    "mean_saving_pct": 39.12868861795889,
+    "sd_saving_pct": 0.8899681653897664,
+    "per_seed": [
+     {
+      "seed": 0,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 39.31678157765122,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.17569348970627094,
+      "delay_s": 47.50725524053597
+     },
+     {
+      "seed": 1,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 39.60988180747416,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.17679463238197668,
+      "delay_s": 36.48825170955755
+     },
+     {
+      "seed": 2,
+      "fleet": "9xL4 + 1xA10G + 4xL40S",
+      "saving_pct": 38.40317353508417,
+      "ntypes": 3,
+      "ndev": 14,
+      "carbon_g_per_job": 0.18705171908465262,
+      "delay_s": 54.855816642620674
+     },
+     {
+      "seed": 3,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.852966669860706,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.18160329435947647,
+      "delay_s": 51.89283581868248
+     },
+     {
+      "seed": 4,
+      "fleet": "8xL4 + 5xL40S",
+      "saving_pct": 37.2652518243715,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.19434974503425187,
+      "delay_s": 33.025278217107775
+     },
+     {
+      "seed": 5,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.36269671130525,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.1792053960122773,
+      "delay_s": 25.69228750726978
+     },
+     {
+      "seed": 6,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.26503494163094,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.17674724406511516,
+      "delay_s": 46.68313539783284
+     },
+     {
+      "seed": 7,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.95372187629321,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.18415788379382275,
+      "delay_s": 47.26615716883191
+     }
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 200,
+    "modal_fleet": "10xL4 + 4xL40S",
+    "modal_agreement": "4/8",
+    "mean_ntypes": 2.125,
+    "mean_ndev": 13.625,
+    "mean_saving_pct": 39.36174875912082,
+    "sd_saving_pct": 0.9019124356143717,
+    "per_seed": [
+     {
+      "seed": 0,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 39.52092651477528,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.23076149824745165,
+      "delay_s": 47.50725524053597
+     },
+     {
+      "seed": 1,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 39.81503468169191,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.2322316462017862,
+      "delay_s": 36.48825170955755
+     },
+     {
+      "seed": 2,
+      "fleet": "9xL4 + 1xA10G + 4xL40S",
+      "saving_pct": 38.643465484379355,
+      "ntypes": 3,
+      "ndev": 14,
+      "carbon_g_per_job": 0.2457767563448851,
+      "delay_s": 54.855816642620674
+     },
+     {
+      "seed": 3,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.10701575640348,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.23846839663078914,
+      "delay_s": 51.89283581868248
+     },
+     {
+      "seed": 4,
+      "fleet": "8xL4 + 5xL40S",
+      "saving_pct": 37.467414608646976,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.2555408055747349,
+      "delay_s": 33.025278217107775
+     },
+     {
+      "seed": 5,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.618030509484,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.23525285218861436,
+      "delay_s": 25.69228750726978
+     },
+     {
+      "seed": 6,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.5152372455396,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.23208850824731578,
+      "delay_s": 46.68313539783284
+     },
+     {
+      "seed": 7,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.20686527204598,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.2418458971531603,
+      "delay_s": 47.26615716883191
+     }
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 300,
+    "modal_fleet": "10xL4 + 4xL40S",
+    "modal_agreement": "4/8",
+    "mean_ntypes": 2.125,
+    "mean_ndev": 13.625,
+    "mean_saving_pct": 39.60008660025046,
+    "sd_saving_pct": 0.914727667885601,
+    "per_seed": [
+     {
+      "seed": 0,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 39.72992041048914,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.3408975153298131,
+      "delay_s": 47.50725524053597
+     },
+     {
+      "seed": 1,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 40.02500269283448,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.3431056738414053,
+      "delay_s": 36.48825170955755
+     },
+     {
+      "seed": 2,
+      "fleet": "9xL4 + 1xA10G + 4xL40S",
+      "saving_pct": 38.88900084496744,
+      "ntypes": 3,
+      "ndev": 14,
+      "carbon_g_per_job": 0.36322683086535,
+      "delay_s": 54.855816642620674
+     },
+     {
+      "seed": 3,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.36676714149003,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.35219860117341445,
+      "delay_s": 51.89283581868248
+     },
+     {
+      "seed": 4,
+      "fleet": "8xL4 + 5xL40S",
+      "saving_pct": 37.67398740382316,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.37792292665570093,
+      "delay_s": 33.025278217107775
+     },
+     {
+      "seed": 5,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.8792522807785,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.3473477645412884,
+      "delay_s": 25.69228750726978
+     },
+     {
+      "seed": 6,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.77111695927077,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.34277103661171704,
+      "delay_s": 46.68313539783284
+     },
+     {
+      "seed": 7,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.46564506835013,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.3572219238718354,
+      "delay_s": 47.26615716883191
+     }
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 400,
+    "modal_fleet": "10xL4 + 4xL40S",
+    "modal_agreement": "4/8",
+    "mean_ntypes": 2.125,
+    "mean_ndev": 13.625,
+    "mean_saving_pct": 39.7212910465276,
+    "sd_saving_pct": 0.921468420131451,
+    "per_seed": [
+     {
+      "seed": 0,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 39.83629002861762,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.45103353241217453,
+      "delay_s": 47.50725524053597
+     },
+     {
+      "seed": 1,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 40.13184566365697,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.45397970148102434,
+      "delay_s": 36.48825170955755
+     },
+     {
+      "seed": 2,
+      "fleet": "9xL4 + 1xA10G + 4xL40S",
+      "saving_pct": 39.013788731411985,
+      "ntypes": 3,
+      "ndev": 14,
+      "carbon_g_per_job": 0.480676905385815,
+      "delay_s": 54.855816642620674
+     },
+     {
+      "seed": 3,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.49884153072289,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.4659288057160398,
+      "delay_s": 51.89283581868248
+     },
+     {
+      "seed": 4,
+      "fleet": "8xL4 + 5xL40S",
+      "saving_pct": 37.778972896835825,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.500305047736667,
+      "delay_s": 33.025278217107775
+     },
+     {
+      "seed": 5,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.01213517043091,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.4594426768939625,
+      "delay_s": 25.69228750726978
+     },
+     {
+      "seed": 6,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.901246577319185,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.4534535649761183,
+      "delay_s": 46.68313539783284
+     },
+     {
+      "seed": 7,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.59720777322538,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.47259795059051046,
+      "delay_s": 47.26615716883191
+     }
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 500,
+    "modal_fleet": "10xL4 + 4xL40S",
+    "modal_agreement": "4/8",
+    "mean_ntypes": 2.125,
+    "mean_ndev": 13.75,
+    "mean_saving_pct": 39.7947815403827,
+    "sd_saving_pct": 0.9253725979794618,
+    "per_seed": [
+     {
+      "seed": 0,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 39.900723987289865,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.561169549494536,
+      "delay_s": 47.50725524053597
+     },
+     {
+      "seed": 1,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 40.19655900005742,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.5648537291206434,
+      "delay_s": 36.48825170955755
+     },
+     {
+      "seed": 2,
+      "fleet": "9xL4 + 1xA10G + 4xL40S",
+      "saving_pct": 39.08932073691949,
+      "ntypes": 3,
+      "ndev": 14,
+      "carbon_g_per_job": 0.5981269799062799,
+      "delay_s": 54.855816642620674
+     },
+     {
+      "seed": 3,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.578804089111635,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.5796590102586652,
+      "delay_s": 51.89283581868248
+     },
+     {
+      "seed": 4,
+      "fleet": "9xL4 + 5xL40S",
+      "saving_pct": 37.843343069021685,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.6226789100908992,
+      "delay_s": 13.687215340270676
+     },
+     {
+      "seed": 5,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.092607174932255,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.5715375892466364,
+      "delay_s": 25.69228750726978
+     },
+     {
+      "seed": 6,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 39.98003951308554,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.5641360933405195,
+      "delay_s": 46.68313539783284
+     },
+     {
+      "seed": 7,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.67685475264371,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.5879739773091855,
+      "delay_s": 47.26615716883191
+     }
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 600,
+    "modal_fleet": "10xL4 + 4xL40S",
+    "modal_agreement": "4/8",
+    "mean_ntypes": 2.125,
+    "mean_ndev": 13.75,
+    "mean_saving_pct": 39.84535462173871,
+    "sd_saving_pct": 0.9248904717495426,
+    "per_seed": [
+     {
+      "seed": 0,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 39.94393810377287,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.6713055665768974,
+      "delay_s": 47.50725524053597
+     },
+     {
+      "seed": 1,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 40.23995737787169,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.6757277567602624,
+      "delay_s": 36.48825170955755
+     },
+     {
+      "seed": 2,
+      "fleet": "9xL4 + 1xA10G + 4xL40S",
+      "saving_pct": 39.139953134754386,
+      "ntypes": 3,
+      "ndev": 14,
+      "carbon_g_per_job": 0.7155770544267449,
+      "delay_s": 54.855816642620674
+     },
+     {
+      "seed": 3,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.632414991973576,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.6933892148012905,
+      "delay_s": 51.89283581868248
+     },
+     {
+      "seed": 4,
+      "fleet": "9xL4 + 5xL40S",
+      "saving_pct": 37.89688412696867,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.7449281322028882,
+      "delay_s": 13.687215340270676
+     },
+     {
+      "seed": 5,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.14656806496821,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.6836325015993105,
+      "delay_s": 25.69228750726978
+     },
+     {
+      "seed": 6,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.03286954195277,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.6748186217049208,
+      "delay_s": 46.68313539783284
+     },
+     {
+      "seed": 7,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.730251631647505,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.7033500040278606,
+      "delay_s": 47.26615716883191
+     }
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 700,
+    "modal_fleet": "10xL4 + 4xL40S",
+    "modal_agreement": "4/8",
+    "mean_ntypes": 2.125,
+    "mean_ndev": 13.75,
+    "mean_saving_pct": 39.88162018793423,
+    "sd_saving_pct": 0.9245609245438583,
+    "per_seed": [
+     {
+      "seed": 0,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 39.974932746329905,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.7814415836592589,
+      "delay_s": 47.50725524053597
+     },
+     {
+      "seed": 1,
+      "fleet": "9xL4 + 4xL40S",
+      "saving_pct": 40.27108264151962,
+      "ntypes": 2,
+      "ndev": 13,
+      "carbon_g_per_job": 0.7866017843998815,
+      "delay_s": 36.48825170955755
+     },
+     {
+      "seed": 2,
+      "fleet": "9xL4 + 1xA10G + 4xL40S",
+      "saving_pct": 39.176256129147646,
+      "ntypes": 3,
+      "ndev": 14,
+      "carbon_g_per_job": 0.8330271289472099,
+      "delay_s": 54.855816642620674
+     },
+     {
+      "seed": 3,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.670857755220204,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.8071194193439158,
+      "delay_s": 51.89283581868248
+     },
+     {
+      "seed": 4,
+      "fleet": "9xL4 + 5xL40S",
+      "saving_pct": 37.93527255966593,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.8671773543148772,
+      "delay_s": 13.687215340270676
+     },
+     {
+      "seed": 5,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.185265959723715,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.7957274139519847,
+      "delay_s": 25.69228750726978
+     },
+     {
+      "seed": 6,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.0707539946884,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.785501150069322,
+      "delay_s": 46.68313539783284
+     },
+     {
+      "seed": 7,
+      "fleet": "10xL4 + 4xL40S",
+      "saving_pct": 40.768539717178406,
+      "ntypes": 2,
+      "ndev": 14,
+      "carbon_g_per_job": 0.8187260307465357,
+      "delay_s": 47.26615716883191
+     }
+    ]
+   }
+  ],
+  "energy_optimal_fleet": "9xL4 + 4xL40S",
+  "energy_optimal_j": 3964.8966149650114,
+  "energy_optimal_ntypes": 2,
+  "energy_optimal_ndev": 13,
+  "energy_fleet_by_seed": {
+   "9xL4 + 4xL40S": 2,
+   "9xL4 + 1xA10G + 4xL40S": 1,
+   "10xL4 + 4xL40S": 4,
+   "9xL4 + 5xL40S": 1
+  },
+  "min_slots": 4,
+  "max_slots": 14,
+  "life_years": 5.0,
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4,
+   5,
+   6,
+   7
+  ],
+  "prediction": {
+   "claim": "degree of heterogeneity shrinks as grid carbon intensity falls",
+   "ntypes_clean": 2.0,
+   "ntypes_dirty": 2.125,
+   "ndev_clean": 12.75,
+   "ndev_dirty": 13.75,
+   "holds_weakly": true,
+   "holds_strictly": true
+  },
+  "sensitivity_factor_two": [
+   {
+    "intensity_gco2e_per_kwh": 20,
+    "0.5": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 36.86863420337772,
+     "sd_saving_pct": 0.8097978883029439,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    },
+    "1.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 34.58656843806144,
+     "sd_saving_pct": 0.7234884254725534,
+     "mean_ndev": 12.75,
+     "mean_ntypes": 2.0
+    },
+    "2.0": {
+     "modal_fleet": "1xL4 + 7xL40S",
+     "mean_saving_pct": 34.018950694185826,
+     "sd_saving_pct": 1.171806283345506,
+     "mean_ndev": 7.75,
+     "mean_ntypes": 1.625
+    }
+   },
+   {
+    "intensity_gco2e_per_kwh": 50,
+    "0.5": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 38.67771490259903,
+     "sd_saving_pct": 0.8686077959769214,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    },
+    "1.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 37.43486731062392,
+     "sd_saving_pct": 0.8231684610367674,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    },
+    "2.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 35.41413965711672,
+     "sd_saving_pct": 0.741029156489738,
+     "mean_ndev": 13.375,
+     "mean_ntypes": 2.0
+    }
+   },
+   {
+    "intensity_gco2e_per_kwh": 100,
+    "0.5": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.36174875912082,
+     "sd_saving_pct": 0.9019124356143717,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    },
+    "1.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 38.67771490259903,
+     "sd_saving_pct": 0.8686077959769214,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    },
+    "2.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 37.43486731062392,
+     "sd_saving_pct": 0.8231684610367674,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    }
+   },
+   {
+    "intensity_gco2e_per_kwh": 150,
+    "0.5": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.60008660025046,
+     "sd_saving_pct": 0.914727667885601,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    },
+    "1.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.12868861795889,
+     "sd_saving_pct": 0.8899681653897664,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    },
+    "2.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 38.24586528291378,
+     "sd_saving_pct": 0.8504739820988562,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    }
+   },
+   {
+    "intensity_gco2e_per_kwh": 200,
+    "0.5": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.7212910465276,
+     "sd_saving_pct": 0.921468420131451,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    },
+    "1.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.36174875912082,
+     "sd_saving_pct": 0.9019124356143717,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    },
+    "2.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 38.67771490259903,
+     "sd_saving_pct": 0.8686077959769214,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    }
+   },
+   {
+    "intensity_gco2e_per_kwh": 300,
+    "0.5": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.84535462173871,
+     "sd_saving_pct": 0.9248904717495426,
+     "mean_ndev": 13.75,
+     "mean_ntypes": 2.125
+    },
+    "1.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.60008660025046,
+     "sd_saving_pct": 0.914727667885601,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    },
+    "2.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.12868861795889,
+     "sd_saving_pct": 0.8899681653897664,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    }
+   },
+   {
+    "intensity_gco2e_per_kwh": 400,
+    "0.5": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.9088973853256,
+     "sd_saving_pct": 0.9243219530465484,
+     "mean_ndev": 13.75,
+     "mean_ntypes": 2.125
+    },
+    "1.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.7212910465276,
+     "sd_saving_pct": 0.921468420131451,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    },
+    "2.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.36174875912082,
+     "sd_saving_pct": 0.9019124356143717,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    }
+   },
+   {
+    "intensity_gco2e_per_kwh": 500,
+    "0.5": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.9471983314275,
+     "sd_saving_pct": 0.9239992871319689,
+     "mean_ndev": 13.75,
+     "mean_ntypes": 2.125
+    },
+    "1.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.7947815403827,
+     "sd_saving_pct": 0.9253725979794618,
+     "mean_ndev": 13.75,
+     "mean_ntypes": 2.125
+    },
+    "2.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.504106708836886,
+     "sd_saving_pct": 0.9094957198653167,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    }
+   },
+   {
+    "intensity_gco2e_per_kwh": 600,
+    "0.5": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.97280575273257,
+     "sd_saving_pct": 0.9237919450336871,
+     "mean_ndev": 13.75,
+     "mean_ntypes": 2.125
+    },
+    "1.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.84535462173871,
+     "sd_saving_pct": 0.9248904717495426,
+     "mean_ndev": 13.75,
+     "mean_ntypes": 2.125
+    },
+    "2.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.60008660025046,
+     "sd_saving_pct": 0.914727667885601,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    }
+   },
+   {
+    "intensity_gco2e_per_kwh": 700,
+    "0.5": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.991132880309564,
+     "sd_saving_pct": 0.9236476747442959,
+     "mean_ndev": 13.75,
+     "mean_ntypes": 2.125
+    },
+    "1.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.88162018793423,
+     "sd_saving_pct": 0.9245609245438583,
+     "mean_ndev": 13.75,
+     "mean_ntypes": 2.125
+    },
+    "2.0": {
+     "modal_fleet": "10xL4 + 4xL40S",
+     "mean_saving_pct": 39.669177689586476,
+     "sd_saving_pct": 0.9185520592195643,
+     "mean_ndev": 13.625,
+     "mean_ntypes": 2.125
+    }
+   }
+  ]
+ },
+ "horizon_screen": {
+  "n_feasible_1h": 4368,
+  "n_feasible_24h": 3099,
+  "paper_fleet": "4xL4 + 6xL40S",
+  "paper_fleet_delay_1h_s": 15.0058494048766,
+  "paper_fleet_delay_24h_s": 93.4330644228286,
+  "note": "fleet selection on a one-hour replay is a transient screen; the 24-hour screen is stricter and is what G3 uses."
+ },
+ "G1b_24h": {
+  "rows": [
+   {
+    "intensity_gco2e_per_kwh": 20,
+    "modal_fleet": "8xL4 + 5xL40S",
+    "mean_ntypes": 2.0,
+    "mean_ndev": 13.0,
+    "mean_saving_pct": 32.72977413033513,
+    "sd_saving_pct": 0.05234332494107989,
+    "per_seed_fleets": [
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S"
+    ],
+    "per_seed_saving_pct": [
+     32.69664509425083,
+     32.675613412311435,
+     32.78718134735785,
+     32.75965666742039
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 50,
+    "modal_fleet": "8xL4 + 5xL40S",
+    "mean_ntypes": 2.0,
+    "mean_ndev": 13.0,
+    "mean_saving_pct": 35.32286903409356,
+    "sd_saving_pct": 0.05774684508415973,
+    "per_seed_fleets": [
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S"
+    ],
+    "per_seed_saving_pct": [
+     35.276513611069674,
+     35.27097734543843,
+     35.38495936053495,
+     35.35902581933118
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 100,
+    "modal_fleet": "8xL4 + 5xL40S",
+    "mean_ntypes": 2.0,
+    "mean_ndev": 13.0,
+    "mean_saving_pct": 36.41130713759995,
+    "sd_saving_pct": 0.059973533541309125,
+    "per_seed_fleets": [
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S"
+    ],
+    "per_seed_saving_pct": [
+     36.358739365004816,
+     36.3614899468316,
+     36.47482866229317,
+     36.450170576270196
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 150,
+    "modal_fleet": "8xL4 + 5xL40S",
+    "mean_ntypes": 2.0,
+    "mean_ndev": 13.0,
+    "mean_saving_pct": 36.80616331997914,
+    "sd_saving_pct": 0.06079186874380777,
+    "per_seed_fleets": [
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S"
+    ],
+    "per_seed_saving_pct": [
+     36.75124530452452,
+     36.75726282036606,
+     36.87012588819465,
+     36.84601926683135
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 200,
+    "modal_fleet": "8xL4 + 5xL40S",
+    "mean_ntypes": 2.0,
+    "mean_ndev": 13.0,
+    "mean_saving_pct": 37.01020320185379,
+    "sd_saving_pct": 0.061218465354451315,
+    "per_seed_fleets": [
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S"
+    ],
+    "per_seed_saving_pct": [
+     36.95405056164391,
+     36.96181064937539,
+     37.07437736754888,
+     37.050574228847005
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 300,
+    "modal_fleet": "8xL4 + 5xL40S",
+    "mean_ntypes": 2.0,
+    "mean_ndev": 13.0,
+    "mean_saving_pct": 37.21884999171977,
+    "sd_saving_pct": 0.06165784420774005,
+    "per_seed_fleets": [
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S"
+    ],
+    "per_seed_saving_pct": [
+     37.16142065287082,
+     37.17100099338992,
+     37.28322903926238,
+     37.25974928135597
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 400,
+    "modal_fleet": "8xL4 + 5xL40S",
+    "mean_ntypes": 2.0,
+    "mean_ndev": 13.0,
+    "mean_saving_pct": 37.32495001240214,
+    "sd_saving_pct": 0.061882628579805164,
+    "per_seed_fleets": [
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S"
+    ],
+    "per_seed_saving_pct": [
+     37.266865946664176,
+     37.27738678197075,
+     37.38942878777412,
+     37.36611853319954
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 500,
+    "modal_fleet": "8xL4 + 5xL40S",
+    "mean_ntypes": 2.0,
+    "mean_ndev": 13.25,
+    "mean_saving_pct": 37.39010971136217,
+    "sd_saving_pct": 0.06285785475667816,
+    "per_seed_fleets": [
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "9xL4 + 5xL40S"
+    ],
+    "per_seed_saving_pct": [
+     37.33070791672327,
+     37.341803064174734,
+     37.45372789982684,
+     37.43419996472383
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 600,
+    "modal_fleet": "9xL4 + 5xL40S",
+    "mean_ntypes": 2.0,
+    "mean_ndev": 13.75,
+    "mean_saving_pct": 37.43991513390036,
+    "sd_saving_pct": 0.06382111928911968,
+    "per_seed_fleets": [
+     "9xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "9xL4 + 5xL40S",
+     "9xL4 + 5xL40S"
+    ],
+    "per_seed_saving_pct": [
+     37.38465322288861,
+     37.384993719721415,
+     37.50129101016262,
+     37.4887225828288
+    ]
+   },
+   {
+    "intensity_gco2e_per_kwh": 700,
+    "modal_fleet": "9xL4 + 5xL40S",
+    "mean_ntypes": 2.0,
+    "mean_ndev": 13.75,
+    "mean_saving_pct": 37.476882000534616,
+    "sd_saving_pct": 0.0662883361815244,
+    "per_seed_fleets": [
+     "9xL4 + 5xL40S",
+     "8xL4 + 5xL40S",
+     "9xL4 + 5xL40S",
+     "9xL4 + 5xL40S"
+    ],
+    "per_seed_saving_pct": [
+     37.423445137059744,
+     37.41596579895167,
+     37.540296994562894,
+     37.527820071564165
+    ]
+   }
+  ],
+  "seeds": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "ntypes_clean": 2.0,
+  "ntypes_dirty": 2.0,
+  "ndev_clean": 13.0,
+  "ndev_dirty": 13.75
+ },
+ "G3": {
+  "profile": {
+   "shape": "sinusoid, minimum at the solar peak",
+   "mean_gco2e_per_kwh": 400.0,
+   "amplitude": 0.4,
+   "peak_to_trough": 2.3333333333333335,
+   "trough_hour": 14.0,
+   "period_s": 86400.0,
+   "status": "ILLUSTRATIVE ASSUMPTION, not fitted to any grid"
+  },
+  "horizon_s": 86400.0,
+  "seeds": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "sla_s": 60.0,
+  "reference_fleet": "10xA100-40GB",
+  "energy_fleet": "9xL4 + 5xL40S",
+  "carbon_fleet": "8xL4 + 5xL40S",
+  "placement_pool": "1xT4 + 7xL4 + 1xA10G + 4xL40S + 1xA100-40GB",
+  "shiftable_carbon_fraction": 0.6728116345644728,
+  "levers": {
+   "composition_carbon": {
+    "mean_pct": 37.318940108989516,
+    "sd_pct": 0.07457075774315589,
+    "per_seed": [
+     37.2413193399894,
+     37.269522684992666,
+     37.39100253377811,
+     37.37391587719789
+    ]
+   },
+   "composition_energy": {
+    "mean_pct": 37.29440677872195,
+    "sd_pct": 0.08044200941084138,
+    "per_seed": [
+     37.22627775527632,
+     37.2232321372306,
+     37.3651991537472,
+     37.36291806863368
+    ]
+   },
+   "placement_spatial": {
+    "mean_pct": 0.7039162890632124,
+    "sd_pct": 0.034535886423613535,
+    "per_seed": [
+     0.6862890155160644,
+     0.7556593828149875,
+     0.6848373352495933,
+     0.6888794226722045
+    ]
+   },
+   "placement_temporal": {
+    "mean_pct": 0.03628179264350627,
+    "sd_pct": 0.0009711381280007821,
+    "per_seed": [
+     0.035200389569317606,
+     0.037130308705027586,
+     0.0370738090530531,
+     0.035722663246626804
+    ]
+   },
+   "placement_temporal_bound": {
+    "mean_pct": 0.04103256528676254,
+    "sd_pct": 0.010618034741431965,
+    "per_seed": [
+     0.04411173440776188,
+     0.032518062938879294,
+     0.032762089906234144,
+     0.05473837389417484
+    ]
+   }
+  },
+  "per_seed": [
+   {
+    "seed": 0,
+    "njobs": 43368,
+    "ref_g_per_job": 0.7811212409887619,
+    "ref_delay_s": 59.94066156582047,
+    "carbon_composition_g": 0.49022138519964886,
+    "carbon_composition_delay_s": 31.596561347372546,
+    "energy_composition_g": 0.49033887821282407,
+    "pool_fastest_g": 0.5307680436729236,
+    "pool_energy_g": 0.5271254408913268,
+    "pool_static_g": 0.16004427227448811,
+    "pool_dynamic_g": 0.35532937638853607,
+    "pool_embodied_g": 0.011751792228302683,
+    "temporal_policy_dyn_g": 0.3551438261798234,
+    "temporal_bound_dyn_g": 0.35509685221405435,
+    "temporal_mean_shift_s": 27.41584560059493,
+    "temporal_mean_delay_s": 61.91037089833499,
+    "baseline_mean_delay_s": 34.494525297740516
+   },
+   {
+    "seed": 1,
+    "njobs": 43223,
+    "ref_g_per_job": 0.7776710734026677,
+    "ref_delay_s": 43.291635477370995,
+    "carbon_composition_g": 0.4878367762862345,
+    "carbon_composition_delay_s": 22.44231871478811,
+    "energy_composition_g": 0.4881967644858997,
+    "pool_fastest_g": 0.5285224646648531,
+    "pool_energy_g": 0.5245286350703281,
+    "pool_static_g": 0.16058117206117115,
+    "pool_dynamic_g": 0.35215624709732696,
+    "pool_embodied_g": 0.011791215911830062,
+    "temporal_policy_dyn_g": 0.35196148799587906,
+    "temporal_bound_dyn_g": 0.35198568054564233,
+    "temporal_mean_shift_s": 30.133420758055106,
+    "temporal_mean_delay_s": 54.46039638342853,
+    "baseline_mean_delay_s": 24.32697562537348
+   },
+   {
+    "seed": 2,
+    "njobs": 43198,
+    "ref_g_per_job": 0.7849835571632174,
+    "ref_delay_s": 48.4629990288535,
+    "carbon_composition_g": 0.4914703354145773,
+    "carbon_composition_delay_s": 22.884781423935593,
+    "energy_composition_g": 0.4916728877050123,
+    "pool_fastest_g": 0.5324349479225303,
+    "pool_energy_g": 0.5287886346132401,
+    "pool_static_g": 0.16067410528265197,
+    "pool_dynamic_g": 0.35631648948251576,
+    "pool_embodied_g": 0.011798039848072383,
+    "temporal_policy_dyn_g": 0.35612044739382503,
+    "temporal_bound_dyn_g": 0.3561432472746298,
+    "temporal_mean_shift_s": 30.384167604851072,
+    "temporal_mean_delay_s": 55.6005604572951,
+    "baseline_mean_delay_s": 25.216392852444155
+   },
+   {
+    "seed": 3,
+    "njobs": 43183,
+    "ref_g_per_job": 0.7808238983153034,
+    "ref_delay_s": 53.883714500103835,
+    "carbon_composition_g": 0.4889994314098847,
+    "carbon_composition_delay_s": 27.044010889559942,
+    "energy_composition_g": 0.489085304927445,
+    "pool_fastest_g": 0.5295734668662855,
+    "pool_energy_g": 0.5259253442251118,
+    "pool_static_g": 0.16072991686543317,
+    "pool_dynamic_g": 0.3533932893572927,
+    "pool_embodied_g": 0.011802138002385911,
+    "temporal_policy_dyn_g": 0.3532054148176465,
+    "temporal_bound_dyn_g": 0.35310540637596655,
+    "temporal_mean_shift_s": 32.53444032149741,
+    "temporal_mean_delay_s": 62.999093694205484,
+    "baseline_mean_delay_s": 30.46465337270655
+   }
+  ],
+  "slack_sweep": [
+   {
+    "slack_s": 60.0,
+    "policy_saving_pct": 0.035200389569317606,
+    "bound_saving_pct": 0.04411173440776188,
+    "mean_shift_s": 27.41584560059493,
+    "mean_delay_s": 61.91037089833499
+   },
+   {
+    "slack_s": 300.0,
+    "policy_saving_pct": 0.1644965152550455,
+    "bound_saving_pct": 0.1921011894010839,
+    "mean_shift_s": 173.58188249142148,
+    "mean_delay_s": 208.0764077891581
+   },
+   {
+    "slack_s": 1800.0,
+    "policy_saving_pct": 0.5281833225066652,
+    "bound_saving_pct": 1.1167975853533605,
+    "mean_shift_s": 1389.6815996829498,
+    "mean_delay_s": 1424.176124980661
+   },
+   {
+    "slack_s": 3600.0,
+    "policy_saving_pct": 0.5366486356375871,
+    "bound_saving_pct": 2.2250004016524536,
+    "mean_shift_s": 3082.912805899525,
+    "mean_delay_s": 3117.4073311972106
+   },
+   {
+    "slack_s": 14400.0,
+    "policy_saving_pct": 0.43994172322548847,
+    "bound_saving_pct": 8.721962499545532,
+    "mean_shift_s": 13983.063301019474,
+    "mean_delay_s": 14017.557826317176
+   },
+   {
+    "slack_s": 28800.0,
+    "policy_saving_pct": 0.6431845255765883,
+    "bound_saving_pct": 16.336892455846666,
+    "mean_shift_s": 28216.14090006014,
+    "mean_delay_s": 28250.63542535741
+   },
+   {
+    "slack_s": 43200.0,
+    "policy_saving_pct": 0.6204181902398396,
+    "bound_saving_pct": 21.996736123359156,
+    "mean_shift_s": 42680.22630905619,
+    "mean_delay_s": 42714.72083435376
+   }
+  ],
+  "mechanism_check": {
+   "period_s": 3600.0,
+   "slack_s": 1800.0,
+   "saving_pct": 0.8732744109118326
+  },
+  "slack_to_match_composition_s": null
+ },
+ "embodied": {
+  "anchor": {
+   "source": "NVIDIA HGX H100 product carbon footprint summary, ISO 14067, third-party reviewed; cited as reference [53] in the paper",
+   "value_kg": 1312.0,
+   "gpus": 8,
+   "per_gpu_kg": 164.0,
+   "scope": "eight-GPU HGX baseboard, cradle-to-gate, host server excluded"
+  },
+  "pcf_component_split_kg": {
+   "memory": 546.0,
+   "ics": 332.0,
+   "thermal": 230.0,
+   "electromechanical": 52.0,
+   "common": 10.6,
+   "pcb": 9.0,
+   "interconnect": 4.8,
+   "mechanical": 7.4
+  },
+  "pcf_uplift": 1.1008558482966941,
+  "rule": "E = uplift * (CPA(node)*die_area + IC_OVERHEAD + mem_kg_per_gb*mem_gb + THERMAL_KG_PER_W*tdp + CARD_FIXED), every term calibrated against the HGX H100 PCF component split",
+  "cpa_source": "ACT (Gupta et al., ISCA 2022) via CarbonClarity (arXiv:2507.01145): 1.18 kg CO2e/cm2 at 28nm, 2.52 at 7nm, sigma 0.99 at 7nm",
+  "cpa_kg_per_cm2": {
+   "4": 3.4231012551631577,
+   "7": 2.52,
+   "8": 2.3423968696833137,
+   "12": 1.876214492663292,
+   "28": 1.18
+  },
+  "cpa_exponent": -0.5473184370690377,
+  "mem_kg_per_gb": {
+   "HBM3": 0.853125,
+   "HBM2": 0.853125,
+   "GDDR6": 0.4265625
+  },
+  "gddr_to_hbm_ratio": 0.5,
+  "ic_overhead_kg": 13.635955782971894,
+  "thermal_kg_per_w": 0.04107142857142857,
+  "card_fixed_kg": 10.475,
+  "die": {
+   "T4": {
+    "chip": "TU104",
+    "area_mm2": 545.0,
+    "node_nm": 12,
+    "node": "TSMC 12FFC",
+    "mem_gb": 16,
+    "mem": "GDDR6",
+    "tdp": 70,
+    "tdp_src": "NVIDIA T4 product brief (verified)"
+   },
+   "L4": {
+    "chip": "AD104",
+    "area_mm2": 294.0,
+    "node_nm": 4,
+    "node": "TSMC 4N",
+    "mem_gb": 24,
+    "mem": "GDDR6",
+    "tdp": 72,
+    "tdp_src": "NVIDIA L4 product page (verified)"
+   },
+   "A10G": {
+    "chip": "GA102",
+    "area_mm2": 628.4,
+    "node_nm": 8,
+    "node": "Samsung 8N",
+    "mem_gb": 24,
+    "mem": "GDDR6",
+    "tdp": 150,
+    "tdp_src": "NVIDIA A10 datasheet (verified); the AWS A10G SKU may run higher, unverified"
+   },
+   "L40S": {
+    "chip": "AD102",
+    "area_mm2": 608.4,
+    "node_nm": 4,
+    "node": "TSMC 4N",
+    "mem_gb": 48,
+    "mem": "GDDR6",
+    "tdp": 350,
+    "tdp_src": "NVIDIA L40S, datasheet URL did not resolve; UNVERIFIED"
+   },
+   "A100-40GB": {
+    "chip": "GA100",
+    "area_mm2": 826.0,
+    "node_nm": 7,
+    "node": "TSMC N7",
+    "mem_gb": 40,
+    "mem": "HBM2",
+    "tdp": 400,
+    "tdp_src": "NVIDIA A100 SXM datasheet (verified)"
+   },
+   "H100": {
+    "chip": "GH100",
+    "area_mm2": 814.0,
+    "node_nm": 4,
+    "node": "TSMC 4N",
+    "mem_gb": 80,
+    "mem": "HBM3",
+    "tdp": 700,
+    "tdp_src": "NVIDIA H100 SXM5 (verified)"
+   }
+  },
+  "cross_check": "EcoServe (arXiv:2502.05043) states an L4 has about 3x lower embodied carbon than an H100; the model was not fitted to this",
+  "per_device": {
+   "T4": {
+    "kg": 48.47764565833087,
+    "die_kg": 11.256657248145329,
+    "ic_overhead_kg": 15.011221670799737,
+    "mem_kg": 7.513341164624937,
+    "thermal_kg": 3.1649605638529956,
+    "fixed_kg": 11.531465010907871,
+    "chip": "TU104",
+    "node": "TSMC 12FFC",
+    "area_mm2": 545.0,
+    "mem_gb": 16,
+    "mem_type": "GDDR6",
+    "tdp_w": 70,
+    "tdp_source": "NVIDIA T4 product brief (verified)",
+    "method": "EXTRAPOLATED from the HGX H100 PCF component split with ACT die-area carbon"
+   },
+   "L4": {
+    "kg": 52.14700908319039,
+    "die_kg": 11.078922646010863,
+    "ic_overhead_kg": 15.011221670799737,
+    "mem_kg": 11.270011746937406,
+    "thermal_kg": 3.25538800853451,
+    "fixed_kg": 11.531465010907871,
+    "chip": "AD104",
+    "node": "TSMC 4N",
+    "area_mm2": 294.0,
+    "mem_gb": 24,
+    "mem_type": "GDDR6",
+    "tdp_w": 72,
+    "tdp_source": "NVIDIA L4 product page (verified)",
+    "method": "EXTRAPOLATED from the HGX H100 PCF component split with ACT die-area carbon"
+   },
+   "A10G": {
+    "kg": 60.79893866511351,
+    "die_kg": 16.20418188535493,
+    "ic_overhead_kg": 15.011221670799737,
+    "mem_kg": 11.270011746937406,
+    "thermal_kg": 6.782058351113562,
+    "fixed_kg": 11.531465010907871,
+    "chip": "GA102",
+    "node": "Samsung 8N",
+    "area_mm2": 628.4,
+    "mem_gb": 24,
+    "mem_type": "GDDR6",
+    "tdp_w": 150,
+    "tdp_source": "NVIDIA A10 datasheet (verified); the AWS A10G SKU may run higher, unverified",
+    "method": "EXTRAPOLATED from the HGX H100 PCF component split with ACT die-area carbon"
+   },
+   "L40S": {
+    "kg": 87.83409985822497,
+    "die_kg": 22.92658686337758,
+    "ic_overhead_kg": 15.011221670799737,
+    "mem_kg": 22.540023493874813,
+    "thermal_kg": 15.824802819264978,
+    "fixed_kg": 11.531465010907871,
+    "chip": "AD102",
+    "node": "TSMC 4N",
+    "area_mm2": 608.4,
+    "mem_gb": 48,
+    "mem_type": "GDDR6",
+    "tdp_w": 350,
+    "tdp_source": "NVIDIA L40S, datasheet URL did not resolve; UNVERIFIED",
+    "method": "EXTRAPOLATED from the HGX H100 PCF component split with ACT die-area carbon"
+   },
+   "A100-40GB": {
+    "kg": 105.10941609460048,
+    "die_kg": 22.91453465346535,
+    "ic_overhead_kg": 15.011221670799737,
+    "mem_kg": 37.566705823124686,
+    "thermal_kg": 18.08548893630283,
+    "fixed_kg": 11.531465010907871,
+    "chip": "GA100",
+    "node": "TSMC N7",
+    "area_mm2": 826.0,
+    "mem_gb": 40,
+    "mem_type": "HBM2",
+    "tdp_w": 400,
+    "tdp_source": "NVIDIA A100 SXM datasheet (verified)",
+    "method": "EXTRAPOLATED from the HGX H100 PCF component split with ACT die-area carbon"
+   },
+   "H100": {
+    "kg": 164.0,
+    "die_kg": 30.67429603351307,
+    "ic_overhead_kg": 15.011221670799737,
+    "mem_kg": 75.13341164624937,
+    "thermal_kg": 31.649605638529955,
+    "fixed_kg": 11.531465010907871,
+    "chip": "GH100",
+    "node": "TSMC 4N",
+    "area_mm2": 814.0,
+    "mem_gb": 80,
+    "mem_type": "HBM3",
+    "tdp_w": 700,
+    "tdp_source": "NVIDIA H100 SXM5 (verified)",
+    "method": "VENDOR ANCHOR (NVIDIA HGX H100 PCF / 8)"
+   }
+  },
+  "caveat": "Every per-device figure for the five accelerators in the fleet is an EXTRAPOLATION from the single published anchor, not a vendor figure. The factor-of-two sensitivity sweep is the load-bearing result, not the point estimate."
+ },
+ "sanity": [
+  {
+   "check": "E1 the component model reproduces the published H100 anchor",
+   "passed": true,
+   "detail": "model 164.0 kg vs anchor 164.0 kg per H100"
+  },
+  {
+   "check": "E2 the L4-to-H100 embodied ratio matches the independent EcoServe estimate",
+   "passed": true,
+   "detail": "model gives 3.14x; EcoServe (arXiv:2502.05043) states an L4 has about 3x lower embodied carbon than an H100, a figure the model was not fitted to"
+  },
+  {
+   "check": "S0 fast simulator reproduces the stored published 10-slot optimum bit for bit",
+   "passed": true,
+   "detail": "4xL4 + 6xL40S at 4391.351705 J/job (stored 4391.351705), delay 15.005849s (stored 15.005849), reference 6626.180142 J/job (stored 6626.180142), saving 33.7273% (stored v_grand 33.7273%); 169 of 1001 ten-slot fleets feasible"
+  },
+  {
+   "check": "S1 with zero embodied carbon the carbon optimum IS the energy optimum",
+   "passed": true,
+   "detail": "identical fleet at all 10 intensities x 8 seeds; max saving discrepancy 1.42e-14 pp"
+  },
+  {
+   "check": "S2 at a coal-heavy grid the carbon optimum converges to the energy optimum",
+   "passed": true,
+   "detail": "8/8 seeds agree at 700 gCO2e/kWh, against 5/8 at 20 gCO2e/kWh"
+  },
+  {
+   "check": "S3 device count of the carbon optimum is non-decreasing in grid intensity",
+   "passed": true,
+   "detail": "no violation across 8 seeds x 9 intensity steps"
+  },
+  {
+   "check": "S4 neither argmin is beaten on its own objective",
+   "passed": true,
+   "detail": "checked 80 seed-intensity cells"
+  },
+  {
+   "check": "S5 every reported carbon-optimal fleet meets the 60-second constraint",
+   "passed": true,
+   "detail": "worst mean delay across all reported optima 56.0s"
+  },
+  {
+   "check": "SENS heterogeneity and a positive carbon saving survive a factor-of-two error in the embodied table in either direction",
+   "passed": true,
+   "detail": "over 10 intensities x 3 embodied scalings: minimum distinct types 1.62, minimum saving 34.0%"
+  },
+  {
+   "check": "S6 the one-hour SLA screen is not a steady-state screen",
+   "passed": true,
+   "detail": "the published optimum 4xL4 + 6xL40S has mean delay 15.0s at one hour and 93.4s at 24 hours, breaching the same 60-second constraint; 1269 of 4368 one-hour-feasible fleets fail the 24-hour screen"
+  },
+  {
+   "check": "S3b device count is non-decreasing in grid intensity on the 24-hour screen too",
+   "passed": true,
+   "detail": "monotone over 9 intensity steps"
+  },
+  {
+   "check": "T1 under a constant grid intensity temporal shifting is worth exactly zero",
+   "passed": true,
+   "detail": "relative carbon difference 0.00e+00, mean shift applied 0.00e+00s"
+  },
+  {
+   "check": "T2 the shifting mechanism is alive: with a one-hour intensity period and a 30-minute slack it captures most of the available swing",
+   "passed": false,
+   "detail": "0.9% of the shiftable carbon removed (ceiling 40.0% at an amplitude of 0.40), mean shift 1772s; the same code returns 0.035% on the diurnal profile at a 60-second slack, so that number is the profile's flatness and not a no-op"
+  },
+  {
+   "check": "T3 the temporal-shifting upper bound is non-decreasing in deadline slack",
+   "passed": true,
+   "detail": "monotone over 7 slack levels from 60s to 12h"
+  },
+  {
+   "check": "T4 the capacity-free bound dominates the capacity-respecting policy",
+   "passed": true,
+   "detail": "bound >= policy at all 7 slack levels"
+  },
+  {
+   "check": "T5 the carbon-aware temporal policy never breaches the delay constraint",
+   "passed": false,
+   "detail": "mean delay 61.91s at the 60-second slack against 34.49s for the unshifted baseline on the same fleet"
+  }
+ ]
+}

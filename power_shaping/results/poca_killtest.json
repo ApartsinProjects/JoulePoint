@@ -1,0 +1,392 @@
+{
+  "provenance": "real:emerald/dvfs_sweep.csv",
+  "n_workload_types": 8,
+  "n_pool": 40,
+  "total_base_w": 14665.138779403804,
+  "feasible_min_w": 3982.5678500215636,
+  "heterogeneity": {
+    "q_at_50pct_power_by_type": {
+      "ft_llama_8b_dolly": 0.6700312065621737,
+      "ft_llama_8b_p3": 0.6457713614322473,
+      "infer_llama_8b": 0.7205047331623835,
+      "infer_llama_8b_32g": 0.7208080737492499,
+      "infer_llama_8b_48g": 0.7208080737492502,
+      "pt_mpt_13b_lg": 0.5992834037923581,
+      "pt_mpt_13b_sm": 0.6042180624167157,
+      "pt_mpt_7b_fast": 0.6049539595143607
+    },
+    "spread": 0.12152466995689204,
+    "min": 0.5992834037923581,
+    "max": 0.7208080737492502
+  },
+  "invariants": {
+    "pass": true,
+    "messages": [
+      "INV-2 ok frac=0.9: homogeneous headroom 0.000% (expect ~0)",
+      "INV-2 ok frac=0.8: homogeneous headroom 0.000% (expect ~0)",
+      "INV-2 ok frac=0.75: homogeneous headroom 0.000% (expect ~0)"
+    ]
+  },
+  "static": [
+    {
+      "curtailment_pct": 5,
+      "cap_frac": 0.95,
+      "feasible": true,
+      "cap_w": 13931.881840433613,
+      "total_base_w": 14665.138779403804,
+      "B0_none": {
+        "cost": 0.0,
+        "power_w": 14665.138779403804,
+        "violation_w": 733.2569389701912,
+        "shed_w": 0.0
+      },
+      "B1_uniform": {
+        "cost": 1.589031968266383,
+        "power_w": 13931.881840433613,
+        "violation_w": 0.0,
+        "shed_w": 733.2569389701912
+      },
+      "B2_priority": {
+        "cost": 1.9417514602335717,
+        "power_w": 13931.88184043361,
+        "violation_w": 0.0,
+        "shed_w": 733.256938970193
+      },
+      "B3_largest_power": {
+        "cost": 1.9000079063845352,
+        "power_w": 13931.88184043361,
+        "violation_w": 0.0,
+        "shed_w": 733.256938970193
+      },
+      "B4_static_class": {
+        "cost": 1.9417514602335717,
+        "power_w": 13931.88184043361,
+        "violation_w": 0.0,
+        "shed_w": 733.256938970193
+      },
+      "B5g_shared_elasticity": {
+        "cost": 1.187674491517605,
+        "power_w": 13931.881840433507,
+        "violation_w": 0.0,
+        "shed_w": 733.2569389702967
+      },
+      "B5_profiled": {
+        "cost": 1.0607124671043293,
+        "power_w": 13931.881840433443,
+        "violation_w": 0.0,
+        "shed_w": 733.2569389703604
+      },
+      "B6_oracle": {
+        "cost": 1.043690078713232,
+        "power_w": 13930.445641486544,
+        "violation_w": 0.0,
+        "shed_w": 734.6931379172602
+      },
+      "profiled_gain_vs_uniform_pct": 33.247883724985385,
+      "oracle_gain_vs_uniform_pct": 34.31912638913824,
+      "priority_capture_of_oracle_pct": -64.67859864134121,
+      "shared_elasticity_capture_pct": 73.59740457085503,
+      "per_workload_elasticity_gain_pct": 12.123221794583666
+    },
+    {
+      "curtailment_pct": 10,
+      "cap_frac": 0.9,
+      "feasible": true,
+      "cap_w": 13198.624901463423,
+      "total_base_w": 14665.138779403804,
+      "B0_none": {
+        "cost": 0.0,
+        "power_w": 14665.138779403804,
+        "violation_w": 1466.5138779403806,
+        "shed_w": 0.0
+      },
+      "B1_uniform": {
+        "cost": 3.2022503876699226,
+        "power_w": 13198.624901463429,
+        "violation_w": 5.4569682106375694e-12,
+        "shed_w": 1466.513877940375
+      },
+      "B2_priority": {
+        "cost": 4.149347536924812,
+        "power_w": 13198.624901463421,
+        "violation_w": 0.0,
+        "shed_w": 1466.5138779403824
+      },
+      "B3_largest_power": {
+        "cost": 4.142190567117446,
+        "power_w": 13198.624901463421,
+        "violation_w": 0.0,
+        "shed_w": 1466.5138779403824
+      },
+      "B4_static_class": {
+        "cost": 4.149347536924812,
+        "power_w": 13198.624901463421,
+        "violation_w": 0.0,
+        "shed_w": 1466.5138779403824
+      },
+      "B5g_shared_elasticity": {
+        "cost": 2.18953750108908,
+        "power_w": 13198.624901463301,
+        "violation_w": 0.0,
+        "shed_w": 1466.5138779405024
+      },
+      "B5_profiled": {
+        "cost": 2.275859238434619,
+        "power_w": 13198.624901463167,
+        "violation_w": 0.0,
+        "shed_w": 1466.513877940637
+      },
+      "B6_oracle": {
+        "cost": 2.1724165688839263,
+        "power_w": 13198.241836330464,
+        "violation_w": 0.0,
+        "shed_w": 1466.8969430733396
+      },
+      "profiled_gain_vs_uniform_pct": 28.929378939333372,
+      "oracle_gain_vs_uniform_pct": 32.15969065852286,
+      "priority_capture_of_oracle_pct": -91.96601742709908,
+      "shared_elasticity_capture_pct": 98.33750534379067,
+      "per_workload_elasticity_gain_pct": 0.7819428622089266
+    },
+    {
+      "curtailment_pct": 15,
+      "cap_frac": 0.85,
+      "feasible": true,
+      "cap_w": 12465.367962493232,
+      "total_base_w": 14665.138779403804,
+      "B0_none": {
+        "cost": 0.0,
+        "power_w": 14665.138779403804,
+        "violation_w": 2199.7708169105717,
+        "shed_w": 0.0
+      },
+      "B1_uniform": {
+        "cost": 5.063395018159841,
+        "power_w": 12465.367962493232,
+        "violation_w": 0.0,
+        "shed_w": 2199.7708169105717
+      },
+      "B2_priority": {
+        "cost": 6.31525591466773,
+        "power_w": 12465.36796249323,
+        "violation_w": 0.0,
+        "shed_w": 2199.7708169105736
+      },
+      "B3_largest_power": {
+        "cost": 6.181074292122258,
+        "power_w": 12465.36796249323,
+        "violation_w": 0.0,
+        "shed_w": 2199.7708169105736
+      },
+      "B4_static_class": {
+        "cost": 6.31525591466773,
+        "power_w": 12465.36796249323,
+        "violation_w": 0.0,
+        "shed_w": 2199.7708169105736
+      },
+      "B5g_shared_elasticity": {
+        "cost": 3.7271389861583417,
+        "power_w": 12465.367962493054,
+        "violation_w": 0.0,
+        "shed_w": 2199.77081691075
+      },
+      "B5_profiled": {
+        "cost": 3.507039880820161,
+        "power_w": 12465.367962493041,
+        "violation_w": 0.0,
+        "shed_w": 2199.7708169107627
+      },
+      "B6_oracle": {
+        "cost": 3.4814286794878444,
+        "power_w": 12465.116624986642,
+        "violation_w": 0.0,
+        "shed_w": 2200.022154417162
+      },
+      "profiled_gain_vs_uniform_pct": 30.737383351640943,
+      "oracle_gain_vs_uniform_pct": 31.243194200695026,
+      "priority_capture_of_oracle_pct": -79.13321958283773,
+      "shared_elasticity_capture_pct": 84.46804456808087,
+      "per_workload_elasticity_gain_pct": 6.592464289177402
+    },
+    {
+      "curtailment_pct": 20,
+      "cap_frac": 0.8,
+      "feasible": true,
+      "cap_w": 11732.111023523044,
+      "total_base_w": 14665.138779403804,
+      "B0_none": {
+        "cost": 0.0,
+        "power_w": 14665.138779403804,
+        "violation_w": 2933.0277558807593,
+        "shed_w": 0.0
+      },
+      "B1_uniform": {
+        "cost": 6.916267527523647,
+        "power_w": 11732.111023523043,
+        "violation_w": 0.0,
+        "shed_w": 2933.027755880761
+      },
+      "B2_priority": {
+        "cost": 8.375581318864432,
+        "power_w": 11732.111023523044,
+        "violation_w": 0.0,
+        "shed_w": 2933.0277558807593
+      },
+      "B3_largest_power": {
+        "cost": 8.31306860310009,
+        "power_w": 11732.111023523043,
+        "violation_w": 0.0,
+        "shed_w": 2933.027755880761
+      },
+      "B4_static_class": {
+        "cost": 8.375581318864432,
+        "power_w": 11732.111023523044,
+        "violation_w": 0.0,
+        "shed_w": 2933.0277558807593
+      },
+      "B5g_shared_elasticity": {
+        "cost": 5.612675082272853,
+        "power_w": 11732.111023522817,
+        "violation_w": 0.0,
+        "shed_w": 2933.0277558809867
+      },
+      "B5_profiled": {
+        "cost": 5.037751147043618,
+        "power_w": 11732.111023522679,
+        "violation_w": 0.0,
+        "shed_w": 2933.027755881125
+      },
+      "B6_oracle": {
+        "cost": 5.037578556367432,
+        "power_w": 11732.111023524152,
+        "violation_w": 1.1077645467594266e-09,
+        "shed_w": 2933.0277558796515
+      },
+      "profiled_gain_vs_uniform_pct": 27.16084033771648,
+      "oracle_gain_vs_uniform_pct": 27.163335768604593,
+      "priority_capture_of_oracle_pct": -77.67724268071198,
+      "shared_elasticity_capture_pct": 69.38841209295624,
+      "per_workload_elasticity_gain_pct": 10.246389065381912
+    },
+    {
+      "curtailment_pct": 25,
+      "cap_frac": 0.75,
+      "feasible": true,
+      "cap_w": 10998.854084552853,
+      "total_base_w": 14665.138779403804,
+      "B0_none": {
+        "cost": 0.0,
+        "power_w": 14665.138779403804,
+        "violation_w": 3666.2846948509505,
+        "shed_w": 0.0
+      },
+      "B1_uniform": {
+        "cost": 9.050908733603915,
+        "power_w": 10998.854084552853,
+        "violation_w": 0.0,
+        "shed_w": 3666.2846948509505
+      },
+      "B2_priority": {
+        "cost": 10.616185074769996,
+        "power_w": 10998.854084552853,
+        "violation_w": 0.0,
+        "shed_w": 3666.2846948509505
+      },
+      "B3_largest_power": {
+        "cost": 10.606248084075178,
+        "power_w": 10998.854084552851,
+        "violation_w": 0.0,
+        "shed_w": 3666.2846948509523
+      },
+      "B4_static_class": {
+        "cost": 10.616185074769996,
+        "power_w": 10998.854084552853,
+        "violation_w": 0.0,
+        "shed_w": 3666.2846948509505
+      },
+      "B5g_shared_elasticity": {
+        "cost": 7.309019838804746,
+        "power_w": 10998.854084552466,
+        "violation_w": 0.0,
+        "shed_w": 3666.284694851338
+      },
+      "B5_profiled": {
+        "cost": 7.040723221974268,
+        "power_w": 10998.854084552435,
+        "violation_w": 0.0,
+        "shed_w": 3666.284694851369
+      },
+      "B6_oracle": {
+        "cost": 7.038118715929871,
+        "power_w": 10998.854084553761,
+        "violation_w": 9.076757123693824e-10,
+        "shed_w": 3666.284694850043
+      },
+      "profiled_gain_vs_uniform_pct": 22.209764464492903,
+      "oracle_gain_vs_uniform_pct": 22.238540647316704,
+      "priority_capture_of_oracle_pct": -77.76649960609878,
+      "shared_elasticity_capture_pct": 86.54101418945206,
+      "per_workload_elasticity_gain_pct": 3.7063946855995376
+    },
+    {
+      "curtailment_pct": 30,
+      "cap_frac": 0.7,
+      "feasible": true,
+      "cap_w": 10265.597145582662,
+      "total_base_w": 14665.138779403804,
+      "B0_none": {
+        "cost": 0.0,
+        "power_w": 14665.138779403804,
+        "violation_w": 4399.541633821142,
+        "shed_w": 0.0
+      },
+      "B1_uniform": {
+        "cost": 11.38344178153126,
+        "power_w": 10265.597145582664,
+        "violation_w": 1.8189894035458565e-12,
+        "shed_w": 4399.54163382114
+      },
+      "B2_priority": {
+        "cost": 13.166489805880419,
+        "power_w": 10265.597145582662,
+        "violation_w": 0.0,
+        "shed_w": 4399.541633821142
+      },
+      "B3_largest_power": {
+        "cost": 17.201301469975448,
+        "power_w": 10265.597145582662,
+        "violation_w": 0.0,
+        "shed_w": 4399.541633821142
+      },
+      "B4_static_class": {
+        "cost": 13.166489805880419,
+        "power_w": 10265.597145582662,
+        "violation_w": 0.0,
+        "shed_w": 4399.541633821142
+      },
+      "B5g_shared_elasticity": {
+        "cost": 9.58879470025706,
+        "power_w": 10265.597145582173,
+        "violation_w": 0.0,
+        "shed_w": 4399.541633821631
+      },
+      "B5_profiled": {
+        "cost": 9.44511428492871,
+        "power_w": 10265.597145582155,
+        "violation_w": 0.0,
+        "shed_w": 4399.541633821649
+      },
+      "B6_oracle": {
+        "cost": 9.442811495548082,
+        "power_w": 10265.597145583877,
+        "violation_w": 1.2150849215686321e-09,
+        "shed_w": 4399.541633819927
+      },
+      "profiled_gain_vs_uniform_pct": 17.0276049529004,
+      "oracle_gain_vs_uniform_pct": 17.04783424229128,
+      "priority_capture_of_oracle_pct": -91.87984116437794,
+      "shared_elasticity_capture_pct": 92.47753651154534,
+      "per_workload_elasticity_gain_pct": 1.5224353974860303
+    }
+  ]
+}

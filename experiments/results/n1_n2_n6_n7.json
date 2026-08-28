@@ -1,0 +1,358 @@
+{
+ "results": {
+  "n1": [
+   {
+    "threshold": null,
+    "wake_cost_j": 0,
+    "total_j": 2987930.6647309097,
+    "static_j": 2006640.0,
+    "dyn_j": 981290.6647309099,
+    "wake_j": 0.0,
+    "per_job": 9222.008224478117,
+    "mean_delay": 0.0,
+    "jobs": 324
+   },
+   {
+    "threshold": 300,
+    "wake_cost_j": 20000,
+    "total_j": 2594229.3275512615,
+    "static_j": 1417551.1081465345,
+    "dyn_j": 1016678.2194047272,
+    "wake_j": 160000.0,
+    "per_job": 8006.880640590313,
+    "mean_delay": 0.7407407407407407,
+    "jobs": 324
+   },
+   {
+    "threshold": 120,
+    "wake_cost_j": 20000,
+    "total_j": 2669239.5814346783,
+    "static_j": 1165662.9114741709,
+    "dyn_j": 983576.6699605073,
+    "wake_j": 520000.0,
+    "per_job": 8238.393769860118,
+    "mean_delay": 2.4074074074074074,
+    "jobs": 324
+   },
+   {
+    "threshold": 60,
+    "wake_cost_j": 20000,
+    "total_j": 3222495.302190557,
+    "static_j": 1026654.8915471426,
+    "dyn_j": 975840.4106434146,
+    "wake_j": 1220000.0,
+    "per_job": 9945.973154909127,
+    "mean_delay": 5.652773730534614,
+    "jobs": 324
+   },
+   {
+    "threshold": 60,
+    "wake_cost_j": 50000,
+    "total_j": 5052495.302190557,
+    "static_j": 1026654.8915471426,
+    "dyn_j": 975840.4106434146,
+    "wake_j": 3050000.0,
+    "per_job": 15594.121303057274,
+    "mean_delay": 5.652773730534614,
+    "jobs": 324
+   },
+   {
+    "threshold": 30,
+    "wake_cost_j": 20000,
+    "total_j": 3824728.895203389,
+    "static_j": 828160.6362769231,
+    "dyn_j": 1016568.2589264659,
+    "wake_j": 1980000.0,
+    "per_job": 11804.71881235614,
+    "mean_delay": 9.18060031811656,
+    "jobs": 324
+   }
+  ],
+  "n2": [
+   {
+    "descriptors": "A full descriptors (family+precision+batch)",
+    "unseen_family": 87.91666666666666,
+    "recurring": 87.91666666666666,
+    "n_features": 8
+   },
+   {
+    "descriptors": "B identity only (which script)",
+    "unseen_family": 81.66666666666666,
+    "recurring": 83.33333333333333,
+    "n_features": 4
+   },
+   {
+    "descriptors": "C observable only (mem request + batch)",
+    "unseen_family": 81.66666666666666,
+    "recurring": 83.33333333333333,
+    "n_features": 2
+   },
+   {
+    "descriptors": "D memory request only",
+    "unseen_family": 82.08333333333333,
+    "recurring": 83.75,
+    "n_features": 1
+   },
+   {
+    "descriptors": "E nothing (global mean)",
+    "unseen_family": 81.66666666666666,
+    "recurring": 83.33333333333333,
+    "n_features": 1
+   }
+  ],
+  "n6": [
+   {
+    "per_job_j": 4476.267016200247,
+    "delay_s": 13.38326338743011,
+    "fleet": {
+     "L4": 4,
+     "L40S": 6
+    }
+   },
+   {
+    "per_job_j": 4550.168847376717,
+    "delay_s": 20.434894529933242,
+    "fleet": {
+     "T4": 1,
+     "L4": 3,
+     "L40S": 6
+    }
+   },
+   {
+    "per_job_j": 4601.942820825284,
+    "delay_s": 10.488666057390517,
+    "fleet": {
+     "L4": 3,
+     "A10G": 1,
+     "L40S": 6
+    }
+   },
+   {
+    "per_job_j": 4623.566736583665,
+    "delay_s": 31.514009500666763,
+    "fleet": {
+     "T4": 2,
+     "L4": 2,
+     "L40S": 6
+    }
+   },
+   {
+    "per_job_j": 4637.115506306372,
+    "delay_s": 25.776715550987547,
+    "fleet": {
+     "L4": 4,
+     "L40S": 5,
+     "A100-40GB": 1
+    }
+   },
+   {
+    "per_job_j": 4649.288135846169,
+    "delay_s": 59.03246487821154,
+    "fleet": {
+     "L4": 2,
+     "A10G": 3,
+     "L40S": 5
+    }
+   },
+   {
+    "per_job_j": 4672.576607975259,
+    "delay_s": 4.241936011435731,
+    "fleet": {
+     "L4": 3,
+     "L40S": 7
+    }
+   },
+   {
+    "per_job_j": 4673.404539058468,
+    "delay_s": 16.11860529596519,
+    "fleet": {
+     "T4": 1,
+     "L4": 2,
+     "A10G": 1,
+     "L40S": 6
+    }
+   },
+   {
+    "per_job_j": 4713.385440105861,
+    "delay_s": 49.37963306740536,
+    "fleet": {
+     "T4": 1,
+     "L4": 3,
+     "L40S": 5,
+     "A100-40GB": 1
+    }
+   },
+   {
+    "per_job_j": 4731.075803963282,
+    "delay_s": 9.00295779694451,
+    "fleet": {
+     "L4": 2,
+     "A10G": 2,
+     "L40S": 6
+    }
+   },
+   {
+    "per_job_j": 4743.4396234889955,
+    "delay_s": 20.49627050315889,
+    "fleet": {
+     "L4": 3,
+     "A10G": 1,
+     "L40S": 5,
+     "A100-40GB": 1
+    }
+   },
+   {
+    "per_job_j": 4748.69926299637,
+    "delay_s": 4.876023564542984,
+    "fleet": {
+     "T4": 1,
+     "L4": 2,
+     "L40S": 7
+    }
+   },
+   {
+    "per_job_j": 4750.148126200734,
+    "delay_s": 24.942165901956947,
+    "fleet": {
+     "T4": 2,
+     "L4": 1,
+     "A10G": 1,
+     "L40S": 6
+    }
+   },
+   {
+    "per_job_j": 4772.938104543499,
+    "delay_s": 46.788635338084546,
+    "fleet": {
+     "L4": 1,
+     "A10G": 4,
+     "L40S": 5
+    }
+   },
+   {
+    "per_job_j": 4795.206450534624,
+    "delay_s": 3.66869457164563,
+    "fleet": {
+     "L4": 2,
+     "A10G": 1,
+     "L40S": 7
+    }
+   },
+   {
+    "per_job_j": 4797.326908958205,
+    "delay_s": 12.835758990779098,
+    "fleet": {
+     "T4": 1,
+     "L4": 1,
+     "A10G": 2,
+     "L40S": 6
+    }
+   },
+   {
+    "per_job_j": 4799.145027948617,
+    "delay_s": 5.411984150614734,
+    "fleet": {
+     "L4": 3,
+     "L40S": 6,
+     "A100-40GB": 1
+    }
+   },
+   {
+    "per_job_j": 4817.455859526426,
+    "delay_s": 33.6790029123774,
+    "fleet": {
+     "T4": 1,
+     "L4": 2,
+     "A10G": 1,
+     "L40S": 5,
+     "A100-40GB": 1
+    }
+   },
+   {
+    "per_job_j": 4817.826812170125,
+    "delay_s": 6.1361307773633955,
+    "fleet": {
+     "T4": 2,
+     "L4": 1,
+     "L40S": 7
+    }
+   },
+   {
+    "per_job_j": 4819.34616026237,
+    "delay_s": 45.969695596586185,
+    "fleet": {
+     "T4": 3,
+     "A10G": 1,
+     "L40S": 6
+    }
+   },
+   {
+    "per_job_j": 6817.180442379689,
+    "delay_s": 11.471335157790323,
+    "fleet": {
+     "A100-40GB": 10
+    },
+    "worst": true
+   }
+  ],
+  "n7": [
+   {
+    "cells": 24,
+    "random": 49.166666666666664,
+    "uncertainty (max residual)": 49.166666666666664
+   },
+   {
+    "cells": 36,
+    "random": 83.38541666666666,
+    "uncertainty (max residual)": 86.97916666666667
+   },
+   {
+    "cells": 48,
+    "random": 85.26041666666666,
+    "uncertainty (max residual)": 91.04166666666666
+   },
+   {
+    "cells": 60,
+    "random": 87.44791666666667,
+    "uncertainty (max residual)": 93.22916666666666
+   },
+   {
+    "cells": 72,
+    "random": 88.4375,
+    "uncertainty (max residual)": 94.0625
+   },
+   {
+    "cells": 90,
+    "random": 91.09375,
+    "uncertainty (max residual)": 94.79166666666666
+   }
+  ]
+ },
+ "sanity": [
+  {
+   "check": "power-down with an unreachable threshold equals no power-down",
+   "passed": true,
+   "detail": "no-sleep 2987931 J vs threshold=1e9 2987931 J"
+  },
+  {
+   "check": "free instant wake never costs more than never sleeping",
+   "passed": true,
+   "detail": "sleep(free wake) 1986779 J vs no-sleep 2987931 J"
+  },
+  {
+   "check": "a constant feature cannot beat the fixed-ranking ceiling",
+   "passed": true,
+   "detail": "nothing-features scores 81.7%, additive ceiling is 81.7%"
+  },
+  {
+   "check": "an all-L4 fleet beats an all-A100 fleet on energy per job",
+   "passed": true,
+   "detail": "L4x10 4902 J vs A100x10 12636 J (L4 wins every measured cell)"
+  },
+  {
+   "check": "accuracy improves as the measurement budget grows",
+   "passed": true,
+   "detail": "random: 49.2% at 24 cells -> 91.1% at 90 cells"
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+{
+  "label": "aws26",
+  "pipe_invariant_pct": 100.0,
+  "corrupt_curve_pct": -1432.5,
+  "value_vs_k": {
+    "prior": {
+      "0": -8.8,
+      "1": 2.9,
+      "2": -5.2,
+      "3": -21.0
+    },
+    "knee": {
+      "0": null,
+      "1": null,
+      "2": 92.6,
+      "3": 94.2
+    },
+    "linear": {
+      "0": null,
+      "1": 88.5,
+      "2": 88.4,
+      "3": 92.1
+    }
+  },
+  "classmean_feature_pct": 60.0,
+  "mono_ok": true,
+  "ks": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "homog_invariant_ok": true,
+  "homog_den_max": 0.0
+}

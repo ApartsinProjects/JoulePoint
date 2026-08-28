@@ -1,0 +1,50 @@
+{
+  "grid5000": {
+    "n_workloads": 9,
+    "heterogeneity_spread": 0.060719647807413346,
+    "rows": [
+      {
+        "curt": 10,
+        "oracle_gain_vs_uniform_pct": 29.077897726161623,
+        "per_workload_elasticity_gain_pct": 22.22642145968826
+      },
+      {
+        "curt": 20,
+        "oracle_gain_vs_uniform_pct": 8.522419786923525,
+        "per_workload_elasticity_gain_pct": 7.486325341450193
+      },
+      {
+        "curt": 30,
+        "oracle_gain_vs_uniform_pct": 9.640891703150519e-13,
+        "per_workload_elasticity_gain_pct": -3.1990231560455323e-12
+      }
+    ]
+  },
+  "eehpc": {
+    "n_workloads": 1,
+    "curves": {
+      "gromacs": {
+        "power_w": [
+          121.6,
+          163.5,
+          403.4,
+          148.2,
+          203.8,
+          513.7,
+          359.4
+        ],
+        "throughput_norm": [
+          0.402,
+          0.454,
+          0.597,
+          0.357,
+          0.471,
+          0.62,
+          1.0
+        ]
+      }
+    }
+  },
+  "_anchor_zeus_spread": 0.1416871547288987,
+  "_anchor_emerald_spread": 0.0897832388763935
+}

@@ -1,0 +1,123 @@
+{
+ "rows": [
+  [
+   "alpaca",
+   "gemma_2b"
+  ],
+  [
+   "alpaca",
+   "gemma_7b"
+  ],
+  [
+   "codefeedback",
+   "codellama_7b"
+  ],
+  [
+   "codefeedback",
+   "gemma_2b"
+  ],
+  [
+   "codefeedback",
+   "gemma_7b"
+  ]
+ ],
+ "machines": [
+  "laptop2",
+  "workstation"
+ ],
+ "log10_energy_per_token": [
+  [
+   -6.50202454239265,
+   -6.6735562979188625
+  ],
+  [
+   -6.166149755390485,
+   -6.1680024405490235
+  ],
+  [
+   -6.334536762419149,
+   -6.37864883259019
+  ],
+  [
+   -6.6181989441040905,
+   -6.641223346343858
+  ],
+  [
+   -6.223559892092016,
+   -6.272919602137884
+  ]
+ ],
+ "shares": {
+  "workload": 95.11574899973245,
+  "machine": 2.390447858658337,
+  "interaction": 2.493803141608999
+ },
+ "winners": [
+  "workstation",
+  "workstation",
+  "workstation",
+  "workstation",
+  "workstation"
+ ],
+ "fixed_ranking_accuracy": 1.0,
+ "additive_accuracy": 1.0,
+ "bootstrap_p": 0.0,
+ "observed_sd_d": 0.02960810638213302,
+ "per_row_se": [
+  0.0034370818710770176,
+  0.0024792067162659357,
+  0.0004420681618151447,
+  0.0004393105019859114,
+  0.0002561624142655127
+ ],
+ "reversals": 0,
+ "cell_counts": {
+  "alpaca|gemma_2b|laptop2": 5101,
+  "alpaca|gemma_2b|workstation": 11828,
+  "alpaca|gemma_7b|laptop2": 5099,
+  "alpaca|gemma_7b|workstation": 8735,
+  "alpaca|llama3_70b|server": 1026,
+  "alpaca|llama3_8b|laptop2": 5101,
+  "codefeedback|codellama_70b|workstation": 161,
+  "codefeedback|codellama_7b|laptop1": 5331,
+  "codefeedback|codellama_7b|laptop2": 3572,
+  "codefeedback|codellama_7b|workstation": 3109,
+  "codefeedback|gemma_2b|laptop2": 5008,
+  "codefeedback|gemma_2b|workstation": 9957,
+  "codefeedback|gemma_7b|laptop2": 3405,
+  "codefeedback|gemma_7b|workstation": 5926
+ },
+ "defect": "alpaca_gemma_2b_laptop1.csv is a mislabelled byte-identical duplicate of codefeedback_codellama_7b_laptop1.csv (md5 7a7309b5b4dd); excluded",
+ "sanity": [
+  {
+   "check": "S1 every cell has >= 200 observations",
+   "passed": true,
+   "detail": "min n = 3109"
+  },
+  {
+   "check": "S2 energy per token positive and finite",
+   "passed": true,
+   "detail": "ok"
+  },
+  {
+   "check": "S3 sums of squares decompose exactly",
+   "passed": true,
+   "detail": "TSS 0.351527 vs R+C+I 0.351527"
+  },
+  {
+   "check": "S4 additive ties a fixed ranking exactly (Proposition 1)",
+   "passed": true,
+   "detail": "fixed 1.0000 vs additive 1.0000"
+  },
+  {
+   "check": "S5 between-row spread exceeds bootstrap median noise",
+   "passed": true,
+   "detail": "observed sd(d) 0.0296, median null 0.0014, p = 0.0000"
+  },
+  {
+   "check": "S5b bootstrap standard errors are small relative to the effect",
+   "passed": true,
+   "detail": "max per-row SE 0.00344 vs observed sd(d) 0.02961"
+  }
+ ]
+}

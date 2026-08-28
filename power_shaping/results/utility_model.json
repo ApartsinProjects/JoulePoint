@@ -1,0 +1,56 @@
+{
+ "A100": {
+  "throughput": {
+   "energy_saved": 0.12672185290482296,
+   "cap": 78.5
+  },
+  "soft": {
+   "energy_saved": 0.28741293427648607,
+   "cap": 57.25
+  },
+  "hard": {
+   "energy_saved": 0.2817044287189181,
+   "cap": 57.25
+  }
+ },
+ "A10G": {
+  "throughput": {
+   "energy_saved": 0.15864311486462102,
+   "cap": 66.66666666666666
+  },
+  "soft": {
+   "energy_saved": 0.3076715558156152,
+   "cap": 43.0
+  },
+  "hard": {
+   "energy_saved": 0.3001649681276761,
+   "cap": 47.66666666666667
+  }
+ },
+ "frontier_A100_throughput": [
+  {
+   "util_loss": 0.0,
+   "energy_saved": 0.0
+  },
+  {
+   "util_loss": 0.02,
+   "energy_saved": 0.040008635450334784
+  },
+  {
+   "util_loss": 0.05,
+   "energy_saved": 0.12672185290482296
+  },
+  {
+   "util_loss": 0.1,
+   "energy_saved": 0.21808649579712636
+  },
+  {
+   "util_loss": 0.2,
+   "energy_saved": 0.2817044287189181
+  },
+  {
+   "util_loss": 0.35,
+   "energy_saved": 0.2909579629094004
+  }
+ ]
+}

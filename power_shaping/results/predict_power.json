@@ -1,0 +1,24 @@
+{
+  "zeus": {
+    "n_rows": 929,
+    "n_jobs": 73,
+    "n_cards": 2,
+    "job_power_MdAPE": 2.2,
+    "job_power_R2": 0.972,
+    "job_drawfrac_MdAPE": 2.5,
+    "job_drawfrac_MAE": 0.027,
+    "assume_draw_eq_cap_MdAPE": 21.3,
+    "card_power_MdAPE": 21.1
+  },
+  "aws": {
+    "n_rows": 295,
+    "n_jobs": 26,
+    "n_cards": 3,
+    "job_power_MdAPE": 1.3,
+    "job_power_R2": 0.975,
+    "job_drawfrac_MdAPE": 1.3,
+    "job_drawfrac_MAE": 0.035,
+    "assume_draw_eq_cap_MdAPE": 3.2,
+    "card_power_MdAPE": 57.7
+  }
+}

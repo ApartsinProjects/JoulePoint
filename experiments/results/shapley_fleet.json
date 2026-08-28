@@ -1,0 +1,77 @@
+{
+ "results": {
+  "shapley": {
+   "uniform": {
+    "reference_j": 6626.1801423155275,
+    "v_grand": 0.33727251437609,
+    "values": {
+     "T4": 0.006408152275398531,
+     "L4": 0.035989938384416,
+     "A10G": 0.0063452777041025955,
+     "L40S": 0.27952923696024146,
+     "A100-40GB": 0.008999909051931466
+    }
+   },
+   "LLM-serving (transformer)": {
+    "reference_j": 10376.69883198009,
+    "v_grand": 0.0,
+    "values": {
+     "T4": 0.0,
+     "L4": 0.0,
+     "A10G": 0.0,
+     "L40S": 0.0,
+     "A100-40GB": 0.0
+    }
+   },
+   "vision inference": {
+    "reference_j": 5652.760883758432,
+    "v_grand": 0.3852931771742034,
+    "values": {
+     "T4": 0.010808290326055719,
+     "L4": 0.07423425339844009,
+     "A10G": 0.013548015007771565,
+     "L40S": 0.25650257131004833,
+     "A100-40GB": 0.030200047131887717
+    }
+   },
+   "modern precision (fp16)": {
+    "reference_j": 3667.722017982501,
+    "v_grand": 0.36647993522928085,
+    "values": {
+     "T4": 0.025249042470317572,
+     "L4": 0.15757236151686663,
+     "A10G": 0.018879060874418443,
+     "L40S": 0.08240502006753267,
+     "A100-40GB": 0.08237445030014555
+    }
+   }
+  }
+ },
+ "sanity": [
+  {
+   "check": "efficiency axiom holds for 'uniform'",
+   "passed": true,
+   "detail": "sum of Shapley 33.727% vs v(N) 33.727%"
+  },
+  {
+   "check": "efficiency axiom holds for 'LLM-serving (transformer)'",
+   "passed": true,
+   "detail": "sum of Shapley 0.000% vs v(N) 0.000%"
+  },
+  {
+   "check": "efficiency axiom holds for 'vision inference'",
+   "passed": true,
+   "detail": "sum of Shapley 38.529% vs v(N) 38.529%"
+  },
+  {
+   "check": "efficiency axiom holds for 'modern precision (fp16)'",
+   "passed": true,
+   "detail": "sum of Shapley 36.648% vs v(N) 36.648%"
+  },
+  {
+   "check": "the most valuable accelerator type is not the same for every workload mix",
+   "passed": true,
+   "detail": "top type per mix: {'uniform': 'L40S', 'LLM-serving (transformer)': 'T4', 'vision inference': 'L40S', 'modern precision (fp16)': 'L4'}"
+  }
+ ]
+}

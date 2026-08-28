@@ -1,0 +1,40 @@
+{
+ "results": {
+  "interaction_pct": 8.979621436873321,
+  "reversal_pairs": [
+   3,
+   3
+  ],
+  "interaction_corr": {
+   "quant=bnb": -0.4036021833352996,
+   "quant=gptq": 0.8000370974198495,
+   "quant=unquantized": -0.35652490930897834
+  }
+ },
+ "sanity": [
+  {
+   "check": "the dataset has a real hardware axis",
+   "passed": true,
+   "detail": "3 GPUs: ['A10', 'A100', 'T4']"
+  },
+  {
+   "check": "the dataset has a real configuration axis",
+   "passed": false,
+   "detail": "5 distinct (quant,batch,seqlen) combos"
+  },
+  {
+   "check": "a configuration variable is the strongest correlate of the interaction",
+   "passed": true,
+   "detail": "strongest is quant=gptq at r=+0.800"
+  }
+ ],
+ "matrix": {
+  "rows": 292,
+  "full_rows": 74,
+  "gpus": [
+   "A10",
+   "A100",
+   "T4"
+  ]
+ }
+}

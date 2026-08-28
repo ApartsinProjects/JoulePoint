@@ -1,0 +1,47 @@
+{
+  "n_workloads": 26,
+  "family_sizes": {
+    "attn": 2,
+    "conv": 8,
+    "gemm": 4,
+    "lat": 1,
+    "linalg": 2,
+    "mem": 9
+  },
+  "capture_classmean_pct": 47.72067247503817,
+  "capture_gbdt_pct": 27.591372337290665,
+  "learning_curve": [
+    {
+      "k_train": 6,
+      "capture_pct": -133.34774005388041,
+      "sd": 122.04439337987776
+    },
+    {
+      "k_train": 10,
+      "capture_pct": -59.1586772465875,
+      "sd": 166.08658431691447
+    },
+    {
+      "k_train": 14,
+      "capture_pct": 36.81856523835856,
+      "sd": 16.552466086145117
+    },
+    {
+      "k_train": 18,
+      "capture_pct": 46.92058183693988,
+      "sd": 9.151418626314268
+    },
+    {
+      "k_train": 22,
+      "capture_pct": 55.1844936654357,
+      "sd": 5.492151417011892
+    },
+    {
+      "k_train": 26,
+      "capture_pct": 47.72067247503817,
+      "sd": 0.0
+    }
+  ],
+  "capture_rose_with_workloads": true,
+  "gain_pts_lo_to_hi": 181.0684125289186
+}

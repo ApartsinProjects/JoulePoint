@@ -1,0 +1,61 @@
+{
+  "elasticity_response": {
+    "model": "elasticity_response",
+    "target": "normalized_throughput",
+    "features": [
+      "relp",
+      "fam_compute",
+      "fam_hpc",
+      "fam_llm",
+      "fam_llm_decode",
+      "fam_memory",
+      "fam_nlp",
+      "fam_recommendation",
+      "fam_speech",
+      "fam_vision",
+      "src_aws_a10g",
+      "src_emerald",
+      "src_grid5000",
+      "src_zeus"
+    ],
+    "n_samples": 278,
+    "sources": [
+      "aws_a10g",
+      "emerald",
+      "grid5000",
+      "zeus"
+    ],
+    "n_workloads": 30,
+    "leave_one_workload_out_MAE": 0.04505596117992259
+  },
+  "gpu_power": {
+    "model": "gpu_power",
+    "target": "mean_power_w (log-space)",
+    "features": [
+      "batch",
+      "tdp_w",
+      "mem_gb",
+      "bw_gbs",
+      "year",
+      "load_bert_large",
+      "load_convnext_t",
+      "load_resnet50",
+      "load_transformer",
+      "load_vit_b16",
+      "prec_fp16",
+      "prec_fp32"
+    ],
+    "n_samples": 346,
+    "n_gpus": 7,
+    "gpus": [
+      "NVIDIA A10",
+      "NVIDIA A100-SXM4-40GB",
+      "NVIDIA H100 80GB HBM3",
+      "NVIDIA H200",
+      "NVIDIA L4",
+      "NVIDIA L40S",
+      "Tesla T4"
+    ],
+    "leave_one_gpu_out_MAE_w": 38.41422614143938
+  }
+}

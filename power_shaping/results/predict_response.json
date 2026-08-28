@@ -1,0 +1,22 @@
+{
+  "zeus": {
+    "n_rows": 929,
+    "n_jobs": 73,
+    "n_cards": 2,
+    "job_norm_MdAPE": 1.8,
+    "job_slowdown_MAE": 0.025,
+    "job_slowdown_MAE_gt5pct": 0.03,
+    "card_norm_MdAPE": 3.4,
+    "card_slowdown_MAE": 0.055
+  },
+  "aws": {
+    "n_rows": 295,
+    "n_jobs": 26,
+    "n_cards": 3,
+    "job_norm_MdAPE": 1.9,
+    "job_slowdown_MAE": 0.046,
+    "job_slowdown_MAE_gt5pct": 0.069,
+    "card_norm_MdAPE": 17.5,
+    "card_slowdown_MAE": 0.202
+  }
+}

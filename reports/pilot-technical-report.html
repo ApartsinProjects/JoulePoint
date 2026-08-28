@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Configuration-Dependent Energy Rankings Across Heterogeneous AI Accelerators</title>
+<style>
+  @page { size: A4; margin: 2.2cm; }
+  :root { --ink:#15181c; --muted:#5b636b; --rule:#d5dae0; --accent:#0b4f6c; --hl:#e8f2f6; --bg:#fff; --card:#f7f9fb; }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+    --ink:#e6e9ed; --muted:#9aa4b0; --rule:#2c333b; --accent:#6fb3cc; --hl:#1d3038; --bg:#14171b; --card:#1b1f25; } }
+  :root[data-theme="dark"] { --ink:#e6e9ed; --muted:#9aa4b0; --rule:#2c333b; --accent:#6fb3cc; --hl:#1d3038; --bg:#14171b; --card:#1b1f25; }
+  * { box-sizing:border-box; }
+  body { font-family:"Charter","Georgia","Times New Roman",serif; font-size:16px; line-height:1.62;
+         color:var(--ink); background:var(--bg); max-width:52rem; margin:0 auto; padding:2.5rem 1.25rem 4rem; }
+  h1 { font-size:1.6rem; line-height:1.25; margin:0 0 .4rem; }
+  h2 { font-size:1.16rem; margin:2.1rem 0 .5rem; border-bottom:1px solid var(--rule); padding-bottom:.25rem; }
+  h3 { font-size:1rem; margin:1.4rem 0 .35rem; color:var(--accent); }
+  .byline { color:var(--muted); font-size:.95rem; margin-bottom:1.4rem; }
+  .abstract { background:var(--card); border-left:3px solid var(--accent); padding:.9rem 1.1rem; border-radius:0 6px 6px 0; margin:1.2rem 0 1.8rem; font-size:.96rem; }
+  .abstract h3 { margin:0 0 .35rem; }
+  p { text-align:justify; }
+  .wrap { overflow-x:auto; margin:.9rem 0; }
+  table { border-collapse:collapse; width:100%; font-size:.85rem; font-family:-apple-system,"Segoe UI",sans-serif; }
+  caption { caption-side:top; text-align:left; font-size:.85rem; color:var(--muted); padding-bottom:.3rem; font-style:italic; }
+  th,td { border:1px solid var(--rule); padding:.32rem .5rem; text-align:right; }
+  th:first-child, td:first-child { text-align:left; }
+  th { background:var(--card); font-weight:600; }
+  td.best { background:var(--hl); font-weight:700; }
+  .key { border:1px solid var(--accent); border-radius:6px; padding:.7rem 1rem; margin:1rem 0; background:var(--card); }
+  .key strong { color:var(--accent); }
+  code { font-family:"SF Mono",Consolas,monospace; font-size:.85em; background:var(--card); padding:.1em .3em; border-radius:3px; }
+  .small { font-size:.88rem; color:var(--muted); }
+  ol.refs { font-size:.9rem; }
+  ol.refs li { margin-bottom:.35rem; }
+  figure { margin:1.2rem 0; }
+  @media print { body { max-width:none; padding:0; font-size:10.5pt; } h2 { page-break-after:avoid; } table { page-break-inside:avoid; } }
+</style>
+</head>
+<body>
+
+<h1>The Fastest Accelerator Is Never the Greenest: Configuration-Dependent Energy Rankings Across Heterogeneous AI Hardware</h1>
+<div class="byline">
+Alexander Apartsin · Department of Computer Science, Holon Institute of Technology<br>
+Technical Report · GreenMatch-AI Pilot Study · 18 August 2026
+</div>
+
+<div class="abstract">
+<h3>Abstract</h3>
+<p>
+Energy-aware placement of AI workloads presumes that the energy cost of running a given workload on a given accelerator
+can be anticipated. We report a complete, fully-measured pilot sweep testing that presumption: 120 cells covering
+four inference workloads on five accelerator families spanning three architecture generations, at two precisions and
+three batch sizes, with energy read from the NVML total-energy counter alongside runtime and peak power. Three results
+follow. First, selecting the highest-throughput accelerator, the default of performance-oriented schedulers, chose a
+sub-optimal machine in <strong>all 24 of 24 configurations</strong>, at a median energy penalty of
+<strong>41.6%</strong> and up to <strong>64.9%</strong>. Second, the energy ordering of accelerators is not
+fixed: <strong>18 of 40 machine pairs (45%)</strong> reverse their ranking across configurations of
+the same workload, with batch size and numerical precision each sufficient on their own to flip the order. Third, the
+log-energy matrix is approximately low-rank, a rank-2 factorisation capturing 98.9% of its variance, and an additive
+workload-plus-machine model explains 97.5% of that variance while leaving a residual interaction term worth up to
+1.40x in energy. Energy efficiency is therefore not a property of hardware that can be tabulated once; it is a
+property of the workload-hardware-configuration triple, with a small but operationally decisive interaction component.
+The measurement harness and all 120 cells are released.
+</p>
+</div>
+
+<h2>1. Introduction</h2>
+<p>
+Data-center electricity demand driven by AI compute is growing faster than overall demand, and modern AI fleets are
+heterogeneous: several accelerator generations coexist, with different compute throughput, memory bandwidth, and power
+envelopes. Schedulers must therefore choose where to run each workload. In practice they choose on availability or
+throughput, on the implicit assumption that the faster device is also the more efficient one, since it finishes sooner.
+</p>
+<p>
+That assumption is testable, and it is the subject of this report. If the highest-throughput accelerator were reliably
+the lowest-energy one, energy-aware placement would reduce to performance-aware placement and would need no new
+machinery. If instead the energy-optimal choice depends on the workload and on the execution configuration, then
+placement requires knowing an interaction that cannot be read off a specification sheet, and the size of that
+interaction determines whether the problem is worth solving.
+</p>
+<p>
+We measure the interaction directly. The contribution is not a new method but a clean empirical characterisation: a
+complete, unpruned grid with no missing cells, measured under one protocol, on rented hardware anyone can rent.
+</p>
+
+<h2>2. Method</h2>
+
+<h3>2.1 Workloads, machines, configurations</h3>
+<p>
+Four inference workloads were selected to span distinct computational profiles: <strong>ResNet-50</strong>
+(convolutional, compute-bound), <strong>ViT-B/16</strong> (vision transformer, attention-dominated),
+<strong>ConvNeXt-Tiny</strong> (modernised convolutional), and a <strong>six-layer Transformer encoder</strong>
+(d_model 1024, 16 heads, feed-forward 4096, sequence length 256). All were constructed with randomly initialised
+weights; the study concerns execution cost, which does not depend on trained parameter values.
+</p>
+<p>
+Five accelerator families were used, spanning three NVIDIA architecture generations and a 5.7-fold range of enforced
+power caps. Configurations crossed two precisions (fp32, and fp16 via autocast) with three batch sizes (8, 32, 128),
+giving 4 x 5 x 2 x 3 = 120 cells. Every cell returned a valid measurement; no cell was memory-infeasible at these
+model sizes.
+</p>
+<div class="wrap">
+<table><caption>Table 1. Machines under test.</caption>
+<tr><th>Label</th><th>Device</th><th>Enforced cap (W)</th><th>Observed peak, min (W)</th><th>Observed peak, max (W)</th><th>Dynamic range</th></tr>
+<tr><td>T4</td><td>Tesla T4</td><td>70</td><td>68.2</td><td>75.5</td><td>1.11x</td></tr><tr><td>L4</td><td>NVIDIA L4</td><td>72</td><td>70.9</td><td>76.6</td><td>1.08x</td></tr><tr><td>A10G</td><td>NVIDIA A10</td><td>150</td><td>149.0</td><td>153.1</td><td>1.03x</td></tr><tr><td>L40S</td><td>NVIDIA L40S</td><td>350</td><td>248.1</td><td>353.4</td><td>1.42x</td></tr><tr><td>A100-40GB</td><td>NVIDIA A100-SXM4-40GB</td><td>400</td><td>152.8</td><td>422.7</td><td>2.77x</td></tr>
+</table>
+</div>
+<p class="small">
+Observed peaks exceed the enforced cap by 1 to 8%, consistent with short transients above the sustained limit. The
+dynamic range column is the ratio of the highest to the lowest peak power observed across configurations on that
+machine: the A100-40GB varies by 2.77x depending only on what it is running, which is why peak power must be predicted
+per workload rather than assumed at the cap.
+</p>
+
+<h3>2.2 Measurement protocol</h3>
+<p>
+Each cell ran three warmup iterations, then a measured window repeated until at least four seconds of work had elapsed,
+synchronised at both ends. Energy was taken as the difference of NVML's <code>nvmlDeviceGetTotalEnergyConsumption</code>
+counter (millijoule resolution), with mean-power integration as fallback; the counter was available on every machine, so
+all 120 cells use the counter. Peak and mean power were sampled during the window, and peak device memory recorded.
+The reported quantity throughout is <strong>energy per sample</strong>, total joules divided by the number of inputs
+processed, which normalises across the differing iteration counts that a fixed time window produces.
+</p>
+<p>
+All measurements ran on serverless GPU containers (Modal), one container per machine, dispatched in a single run. This
+matters for reproducibility: the hardware is rentable on demand rather than institution-specific, so the grid can be
+re-measured by anyone at a cost of a few dollars.
+</p>
+
+<h2>3. Results</h2>
+
+<h3>3.1 Choosing the fastest machine is consistently the wrong energy decision</h3>
+<div class="key">
+<strong>Result 1.</strong> Selecting the highest-throughput accelerator chose a machine other than the lowest-energy one
+in <strong>24 of 24 configurations (100%)</strong>. The median energy penalty was <strong>41.6%</strong>
+and the maximum <strong>64.9%</strong>.
+</div>
+<p>
+The two selection rules never agreed. The highest-throughput machine was in every case either the L40S or the
+A100-40GB, the two largest devices, while the lowest-energy machine was in every case the L4, a 72 W inference-oriented
+part. Finishing sooner does not compensate for drawing four to five times the power.
+</p>
+<div class="wrap">
+<table><caption>Table 2. Performance-first selection versus energy-optimal selection, all 24 configurations.</caption>
+<tr><th>Workload</th><th>Precision</th><th>Batch</th><th>Fastest</th><th>Lowest energy</th><th>Energy penalty</th></tr>
+<tr><td>ResNet-50</td><td>fp16</td><td>8</td><td>L40S</td><td>L4</td><td>26.0%</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>32</td><td>L40S</td><td>L4</td><td>25.2%</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>128</td><td>A100-40GB</td><td>L4</td><td>19.0%</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>8</td><td>L40S</td><td>L4</td><td>46.8%</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>32</td><td>A100-40GB</td><td>L4</td><td>17.2%</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>128</td><td>A100-40GB</td><td>L4</td><td>3.7%</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>8</td><td>A100-40GB</td><td>L4</td><td>61.9%</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>32</td><td>A100-40GB</td><td>L4</td><td>57.5%</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>128</td><td>A100-40GB</td><td>L4</td><td>34.9%</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>8</td><td>L40S</td><td>L4</td><td>47.5%</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>32</td><td>L40S</td><td>L4</td><td>43.4%</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>128</td><td>L40S</td><td>L4</td><td>51.6%</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>8</td><td>L40S</td><td>L4</td><td>64.9%</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>32</td><td>L40S</td><td>L4</td><td>26.3%</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>128</td><td>A100-40GB</td><td>L4</td><td>41.6%</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>8</td><td>L40S</td><td>L4</td><td>50.9%</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>32</td><td>L40S</td><td>L4</td><td>36.2%</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>128</td><td>L40S</td><td>L4</td><td>35.9%</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>8</td><td>A100-40GB</td><td>L4</td><td>47.9%</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>32</td><td>A100-40GB</td><td>L4</td><td>28.8%</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>128</td><td>A100-40GB</td><td>L4</td><td>24.6%</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>8</td><td>L40S</td><td>L4</td><td>48.8%</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>32</td><td>L40S</td><td>L4</td><td>38.4%</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>128</td><td>L40S</td><td>L4</td><td>53.8%</td></tr>
+</table>
+</div>
+<p class="small">
+<strong>Scope of this result.</strong> That the penalty is universal here rather than merely common is anchored by one
+device: the L4 was the energy winner in every cell, so no configuration existed in which the two rules could coincide.
+A hardware set without an efficiency-optimised part would show a lower agreement rate. The magnitude of the penalty,
+median 41.6%, does not depend on that anchoring, and it is the operationally relevant quantity.
+</p>
+
+<h3>3.2 The energy ranking of machines is not fixed</h3>
+<div class="key">
+<strong>Result 2.</strong> <strong>18 of 40 workload-machine pairs (45%)</strong> reverse their energy
+ordering across configurations of the same workload. Batch size drove 13 of the reversals and precision drove
+5.
+</div>
+<p>
+A reversal means that for one workload, machine A uses less energy per sample than machine B at one configuration and
+more at another, with no change of workload. The clearest instance is the Transformer encoder on the A100-40GB versus
+the T4: at fp16 the A100 is 1.41x more efficient, and at fp32 it is 1.35x less efficient. Precision alone inverts the
+choice. The same pattern appears on ViT-B/16 across the same pair.
+</p>
+<div class="wrap">
+<table><caption>Energy per sample (mJ), fp16, batch 32</caption><tr><th>Load</th><th>T4</th><th>L4</th><th>A10G</th><th>L40S</th><th>A100-40GB</th><th>best</th><th>spread</th></tr><tr><td>ResNet-50</td><td>85.3</td><td class="best">46.2</td><td>78.2</td><td>57.9</td><td>68.5</td><td>L4</td><td>1.85x</td></tr><tr><td>ViT-B/16</td><td>209.3</td><td class="best">115.0</td><td>206.8</td><td>169.0</td><td>181.1</td><td>L4</td><td>1.82x</td></tr><tr><td>ConvNeXt-T</td><td>101.3</td><td class="best">57.9</td><td>101.0</td><td>73.2</td><td>90.9</td><td>L4</td><td>1.75x</td></tr><tr><td>Transformer-6L</td><td>213.9</td><td class="best">117.8</td><td>196.9</td><td>152.9</td><td>151.7</td><td>L4</td><td>1.82x</td></tr></table>
+</div>
+<div class="wrap">
+<table><caption>Energy per sample (mJ), fp32, batch 32</caption><tr><th>Load</th><th>T4</th><th>L4</th><th>A10G</th><th>L40S</th><th>A100-40GB</th><th>best</th><th>spread</th></tr><tr><td>ResNet-50</td><td>179.0</td><td class="best">94.4</td><td>140.3</td><td>118.7</td><td>110.6</td><td>L4</td><td>1.90x</td></tr><tr><td>ViT-B/16</td><td>688.2</td><td class="best">336.8</td><td>574.6</td><td>482.9</td><td>831.9</td><td>L4</td><td>2.47x</td></tr><tr><td>ConvNeXt-T</td><td>253.4</td><td class="best">131.5</td><td>219.5</td><td>179.2</td><td>277.3</td><td>L4</td><td>2.11x</td></tr><tr><td>Transformer-6L</td><td>685.2</td><td class="best">368.1</td><td>654.5</td><td>509.4</td><td>927.7</td><td>L4</td><td>2.52x</td></tr></table>
+</div>
+<p>
+Comparing the two tables above: moving from fp16 to fp32 leaves the L4 in front but rearranges everything behind it, and
+the A100-40GB moves from third place to last on three of the four workloads. Any system that stores a single preference
+order over accelerators is wrong for some configuration it will encounter.
+</p>
+<div class="wrap">
+<table><caption>Table 5. All 18 reversing pairs and the configuration dimension that flips them.</caption>
+<tr><th>Workload</th><th>Machine A</th><th>Machine B</th><th>Flip driver</th></tr>
+<tr><td>ResNet-50</td><td>T4</td><td>A100-40GB</td><td>batch size</td></tr><tr><td>ResNet-50</td><td>A10G</td><td>L40S</td><td>batch size</td></tr><tr><td>ResNet-50</td><td>A10G</td><td>A100-40GB</td><td>batch size</td></tr><tr><td>ResNet-50</td><td>L40S</td><td>A100-40GB</td><td>batch size</td></tr><tr><td>ViT-B/16</td><td>T4</td><td>A100-40GB</td><td>precision</td></tr><tr><td>ViT-B/16</td><td>A10G</td><td>L40S</td><td>batch size</td></tr><tr><td>ViT-B/16</td><td>A10G</td><td>A100-40GB</td><td>precision</td></tr><tr><td>ViT-B/16</td><td>L40S</td><td>A100-40GB</td><td>batch size</td></tr><tr><td>ConvNeXt-T</td><td>T4</td><td>A10G</td><td>batch size</td></tr><tr><td>ConvNeXt-T</td><td>T4</td><td>L40S</td><td>batch size</td></tr><tr><td>ConvNeXt-T</td><td>T4</td><td>A100-40GB</td><td>batch size</td></tr><tr><td>ConvNeXt-T</td><td>A10G</td><td>L40S</td><td>batch size</td></tr><tr><td>ConvNeXt-T</td><td>A10G</td><td>A100-40GB</td><td>batch size</td></tr><tr><td>ConvNeXt-T</td><td>L40S</td><td>A100-40GB</td><td>batch size</td></tr><tr><td>Transformer-6L</td><td>T4</td><td>A100-40GB</td><td>precision</td></tr><tr><td>Transformer-6L</td><td>A10G</td><td>L40S</td><td>batch size</td></tr><tr><td>Transformer-6L</td><td>A10G</td><td>A100-40GB</td><td>precision</td></tr><tr><td>Transformer-6L</td><td>L40S</td><td>A100-40GB</td><td>precision</td></tr>
+</table>
+</div>
+
+<h3>3.3 How much is at stake between machines</h3>
+<p>
+For a fixed workload and configuration, energy per sample between the best and worst feasible machine differed by a
+median of <strong>2.10x</strong>, with a range of 1.43x to 3.18x across the 24 configurations. The
+spread is widest at fp32 and small batch, where the largest devices are least well utilised.
+</p>
+<div class="wrap">
+<table><caption>Energy per sample (mJ), fp32, batch 128</caption><tr><th>Load</th><th>T4</th><th>L4</th><th>A10G</th><th>L40S</th><th>A100-40GB</th><th>best</th><th>spread</th></tr><tr><td>ResNet-50</td><td>171.0</td><td class="best">107.2</td><td>131.1</td><td>146.9</td><td>111.2</td><td>L4</td><td>1.59x</td></tr><tr><td>ViT-B/16</td><td>645.7</td><td class="best">331.1</td><td>547.7</td><td>502.1</td><td>775.4</td><td>L4</td><td>2.34x</td></tr><tr><td>ConvNeXt-T</td><td>244.7</td><td class="best">139.8</td><td>214.2</td><td>189.9</td><td>269.6</td><td>L4</td><td>1.93x</td></tr><tr><td>Transformer-6L</td><td>730.4</td><td class="best">347.8</td><td>593.0</td><td>534.9</td><td>857.6</td><td>L4</td><td>2.47x</td></tr></table>
+</div>
+
+<h2>4. Structure of the energy matrix</h2>
+<p>
+The practical question behind these results is whether the energy of unmeasured workload-machine pairs could be
+predicted from a sparse sample, which requires the matrix to have exploitable structure. We examine the 24 x 5
+matrix of log energy per sample, rows indexed by (workload, precision, batch) and columns by machine.
+</p>
+<h3>4.1 The matrix is approximately low-rank</h3>
+<p>
+A rank-1 factorisation captures <strong>89.8%</strong> of the variance of the centred log-energy matrix, rank-2
+<strong>98.9%</strong>, and rank-3 <strong>99.7%</strong>. The effective rank is therefore about two, against a matrix
+of five columns. This is the structural precondition that matrix-completion approaches require, and it is what makes
+prediction from a sparse sample plausible rather than hopeful.
+</p>
+<h3>4.2 Most of the variance is additive, but the interaction is what decides placement</h3>
+<p>
+Decomposing log energy into a workload effect plus a machine effect, the best additive model explains
+<strong>97.5%</strong> of the variance, leaving <strong>2.5%</strong> in the interaction residual. Read
+naively this suggests the interaction hardly matters. Read in the units that matter it says the opposite: the largest
+residual corresponds to a <strong>1.40x</strong> difference in energy, and the reversals of Section 3.2 are
+precisely the cases where the residual exceeds the gap between two machines' additive effects.
+</p>
+<p>
+This is the central quantitative finding of the study. A "workload difficulty times machine efficiency" model is a good
+variance-explainer and a poor decision-maker, because placement decisions are made in the tail of the residual, not in
+its mean. Any method that fits only the additive part will produce accurate-looking predictions and systematically wrong
+choices for exactly the pairs where the choice is non-obvious.
+</p>
+
+<h2>5. Threats to validity</h2>
+<p>
+<strong>Inference only.</strong> All workloads are forward-pass inference. Training changes the arithmetic intensity,
+adds optimiser state and gradient traffic, and would plausibly shift the balance toward higher-bandwidth devices. The
+generality of Result 1 to training is untested here.
+</p>
+<p>
+<strong>Moderate model sizes.</strong> No configuration exhausted device memory, so memory capacity never became a
+binding constraint. On larger models the smaller devices would become infeasible rather than merely slower, which
+removes them from the comparison and would reduce the observed penalty.
+</p>
+<p>
+<strong>One efficiency-optimised part anchors Result 1.</strong> As noted in Section 3.1, the L4's consistent win is
+what makes the disagreement universal rather than frequent.
+</p>
+<p>
+<strong>Single vendor, single provider, one measurement session.</strong> All devices are NVIDIA, rented from one
+provider, measured once per cell without repetition across days. Run-to-run and host-to-host variance is therefore not
+characterised, and NVML counters are vendor-reported rather than wall-socket measurements; they exclude host CPU,
+memory and cooling.
+</p>
+<p>
+<strong>Default software configuration.</strong> Results reflect stock PyTorch 2.4 with autocast and no vendor-specific
+tuning; TF32 behaviour, kernel selection and compilation would all shift absolute numbers.
+</p>
+
+<h2>6. Reproducibility</h2>
+<p>
+The measurement harness is a single self-contained file that defines one function per machine and dispatches them
+concurrently; the full sweep completes in one run. The harness, the raw 120-cell result set, and the analysis
+script that produced every number in this report are released together. Re-running the study requires a Modal account
+and costs on the order of one dollar of compute.
+</p>
+
+<h2>7. Conclusion</h2>
+<p>
+Across a complete grid of 120 measured cells, the accelerator that finishes an AI inference workload fastest was
+never the one that finishes it using the least electricity, at a median cost of 41.6% additional energy. The
+ordering of accelerators by energy is not a fixed property that can be tabulated: 45% of machine pairs invert
+their ranking under a change of batch size or numerical precision alone. Beneath that variability the log-energy matrix
+is approximately rank-2, so the structure needed to predict unmeasured pairs is present, but the component that decides
+which machine to pick is the small interaction residual rather than the large additive part.
+</p>
+<p>
+For practitioners the immediate implication is that a scheduler cannot become energy-aware by preferring the biggest
+available device, nor by consulting a static efficiency ranking. For researchers the implication is that the modelling
+target should be the interaction term explicitly, and that evaluation should be reported in placement regret rather
+than in prediction error, since a model can be accurate on the additive structure and wrong on every decision that
+matters.
+</p>
+
+<h2>References</h2>
+<ol class="refs">
+  <li>Apartsin, A., Meshulam, Y., and Aperstein, Y. (2026). <em>Acting on the Unseen: Communication-Free Collaborative Filtering for Decentralized Multi-Robot Task Allocation.</em> arXiv:2605.25584.</li>
+  <li>Tripp, C. E., Perr-Sauer, J., Gafur, J., et al. (2024). <em>Measuring the Energy Consumption and Efficiency of Deep Neural Networks: An Empirical Analysis and Design Recommendations.</em> arXiv:2403.08151.</li>
+  <li>Chung, J.-W., Ma, J. J., Wu, R., et al. (2025). <em>The ML.ENERGY Benchmark: Toward Automated Inference Energy Measurement and Optimization.</em> arXiv:2505.06371.</li>
+  <li>Chung, J.-W., Wu, R., Ma, J. J., et al. (2026). <em>Where Do the Joules Go? Diagnosing Inference Energy Consumption.</em> arXiv:2601.22076.</li>
+  <li>You, J., Chung, J.-W., and Chowdhury, M. (2022). <em>Zeus: Understanding and Optimizing GPU Energy Consumption of DNN Training.</em> arXiv:2208.06102.</li>
+  <li>Fadel Argerich, M., Fürst, J., and Patiño-Martínez, M. (2026). <em>WattGPU: Predicting Inference Power and Latency on Unseen GPUs and LLMs.</em> arXiv:2607.02391.</li>
+  <li>Lee, S., Phanishayee, A., and Mahajan, D. (2024). <em>Forecasting GPU Performance for Deep Learning Training and Inference.</em> arXiv:2407.13853.</li>
+  <li>Zhang, M. and Chen, Y. (2019). <em>Inductive Matrix Completion Based on Graph Neural Networks.</em> arXiv:1904.12058.</li>
+</ol>
+
+<h2>Appendix A. Complete measurement set</h2>
+<p class="small">All 120 cells. Energy per sample in mJ; throughput in samples/s; power in W; peak memory in GB.</p>
+<div class="wrap">
+<table>
+<tr><th>Workload</th><th>Prec.</th><th>Batch</th><th>Machine</th><th>Energy/sample</th><th>Throughput</th><th>Peak W</th><th>Mean W</th><th>Peak mem</th><th>Iters</th></tr>
+<tr><td>ResNet-50</td><td>fp16</td><td>8</td><td>T4</td><td>103.70</td><td>663.0</td><td>72</td><td>68</td><td>0.22</td><td>335</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>8</td><td>L4</td><td>55.48</td><td>1259.0</td><td>71</td><td>67</td><td>0.22</td><td>630</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>8</td><td>A10G</td><td>95.44</td><td>1582.6</td><td>151</td><td>146</td><td>0.21</td><td>795</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>8</td><td>L40S</td><td>69.93</td><td>3156.4</td><td>248</td><td>222</td><td>0.22</td><td>1580</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>8</td><td>A100-40GB</td><td>119.78</td><td>1247.9</td><td>153</td><td>149</td><td>0.22</td><td>625</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>32</td><td>T4</td><td>85.30</td><td>814.4</td><td>74</td><td>69</td><td>0.37</td><td>105</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>32</td><td>L4</td><td>46.22</td><td>1572.6</td><td>73</td><td>72</td><td>0.36</td><td>200</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>32</td><td>A10G</td><td>78.16</td><td>1896.0</td><td>153</td><td>150</td><td>0.37</td><td>240</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>32</td><td>L40S</td><td>57.88</td><td>5772.3</td><td>341</td><td>319</td><td>0.36</td><td>725</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>32</td><td>A100-40GB</td><td>68.53</td><td>4304.8</td><td>300</td><td>288</td><td>0.37</td><td>540</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>128</td><td>T4</td><td>80.04</td><td>872.4</td><td>74</td><td>71</td><td>0.96</td><td>30</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>128</td><td>L4</td><td>56.03</td><td>1288.7</td><td>76</td><td>74</td><td>0.91</td><td>45</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>128</td><td>A10G</td><td>73.75</td><td>2039.4</td><td>150</td><td>150</td><td>0.96</td><td>65</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>128</td><td>L40S</td><td>76.67</td><td>4182.9</td><td>325</td><td>316</td><td>0.91</td><td>135</td></tr><tr><td>ResNet-50</td><td>fp16</td><td>128</td><td>A100-40GB</td><td>66.67</td><td>4848.0</td><td>334</td><td>329</td><td>0.96</td><td>155</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>8</td><td>T4</td><td>214.71</td><td>321.4</td><td>75</td><td>70</td><td>0.20</td><td>165</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>8</td><td>L4</td><td>67.56</td><td>1056.0</td><td>74</td><td>66</td><td>0.20</td><td>530</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>8</td><td>A10G</td><td>151.14</td><td>981.0</td><td>150</td><td>135</td><td>0.20</td><td>495</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>8</td><td>L40S</td><td>99.15</td><td>3355.2</td><td>335</td><td>288</td><td>0.20</td><td>1680</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>8</td><td>A100-40GB</td><td>132.05</td><td>1524.4</td><td>211</td><td>201</td><td>0.20</td><td>765</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>32</td><td>T4</td><td>179.04</td><td>387.6</td><td>73</td><td>69</td><td>0.46</td><td>50</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>32</td><td>L4</td><td>94.37</td><td>769.3</td><td>73</td><td>72</td><td>0.46</td><td>100</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>32</td><td>A10G</td><td>140.28</td><td>1082.6</td><td>150</td><td>148</td><td>0.46</td><td>140</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>32</td><td>L40S</td><td>118.73</td><td>2687.3</td><td>326</td><td>323</td><td>0.46</td><td>340</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>32</td><td>A100-40GB</td><td>110.59</td><td>2743.2</td><td>311</td><td>300</td><td>0.46</td><td>345</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>128</td><td>T4</td><td>170.95</td><td>405.1</td><td>71</td><td>69</td><td>1.52</td><td>15</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>128</td><td>L4</td><td>107.23</td><td>663.4</td><td>77</td><td>72</td><td>1.52</td><td>25</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>128</td><td>A10G</td><td>131.12</td><td>1153.2</td><td>151</td><td>150</td><td>1.52</td><td>40</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>128</td><td>L40S</td><td>146.90</td><td>1976.9</td><td>301</td><td>292</td><td>1.52</td><td>65</td></tr><tr><td>ResNet-50</td><td>fp32</td><td>128</td><td>A100-40GB</td><td>111.24</td><td>3000.4</td><td>344</td><td>327</td><td>1.52</td><td>95</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>8</td><td>T4</td><td>337.96</td><td>200.6</td><td>70</td><td>69</td><td>0.58</td><td>105</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>8</td><td>L4</td><td>184.85</td><td>386.5</td><td>74</td><td>73</td><td>0.58</td><td>195</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>8</td><td>A10G</td><td>332.74</td><td>453.4</td><td>151</td><td>149</td><td>0.58</td><td>230</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>8</td><td>L40S</td><td>315.99</td><td>952.8</td><td>353</td><td>304</td><td>0.58</td><td>480</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>8</td><td>A100-40GB</td><td>299.24</td><td>1057.8</td><td>391</td><td>316</td><td>0.58</td><td>530</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>32</td><td>T4</td><td>209.25</td><td>330.6</td><td>72</td><td>70</td><td>0.73</td><td>45</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>32</td><td>L4</td><td>114.99</td><td>627.6</td><td>72</td><td>72</td><td>0.73</td><td>80</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>32</td><td>A10G</td><td>206.76</td><td>732.2</td><td>151</td><td>150</td><td>0.73</td><td>95</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>32</td><td>L40S</td><td>169.03</td><td>2002.4</td><td>338</td><td>331</td><td>0.73</td><td>255</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>32</td><td>A100-40GB</td><td>181.11</td><td>2183.1</td><td>408</td><td>394</td><td>0.73</td><td>275</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>128</td><td>T4</td><td>181.77</td><td>379.5</td><td>70</td><td>69</td><td>1.32</td><td>15</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>128</td><td>L4</td><td>112.23</td><td>638.2</td><td>74</td><td>73</td><td>1.32</td><td>20</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>128</td><td>A10G</td><td>153.74</td><td>982.1</td><td>153</td><td>151</td><td>1.32</td><td>35</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>128</td><td>L40S</td><td>167.94</td><td>2013.4</td><td>334</td><td>332</td><td>1.32</td><td>65</td></tr><tr><td>ViT-B/16</td><td>fp16</td><td>128</td><td>A100-40GB</td><td>151.38</td><td>2666.8</td><td>408</td><td>397</td><td>1.32</td><td>85</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>8</td><td>T4</td><td>701.07</td><td>99.2</td><td>71</td><td>70</td><td>0.42</td><td>50</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>8</td><td>L4</td><td>351.84</td><td>209.0</td><td>73</td><td>69</td><td>0.42</td><td>105</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>8</td><td>A10G</td><td>613.70</td><td>241.3</td><td>152</td><td>140</td><td>0.42</td><td>125</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>8</td><td>L40S</td><td>519.09</td><td>649.0</td><td>341</td><td>311</td><td>0.42</td><td>325</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>8</td><td>A100-40GB</td><td>865.59</td><td>416.1</td><td>374</td><td>363</td><td>0.42</td><td>210</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>32</td><td>T4</td><td>688.17</td><td>102.8</td><td>71</td><td>70</td><td>0.63</td><td>15</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>32</td><td>L4</td><td>336.84</td><td>215.0</td><td>72</td><td>71</td><td>0.63</td><td>30</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>32</td><td>A10G</td><td>574.63</td><td>263.5</td><td>150</td><td>149</td><td>0.63</td><td>35</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>32</td><td>L40S</td><td>482.94</td><td>730.2</td><td>352</td><td>350</td><td>0.63</td><td>95</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>32</td><td>A100-40GB</td><td>831.88</td><td>478.6</td><td>403</td><td>399</td><td>0.63</td><td>60</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>128</td><td>T4</td><td>645.74</td><td>108.1</td><td>68</td><td>68</td><td>1.44</td><td>5</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>128</td><td>L4</td><td>331.14</td><td>218.6</td><td>72</td><td>72</td><td>1.44</td><td>10</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>128</td><td>A10G</td><td>547.65</td><td>269.6</td><td>149</td><td>148</td><td>1.44</td><td>10</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>128</td><td>L40S</td><td>502.14</td><td>701.9</td><td>352</td><td>351</td><td>1.44</td><td>25</td></tr><tr><td>ViT-B/16</td><td>fp32</td><td>128</td><td>A100-40GB</td><td>775.44</td><td>500.1</td><td>389</td><td>388</td><td>1.44</td><td>20</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>8</td><td>T4</td><td>113.70</td><td>603.5</td><td>72</td><td>70</td><td>0.25</td><td>305</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>8</td><td>L4</td><td>55.72</td><td>1288.6</td><td>72</td><td>71</td><td>0.25</td><td>645</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>8</td><td>A10G</td><td>115.51</td><td>1285.0</td><td>152</td><td>150</td><td>0.25</td><td>645</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>8</td><td>L40S</td><td>91.86</td><td>2988.5</td><td>327</td><td>279</td><td>0.25</td><td>1495</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>8</td><td>A100-40GB</td><td>133.03</td><td>1223.1</td><td>176</td><td>168</td><td>0.25</td><td>615</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>32</td><td>T4</td><td>101.26</td><td>686.8</td><td>71</td><td>69</td><td>0.44</td><td>90</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>32</td><td>L4</td><td>57.93</td><td>1227.1</td><td>72</td><td>72</td><td>0.44</td><td>155</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>32</td><td>A10G</td><td>101.00</td><td>1487.9</td><td>150</td><td>148</td><td>0.44</td><td>190</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>32</td><td>L40S</td><td>73.18</td><td>4551.9</td><td>337</td><td>326</td><td>0.44</td><td>570</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>32</td><td>A100-40GB</td><td>90.90</td><td>3326.5</td><td>308</td><td>301</td><td>0.44</td><td>420</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>128</td><td>T4</td><td>95.13</td><td>717.1</td><td>76</td><td>73</td><td>1.19</td><td>25</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>128</td><td>L4</td><td>67.31</td><td>1065.0</td><td>73</td><td>72</td><td>1.19</td><td>35</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>128</td><td>A10G</td><td>91.34</td><td>1652.6</td><td>150</td><td>150</td><td>1.19</td><td>55</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>128</td><td>L40S</td><td>96.36</td><td>3514.6</td><td>334</td><td>330</td><td>1.19</td><td>110</td></tr><tr><td>ConvNeXt-T</td><td>fp16</td><td>128</td><td>A100-40GB</td><td>95.33</td><td>3787.9</td><td>376</td><td>353</td><td>1.19</td><td>120</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>8</td><td>T4</td><td>256.50</td><td>264.4</td><td>74</td><td>69</td><td>0.23</td><td>135</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>8</td><td>L4</td><td>118.30</td><td>608.9</td><td>73</td><td>69</td><td>0.23</td><td>305</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>8</td><td>A10G</td><td>238.09</td><td>624.4</td><td>150</td><td>143</td><td>0.23</td><td>315</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>8</td><td>L40S</td><td>178.47</td><td>1741.5</td><td>314</td><td>300</td><td>0.23</td><td>875</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>8</td><td>A100-40GB</td><td>298.10</td><td>1056.3</td><td>322</td><td>313</td><td>0.23</td><td>530</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>32</td><td>T4</td><td>253.36</td><td>273.9</td><td>72</td><td>69</td><td>0.53</td><td>35</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>32</td><td>L4</td><td>131.50</td><td>552.8</td><td>72</td><td>72</td><td>0.53</td><td>70</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>32</td><td>A10G</td><td>219.45</td><td>677.3</td><td>152</td><td>148</td><td>0.53</td><td>85</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>32</td><td>L40S</td><td>179.16</td><td>1823.2</td><td>332</td><td>328</td><td>0.53</td><td>230</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>32</td><td>A100-40GB</td><td>277.30</td><td>1259.2</td><td>365</td><td>353</td><td>0.53</td><td>160</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>128</td><td>T4</td><td>244.73</td><td>282.6</td><td>74</td><td>71</td><td>1.75</td><td>10</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>128</td><td>L4</td><td>139.76</td><td>513.0</td><td>71</td><td>71</td><td>1.75</td><td>20</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>128</td><td>A10G</td><td>214.19</td><td>696.8</td><td>150</td><td>149</td><td>1.75</td><td>25</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>128</td><td>L40S</td><td>189.89</td><td>1727.7</td><td>329</td><td>325</td><td>1.75</td><td>55</td></tr><tr><td>ConvNeXt-T</td><td>fp32</td><td>128</td><td>A100-40GB</td><td>269.60</td><td>1347.1</td><td>389</td><td>358</td><td>1.75</td><td>45</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>8</td><td>T4</td><td>397.80</td><td>172.8</td><td>72</td><td>70</td><td>0.52</td><td>90</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>8</td><td>L4</td><td>189.09</td><td>383.8</td><td>73</td><td>72</td><td>0.52</td><td>195</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>8</td><td>A10G</td><td>318.68</td><td>461.7</td><td>152</td><td>150</td><td>0.52</td><td>235</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>8</td><td>L40S</td><td>309.85</td><td>1041.8</td><td>344</td><td>321</td><td>0.52</td><td>525</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>8</td><td>A100-40GB</td><td>279.66</td><td>1404.9</td><td>411</td><td>392</td><td>0.52</td><td>705</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>32</td><td>T4</td><td>213.93</td><td>325.3</td><td>71</td><td>69</td><td>0.70</td><td>45</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>32</td><td>L4</td><td>117.81</td><td>611.4</td><td>73</td><td>72</td><td>0.70</td><td>80</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>32</td><td>A10G</td><td>196.92</td><td>745.6</td><td>150</td><td>150</td><td>0.70</td><td>95</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>32</td><td>L40S</td><td>152.88</td><td>2300.1</td><td>348</td><td>344</td><td>0.70</td><td>290</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>32</td><td>A100-40GB</td><td>151.75</td><td>2624.4</td><td>420</td><td>399</td><td>0.70</td><td>330</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>128</td><td>T4</td><td>167.57</td><td>413.2</td><td>70</td><td>69</td><td>1.40</td><td>15</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>128</td><td>L4</td><td>103.36</td><td>699.0</td><td>73</td><td>72</td><td>1.40</td><td>25</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>128</td><td>A10G</td><td>140.26</td><td>1078.2</td><td>150</td><td>149</td><td>1.40</td><td>35</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>128</td><td>L40S</td><td>142.42</td><td>2292.6</td><td>343</td><td>335</td><td>1.40</td><td>75</td></tr><tr><td>Transformer-6L</td><td>fp16</td><td>128</td><td>A100-40GB</td><td>128.77</td><td>3072.8</td><td>423</td><td>402</td><td>1.40</td><td>100</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>8</td><td>T4</td><td>750.89</td><td>92.8</td><td>71</td><td>70</td><td>0.38</td><td>50</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>8</td><td>L4</td><td>359.72</td><td>196.4</td><td>72</td><td>71</td><td>0.38</td><td>100</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>8</td><td>A10G</td><td>668.33</td><td>228.1</td><td>151</td><td>146</td><td>0.38</td><td>115</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>8</td><td>L40S</td><td>535.28</td><td>658.6</td><td>349</td><td>339</td><td>0.38</td><td>330</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>8</td><td>A100-40GB</td><td>1018.72</td><td>388.0</td><td>408</td><td>395</td><td>0.38</td><td>195</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>32</td><td>T4</td><td>685.23</td><td>100.9</td><td>70</td><td>70</td><td>0.58</td><td>15</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>32</td><td>L4</td><td>368.13</td><td>195.8</td><td>72</td><td>72</td><td>0.58</td><td>25</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>32</td><td>A10G</td><td>654.46</td><td>230.2</td><td>150</td><td>150</td><td>0.58</td><td>30</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>32</td><td>L40S</td><td>509.43</td><td>693.4</td><td>353</td><td>351</td><td>0.58</td><td>90</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>32</td><td>A100-40GB</td><td>927.72</td><td>428.2</td><td>400</td><td>397</td><td>0.58</td><td>55</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>128</td><td>T4</td><td>730.41</td><td>94.6</td><td>72</td><td>72</td><td>1.39</td><td>5</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>128</td><td>L4</td><td>347.85</td><td>205.6</td><td>72</td><td>71</td><td>1.39</td><td>10</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>128</td><td>A10G</td><td>593.01</td><td>252.3</td><td>150</td><td>149</td><td>1.39</td><td>10</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>128</td><td>L40S</td><td>534.87</td><td>660.5</td><td>353</td><td>352</td><td>1.39</td><td>25</td></tr><tr><td>Transformer-6L</td><td>fp32</td><td>128</td><td>A100-40GB</td><td>857.62</td><td>447.4</td><td>388</td><td>384</td><td>1.39</td><td>15</td></tr>
+</table>
+</div>
+
+</body>
+</html>

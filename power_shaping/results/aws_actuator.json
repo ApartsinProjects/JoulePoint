@@ -1,0 +1,117 @@
+{
+  "meta": "gpu=NVIDIA A10G default=300 min=100 maxclk=1710\r",
+  "rows": [
+    {
+      "kind": "clock",
+      "setting": "1710",
+      "power_w": "260.6",
+      "throughput": "60.0652",
+      "energy_per_op_j": "4.34"
+    },
+    {
+      "kind": "clock",
+      "setting": "1453",
+      "power_w": "201.8",
+      "throughput": "52.9515",
+      "energy_per_op_j": "3.81"
+    },
+    {
+      "kind": "clock",
+      "setting": "1197",
+      "power_w": "148.5",
+      "throughput": "43.7606",
+      "energy_per_op_j": "3.39"
+    },
+    {
+      "kind": "clock",
+      "setting": "940",
+      "power_w": "119.5",
+      "throughput": "34.4716",
+      "energy_per_op_j": "3.47"
+    },
+    {
+      "kind": "clock",
+      "setting": "684",
+      "power_w": "102.6",
+      "throughput": "25.1453",
+      "energy_per_op_j": "4.08"
+    },
+    {
+      "kind": "cap",
+      "setting": "1.00",
+      "power_w": "272.8",
+      "throughput": "59.6437",
+      "energy_per_op_j": "4.57"
+    },
+    {
+      "kind": "cap",
+      "setting": "0.90",
+      "power_w": "251.1",
+      "throughput": "57.2212",
+      "energy_per_op_j": "4.39"
+    },
+    {
+      "kind": "cap",
+      "setting": "0.80",
+      "power_w": "224.8",
+      "throughput": "54.2710",
+      "energy_per_op_j": "4.14"
+    },
+    {
+      "kind": "cap",
+      "setting": "0.70",
+      "power_w": "203.1",
+      "throughput": "50.7098",
+      "energy_per_op_j": "4.00"
+    },
+    {
+      "kind": "cap",
+      "setting": "0.60",
+      "power_w": "178.7",
+      "throughput": "46.2554",
+      "energy_per_op_j": "3.86"
+    },
+    {
+      "kind": "cap",
+      "setting": "0.50",
+      "power_w": "139.7",
+      "throughput": "39.6103",
+      "energy_per_op_j": "3.53"
+    },
+    {
+      "kind": "model",
+      "setting": "mobilenet_v3_small",
+      "power_w": "98.6",
+      "throughput": "197.6592",
+      "energy_per_op_j": "0.50"
+    },
+    {
+      "kind": "model",
+      "setting": "resnet50",
+      "power_w": "185.5",
+      "throughput": "58.6500",
+      "energy_per_op_j": "3.16"
+    },
+    {
+      "kind": "model",
+      "setting": "densenet121",
+      "power_w": "184.6",
+      "throughput": "46.6999",
+      "energy_per_op_j": "3.95"
+    },
+    {
+      "kind": "model",
+      "setting": "vit_b_16",
+      "power_w": "227.6",
+      "throughput": "40.4584",
+      "energy_per_op_j": "5.62"
+    },
+    {
+      "kind": "model",
+      "setting": "vit_l_16",
+      "power_w": "238.2",
+      "throughput": "12.5043",
+      "energy_per_op_j": "19.05"
+    }
+  ]
+}

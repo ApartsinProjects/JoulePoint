@@ -1,0 +1,12 @@
+{
+  "platform": "AWS g5.xlarge A10G (measured)",
+  "window_target_w": 165.0,
+  "uncontrolled_power_w_median_inwindow": 299.2,
+  "controlled_power_w_median_inwindow": 170.6,
+  "uncontrolled_violation_w": 134.2,
+  "controlled_violation_w": 5.599999999999994,
+  "crit_p95_ms_uncontrolled_inwindow": 13.34,
+  "crit_p95_ms_controlled_inwindow": 14.51,
+  "defer_thru_uncontrolled_inwindow": 57.98,
+  "defer_thru_controlled_inwindow": 18.99
+}

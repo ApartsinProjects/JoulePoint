@@ -1,0 +1,76 @@
+{
+  "sweep": [
+    {
+      "lam": 1.0,
+      "H": 0.0,
+      "elasticity_value_pct": -0.2
+    },
+    {
+      "lam": 0.9,
+      "H": 0.0083,
+      "elasticity_value_pct": 0.4
+    },
+    {
+      "lam": 0.8,
+      "H": 0.0127,
+      "elasticity_value_pct": 1.8
+    },
+    {
+      "lam": 0.7,
+      "H": 0.0165,
+      "elasticity_value_pct": 3.6
+    },
+    {
+      "lam": 0.6,
+      "H": 0.0212,
+      "elasticity_value_pct": 5.9
+    },
+    {
+      "lam": 0.5,
+      "H": 0.0269,
+      "elasticity_value_pct": 8.8
+    },
+    {
+      "lam": 0.4,
+      "H": 0.0326,
+      "elasticity_value_pct": 12.3
+    },
+    {
+      "lam": 0.3,
+      "H": 0.0387,
+      "elasticity_value_pct": 16.4
+    },
+    {
+      "lam": 0.2,
+      "H": 0.0448,
+      "elasticity_value_pct": 21.2
+    },
+    {
+      "lam": 0.1,
+      "H": 0.0515,
+      "elasticity_value_pct": 26.2
+    },
+    {
+      "lam": 0.0,
+      "H": 0.0586,
+      "elasticity_value_pct": 31.1
+    }
+  ],
+  "real_pools": {
+    "emerald": {
+      "H": 0.057,
+      "value": 11.8
+    },
+    "zeus": {
+      "H": 0.0729,
+      "value": 7.1
+    },
+    "aws26": {
+      "H": 0.0586,
+      "value": 31.1
+    }
+  },
+  "homog_invariant_ok": true,
+  "mono_invariant_ok": true,
+  "value_max_pct": 31.1
+}

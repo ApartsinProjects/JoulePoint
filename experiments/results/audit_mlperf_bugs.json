@@ -1,0 +1,12 @@
+[
+ {
+  "tag": "A1",
+  "verdict": "CONFIRMED BUG in the metric, not a finding",
+  "detail": "rank_metrics compares cells WITHIN a row. Holding out a whole column leaves exactly one test cell per row, so the len(js)<2 guard skips every row and both metrics return NaN. The correct machine-cold-start question is whether the held-out accelerator is ranked correctly AGAINST THE OBSERVED ones, so the comparison set must include observed cells."
+ },
+ {
+  "tag": "A2",
+  "verdict": "CONFIRMED BUG, unhandled cold row",
+  "detail": "fit_additive only updates r[i] for rows with observations, so a fully held-out row keeps r[i]=0 (measured: 0.0000) while real row effects span -2.28..2.61. The hybrid adds that biased row term, the column-only baseline does not use r at all, which is exactly why the baseline looked better. The row effect must be imputed (row mean of the training rows, or regressed from load features) before the comparison is meaningful."
+ }
+]

@@ -1,0 +1,57 @@
+{
+ "corpus": "DeepEn2023",
+ "verdict": "NOT USABLE",
+ "analysis_performed": false,
+ "reason_short": "The measurement data is not published. The repository contains no energy data at all, and the dataset is gated behind a Google Form user survey that we will not submit. There is also no licence.",
+ "sources_checked": [
+  "https://github.com/amai-gsu/DeepEn2023",
+  "https://api.github.com/repos/amai-gsu/DeepEn2023",
+  "https://api.github.com/repos/amai-gsu/DeepEn2023/git/trees/main?recursive=1",
+  "https://api.github.com/repos/amai-gsu/DeepEn2023/license",
+  "https://amai-gsu.github.io/DeepEn2023/",
+  "https://arxiv.org/html/2312.00103",
+  "https://dl.acm.org/doi/10.1145/3583740.3628442"
+ ],
+ "licence": {
+  "status": "NONE",
+  "detail": "The GitHub repository has no LICENSE or COPYING file. The repos API returns license: null and /license returns HTTP 404. Under GitHub defaults this is all rights reserved. The arXiv companion paper 2312.00103 carries CC BY 4.0, but that is the licence of the PAPER, not of the dataset, and the project page states no terms of use. 'Publicly readable after filling in a form' is not permission to redistribute.",
+  "redistribution_permitted": false
+ },
+ "access": {
+  "gated": true,
+  "mechanism": "Google Form user survey",
+  "readme_text_quoted": "Go to our project website ... Click \"Data\". Submit the User Survey.",
+  "form_url_present_on_project_page": true,
+  "action_taken": "NONE. No form was opened, no personal data was entered, no survey was submitted, per the task constraint. The gate is reported and the evaluation stops here.",
+  "corroborating_evidence": "The repository ships __pycache__/user_survey.cpython-311.pyc and __pycache__/user_infor.cpython-311.pyc alongside flask.cpython-311.pyc, confirming a Flask-backed survey gate."
+ },
+ "repository_contents": {
+  "measurement_data_files": 0,
+  "csv_files": 0,
+  "energy_tables": 0,
+  "what_is_actually_there": [
+   "Model_test/mobilenetV1/ONNX/mobilenetv1_{1,11,21,31,41,51,61,71,81,91}.onnx  (10 model files, 6.4-22.8 MB each)",
+   "Model_test/mobilenetV1/mobilenetv1-log.json  (1.25 MB, a per-model profiling log for one network)",
+   "Prediction/sec23_AIEnergy_onnx.py  (16 KB, an inference-side prediction script)",
+   "README.md, index.html (the project page), .DS_Store files, __pycache__"
+  ],
+  "tree_truncated": false
+ },
+ "advertised_vs_released": {
+  "advertised_devices": "8 edge devices with 8 distinct mobile SoCs (Qualcomm, HiSilicon, MediaTek)",
+  "advertised_tiers": [
+   "kernel-level: ~1677 kernel measurements across 9 kernel types",
+   "model-level: 9 DNNs x 50 variants = 450 configurations",
+   "application-level: 6 edge AI applications"
+  ],
+  "actually_released": "Kernel level only, and only behind the survey gate. README verbatim: 'Currently, we have only uploaded kernel-level dataset. we will upload other datasets later.' The repository has not added data since 2025-10-12.",
+  "energy_units_claimed": "millijoules (mJ), CPU and GPU, measured externally with a Monsoon Power Monitor at 0.2 ms granularity"
+ },
+ "why_it_fails_the_usability_criterion": [
+  "Criterion is: the same workload measured on 3+ distinct hardware platforms with MEASURED energy, obtainable and analysable. Zero measured-energy records are obtainable without submitting personal data through a third-party form.",
+  "Even if the gate were passed, only the kernel-level tier exists. Kernels are not the paper's unit of workload: a WORKLOAD x HARDWARE matrix built from individual convolution kernels measures operator-level dispatch, not an application whose hardware choice is a decision. The model-level tier, which would be the comparable one, is explicitly not released.",
+  "With no licence, derived statistics could be published only under a fair-use argument that the CC-BY-4.0 Grid'5000 corpus does not require."
+ ],
+ "recommendation": "Exclude from the Table 2 comparison. Do not cite it as a corpus that was analysed. If it is mentioned at all, mention it as an edge-device dataset whose measurement tier relevant to this paper is unreleased.",
+ "contrast_with_k2": "The Grid'5000 corpus (10.5281/zenodo.10982238) was the other candidate evaluated in the same pass and is CC-BY-4.0, open access, checksum-verifiable, and usable; see experiments/results/k2_grid5000.json."
+}

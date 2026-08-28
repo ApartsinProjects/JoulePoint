@@ -1,0 +1,7 @@
+{
+ "settle_ms_down_median": 201.5,
+ "settle_ms_up_median": 171.0,
+ "settle_ms_overall_median": 191.0,
+ "settle_ms_max": 242.0,
+ "n_steps": 12
+}

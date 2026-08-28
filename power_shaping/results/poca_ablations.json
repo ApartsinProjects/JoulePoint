@@ -1,0 +1,71 @@
+{
+  "real_weighted": {
+    "heterogeneity_spread": 0.0897832388763935,
+    "rows": [
+      {
+        "curt": 10,
+        "oracle_gain_vs_uniform_pct": 32.15969065852286,
+        "shared_capture_pct": 98.33750534379067,
+        "per_workload_elasticity_gain_pct": 0.7819428622089266
+      },
+      {
+        "curt": 20,
+        "oracle_gain_vs_uniform_pct": 27.163335768604593,
+        "shared_capture_pct": 69.38841209295624,
+        "per_workload_elasticity_gain_pct": 10.246389065381912
+      },
+      {
+        "curt": 30,
+        "oracle_gain_vs_uniform_pct": 17.04783424229128,
+        "shared_capture_pct": 92.47753651154534,
+        "per_workload_elasticity_gain_pct": 1.5224353974860303
+      }
+    ]
+  },
+  "real_equalweight": {
+    "heterogeneity_spread": 0.0897832388763935,
+    "rows": [
+      {
+        "curt": 10,
+        "oracle_gain_vs_uniform_pct": 25.232694389585824,
+        "shared_capture_pct": -26.7788776857442,
+        "per_workload_elasticity_gain_pct": 29.96498314686929
+      },
+      {
+        "curt": 20,
+        "oracle_gain_vs_uniform_pct": 9.468001582755859,
+        "shared_capture_pct": -27.721772374784706,
+        "per_workload_elasticity_gain_pct": 11.783420252278873
+      },
+      {
+        "curt": 30,
+        "oracle_gain_vs_uniform_pct": 2.1389132857383677,
+        "shared_capture_pct": -66.12018655562909,
+        "per_workload_elasticity_gain_pct": 3.5036167200260264
+      }
+    ]
+  },
+  "surrogate_hetero": {
+    "heterogeneity_spread": 0.10156948145454558,
+    "rows": [
+      {
+        "curt": 10,
+        "oracle_gain_vs_uniform_pct": 78.48570380091512,
+        "shared_capture_pct": 95.03090530659289,
+        "per_workload_elasticity_gain_pct": 15.345789907477283
+      },
+      {
+        "curt": 20,
+        "oracle_gain_vs_uniform_pct": 51.67176439895801,
+        "shared_capture_pct": 90.99932262088993,
+        "per_workload_elasticity_gain_pct": 8.77858191173033
+      },
+      {
+        "curt": 30,
+        "oracle_gain_vs_uniform_pct": 23.90378963779481,
+        "shared_capture_pct": 41.16538174289952,
+        "per_workload_elasticity_gain_pct": 15.598621159086939
+      }
+    ]
+  }
+}

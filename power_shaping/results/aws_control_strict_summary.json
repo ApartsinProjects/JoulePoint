@@ -1,0 +1,16 @@
+{
+  "A10G": {
+    "default_w": 300.0,
+    "time_above_target_pct_mean": 1.11,
+    "time_above_target_pct_max": 13.5,
+    "actuation_s_median": 0.02,
+    "crit_p95_ms_median": 0.12
+  },
+  "L4": {
+    "default_w": 72.0,
+    "time_above_target_pct_mean": 5.84,
+    "time_above_target_pct_max": 91.9,
+    "actuation_s_median": 0.02,
+    "crit_p95_ms_median": 0.2
+  }
+}

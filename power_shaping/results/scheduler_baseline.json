@@ -1,0 +1,103 @@
+{
+  "rows": [
+    {
+      "dip_frac": 0.5,
+      "fifo": {
+        "crit_slo": 0.2,
+        "inter_slo": 0.0,
+        "wcost": 520.0,
+        "compliance": 97.1
+      },
+      "strict_priority": {
+        "crit_slo": 0.0,
+        "inter_slo": 0.0,
+        "wcost": 0.0,
+        "compliance": 97.1
+      },
+      "edf": {
+        "crit_slo": 0.0,
+        "inter_slo": 0.0,
+        "wcost": 0.0,
+        "compliance": 97.1
+      },
+      "wfq": {
+        "crit_slo": 0.0,
+        "inter_slo": 0.0,
+        "wcost": 0.0,
+        "compliance": 97.1
+      },
+      "ours_priority_plus_defer": {
+        "crit_slo": 0.0,
+        "inter_slo": 0.0,
+        "wcost": 3659.0,
+        "compliance": 83.3
+      }
+    },
+    {
+      "dip_frac": 0.45,
+      "fifo": {
+        "crit_slo": 17.2,
+        "inter_slo": 6.0,
+        "wcost": 70436.0,
+        "compliance": 95.9
+      },
+      "strict_priority": {
+        "crit_slo": 0.0,
+        "inter_slo": 0.0,
+        "wcost": 0.0,
+        "compliance": 95.9
+      },
+      "edf": {
+        "crit_slo": 0.0,
+        "inter_slo": 0.0,
+        "wcost": 0.0,
+        "compliance": 95.9
+      },
+      "wfq": {
+        "crit_slo": 0.0,
+        "inter_slo": 0.0,
+        "wcost": 0.0,
+        "compliance": 95.9
+      },
+      "ours_priority_plus_defer": {
+        "crit_slo": 0.0,
+        "inter_slo": 0.0,
+        "wcost": 3659.0,
+        "compliance": 83.4
+      }
+    },
+    {
+      "dip_frac": 0.4,
+      "fifo": {
+        "crit_slo": 41.9,
+        "inter_slo": 41.8,
+        "wcost": 344387.0,
+        "compliance": 97.1
+      },
+      "strict_priority": {
+        "crit_slo": 0.0,
+        "inter_slo": 0.0,
+        "wcost": 16199.0,
+        "compliance": 97.1
+      },
+      "edf": {
+        "crit_slo": 29.6,
+        "inter_slo": 30.2,
+        "wcost": 252350.0,
+        "compliance": 97.1
+      },
+      "wfq": {
+        "crit_slo": 0.0,
+        "inter_slo": 12.1,
+        "wcost": 92893.0,
+        "compliance": 97.1
+      },
+      "ours_priority_plus_defer": {
+        "crit_slo": 0.0,
+        "inter_slo": 0.0,
+        "wcost": 3672.0,
+        "compliance": 83.5
+      }
+    }
+  ]
+}

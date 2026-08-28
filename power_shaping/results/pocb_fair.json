@@ -1,0 +1,184 @@
+[
+  {
+    "dip_frac": 0.9,
+    "uniform": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "priority": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "elasticity": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "priority_gain_vs_uniform_pct": 0.0,
+    "elasticity_gain_vs_priority_pct": 0.0
+  },
+  {
+    "dip_frac": 0.8,
+    "uniform": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "priority": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "elasticity": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "priority_gain_vs_uniform_pct": 0.0,
+    "elasticity_gain_vs_priority_pct": 0.0
+  },
+  {
+    "dip_frac": 0.7,
+    "uniform": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "priority": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "elasticity": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "priority_gain_vs_uniform_pct": 0.0,
+    "elasticity_gain_vs_priority_pct": 0.0
+  },
+  {
+    "dip_frac": 0.6,
+    "uniform": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "priority": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "elasticity": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "priority_gain_vs_uniform_pct": 0.0,
+    "elasticity_gain_vs_priority_pct": 0.0
+  },
+  {
+    "dip_frac": 0.5,
+    "uniform": {
+      "crit_slo": 0.8371412904405018,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 1832.0,
+      "compliance": 100.0
+    },
+    "priority": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "elasticity": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "priority_gain_vs_uniform_pct": 100.0,
+    "elasticity_gain_vs_priority_pct": 0.0
+  },
+  {
+    "dip_frac": 0.45,
+    "uniform": {
+      "crit_slo": 22.690550173642844,
+      "inter_slo": 12.052098066949558,
+      "off_slo": 0.0,
+      "wcost": 115096.0,
+      "compliance": 100.0
+    },
+    "priority": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "elasticity": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 0.0,
+      "wcost": 0.0,
+      "compliance": 100.0
+    },
+    "priority_gain_vs_uniform_pct": 100.0,
+    "elasticity_gain_vs_priority_pct": 0.0
+  },
+  {
+    "dip_frac": 0.4,
+    "uniform": {
+      "crit_slo": 43.823798208736974,
+      "inter_slo": 43.675595238095234,
+      "off_slo": 0.0,
+      "wcost": 360128.0,
+      "compliance": 100.0
+    },
+    "priority": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 29.69481832076123,
+      "wcost": 10371.8,
+      "compliance": 100.0
+    },
+    "elasticity": {
+      "crit_slo": 0.0,
+      "inter_slo": 0.0,
+      "off_slo": 29.69481832076123,
+      "wcost": 10371.8,
+      "compliance": 100.0
+    },
+    "priority_gain_vs_uniform_pct": 97.11996845566021,
+    "elasticity_gain_vs_priority_pct": 0.0
+  }
+]

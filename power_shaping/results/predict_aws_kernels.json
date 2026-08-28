@@ -1,0 +1,22 @@
+{
+  "n_rows": 295,
+  "n_kernels": 26,
+  "n_cards": 3,
+  "leave_one_kernel_out": {
+    "physics_duration_MdAPE": 83.6,
+    "physics_duration_logR2": 0.088,
+    "physics_energy_MdAPE": 86.5,
+    "physics_slowdown_MAE": 0.139,
+    "nameonly_duration_MdAPE": 89.4
+  },
+  "leave_one_card_out": {
+    "physics_duration_MdAPE": 88.5,
+    "physics_energy_MdAPE": 64.2
+  },
+  "normalized_cap_response": {
+    "norm_thr_MdAPE": 2.8,
+    "slowdown_MAE": 0.045,
+    "slowdown_MAE_where_gt5pct": 0.066,
+    "card_out_norm_MdAPE": 19.2
+  }
+}

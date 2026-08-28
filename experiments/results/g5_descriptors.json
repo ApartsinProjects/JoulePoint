@@ -1,0 +1,2356 @@
+{
+ "results": {
+  "panel5": {
+   "(nothing)": {
+    "acc": 81.66666666666667,
+    "ci": [
+     77.08333333333334,
+     85.83333333333333
+    ],
+    "cost": 0,
+    "size": 0,
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 5.416666666666657,
+    "gap_ci": [
+     2.5,
+     10.0
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH": {
+    "acc": 81.66666666666667,
+    "ci": [
+     77.08333333333334,
+     86.25
+    ],
+    "cost": 0,
+    "size": 1,
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 5.416666666666657,
+    "gap_ci": [
+     3.3333333333333286,
+     9.166666666666671
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "FAMILY": {
+    "acc": 81.66666666666667,
+    "ci": [
+     77.08333333333334,
+     85.83333333333333
+    ],
+    "cost": 0,
+    "size": 1,
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 5.416666666666657,
+    "gap_ci": [
+     2.5,
+     10.0
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "MEM": {
+    "acc": 82.08333333333333,
+    "ci": [
+     78.33333333333333,
+     85.41666666666666
+    ],
+    "cost": 0,
+    "size": 1,
+    "gap_vs_ceiling": 5.833333333333343,
+    "gap_vs_full": 5.0,
+    "gap_ci": [
+     2.5,
+     9.166666666666657
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "PREC": {
+    "acc": 83.33333333333334,
+    "ci": [
+     77.91666666666667,
+     88.33333333333333
+    ],
+    "cost": 1,
+    "size": 1,
+    "gap_vs_ceiling": 4.583333333333329,
+    "gap_vs_full": 3.749999999999986,
+    "gap_ci": [
+     1.6666666666666572,
+     7.5
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+FAMILY": {
+    "acc": 81.66666666666667,
+    "ci": [
+     77.08333333333334,
+     86.25
+    ],
+    "cost": 0,
+    "size": 2,
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 5.416666666666657,
+    "gap_ci": [
+     3.3333333333333286,
+     9.166666666666671
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+MEM": {
+    "acc": 81.66666666666667,
+    "ci": [
+     77.08333333333334,
+     86.25
+    ],
+    "cost": 0,
+    "size": 2,
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 5.416666666666657,
+    "gap_ci": [
+     3.3333333333333286,
+     9.166666666666671
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+PREC": {
+    "acc": 85.41666666666666,
+    "ci": [
+     80.41666666666667,
+     90.0
+    ],
+    "cost": 1,
+    "size": 2,
+    "gap_vs_ceiling": 2.500000000000014,
+    "gap_vs_full": 1.6666666666666714,
+    "gap_ci": [
+     0.8333333333333286,
+     4.166666666666671
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "FAMILY+MEM": {
+    "acc": 81.25,
+    "ci": [
+     76.25,
+     85.83333333333333
+    ],
+    "cost": 0,
+    "size": 2,
+    "gap_vs_ceiling": 6.666666666666671,
+    "gap_vs_full": 5.833333333333329,
+    "gap_ci": [
+     2.9166666666666714,
+     10.416666666666671
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "FAMILY+PREC": {
+    "acc": 82.08333333333333,
+    "ci": [
+     77.08333333333334,
+     86.66666666666667
+    ],
+    "cost": 1,
+    "size": 2,
+    "gap_vs_ceiling": 5.833333333333343,
+    "gap_vs_full": 5.0,
+    "gap_ci": [
+     2.9166666666666714,
+     8.749999999999986
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "MEM+PREC": {
+    "acc": 86.25,
+    "ci": [
+     80.83333333333333,
+     90.83333333333333
+    ],
+    "cost": 1,
+    "size": 2,
+    "gap_vs_ceiling": 1.6666666666666714,
+    "gap_vs_full": 0.8333333333333286,
+    "gap_ci": [
+     -0.8333333333333286,
+     4.166666666666671
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   "BATCH+FAMILY+MEM": {
+    "acc": 82.08333333333333,
+    "ci": [
+     77.5,
+     86.66666666666667
+    ],
+    "cost": 0,
+    "size": 3,
+    "gap_vs_ceiling": 5.833333333333343,
+    "gap_vs_full": 5.0,
+    "gap_ci": [
+     2.083333333333343,
+     9.583333333333329
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+FAMILY+PREC": {
+    "acc": 87.91666666666667,
+    "ci": [
+     82.91666666666667,
+     92.5
+    ],
+    "cost": 1,
+    "size": 3,
+    "gap_vs_ceiling": 0.0,
+    "gap_vs_full": -0.8333333333333428,
+    "gap_ci": [
+     0.0,
+     0.0
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   "BATCH+MEM+PREC": {
+    "acc": 85.41666666666666,
+    "ci": [
+     80.41666666666667,
+     90.0
+    ],
+    "cost": 1,
+    "size": 3,
+    "gap_vs_ceiling": 2.500000000000014,
+    "gap_vs_full": 1.6666666666666714,
+    "gap_ci": [
+     0.4166666666666714,
+     4.583333333333329
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "FAMILY+MEM+PREC": {
+    "acc": 87.5,
+    "ci": [
+     82.5,
+     92.08333333333333
+    ],
+    "cost": 1,
+    "size": 3,
+    "gap_vs_ceiling": 0.4166666666666714,
+    "gap_vs_full": -0.4166666666666714,
+    "gap_ci": [
+     -1.6666666666666714,
+     2.5
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   "BATCH+FAMILY+MEM+PREC": {
+    "acc": 87.08333333333333,
+    "ci": [
+     82.08333333333333,
+     91.25
+    ],
+    "cost": 1,
+    "size": 4,
+    "gap_vs_ceiling": 0.8333333333333428,
+    "gap_vs_full": 0.0,
+    "gap_ci": [
+     -3.3333333333333286,
+     4.999999999999986
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   }
+  },
+  "panel4": {
+   "(nothing)": {
+    "acc": 81.94444444444444,
+    "ci": [
+     74.30555555555556,
+     89.58333333333334
+    ],
+    "cost": 0,
+    "size": 0,
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 2.7777777777777715,
+    "gap_ci": [
+     2.0833333333333286,
+     11.111111111111114
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH": {
+    "acc": 80.55555555555556,
+    "ci": [
+     73.61111111111111,
+     87.5
+    ],
+    "cost": 0,
+    "size": 1,
+    "gap_vs_ceiling": 7.638888888888886,
+    "gap_vs_full": 4.166666666666657,
+    "gap_ci": [
+     4.166666666666657,
+     11.805555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "FAMILY": {
+    "acc": 81.94444444444444,
+    "ci": [
+     74.30555555555556,
+     89.58333333333334
+    ],
+    "cost": 0,
+    "size": 1,
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 2.7777777777777715,
+    "gap_ci": [
+     2.0833333333333286,
+     11.111111111111114
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "MEM": {
+    "acc": 81.25,
+    "ci": [
+     74.30555555555556,
+     87.5
+    ],
+    "cost": 0,
+    "size": 1,
+    "gap_vs_ceiling": 6.944444444444443,
+    "gap_vs_full": 3.4722222222222143,
+    "gap_ci": [
+     3.4722222222222143,
+     11.1111111111111
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "PREC": {
+    "acc": 81.94444444444444,
+    "ci": [
+     74.30555555555556,
+     89.58333333333334
+    ],
+    "cost": 1,
+    "size": 1,
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 2.7777777777777715,
+    "gap_ci": [
+     2.083333333333343,
+     11.1111111111111
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "PROF": {
+    "acc": 81.25,
+    "ci": [
+     74.30555555555556,
+     88.19444444444444
+    ],
+    "cost": 10,
+    "size": 1,
+    "gap_vs_ceiling": 6.944444444444443,
+    "gap_vs_full": 3.4722222222222143,
+    "gap_ci": [
+     2.7777777777777715,
+     11.805555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+FAMILY": {
+    "acc": 80.55555555555556,
+    "ci": [
+     73.61111111111111,
+     87.5
+    ],
+    "cost": 0,
+    "size": 2,
+    "gap_vs_ceiling": 7.638888888888886,
+    "gap_vs_full": 4.166666666666657,
+    "gap_ci": [
+     4.166666666666657,
+     11.805555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+MEM": {
+    "acc": 80.55555555555556,
+    "ci": [
+     73.61111111111111,
+     87.5
+    ],
+    "cost": 0,
+    "size": 2,
+    "gap_vs_ceiling": 7.638888888888886,
+    "gap_vs_full": 4.166666666666657,
+    "gap_ci": [
+     4.166666666666657,
+     11.805555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+PREC": {
+    "acc": 86.11111111111111,
+    "ci": [
+     79.86111111111111,
+     91.66666666666666
+    ],
+    "cost": 1,
+    "size": 2,
+    "gap_vs_ceiling": 2.0833333333333286,
+    "gap_vs_full": -1.3888888888889,
+    "gap_ci": [
+     0.0,
+     4.166666666666686
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   "BATCH+PROF": {
+    "acc": 84.02777777777779,
+    "ci": [
+     77.77777777777779,
+     90.27777777777779
+    ],
+    "cost": 10,
+    "size": 2,
+    "gap_vs_ceiling": 4.166666666666657,
+    "gap_vs_full": 0.6944444444444287,
+    "gap_ci": [
+     1.3888888888888995,
+     6.944444444444457
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "FAMILY+MEM": {
+    "acc": 79.86111111111111,
+    "ci": [
+     72.91666666666666,
+     86.80555555555556
+    ],
+    "cost": 0,
+    "size": 2,
+    "gap_vs_ceiling": 8.333333333333329,
+    "gap_vs_full": 4.8611111111111,
+    "gap_ci": [
+     4.166666666666671,
+     13.194444444444443
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "FAMILY+PREC": {
+    "acc": 81.94444444444444,
+    "ci": [
+     74.30555555555556,
+     89.58333333333334
+    ],
+    "cost": 1,
+    "size": 2,
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 2.7777777777777715,
+    "gap_ci": [
+     2.083333333333343,
+     11.1111111111111
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "FAMILY+PROF": {
+    "acc": 81.94444444444444,
+    "ci": [
+     75.0,
+     88.88888888888889
+    ],
+    "cost": 10,
+    "size": 2,
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 2.7777777777777715,
+    "gap_ci": [
+     0.6944444444444571,
+     11.805555555555571
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "MEM+PREC": {
+    "acc": 86.11111111111111,
+    "ci": [
+     79.16666666666666,
+     92.36111111111111
+    ],
+    "cost": 1,
+    "size": 2,
+    "gap_vs_ceiling": 2.0833333333333286,
+    "gap_vs_full": -1.3888888888889,
+    "gap_ci": [
+     -1.3888888888889,
+     5.555555555555557
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   "MEM+PROF": {
+    "acc": 85.41666666666666,
+    "ci": [
+     79.86111111111111,
+     90.97222222222221
+    ],
+    "cost": 10,
+    "size": 2,
+    "gap_vs_ceiling": 2.7777777777777857,
+    "gap_vs_full": -0.6944444444444429,
+    "gap_ci": [
+     -2.0833333333333286,
+     7.638888888888886
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   "PREC+PROF": {
+    "acc": 81.25,
+    "ci": [
+     74.30555555555556,
+     88.88888888888889
+    ],
+    "cost": 11,
+    "size": 2,
+    "gap_vs_ceiling": 6.944444444444443,
+    "gap_vs_full": 3.4722222222222143,
+    "gap_ci": [
+     2.7777777777777715,
+     11.805555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+FAMILY+MEM": {
+    "acc": 80.55555555555556,
+    "ci": [
+     73.61111111111111,
+     86.80555555555556
+    ],
+    "cost": 0,
+    "size": 3,
+    "gap_vs_ceiling": 7.638888888888886,
+    "gap_vs_full": 4.166666666666657,
+    "gap_ci": [
+     3.4722222222222285,
+     12.5
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+FAMILY+PREC": {
+    "acc": 88.19444444444444,
+    "ci": [
+     81.94444444444444,
+     94.44444444444444
+    ],
+    "cost": 1,
+    "size": 3,
+    "gap_vs_ceiling": 0.0,
+    "gap_vs_full": -3.4722222222222285,
+    "gap_ci": [
+     0.0,
+     0.0
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   "BATCH+FAMILY+PROF": {
+    "acc": 83.33333333333334,
+    "ci": [
+     77.77777777777779,
+     88.88888888888889
+    ],
+    "cost": 10,
+    "size": 3,
+    "gap_vs_ceiling": 4.8611111111111,
+    "gap_vs_full": 1.3888888888888715,
+    "gap_ci": [
+     0.6944444444444429,
+     9.722222222222214
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+MEM+PREC": {
+    "acc": 85.41666666666666,
+    "ci": [
+     79.16666666666666,
+     90.97222222222221
+    ],
+    "cost": 1,
+    "size": 3,
+    "gap_vs_ceiling": 2.7777777777777857,
+    "gap_vs_full": -0.6944444444444429,
+    "gap_ci": [
+     0.6944444444444429,
+     5.555555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+MEM+PROF": {
+    "acc": 84.02777777777779,
+    "ci": [
+     77.77777777777779,
+     90.27777777777779
+    ],
+    "cost": 10,
+    "size": 3,
+    "gap_vs_ceiling": 4.166666666666657,
+    "gap_vs_full": 0.6944444444444287,
+    "gap_ci": [
+     -0.6944444444444571,
+     9.027777777777771
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   "BATCH+PREC+PROF": {
+    "acc": 86.80555555555556,
+    "ci": [
+     80.55555555555556,
+     92.36111111111111
+    ],
+    "cost": 11,
+    "size": 3,
+    "gap_vs_ceiling": 1.3888888888888857,
+    "gap_vs_full": -2.083333333333343,
+    "gap_ci": [
+     0.0,
+     3.4722222222222285
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   "FAMILY+MEM+PREC": {
+    "acc": 87.5,
+    "ci": [
+     81.25,
+     93.05555555555556
+    ],
+    "cost": 1,
+    "size": 3,
+    "gap_vs_ceiling": 0.6944444444444429,
+    "gap_vs_full": -2.7777777777777857,
+    "gap_ci": [
+     -2.083333333333343,
+     3.4722222222222285
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   "FAMILY+MEM+PROF": {
+    "acc": 83.33333333333334,
+    "ci": [
+     77.77777777777779,
+     88.88888888888889
+    ],
+    "cost": 10,
+    "size": 3,
+    "gap_vs_ceiling": 4.8611111111111,
+    "gap_vs_full": 1.3888888888888715,
+    "gap_ci": [
+     -0.6944444444444429,
+     10.416666666666671
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   "FAMILY+PREC+PROF": {
+    "acc": 80.55555555555556,
+    "ci": [
+     73.61111111111111,
+     87.5
+    ],
+    "cost": 11,
+    "size": 3,
+    "gap_vs_ceiling": 7.638888888888886,
+    "gap_vs_full": 4.166666666666657,
+    "gap_ci": [
+     2.7777777777777857,
+     13.194444444444443
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "MEM+PREC+PROF": {
+    "acc": 84.72222222222221,
+    "ci": [
+     78.47222222222221,
+     90.97222222222221
+    ],
+    "cost": 11,
+    "size": 3,
+    "gap_vs_ceiling": 3.4722222222222285,
+    "gap_vs_full": 0.0,
+    "gap_ci": [
+     0.6944444444444571,
+     6.25
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "BATCH+FAMILY+MEM+PREC": {
+    "acc": 87.5,
+    "ci": [
+     81.25,
+     93.05555555555556
+    ],
+    "cost": 1,
+    "size": 4,
+    "gap_vs_ceiling": 0.6944444444444429,
+    "gap_vs_full": -2.7777777777777857,
+    "gap_ci": [
+     -4.861111111111114,
+     5.555555555555557
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   "BATCH+FAMILY+MEM+PROF": {
+    "acc": 86.11111111111111,
+    "ci": [
+     80.55555555555556,
+     90.97222222222221
+    ],
+    "cost": 10,
+    "size": 4,
+    "gap_vs_ceiling": 2.0833333333333286,
+    "gap_vs_full": -1.3888888888889,
+    "gap_ci": [
+     -3.4722222222222143,
+     7.6388888888888715
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   "BATCH+FAMILY+PREC+PROF": {
+    "acc": 87.5,
+    "ci": [
+     81.25,
+     93.75
+    ],
+    "cost": 11,
+    "size": 4,
+    "gap_vs_ceiling": 0.6944444444444429,
+    "gap_vs_full": -2.7777777777777857,
+    "gap_ci": [
+     0.0,
+     2.083333333333343
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   "BATCH+MEM+PREC+PROF": {
+    "acc": 83.33333333333334,
+    "ci": [
+     77.08333333333334,
+     88.88888888888889
+    ],
+    "cost": 11,
+    "size": 4,
+    "gap_vs_ceiling": 4.8611111111111,
+    "gap_vs_full": 1.3888888888888715,
+    "gap_ci": [
+     1.371527777777767,
+     9.027777777777786
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   "FAMILY+MEM+PREC+PROF": {
+    "acc": 86.80555555555556,
+    "ci": [
+     80.55555555555556,
+     93.05555555555556
+    ],
+    "cost": 11,
+    "size": 4,
+    "gap_vs_ceiling": 1.3888888888888857,
+    "gap_vs_full": -2.083333333333343,
+    "gap_ci": [
+     0.0,
+     3.4722222222222285
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   "BATCH+FAMILY+MEM+PREC+PROF": {
+    "acc": 84.72222222222221,
+    "ci": [
+     77.77777777777779,
+     90.97222222222221
+    ],
+    "cost": 11,
+    "size": 5,
+    "gap_vs_ceiling": 3.4722222222222285,
+    "gap_vs_full": 0.0,
+    "gap_ci": [
+     0.0,
+     7.638888888888886
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   }
+  },
+  "frontier_panel5_by_size": [
+   {
+    "budget": 0,
+    "accuracy": 81.66666666666667,
+    "descriptors": [],
+    "ci95": [
+     77.08333333333334,
+     85.83333333333333
+    ]
+   },
+   {
+    "budget": 1,
+    "accuracy": 83.33333333333334,
+    "descriptors": [
+     "PREC"
+    ],
+    "ci95": [
+     77.91666666666667,
+     88.33333333333333
+    ]
+   },
+   {
+    "budget": 2,
+    "accuracy": 86.25,
+    "descriptors": [
+     "MEM",
+     "PREC"
+    ],
+    "ci95": [
+     80.83333333333333,
+     90.83333333333333
+    ]
+   },
+   {
+    "budget": 3,
+    "accuracy": 87.91666666666667,
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC"
+    ],
+    "ci95": [
+     82.91666666666667,
+     92.5
+    ]
+   },
+   {
+    "budget": 4,
+    "accuracy": 87.91666666666667,
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC"
+    ],
+    "ci95": [
+     82.91666666666667,
+     92.5
+    ]
+   }
+  ],
+  "frontier_panel5_by_cost": [
+   {
+    "budget": 0,
+    "accuracy": 82.08333333333333,
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "MEM"
+    ],
+    "ci95": [
+     77.5,
+     86.66666666666667
+    ]
+   },
+   {
+    "budget": 1,
+    "accuracy": 87.91666666666667,
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC"
+    ],
+    "ci95": [
+     82.91666666666667,
+     92.5
+    ]
+   }
+  ],
+  "frontier_panel4_by_size": [
+   {
+    "budget": 0,
+    "accuracy": 81.94444444444444,
+    "descriptors": [],
+    "ci95": [
+     74.30555555555556,
+     89.58333333333334
+    ]
+   },
+   {
+    "budget": 1,
+    "accuracy": 81.94444444444444,
+    "descriptors": [
+     "FAMILY"
+    ],
+    "ci95": [
+     74.30555555555556,
+     89.58333333333334
+    ]
+   },
+   {
+    "budget": 2,
+    "accuracy": 86.11111111111111,
+    "descriptors": [
+     "BATCH",
+     "PREC"
+    ],
+    "ci95": [
+     79.86111111111111,
+     91.66666666666666
+    ]
+   },
+   {
+    "budget": 3,
+    "accuracy": 88.19444444444444,
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC"
+    ],
+    "ci95": [
+     81.94444444444444,
+     94.44444444444444
+    ]
+   },
+   {
+    "budget": 4,
+    "accuracy": 88.19444444444444,
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC"
+    ],
+    "ci95": [
+     81.94444444444444,
+     94.44444444444444
+    ]
+   },
+   {
+    "budget": 5,
+    "accuracy": 88.19444444444444,
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC"
+    ],
+    "ci95": [
+     81.94444444444444,
+     94.44444444444444
+    ]
+   }
+  ],
+  "frontier_panel4_by_cost": [
+   {
+    "budget": 0,
+    "accuracy": 81.94444444444444,
+    "descriptors": [
+     "FAMILY"
+    ],
+    "ci95": [
+     74.30555555555556,
+     89.58333333333334
+    ]
+   },
+   {
+    "budget": 1,
+    "accuracy": 88.19444444444444,
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC"
+    ],
+    "ci95": [
+     81.94444444444444,
+     94.44444444444444
+    ]
+   },
+   {
+    "budget": 10,
+    "accuracy": 88.19444444444444,
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC"
+    ],
+    "ci95": [
+     81.94444444444444,
+     94.44444444444444
+    ]
+   },
+   {
+    "budget": 11,
+    "accuracy": 88.19444444444444,
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC"
+    ],
+    "ci95": [
+     81.94444444444444,
+     94.44444444444444
+    ]
+   }
+  ],
+  "minimum_sufficient": {
+   "PANEL-5": {
+    "ceiling": {
+     "descriptors": [
+      "BATCH",
+      "FAMILY",
+      "PREC"
+     ],
+     "accuracy": 87.91666666666667,
+     "cost": 1
+    },
+    "sufficient_strict": {
+     "descriptors": [
+      "BATCH",
+      "FAMILY",
+      "PREC"
+     ],
+     "cost": 1,
+     "size": 3,
+     "accuracy": 87.91666666666667,
+     "gap_vs_ceiling": 0.0
+    },
+    "sufficient": {
+     "descriptors": [
+      "MEM",
+      "PREC"
+     ],
+     "cost": 1,
+     "size": 2,
+     "accuracy": 86.25,
+     "gap_vs_ceiling": 1.6666666666666714
+    },
+    "ceiling_vs_empty": {
+     "gap": 6.25,
+     "ci95": [
+      2.5,
+      10.0
+     ]
+    }
+   },
+   "PANEL-4": {
+    "ceiling": {
+     "descriptors": [
+      "BATCH",
+      "FAMILY",
+      "PREC"
+     ],
+     "accuracy": 88.19444444444444,
+     "cost": 1
+    },
+    "sufficient_strict": {
+     "descriptors": [
+      "BATCH",
+      "FAMILY",
+      "PREC"
+     ],
+     "cost": 1,
+     "size": 3,
+     "accuracy": 88.19444444444444,
+     "gap_vs_ceiling": 0.0
+    },
+    "sufficient": {
+     "descriptors": [
+      "BATCH",
+      "PREC"
+     ],
+     "cost": 1,
+     "size": 2,
+     "accuracy": 86.11111111111111,
+     "gap_vs_ceiling": 2.0833333333333286
+    },
+    "ceiling_vs_empty": {
+     "gap": 6.25,
+     "ci95": [
+      2.0833333333333286,
+      11.111111111111114
+     ]
+    }
+   }
+  },
+  "marginal_value": {
+   "BATCH": {
+    "mean": 1.3454861111111134,
+    "max": 6.944444444444443,
+    "min": -2.083333333333343,
+    "cost": 0,
+    "cost_words": "free, already in the job spec"
+   },
+   "FAMILY": {
+    "mean": 0.47743055555555625,
+    "max": 2.083333333333343,
+    "min": -2.0833333333333144,
+    "cost": 0,
+    "cost_words": "free, already in the job spec"
+   },
+   "MEM": {
+    "mean": 1.0850694444444438,
+    "max": 6.25,
+    "min": -3.4722222222222143,
+    "cost": 0,
+    "cost_words": "free, already requested by the job"
+   },
+   "PREC": {
+    "mean": 2.7343749999999973,
+    "max": 7.638888888888886,
+    "min": -1.3888888888889,
+    "cost": 1,
+    "cost_words": "free at submission, needs one new field in the scheduling interface"
+   },
+   "PROF": {
+    "mean": 0.8246527777777795,
+    "max": 5.555555555555557,
+    "min": -2.7777777777777857,
+    "cost": 10,
+    "cost_words": "one instrumented run per new workload on a reference device"
+   }
+  },
+  "negative_control": [
+   {
+    "trial": 0,
+    "acc": 86.80555555555556,
+    "delta": -1.3888888888888857,
+    "delta_ci95": [
+     -3.4722222222222285,
+     0.0
+    ]
+   },
+   {
+    "trial": 1,
+    "acc": 87.5,
+    "delta": -0.6944444444444429,
+    "delta_ci95": [
+     -2.083333333333343,
+     0.0
+    ]
+   },
+   {
+    "trial": 2,
+    "acc": 87.5,
+    "delta": -0.6944444444444429,
+    "delta_ci95": [
+     -2.083333333333343,
+     0.0
+    ]
+   },
+   {
+    "trial": 3,
+    "acc": 86.80555555555556,
+    "delta": -1.3888888888888857,
+    "delta_ci95": [
+     -3.4722222222222285,
+     0.0
+    ]
+   },
+   {
+    "trial": 4,
+    "acc": 87.5,
+    "delta": -0.6944444444444429,
+    "delta_ci95": [
+     -2.083333333333343,
+     0.0
+    ]
+   }
+  ],
+  "per_subset_records": [
+   {
+    "panel": "PANEL-5",
+    "descriptors": [],
+    "size": 0,
+    "cost": 0,
+    "accuracy": 81.66666666666667,
+    "ci95": [
+     77.08333333333334,
+     85.83333333333333
+    ],
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 5.416666666666657,
+    "gap_ci95": [
+     2.5,
+     10.0
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "BATCH"
+    ],
+    "size": 1,
+    "cost": 0,
+    "accuracy": 81.66666666666667,
+    "ci95": [
+     77.08333333333334,
+     86.25
+    ],
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 5.416666666666657,
+    "gap_ci95": [
+     3.3333333333333286,
+     9.166666666666671
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "FAMILY"
+    ],
+    "size": 1,
+    "cost": 0,
+    "accuracy": 81.66666666666667,
+    "ci95": [
+     77.08333333333334,
+     85.83333333333333
+    ],
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 5.416666666666657,
+    "gap_ci95": [
+     2.5,
+     10.0
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "MEM"
+    ],
+    "size": 1,
+    "cost": 0,
+    "accuracy": 82.08333333333333,
+    "ci95": [
+     78.33333333333333,
+     85.41666666666666
+    ],
+    "gap_vs_ceiling": 5.833333333333343,
+    "gap_vs_full": 5.0,
+    "gap_ci95": [
+     2.5,
+     9.166666666666657
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "PREC"
+    ],
+    "size": 1,
+    "cost": 1,
+    "accuracy": 83.33333333333334,
+    "ci95": [
+     77.91666666666667,
+     88.33333333333333
+    ],
+    "gap_vs_ceiling": 4.583333333333329,
+    "gap_vs_full": 3.749999999999986,
+    "gap_ci95": [
+     1.6666666666666572,
+     7.5
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "BATCH",
+     "FAMILY"
+    ],
+    "size": 2,
+    "cost": 0,
+    "accuracy": 81.66666666666667,
+    "ci95": [
+     77.08333333333334,
+     86.25
+    ],
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 5.416666666666657,
+    "gap_ci95": [
+     3.3333333333333286,
+     9.166666666666671
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "BATCH",
+     "MEM"
+    ],
+    "size": 2,
+    "cost": 0,
+    "accuracy": 81.66666666666667,
+    "ci95": [
+     77.08333333333334,
+     86.25
+    ],
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 5.416666666666657,
+    "gap_ci95": [
+     3.3333333333333286,
+     9.166666666666671
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "BATCH",
+     "PREC"
+    ],
+    "size": 2,
+    "cost": 1,
+    "accuracy": 85.41666666666666,
+    "ci95": [
+     80.41666666666667,
+     90.0
+    ],
+    "gap_vs_ceiling": 2.500000000000014,
+    "gap_vs_full": 1.6666666666666714,
+    "gap_ci95": [
+     0.8333333333333286,
+     4.166666666666671
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "FAMILY",
+     "MEM"
+    ],
+    "size": 2,
+    "cost": 0,
+    "accuracy": 81.25,
+    "ci95": [
+     76.25,
+     85.83333333333333
+    ],
+    "gap_vs_ceiling": 6.666666666666671,
+    "gap_vs_full": 5.833333333333329,
+    "gap_ci95": [
+     2.9166666666666714,
+     10.416666666666671
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "FAMILY",
+     "PREC"
+    ],
+    "size": 2,
+    "cost": 1,
+    "accuracy": 82.08333333333333,
+    "ci95": [
+     77.08333333333334,
+     86.66666666666667
+    ],
+    "gap_vs_ceiling": 5.833333333333343,
+    "gap_vs_full": 5.0,
+    "gap_ci95": [
+     2.9166666666666714,
+     8.749999999999986
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "MEM",
+     "PREC"
+    ],
+    "size": 2,
+    "cost": 1,
+    "accuracy": 86.25,
+    "ci95": [
+     80.83333333333333,
+     90.83333333333333
+    ],
+    "gap_vs_ceiling": 1.6666666666666714,
+    "gap_vs_full": 0.8333333333333286,
+    "gap_ci95": [
+     -0.8333333333333286,
+     4.166666666666671
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "MEM"
+    ],
+    "size": 3,
+    "cost": 0,
+    "accuracy": 82.08333333333333,
+    "ci95": [
+     77.5,
+     86.66666666666667
+    ],
+    "gap_vs_ceiling": 5.833333333333343,
+    "gap_vs_full": 5.0,
+    "gap_ci95": [
+     2.083333333333343,
+     9.583333333333329
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC"
+    ],
+    "size": 3,
+    "cost": 1,
+    "accuracy": 87.91666666666667,
+    "ci95": [
+     82.91666666666667,
+     92.5
+    ],
+    "gap_vs_ceiling": 0.0,
+    "gap_vs_full": -0.8333333333333428,
+    "gap_ci95": [
+     0.0,
+     0.0
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "BATCH",
+     "MEM",
+     "PREC"
+    ],
+    "size": 3,
+    "cost": 1,
+    "accuracy": 85.41666666666666,
+    "ci95": [
+     80.41666666666667,
+     90.0
+    ],
+    "gap_vs_ceiling": 2.500000000000014,
+    "gap_vs_full": 1.6666666666666714,
+    "gap_ci95": [
+     0.4166666666666714,
+     4.583333333333329
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "FAMILY",
+     "MEM",
+     "PREC"
+    ],
+    "size": 3,
+    "cost": 1,
+    "accuracy": 87.5,
+    "ci95": [
+     82.5,
+     92.08333333333333
+    ],
+    "gap_vs_ceiling": 0.4166666666666714,
+    "gap_vs_full": -0.4166666666666714,
+    "gap_ci95": [
+     -1.6666666666666714,
+     2.5
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   {
+    "panel": "PANEL-5",
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "MEM",
+     "PREC"
+    ],
+    "size": 4,
+    "cost": 1,
+    "accuracy": 87.08333333333333,
+    "ci95": [
+     82.08333333333333,
+     91.25
+    ],
+    "gap_vs_ceiling": 0.8333333333333428,
+    "gap_vs_full": 0.0,
+    "gap_ci95": [
+     -3.3333333333333286,
+     4.999999999999986
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [],
+    "size": 0,
+    "cost": 0,
+    "accuracy": 81.94444444444444,
+    "ci95": [
+     74.30555555555556,
+     89.58333333333334
+    ],
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 2.7777777777777715,
+    "gap_ci95": [
+     2.0833333333333286,
+     11.111111111111114
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH"
+    ],
+    "size": 1,
+    "cost": 0,
+    "accuracy": 80.55555555555556,
+    "ci95": [
+     73.61111111111111,
+     87.5
+    ],
+    "gap_vs_ceiling": 7.638888888888886,
+    "gap_vs_full": 4.166666666666657,
+    "gap_ci95": [
+     4.166666666666657,
+     11.805555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "FAMILY"
+    ],
+    "size": 1,
+    "cost": 0,
+    "accuracy": 81.94444444444444,
+    "ci95": [
+     74.30555555555556,
+     89.58333333333334
+    ],
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 2.7777777777777715,
+    "gap_ci95": [
+     2.0833333333333286,
+     11.111111111111114
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "MEM"
+    ],
+    "size": 1,
+    "cost": 0,
+    "accuracy": 81.25,
+    "ci95": [
+     74.30555555555556,
+     87.5
+    ],
+    "gap_vs_ceiling": 6.944444444444443,
+    "gap_vs_full": 3.4722222222222143,
+    "gap_ci95": [
+     3.4722222222222143,
+     11.1111111111111
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "PREC"
+    ],
+    "size": 1,
+    "cost": 1,
+    "accuracy": 81.94444444444444,
+    "ci95": [
+     74.30555555555556,
+     89.58333333333334
+    ],
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 2.7777777777777715,
+    "gap_ci95": [
+     2.083333333333343,
+     11.1111111111111
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "PROF"
+    ],
+    "size": 1,
+    "cost": 10,
+    "accuracy": 81.25,
+    "ci95": [
+     74.30555555555556,
+     88.19444444444444
+    ],
+    "gap_vs_ceiling": 6.944444444444443,
+    "gap_vs_full": 3.4722222222222143,
+    "gap_ci95": [
+     2.7777777777777715,
+     11.805555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "FAMILY"
+    ],
+    "size": 2,
+    "cost": 0,
+    "accuracy": 80.55555555555556,
+    "ci95": [
+     73.61111111111111,
+     87.5
+    ],
+    "gap_vs_ceiling": 7.638888888888886,
+    "gap_vs_full": 4.166666666666657,
+    "gap_ci95": [
+     4.166666666666657,
+     11.805555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "MEM"
+    ],
+    "size": 2,
+    "cost": 0,
+    "accuracy": 80.55555555555556,
+    "ci95": [
+     73.61111111111111,
+     87.5
+    ],
+    "gap_vs_ceiling": 7.638888888888886,
+    "gap_vs_full": 4.166666666666657,
+    "gap_ci95": [
+     4.166666666666657,
+     11.805555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "PREC"
+    ],
+    "size": 2,
+    "cost": 1,
+    "accuracy": 86.11111111111111,
+    "ci95": [
+     79.86111111111111,
+     91.66666666666666
+    ],
+    "gap_vs_ceiling": 2.0833333333333286,
+    "gap_vs_full": -1.3888888888889,
+    "gap_ci95": [
+     0.0,
+     4.166666666666686
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "PROF"
+    ],
+    "size": 2,
+    "cost": 10,
+    "accuracy": 84.02777777777779,
+    "ci95": [
+     77.77777777777779,
+     90.27777777777779
+    ],
+    "gap_vs_ceiling": 4.166666666666657,
+    "gap_vs_full": 0.6944444444444287,
+    "gap_ci95": [
+     1.3888888888888995,
+     6.944444444444457
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "FAMILY",
+     "MEM"
+    ],
+    "size": 2,
+    "cost": 0,
+    "accuracy": 79.86111111111111,
+    "ci95": [
+     72.91666666666666,
+     86.80555555555556
+    ],
+    "gap_vs_ceiling": 8.333333333333329,
+    "gap_vs_full": 4.8611111111111,
+    "gap_ci95": [
+     4.166666666666671,
+     13.194444444444443
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "FAMILY",
+     "PREC"
+    ],
+    "size": 2,
+    "cost": 1,
+    "accuracy": 81.94444444444444,
+    "ci95": [
+     74.30555555555556,
+     89.58333333333334
+    ],
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 2.7777777777777715,
+    "gap_ci95": [
+     2.083333333333343,
+     11.1111111111111
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "FAMILY",
+     "PROF"
+    ],
+    "size": 2,
+    "cost": 10,
+    "accuracy": 81.94444444444444,
+    "ci95": [
+     75.0,
+     88.88888888888889
+    ],
+    "gap_vs_ceiling": 6.25,
+    "gap_vs_full": 2.7777777777777715,
+    "gap_ci95": [
+     0.6944444444444571,
+     11.805555555555571
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "MEM",
+     "PREC"
+    ],
+    "size": 2,
+    "cost": 1,
+    "accuracy": 86.11111111111111,
+    "ci95": [
+     79.16666666666666,
+     92.36111111111111
+    ],
+    "gap_vs_ceiling": 2.0833333333333286,
+    "gap_vs_full": -1.3888888888889,
+    "gap_ci95": [
+     -1.3888888888889,
+     5.555555555555557
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "MEM",
+     "PROF"
+    ],
+    "size": 2,
+    "cost": 10,
+    "accuracy": 85.41666666666666,
+    "ci95": [
+     79.86111111111111,
+     90.97222222222221
+    ],
+    "gap_vs_ceiling": 2.7777777777777857,
+    "gap_vs_full": -0.6944444444444429,
+    "gap_ci95": [
+     -2.0833333333333286,
+     7.638888888888886
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "PREC",
+     "PROF"
+    ],
+    "size": 2,
+    "cost": 11,
+    "accuracy": 81.25,
+    "ci95": [
+     74.30555555555556,
+     88.88888888888889
+    ],
+    "gap_vs_ceiling": 6.944444444444443,
+    "gap_vs_full": 3.4722222222222143,
+    "gap_ci95": [
+     2.7777777777777715,
+     11.805555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "MEM"
+    ],
+    "size": 3,
+    "cost": 0,
+    "accuracy": 80.55555555555556,
+    "ci95": [
+     73.61111111111111,
+     86.80555555555556
+    ],
+    "gap_vs_ceiling": 7.638888888888886,
+    "gap_vs_full": 4.166666666666657,
+    "gap_ci95": [
+     3.4722222222222285,
+     12.5
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC"
+    ],
+    "size": 3,
+    "cost": 1,
+    "accuracy": 88.19444444444444,
+    "ci95": [
+     81.94444444444444,
+     94.44444444444444
+    ],
+    "gap_vs_ceiling": 0.0,
+    "gap_vs_full": -3.4722222222222285,
+    "gap_ci95": [
+     0.0,
+     0.0
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PROF"
+    ],
+    "size": 3,
+    "cost": 10,
+    "accuracy": 83.33333333333334,
+    "ci95": [
+     77.77777777777779,
+     88.88888888888889
+    ],
+    "gap_vs_ceiling": 4.8611111111111,
+    "gap_vs_full": 1.3888888888888715,
+    "gap_ci95": [
+     0.6944444444444429,
+     9.722222222222214
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "MEM",
+     "PREC"
+    ],
+    "size": 3,
+    "cost": 1,
+    "accuracy": 85.41666666666666,
+    "ci95": [
+     79.16666666666666,
+     90.97222222222221
+    ],
+    "gap_vs_ceiling": 2.7777777777777857,
+    "gap_vs_full": -0.6944444444444429,
+    "gap_ci95": [
+     0.6944444444444429,
+     5.555555555555557
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "MEM",
+     "PROF"
+    ],
+    "size": 3,
+    "cost": 10,
+    "accuracy": 84.02777777777779,
+    "ci95": [
+     77.77777777777779,
+     90.27777777777779
+    ],
+    "gap_vs_ceiling": 4.166666666666657,
+    "gap_vs_full": 0.6944444444444287,
+    "gap_ci95": [
+     -0.6944444444444571,
+     9.027777777777771
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "PREC",
+     "PROF"
+    ],
+    "size": 3,
+    "cost": 11,
+    "accuracy": 86.80555555555556,
+    "ci95": [
+     80.55555555555556,
+     92.36111111111111
+    ],
+    "gap_vs_ceiling": 1.3888888888888857,
+    "gap_vs_full": -2.083333333333343,
+    "gap_ci95": [
+     0.0,
+     3.4722222222222285
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "FAMILY",
+     "MEM",
+     "PREC"
+    ],
+    "size": 3,
+    "cost": 1,
+    "accuracy": 87.5,
+    "ci95": [
+     81.25,
+     93.05555555555556
+    ],
+    "gap_vs_ceiling": 0.6944444444444429,
+    "gap_vs_full": -2.7777777777777857,
+    "gap_ci95": [
+     -2.083333333333343,
+     3.4722222222222285
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "FAMILY",
+     "MEM",
+     "PROF"
+    ],
+    "size": 3,
+    "cost": 10,
+    "accuracy": 83.33333333333334,
+    "ci95": [
+     77.77777777777779,
+     88.88888888888889
+    ],
+    "gap_vs_ceiling": 4.8611111111111,
+    "gap_vs_full": 1.3888888888888715,
+    "gap_ci95": [
+     -0.6944444444444429,
+     10.416666666666671
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "FAMILY",
+     "PREC",
+     "PROF"
+    ],
+    "size": 3,
+    "cost": 11,
+    "accuracy": 80.55555555555556,
+    "ci95": [
+     73.61111111111111,
+     87.5
+    ],
+    "gap_vs_ceiling": 7.638888888888886,
+    "gap_vs_full": 4.166666666666657,
+    "gap_ci95": [
+     2.7777777777777857,
+     13.194444444444443
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "MEM",
+     "PREC",
+     "PROF"
+    ],
+    "size": 3,
+    "cost": 11,
+    "accuracy": 84.72222222222221,
+    "ci95": [
+     78.47222222222221,
+     90.97222222222221
+    ],
+    "gap_vs_ceiling": 3.4722222222222285,
+    "gap_vs_full": 0.0,
+    "gap_ci95": [
+     0.6944444444444571,
+     6.25
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "MEM",
+     "PREC"
+    ],
+    "size": 4,
+    "cost": 1,
+    "accuracy": 87.5,
+    "ci95": [
+     81.25,
+     93.05555555555556
+    ],
+    "gap_vs_ceiling": 0.6944444444444429,
+    "gap_vs_full": -2.7777777777777857,
+    "gap_ci95": [
+     -4.861111111111114,
+     5.555555555555557
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "MEM",
+     "PROF"
+    ],
+    "size": 4,
+    "cost": 10,
+    "accuracy": 86.11111111111111,
+    "ci95": [
+     80.55555555555556,
+     90.97222222222221
+    ],
+    "gap_vs_ceiling": 2.0833333333333286,
+    "gap_vs_full": -1.3888888888889,
+    "gap_ci95": [
+     -3.4722222222222143,
+     7.6388888888888715
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "PREC",
+     "PROF"
+    ],
+    "size": 4,
+    "cost": 11,
+    "accuracy": 87.5,
+    "ci95": [
+     81.25,
+     93.75
+    ],
+    "gap_vs_ceiling": 0.6944444444444429,
+    "gap_vs_full": -2.7777777777777857,
+    "gap_ci95": [
+     0.0,
+     2.083333333333343
+    ],
+    "sufficient": true,
+    "sufficient_strict": true
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "MEM",
+     "PREC",
+     "PROF"
+    ],
+    "size": 4,
+    "cost": 11,
+    "accuracy": 83.33333333333334,
+    "ci95": [
+     77.08333333333334,
+     88.88888888888889
+    ],
+    "gap_vs_ceiling": 4.8611111111111,
+    "gap_vs_full": 1.3888888888888715,
+    "gap_ci95": [
+     1.371527777777767,
+     9.027777777777786
+    ],
+    "sufficient": false,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "FAMILY",
+     "MEM",
+     "PREC",
+     "PROF"
+    ],
+    "size": 4,
+    "cost": 11,
+    "accuracy": 86.80555555555556,
+    "ci95": [
+     80.55555555555556,
+     93.05555555555556
+    ],
+    "gap_vs_ceiling": 1.3888888888888857,
+    "gap_vs_full": -2.083333333333343,
+    "gap_ci95": [
+     0.0,
+     3.4722222222222285
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   },
+   {
+    "panel": "PANEL-4",
+    "descriptors": [
+     "BATCH",
+     "FAMILY",
+     "MEM",
+     "PREC",
+     "PROF"
+    ],
+    "size": 5,
+    "cost": 11,
+    "accuracy": 84.72222222222221,
+    "ci95": [
+     77.77777777777779,
+     90.97222222222221
+    ],
+    "gap_vs_ceiling": 3.4722222222222285,
+    "gap_vs_full": 0.0,
+    "gap_ci95": [
+     0.0,
+     7.638888888888886
+    ],
+    "sufficient": true,
+    "sufficient_strict": false
+   }
+  ],
+  "descriptor_costs": {
+   "BATCH": {
+    "ordinal": 0,
+    "description": "free, already in the job spec"
+   },
+   "FAMILY": {
+    "ordinal": 0,
+    "description": "free, already in the job spec"
+   },
+   "MEM": {
+    "ordinal": 0,
+    "description": "free, already requested by the job"
+   },
+   "PREC": {
+    "ordinal": 1,
+    "description": "free at submission, needs one new field in the scheduling interface"
+   },
+   "PROF": {
+    "ordinal": 10,
+    "description": "one instrumented run per new workload on a reference device"
+   }
+  },
+  "config": {
+   "nboot": 4000,
+   "reference_device": "T4",
+   "panel5": [
+    "T4",
+    "L4",
+    "A10G",
+    "L40S",
+    "A100-40GB"
+   ],
+   "panel4": [
+    "L4",
+    "A10G",
+    "L40S",
+    "A100-40GB"
+   ],
+   "protocol": "leave-one-workload-family-out",
+   "bootstrap": "cluster over the 24 workload rows, paired across subsets"
+  }
+ },
+ "sanity": [
+  {
+   "check": "S1 empty descriptor set scores exactly the additive model",
+   "passed": true,
+   "detail": "empty 81.6667% vs additive 81.6667%"
+  },
+  {
+   "check": "S2 PANEL-5 reproduces Table 5",
+   "passed": true,
+   "detail": "full 87.9 (paper 87.9), precision-only 83.3 (83.3), empty 81.7 (81.7)"
+  },
+  {
+   "check": "S6 a constant-valued descriptor behaves exactly like the empty set",
+   "passed": true,
+   "detail": "81.6667% vs 81.6667%"
+  },
+  {
+   "check": "S5 the frontier is non-decreasing in budget (checks the frontier code)",
+   "passed": true,
+   "detail": "size and cost frontiers both non-decreasing"
+  },
+  {
+   "check": "S3 every subset scores above chance and at or below 100",
+   "passed": true,
+   "detail": "min 79.9%, max 88.2%"
+  },
+  {
+   "check": "S7 PANEL-5 best subset beats the empty set, paired interval excluding zero",
+   "passed": true,
+   "detail": "ceiling 87.9% vs empty 81.7%, gap 6.2 pp, 95% CI [+2.5,+10.0]"
+  },
+  {
+   "check": "S7 PANEL-4 best subset beats the empty set, paired interval excluding zero",
+   "passed": true,
+   "detail": "ceiling 88.2% vs empty 81.9%, gap 6.2 pp, 95% CI [+2.1,+11.1]"
+  },
+  {
+   "check": "S4 negative control: a pure-noise descriptor does not improve the best subset",
+   "passed": true,
+   "detail": "best BATCH+FAMILY+PREC = 88.2%; noise deltas -1.4 [-3.5,+0.0], -0.7 [-2.1,+0.0], -0.7 [-2.1,+0.0], -1.4 [-3.5,+0.0], -0.7 [-2.1,+0.0]"
+  }
+ ]
+}

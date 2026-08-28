@@ -1,0 +1,24 @@
+{
+  "n_rows": 929,
+  "n_jobs": 73,
+  "n_cards": 2,
+  "leave_one_job_out": {
+    "duration_MdAPE": 7.6,
+    "duration_logR2": 0.962,
+    "energy_MdAPE": 9.5,
+    "energy_logR2": 0.965,
+    "slowdown_MAE": 0.061,
+    "slowdown_MdAPE_where_gt5pct": 23.0,
+    "n_slowdown_points": 372,
+    "duration_monotone_pct": 79.2
+  },
+  "leave_one_card_out": {
+    "duration_MdAPE": 14.0,
+    "energy_MdAPE": 45.2
+  },
+  "ablation_duration_MdAPE": {
+    "with_cap_feature": 7.6,
+    "without_cap_feature": 18.1
+  },
+  "baseline_globalmean_duration_MdAPE": 94.5
+}

@@ -1,0 +1,22 @@
+{
+  "oracle_capture": {
+    "emerald": {
+      "learned_GBDT_pct": -15.616435518795672,
+      "class_mean_pct": 76.79791492360904
+    },
+    "zeus": {
+      "learned_GBDT_pct": -208.92957695334007,
+      "class_mean_pct": -421.2697765559143
+    }
+  },
+  "ufr": {
+    "UFR_mean_pct": 47.22222222222222,
+    "UFR_conservative_pct": 47.22222222222222,
+    "n": 36
+  },
+  "invariants": {
+    "OC_self_equals_oracle_emerald": true,
+    "OC_self_equals_oracle_zeus": true,
+    "UFR_conservative_leq_mean": true
+  }
+}

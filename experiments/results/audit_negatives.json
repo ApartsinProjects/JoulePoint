@@ -1,0 +1,22 @@
+[
+ {
+  "tag": "A4",
+  "verdict": "DATA PROPERTY, not a bug",
+  "detail": "L4 is argmin in 24/24 rows; runner-up is 1.04x worse at the closest point. Any method ranking L4 first scores regret exactly 1.0. The metric is correct; the GRID is degenerate. Fixing needs loads where the L4 cannot fit (N4)."
+ },
+ {
+  "tag": "A3",
+  "verdict": "STRUCTURAL, not a bug",
+  "detail": "Row-invariance of additive ranking verified over all 24 rows: True. Pairwise accuracy is therefore a step function of the column ORDER alone, so it jumps once when the calibration blend flips a position and is flat thereafter. This also proves additive's 81.7% is a hard ceiling that no amount of data can raise."
+ },
+ {
+  "tag": "A5",
+  "verdict": "PARTLY MY FAULT (over-regularised), still loses",
+  "detail": "alpha=200 was arbitrary. Best over the sweep is alpha=0.1 at 87.5%, vs 82.1% originally and 87.9% for the rank-1 bilinear. Tuning helps but does not close the gap: the full quadratic cross has far more terms than 96 training cells can identify."
+ },
+ {
+  "tag": "A6",
+  "verdict": "REAL FINDING, survives tuning",
+  "detail": "Best MLP over 12 configurations is 86.7% (((128, 64), 1.0)), against 81.7% for the trivial fixed ranking and 87.9% for the rank-1 bilinear. The MLP was not misconfigured; it genuinely cannot beat a fixed ranking at this signal level and sample size."
+ }
+]

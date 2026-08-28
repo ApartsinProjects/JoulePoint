@@ -1,0 +1,108 @@
+{
+ "rho": 0.9400000000000004,
+ "rho_agreement": 0.974025974025974,
+ "lp_vs_sim_spearman": 0.8454935774923331,
+ "pair_accuracy_1pct": 0.8639059006513075,
+ "pair_accuracy_5pct": 0.9502436143510999,
+ "penalty": 5.0,
+ "scenarios": [
+  "uniform",
+  "vision inference",
+  "modern precision (fp16)",
+  "legacy fp32",
+  "transformer-heavy"
+ ],
+ "probs": [
+  0.3,
+  0.25,
+  0.2,
+  0.15,
+  0.1
+ ],
+ "enumeration_optimum": [
+  0,
+  4,
+  0,
+  6,
+  0
+ ],
+ "enumeration_energy": 4391.351705007852,
+ "lp_refined_optimum": [
+  0,
+  4,
+  0,
+  6,
+  0
+ ],
+ "lp_refined_energy": 4391.351705007852,
+ "stochastic_fleet": "9xL40S+1xA100-40GB",
+ "stochastic_value": 5239.127106640858,
+ "mean_mix_fleet": "4xL4+5xL40S+1xA100-40GB",
+ "mean_mix_value_on_distribution": 6659.273661994853,
+ "wait_and_see": 4359.084474495139,
+ "VSS": 1420.1465553539947,
+ "EVPI": 880.0426321457189,
+ "VSS_pct": 21.325847643999293,
+ "EVPI_pct": 16.797504894092388,
+ "scaling": [
+  {
+   "slots": 10,
+   "types": 5,
+   "lp_evals": 291,
+   "enumeration_size": 1001,
+   "fleet": "9xL40S+1xA100-40GB",
+   "energy": 5239.127106640858
+  },
+  {
+   "slots": 20,
+   "types": 5,
+   "lp_evals": 695,
+   "enumeration_size": 10626,
+   "fleet": "14xL4+5xL40S+1xA100-40GB",
+   "energy": 4185.547096457544
+  },
+  {
+   "slots": 50,
+   "types": 5,
+   "lp_evals": 1623,
+   "enumeration_size": 316251,
+   "fleet": "16xT4+34xL4",
+   "energy": 4740.8481698296955
+  },
+  {
+   "slots": 100,
+   "types": 5,
+   "lp_evals": 3307,
+   "enumeration_size": 4598126,
+   "fleet": "66xT4+34xL4",
+   "energy": 7530.848169829696
+  }
+ ],
+ "sanity": [
+  {
+   "check": "S2 LP orders clearly separated fleets correctly",
+   "passed": true,
+   "detail": "95.0% of pairs differing by more than 5% (6,773 pairs); Spearman over all feasible fleets is 0.845, depressed by near-ties"
+  },
+  {
+   "check": "S1 LP shortlist plus simulation recovers the enumeration optimum",
+   "passed": true,
+   "detail": "enumeration (0, 4, 0, 6, 0) at 4391 J/job needing 1001 simulations; LP+refine (0, 4, 0, 6, 0) at 4391 needing 346 LP solves and 25 simulations"
+  },
+  {
+   "check": "S3 single scenario reduces to the deterministic problem",
+   "passed": true,
+   "detail": "local search 4442.0 vs LP enumeration 4442.0 J/job"
+  },
+  {
+   "check": "S4 value of the stochastic solution is non-negative",
+   "passed": true,
+   "detail": "1420.147 J/job"
+  },
+  {
+   "check": "S5 EVPI is non-negative",
+   "passed": true,
+   "detail": "880.043 J/job"
+  }
+ ]
+}

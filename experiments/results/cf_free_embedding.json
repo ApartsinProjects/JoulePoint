@@ -1,0 +1,185 @@
+{
+ "llm-perf": {
+  "shape": [
+   74,
+   3
+  ],
+  "machines": [
+   "A10",
+   "A100",
+   "T4"
+  ],
+  "sweep": [
+   {
+    "obs_per_row": 1,
+    "fixed_regret": 2.1193455621127564,
+    "free_regret": 2.1193455621127564,
+    "fixed_acc": 0.675675675675676,
+    "free_acc": 0.675675675675676,
+    "gap": 0.0,
+    "free_regret_sd": 0.0
+   },
+   {
+    "obs_per_row": 2,
+    "fixed_regret": 1.0034512625712635,
+    "free_regret": 1.078995078598078,
+    "fixed_acc": 0.9430180180180182,
+    "free_acc": 0.9306306306306309,
+    "gap": -0.07554381602681448,
+    "free_regret_sd": 0.17027469132274214
+   }
+  ],
+  "cold_row_latent_is_null": true
+ },
+ "own grid": {
+  "shape": [
+   24,
+   5
+  ],
+  "machines": [
+   "T4",
+   "L4",
+   "A10G",
+   "L40S",
+   "A100-40GB"
+  ],
+  "sweep": [
+   {
+    "obs_per_row": 1,
+    "fixed_regret": 1.9042902066826182,
+    "free_regret": 1.9042902066826182,
+    "fixed_acc": 0.5083333333333332,
+    "free_acc": 0.5083333333333332,
+    "gap": 0.0,
+    "free_regret_sd": 2.220446049250313e-16
+   },
+   {
+    "obs_per_row": 2,
+    "fixed_regret": 1.0,
+    "free_regret": 1.0019881199430425,
+    "fixed_acc": 0.8350308641975308,
+    "free_acc": 0.8327160493827159,
+    "gap": -0.001988119943042488,
+    "free_regret_sd": 0.007903557499378372
+   },
+   {
+    "obs_per_row": 3,
+    "fixed_regret": 1.0,
+    "free_regret": 1.0031112026782727,
+    "fixed_acc": 0.8533730158730157,
+    "free_acc": 0.8599206349206351,
+    "gap": -0.0031112026782726954,
+    "free_regret_sd": 0.00829802379190594
+   },
+   {
+    "obs_per_row": 4,
+    "fixed_regret": 1.0,
+    "free_regret": 1.0,
+    "fixed_acc": 0.8600694444444443,
+    "free_acc": 0.8746527777777777,
+    "gap": 0.0,
+    "free_regret_sd": 0.0
+   }
+  ],
+  "cold_row_latent_is_null": true
+ },
+ "extended grid": {
+  "shape": [
+   30,
+   7
+  ],
+  "machines": [
+   "A100-40GB",
+   "A10G",
+   "H100",
+   "H200",
+   "L4",
+   "L40S",
+   "T4"
+  ],
+  "sweep": [
+   {
+    "obs_per_row": 1,
+    "fixed_regret": 1.818479988612736,
+    "free_regret": 1.818479988612736,
+    "fixed_acc": 0.546031746031746,
+    "free_acc": 0.546031746031746,
+    "gap": 0.0,
+    "free_regret_sd": 0.0
+   },
+   {
+    "obs_per_row": 2,
+    "fixed_regret": 1.0246484663611684,
+    "free_regret": 1.0298775852265634,
+    "fixed_acc": 0.8232222222222222,
+    "free_acc": 0.8225555555555556,
+    "gap": -0.0052291188653950105,
+    "free_regret_sd": 0.020842445075176772
+   },
+   {
+    "obs_per_row": 3,
+    "fixed_regret": 1.0213746375368427,
+    "free_regret": 1.0162190279725318,
+    "fixed_acc": 0.8367283950617285,
+    "free_acc": 0.8743827160493828,
+    "gap": 0.005155609564310826,
+    "free_regret_sd": 0.00907637546169414
+   },
+   {
+    "obs_per_row": 4,
+    "fixed_regret": 1.0139765499293192,
+    "free_regret": 1.008288733714471,
+    "fixed_acc": 0.850962962962963,
+    "free_acc": 0.9014074074074074,
+    "gap": 0.0056878162148481515,
+    "free_regret_sd": 0.006752920611593088
+   },
+   {
+    "obs_per_row": 5,
+    "fixed_regret": 1.0112145767991145,
+    "free_regret": 1.0037195441703266,
+    "fixed_acc": 0.8567676767676766,
+    "free_acc": 0.9132323232323234,
+    "gap": 0.007495032628787923,
+    "free_regret_sd": 0.004331778871096504
+   },
+   {
+    "obs_per_row": 6,
+    "fixed_regret": 1.004334842400618,
+    "free_regret": 1.0012478411151695,
+    "fixed_acc": 0.8527777777777777,
+    "free_acc": 0.9137037037037037,
+    "gap": 0.0030870012854484763,
+    "free_regret_sd": 0.0019356416174394662
+   }
+  ],
+  "cold_row_latent_is_null": true
+ },
+ "sanity": [
+  {
+   "check": "H1 free embeddings beat the fixed ranking where descriptors are weak (llm-perf)",
+   "passed": false,
+   "detail": "largest advantage +0.0000 regret at 1 observed cells per workload; the feature-based model gained exactly 0.0 on this corpus"
+  },
+  {
+   "check": "H2 the advantage grows with repeat observations",
+   "passed": false,
+   "detail": "gap +0.0000 at 1 observation -> -0.0755 at 2"
+  },
+  {
+   "check": "H3 free embeddings cannot place a workload with no observations",
+   "passed": true,
+   "detail": "on a fully unobserved row the latent vector is unidentified and the prediction collapses to the fixed ranking on every corpus"
+  },
+  {
+   "check": "H4 where descriptors are good the feature-based model is not dominated",
+   "passed": true,
+   "detail": "own grid free-CF best gap +0.0000; Section 7.3 reports the feature-based gain at +6.2 points, so the two access different structure"
+  },
+  {
+   "check": "S2 regret never below 1.0",
+   "passed": true,
+   "detail": "checked all rows"
+  }
+ ]
+}

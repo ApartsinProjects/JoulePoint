@@ -1,0 +1,26 @@
+{
+  "emerald": {
+    "n": 8,
+    "spearman_drawfrac_shed": 1.0,
+    "capture_classmean_pct": 77.0,
+    "capture_rank_only_pct": -2339.0,
+    "abs_oracle_advantage_mean": 0.06,
+    "rank_beats_uniform_levels": "0/5"
+  },
+  "zeus": {
+    "n": 6,
+    "spearman_drawfrac_shed": 1.0,
+    "capture_classmean_pct": -421.0,
+    "capture_rank_only_pct": -1501.0,
+    "abs_oracle_advantage_mean": 0.024,
+    "rank_beats_uniform_levels": "0/5"
+  },
+  "aws26": {
+    "n": 26,
+    "spearman_drawfrac_shed": 1.0,
+    "capture_classmean_pct": 48.0,
+    "capture_rank_only_pct": -225.0,
+    "abs_oracle_advantage_mean": 0.333,
+    "rank_beats_uniform_levels": "0/5"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "zeus": {
+    "cap only": {
+      "slowdown_MAE": 0.077,
+      "slowdown_MAE_where_gt5pct": 0.097
+    },
+    "cap + card": {
+      "slowdown_MAE": 0.076,
+      "slowdown_MAE_where_gt5pct": 0.097
+    },
+    "cap + job": {
+      "slowdown_MAE": 0.026,
+      "slowdown_MAE_where_gt5pct": 0.033
+    },
+    "full": {
+      "slowdown_MAE": 0.024,
+      "slowdown_MAE_where_gt5pct": 0.03
+    }
+  },
+  "aws": {
+    "cap only": {
+      "slowdown_MAE": 0.137,
+      "slowdown_MAE_where_gt5pct": 0.172
+    },
+    "cap + card": {
+      "slowdown_MAE": 0.063,
+      "slowdown_MAE_where_gt5pct": 0.09
+    },
+    "cap + job": {
+      "slowdown_MAE": 0.051,
+      "slowdown_MAE_where_gt5pct": 0.079
+    },
+    "full": {
+      "slowdown_MAE": 0.045,
+      "slowdown_MAE_where_gt5pct": 0.068
+    }
+  }
+}

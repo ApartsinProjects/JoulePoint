@@ -1,0 +1,968 @@
+{
+ "results": {
+  "capacity_constrained": {
+   "slots_grand": 10,
+   "budgets": {
+    "(empty)": 0,
+    "LLM serving": 3,
+    "vision inference": 3,
+    "legacy fp32 research": 2,
+    "large-batch offline": 2,
+    "interactive small-batch": 1,
+    "LLM serving|vision inference": 6,
+    "LLM serving|legacy fp32 research": 4,
+    "LLM serving|large-batch offline": 5,
+    "LLM serving|interactive small-batch": 4,
+    "legacy fp32 research|vision inference": 4,
+    "large-batch offline|vision inference": 5,
+    "interactive small-batch|vision inference": 4,
+    "large-batch offline|legacy fp32 research": 4,
+    "interactive small-batch|legacy fp32 research": 2,
+    "interactive small-batch|large-batch offline": 4,
+    "LLM serving|legacy fp32 research|vision inference": 7,
+    "LLM serving|large-batch offline|vision inference": 8,
+    "LLM serving|interactive small-batch|vision inference": 7,
+    "LLM serving|large-batch offline|legacy fp32 research": 6,
+    "LLM serving|interactive small-batch|legacy fp32 research": 5,
+    "LLM serving|interactive small-batch|large-batch offline": 6,
+    "large-batch offline|legacy fp32 research|vision inference": 6,
+    "interactive small-batch|legacy fp32 research|vision inference": 5,
+    "interactive small-batch|large-batch offline|vision inference": 6,
+    "interactive small-batch|large-batch offline|legacy fp32 research": 4,
+    "LLM serving|large-batch offline|legacy fp32 research|vision inference": 9,
+    "LLM serving|interactive small-batch|legacy fp32 research|vision inference": 8,
+    "LLM serving|interactive small-batch|large-batch offline|vision inference": 9,
+    "LLM serving|interactive small-batch|large-batch offline|legacy fp32 research": 7,
+    "interactive small-batch|large-batch offline|legacy fp32 research|vision inference": 7,
+    "LLM serving|interactive small-batch|large-batch offline|legacy fp32 research|vision inference": 10
+   },
+   "relaxed": [
+    {
+     "coalition": [
+      "legacy fp32 research"
+     ],
+     "pro_rata": 1,
+     "used": 2
+    }
+   ],
+   "coalition_costs_j": {
+    "(empty)": 0.0,
+    "LLM serving": 1818644.0700759129,
+    "vision inference": 1209077.7205465282,
+    "legacy fp32 research": 1179915.1964384718,
+    "large-batch offline": 1681885.8475937701,
+    "interactive small-batch": 1010023.1306400223,
+    "LLM serving|vision inference": 2974014.0476945573,
+    "LLM serving|legacy fp32 research": 3011008.9258581344,
+    "LLM serving|large-batch offline": 3327360.9744033054,
+    "LLM serving|interactive small-batch": 2798850.068234892,
+    "legacy fp32 research|vision inference": 2366658.2920317454,
+    "large-batch offline|vision inference": 2651151.791777987,
+    "interactive small-batch|vision inference": 1900463.9318208399,
+    "large-batch offline|legacy fp32 research": 2700939.146044101,
+    "interactive small-batch|legacy fp32 research": 2217165.194458806,
+    "interactive small-batch|large-batch offline": 2431682.3323652307,
+    "LLM serving|legacy fp32 research|vision inference": 4155343.305550187,
+    "LLM serving|large-batch offline|vision inference": 4390109.034006717,
+    "LLM serving|interactive small-batch|vision inference": 3666868.346417855,
+    "LLM serving|large-batch offline|legacy fp32 research": 4503915.341436295,
+    "LLM serving|interactive small-batch|legacy fp32 research": 3998133.1457771813,
+    "LLM serving|interactive small-batch|large-batch offline": 4289619.108854091,
+    "large-batch offline|legacy fp32 research|vision inference": 3851121.162056068,
+    "interactive small-batch|legacy fp32 research|vision inference": 3090260.9379903316,
+    "interactive small-batch|large-batch offline|vision inference": 3348271.3654646343,
+    "interactive small-batch|large-batch offline|legacy fp32 research": 3723450.420065433,
+    "LLM serving|large-batch offline|legacy fp32 research|vision inference": 5531089.367948822,
+    "LLM serving|interactive small-batch|legacy fp32 research|vision inference": 4859824.602789654,
+    "LLM serving|interactive small-batch|large-batch offline|vision inference": 5157825.957653276,
+    "LLM serving|interactive small-batch|large-batch offline|legacy fp32 research": 5486876.639547005,
+    "interactive small-batch|large-batch offline|legacy fp32 research|vision inference": 4548002.138636511,
+    "LLM serving|interactive small-batch|large-batch offline|legacy fp32 research|vision inference": 6349823.146738294
+   },
+   "coalition_fleets": {
+    "(empty)": null,
+    "LLM serving": {
+     "L4": 2,
+     "A100-40GB": 1
+    },
+    "vision inference": {
+     "L4": 2,
+     "A100-40GB": 1
+    },
+    "legacy fp32 research": {
+     "L4": 1,
+     "L40S": 1
+    },
+    "large-batch offline": {
+     "A10G": 1,
+     "L40S": 1
+    },
+    "interactive small-batch": {
+     "L40S": 1
+    },
+    "LLM serving|vision inference": {
+     "L4": 4,
+     "L40S": 1,
+     "A100-40GB": 1
+    },
+    "LLM serving|legacy fp32 research": {
+     "L4": 2,
+     "L40S": 1,
+     "A100-40GB": 1
+    },
+    "LLM serving|large-batch offline": {
+     "L4": 3,
+     "A100-40GB": 2
+    },
+    "LLM serving|interactive small-batch": {
+     "L4": 2,
+     "L40S": 1,
+     "A100-40GB": 1
+    },
+    "legacy fp32 research|vision inference": {
+     "L4": 2,
+     "L40S": 1,
+     "A100-40GB": 1
+    },
+    "large-batch offline|vision inference": {
+     "L4": 3,
+     "L40S": 1,
+     "A100-40GB": 1
+    },
+    "interactive small-batch|vision inference": {
+     "L4": 3,
+     "L40S": 1
+    },
+    "large-batch offline|legacy fp32 research": {
+     "L4": 2,
+     "L40S": 2
+    },
+    "interactive small-batch|legacy fp32 research": {
+     "L40S": 2
+    },
+    "interactive small-batch|large-batch offline": {
+     "L4": 2,
+     "L40S": 1,
+     "A100-40GB": 1
+    },
+    "LLM serving|legacy fp32 research|vision inference": {
+     "L4": 4,
+     "A10G": 1,
+     "A100-40GB": 2
+    },
+    "LLM serving|large-batch offline|vision inference": {
+     "L4": 5,
+     "A10G": 1,
+     "A100-40GB": 2
+    },
+    "LLM serving|interactive small-batch|vision inference": {
+     "L4": 5,
+     "L40S": 1,
+     "A100-40GB": 1
+    },
+    "LLM serving|large-batch offline|legacy fp32 research": {
+     "L4": 3,
+     "L40S": 1,
+     "A100-40GB": 2
+    },
+    "LLM serving|interactive small-batch|legacy fp32 research": {
+     "L4": 2,
+     "L40S": 2,
+     "A100-40GB": 1
+    },
+    "LLM serving|interactive small-batch|large-batch offline": {
+     "L4": 3,
+     "L40S": 1,
+     "A100-40GB": 2
+    },
+    "large-batch offline|legacy fp32 research|vision inference": {
+     "L4": 3,
+     "L40S": 2,
+     "A100-40GB": 1
+    },
+    "interactive small-batch|legacy fp32 research|vision inference": {
+     "L4": 3,
+     "L40S": 1,
+     "A100-40GB": 1
+    },
+    "interactive small-batch|large-batch offline|vision inference": {
+     "L4": 4,
+     "L40S": 1,
+     "A100-40GB": 1
+    },
+    "interactive small-batch|large-batch offline|legacy fp32 research": {
+     "L4": 1,
+     "L40S": 2,
+     "A100-40GB": 1
+    },
+    "LLM serving|large-batch offline|legacy fp32 research|vision inference": {
+     "L4": 5,
+     "A10G": 1,
+     "L40S": 1,
+     "A100-40GB": 2
+    },
+    "LLM serving|interactive small-batch|legacy fp32 research|vision inference": {
+     "L4": 5,
+     "L40S": 2,
+     "A100-40GB": 1
+    },
+    "LLM serving|interactive small-batch|large-batch offline|vision inference": {
+     "L4": 6,
+     "L40S": 1,
+     "A100-40GB": 2
+    },
+    "LLM serving|interactive small-batch|large-batch offline|legacy fp32 research": {
+     "L4": 3,
+     "L40S": 2,
+     "A100-40GB": 2
+    },
+    "interactive small-batch|large-batch offline|legacy fp32 research|vision inference": {
+     "L4": 4,
+     "L40S": 2,
+     "A100-40GB": 1
+    },
+    "LLM serving|interactive small-batch|large-batch offline|legacy fp32 research|vision inference": {
+     "L4": 6,
+     "L40S": 2,
+     "A100-40GB": 2
+    }
+   },
+   "grand_fleet": {
+    "L4": 6,
+    "L40S": 2,
+    "A100-40GB": 2
+   },
+   "total_bill_j": 6349823.146738294,
+   "total_bill_kwh": 1.7638397629828593,
+   "bills": {
+    "per-job": {
+     "LLM serving": 1904946.944021488,
+     "vision inference": 1904946.944021488,
+     "legacy fp32 research": 634982.3146738294,
+     "large-batch offline": 1269964.6293476587,
+     "interactive small-batch": 634982.3146738294
+    },
+    "per-second (occupancy)": {
+     "LLM serving": 1392322.816335271,
+     "vision inference": 1225763.269225488,
+     "legacy fp32 research": 1018458.6816305151,
+     "large-batch offline": 1954910.6359458514,
+     "interactive small-batch": 758367.7436011684
+    },
+    "metered energy + idle by occupancy": {
+     "LLM serving": 1938171.0120134628,
+     "vision inference": 1131719.751165688,
+     "legacy fp32 research": 1097344.7330210535,
+     "large-batch offline": 1316654.8764571098,
+     "interactive small-batch": 865932.7740809782
+    },
+    "Shapley": {
+     "LLM serving": 1784599.5089203794,
+     "vision inference": 1004075.9560252182,
+     "legacy fp32 research": 1181025.8001764165,
+     "large-batch offline": 1514320.8687816118,
+     "interactive small-batch": 865801.0128346686
+    }
+   },
+   "departure_from_shapley_pct": {
+    "LLM serving": {
+     "per-job": 6.743666267952445,
+     "per-second (occupancy)": -21.981217109177738,
+     "metered energy + idle by occupancy": 8.60537629453842
+    },
+    "vision inference": {
+     "per-job": 89.72139832553103,
+     "per-second (occupancy)": 22.07873934934678,
+     "metered energy + idle by occupancy": 12.712563663586414
+    },
+    "legacy fp32 research": {
+     "per-job": -46.234678820820136,
+     "per-second (occupancy)": -13.764908312893573,
+     "metered energy + idle by occupancy": -7.085456316268715
+    },
+    "large-batch offline": {
+     "per-job": -16.136358183490966,
+     "per-second (occupancy)": 29.094875217478062,
+     "metered energy + idle by occupancy": -13.053111556439129
+    },
+    "interactive small-batch": {
+     "per-job": -26.659555110143522,
+     "per-second (occupancy)": -12.408540489200773,
+     "metered energy + idle by occupancy": 0.015218421364306777
+    }
+   },
+   "stand_alone_cost_j": {
+    "LLM serving": 1818644.0700759129,
+    "vision inference": 1209077.7205465282,
+    "legacy fp32 research": 1179915.1964384718,
+    "large-batch offline": 1681885.8475937701,
+    "interactive small-batch": 1010023.1306400223
+   },
+   "core": {
+    "in_core": false,
+    "violations": [
+     {
+      "coalition": [
+       "legacy fp32 research"
+      ],
+      "excess_j": 1110.603737944737
+     },
+     {
+      "coalition": [
+       "interactive small-batch",
+       "large-batch offline",
+       "vision inference"
+      ],
+      "excess_j": 35926.47217686428
+     },
+     {
+      "coalition": [
+       "LLM serving",
+       "interactive small-batch",
+       "large-batch offline",
+       "vision inference"
+      ],
+      "excess_j": 10971.388908601366
+     },
+     {
+      "coalition": [
+       "interactive small-batch",
+       "large-batch offline",
+       "legacy fp32 research",
+       "vision inference"
+      ],
+      "excess_j": 17221.49918140471
+     }
+    ]
+   }
+  },
+  "tenants": [
+   {
+    "name": "LLM serving",
+    "rate": 0.15,
+    "mix_nonzero_cells": [
+     [
+      "transformer",
+      "fp16",
+      8
+     ],
+     [
+      "transformer",
+      "fp16",
+      32
+     ],
+     [
+      "transformer",
+      "fp16",
+      128
+     ]
+    ]
+   },
+   {
+    "name": "vision inference",
+    "rate": 0.15,
+    "mix_nonzero_cells": [
+     [
+      "convnext_t",
+      "fp16",
+      8
+     ],
+     [
+      "convnext_t",
+      "fp16",
+      32
+     ],
+     [
+      "convnext_t",
+      "fp16",
+      128
+     ],
+     [
+      "resnet50",
+      "fp16",
+      8
+     ],
+     [
+      "resnet50",
+      "fp16",
+      32
+     ],
+     [
+      "resnet50",
+      "fp16",
+      128
+     ],
+     [
+      "vit_b16",
+      "fp16",
+      8
+     ],
+     [
+      "vit_b16",
+      "fp16",
+      32
+     ],
+     [
+      "vit_b16",
+      "fp16",
+      128
+     ]
+    ]
+   },
+   {
+    "name": "legacy fp32 research",
+    "rate": 0.05,
+    "mix_nonzero_cells": [
+     [
+      "convnext_t",
+      "fp32",
+      8
+     ],
+     [
+      "convnext_t",
+      "fp32",
+      32
+     ],
+     [
+      "convnext_t",
+      "fp32",
+      128
+     ],
+     [
+      "resnet50",
+      "fp32",
+      8
+     ],
+     [
+      "resnet50",
+      "fp32",
+      32
+     ],
+     [
+      "resnet50",
+      "fp32",
+      128
+     ],
+     [
+      "transformer",
+      "fp32",
+      8
+     ],
+     [
+      "transformer",
+      "fp32",
+      32
+     ],
+     [
+      "transformer",
+      "fp32",
+      128
+     ],
+     [
+      "vit_b16",
+      "fp32",
+      8
+     ],
+     [
+      "vit_b16",
+      "fp32",
+      32
+     ],
+     [
+      "vit_b16",
+      "fp32",
+      128
+     ]
+    ]
+   },
+   {
+    "name": "large-batch offline",
+    "rate": 0.1,
+    "mix_nonzero_cells": [
+     [
+      "convnext_t",
+      "fp16",
+      128
+     ],
+     [
+      "convnext_t",
+      "fp32",
+      128
+     ],
+     [
+      "resnet50",
+      "fp16",
+      128
+     ],
+     [
+      "resnet50",
+      "fp32",
+      128
+     ],
+     [
+      "transformer",
+      "fp16",
+      128
+     ],
+     [
+      "transformer",
+      "fp32",
+      128
+     ],
+     [
+      "vit_b16",
+      "fp16",
+      128
+     ],
+     [
+      "vit_b16",
+      "fp32",
+      128
+     ]
+    ]
+   },
+   {
+    "name": "interactive small-batch",
+    "rate": 0.05,
+    "mix_nonzero_cells": [
+     [
+      "convnext_t",
+      "fp16",
+      8
+     ],
+     [
+      "convnext_t",
+      "fp32",
+      8
+     ],
+     [
+      "resnet50",
+      "fp16",
+      8
+     ],
+     [
+      "resnet50",
+      "fp32",
+      8
+     ],
+     [
+      "transformer",
+      "fp16",
+      8
+     ],
+     [
+      "transformer",
+      "fp32",
+      8
+     ],
+     [
+      "vit_b16",
+      "fp16",
+      8
+     ],
+     [
+      "vit_b16",
+      "fp32",
+      8
+     ]
+    ]
+   }
+  ],
+  "coalition_costs_j": {
+   "(empty)": 0.0,
+   "LLM serving": 1615579.0700849532,
+   "vision inference": 954957.6408278801,
+   "legacy fp32 research": 913334.1841715015,
+   "large-batch offline": 1202378.1970111202,
+   "interactive small-batch": 685892.2875240098,
+   "LLM serving|vision inference": 2466955.3852324127,
+   "LLM serving|legacy fp32 research": 2425331.9285760345,
+   "LLM serving|large-batch offline": 2714375.9414156526,
+   "LLM serving|interactive small-batch": 2197890.0319285425,
+   "legacy fp32 research|vision inference": 1868275.881639439,
+   "large-batch offline|vision inference": 2157335.837839,
+   "interactive small-batch|vision inference": 1640849.9283518898,
+   "large-batch offline|legacy fp32 research": 2113585.21407196,
+   "interactive small-batch|legacy fp32 research": 1492306.4716955111,
+   "interactive small-batch|large-batch offline": 1888270.48453513,
+   "LLM serving|legacy fp32 research|vision inference": 3380289.5694039147,
+   "LLM serving|large-batch offline|vision inference": 3669333.582243533,
+   "LLM serving|interactive small-batch|vision inference": 3152847.6727564223,
+   "LLM serving|large-batch offline|legacy fp32 research": 3627635.142102503,
+   "LLM serving|interactive small-batch|legacy fp32 research": 3004304.2161000445,
+   "LLM serving|interactive small-batch|large-batch offline": 3400268.2289396627,
+   "large-batch offline|legacy fp32 research|vision inference": 2963750.022010502,
+   "interactive small-batch|legacy fp32 research|vision inference": 2447264.112523392,
+   "interactive small-batch|large-batch offline|vision inference": 2736308.1253630104,
+   "interactive small-batch|large-batch offline|legacy fp32 research": 2694684.6687066313,
+   "LLM serving|large-batch offline|legacy fp32 research|vision inference": 4475747.766415035,
+   "LLM serving|interactive small-batch|legacy fp32 research|vision inference": 3959261.856927925,
+   "LLM serving|interactive small-batch|large-batch offline|vision inference": 4248305.869767543,
+   "LLM serving|interactive small-batch|large-batch offline|legacy fp32 research": 4206682.413111165,
+   "interactive small-batch|large-batch offline|legacy fp32 research|vision inference": 3649642.3095345115,
+   "LLM serving|interactive small-batch|large-batch offline|legacy fp32 research|vision inference": 5161640.0539390445
+  },
+  "coalition_fleets": {
+   "(empty)": null,
+   "LLM serving": {
+    "T4": 1,
+    "L4": 6
+   },
+   "vision inference": {
+    "L4": 4
+   },
+   "legacy fp32 research": {
+    "L4": 4
+   },
+   "large-batch offline": {
+    "L4": 5
+   },
+   "interactive small-batch": {
+    "L4": 3
+   },
+   "LLM serving|vision inference": {
+    "L4": 10
+   },
+   "LLM serving|legacy fp32 research": {
+    "L4": 10
+   },
+   "LLM serving|large-batch offline": {
+    "L4": 11
+   },
+   "LLM serving|interactive small-batch": {
+    "L4": 9
+   },
+   "legacy fp32 research|vision inference": {
+    "T4": 1,
+    "L4": 7
+   },
+   "large-batch offline|vision inference": {
+    "L4": 9
+   },
+   "interactive small-batch|vision inference": {
+    "L4": 7
+   },
+   "large-batch offline|legacy fp32 research": {
+    "T4": 1,
+    "L4": 8
+   },
+   "interactive small-batch|legacy fp32 research": {
+    "L4": 6
+   },
+   "interactive small-batch|large-batch offline": {
+    "L4": 8
+   },
+   "LLM serving|legacy fp32 research|vision inference": {
+    "L4": 14
+   },
+   "LLM serving|large-batch offline|vision inference": {
+    "L4": 15
+   },
+   "LLM serving|interactive small-batch|vision inference": {
+    "L4": 13
+   },
+   "LLM serving|large-batch offline|legacy fp32 research": {
+    "T4": 1,
+    "L4": 14
+   },
+   "LLM serving|interactive small-batch|legacy fp32 research": {
+    "L4": 12
+   },
+   "LLM serving|interactive small-batch|large-batch offline": {
+    "L4": 14
+   },
+   "large-batch offline|legacy fp32 research|vision inference": {
+    "L4": 12
+   },
+   "interactive small-batch|legacy fp32 research|vision inference": {
+    "L4": 10
+   },
+   "interactive small-batch|large-batch offline|vision inference": {
+    "L4": 11
+   },
+   "interactive small-batch|large-batch offline|legacy fp32 research": {
+    "L4": 11
+   },
+   "LLM serving|large-batch offline|legacy fp32 research|vision inference": {
+    "L4": 18
+   },
+   "LLM serving|interactive small-batch|legacy fp32 research|vision inference": {
+    "L4": 16
+   },
+   "LLM serving|interactive small-batch|large-batch offline|vision inference": {
+    "L4": 17
+   },
+   "LLM serving|interactive small-batch|large-batch offline|legacy fp32 research": {
+    "L4": 17
+   },
+   "interactive small-batch|large-batch offline|legacy fp32 research|vision inference": {
+    "L4": 15
+   },
+   "LLM serving|interactive small-batch|large-batch offline|legacy fp32 research|vision inference": {
+    "L4": 21
+   }
+  },
+  "grand_fleet": {
+   "L4": 21
+  },
+  "total_bill_j": 5161640.0539390445,
+  "total_bill_kwh": 1.433788903871957,
+  "bills": {
+   "per-job": {
+    "LLM serving": 1548492.0161817132,
+    "vision inference": 1548492.0161817132,
+    "legacy fp32 research": 516164.00539390446,
+    "large-batch offline": 1032328.0107878089,
+    "interactive small-batch": 516164.00539390446
+   },
+   "per-second (occupancy)": {
+    "LLM serving": 1528147.08047395,
+    "vision inference": 941541.3675691548,
+    "legacy fp32 research": 858320.0361097185,
+    "large-batch offline": 1185971.1920952336,
+    "interactive small-batch": 647660.3776909882
+   },
+   "metered energy + idle by occupancy": {
+    "LLM serving": 1535223.6714498145,
+    "vision inference": 936849.3353549041,
+    "legacy fp32 research": 859024.4934799065,
+    "large-batch offline": 1183677.1766393336,
+    "interactive small-batch": 646865.3770150854
+   },
+   "Shapley": {
+    "LLM serving": 1532782.9471068154,
+    "vision inference": 932032.4321204498,
+    "legacy fp32 research": 872405.4629144621,
+    "large-batch offline": 1179270.804367409,
+    "interactive small-batch": 645148.407429908
+   }
+  },
+  "bill_shares_pct": {
+   "per-job": {
+    "LLM serving": 30.0,
+    "vision inference": 30.0,
+    "legacy fp32 research": 10.0,
+    "large-batch offline": 20.0,
+    "interactive small-batch": 10.0
+   },
+   "per-second (occupancy)": {
+    "LLM serving": 29.605843578878822,
+    "vision inference": 18.24112796960006,
+    "legacy fp32 research": 16.62882392302233,
+    "large-batch offline": 22.9766349397063,
+    "interactive small-batch": 12.547569588792499
+   },
+   "metered energy + idle by occupancy": {
+    "LLM serving": 29.74294323910143,
+    "vision inference": 18.150226005007045,
+    "legacy fp32 research": 16.642471859779377,
+    "large-batch offline": 22.9321914017624,
+    "interactive small-batch": 12.532167494349743
+   },
+   "Shapley": {
+    "LLM serving": 29.695657409064975,
+    "vision inference": 18.056904828324484,
+    "legacy fp32 research": 16.901710576441612,
+    "large-batch offline": 22.846823723546212,
+    "interactive small-batch": 12.498903462622712
+   }
+  },
+  "departure_from_shapley_pct": {
+   "LLM serving": {
+    "per-job": 1.024872380303372,
+    "per-second (occupancy)": -0.3024476910847605,
+    "metered energy + idle by occupancy": 0.1592348314943095
+   },
+   "vision inference": {
+    "per-job": 66.14143057862992,
+    "per-second (occupancy)": 1.0202365412404568,
+    "metered energy + idle by occupancy": 0.5168171265773845
+   },
+   "legacy fp32 research": {
+    "per-job": -40.83439096431776,
+    "per-second (occupancy)": -1.6145505047261084,
+    "metered energy + idle by occupancy": -1.5338016556949967
+   },
+   "large-batch offline": {
+    "per-job": -12.460479224568273,
+    "per-second (occupancy)": 0.568180582696505,
+    "metered energy + idle by occupancy": 0.37365228203781425
+   },
+   "interactive small-batch": {
+    "per-job": -19.992981545105508,
+    "per-second (occupancy)": 0.38936316545943,
+    "metered energy + idle by occupancy": 0.26613560002686854
+   }
+  },
+  "stand_alone_cost_j": {
+   "LLM serving": 1615579.0700849532,
+   "vision inference": 954957.6408278801,
+   "legacy fp32 research": 913334.1841715015,
+   "large-batch offline": 1202378.1970111202,
+   "interactive small-batch": 685892.2875240098
+  },
+  "occupancy_seconds": {
+   "LLM serving": 20418.694127793486,
+   "vision inference": 12580.62488795016,
+   "legacy fp32 research": 11468.643630589171,
+   "large-batch offline": 15846.631077066664,
+   "interactive small-batch": 8653.865403231994
+  },
+  "jobs": {
+   "LLM serving": 540.0,
+   "vision inference": 540.0,
+   "legacy fp32 research": 180.0,
+   "large-batch offline": 360.0,
+   "interactive small-batch": 180.0
+  },
+  "core": {
+   "in_core": false,
+   "violations": [
+    {
+     "coalition": [
+      "interactive small-batch",
+      "legacy fp32 research"
+     ],
+     "excess_j": 25247.398648859
+    },
+    {
+     "coalition": [
+      "LLM serving",
+      "interactive small-batch",
+      "legacy fp32 research"
+     ],
+     "excess_j": 46032.601351141
+    },
+    {
+     "coalition": [
+      "large-batch offline",
+      "legacy fp32 research",
+      "vision inference"
+     ],
+     "excess_j": 19958.67739181919
+    },
+    {
+     "coalition": [
+      "interactive small-batch",
+      "legacy fp32 research",
+      "vision inference"
+     ],
+     "excess_j": 2322.189941428136
+    },
+    {
+     "coalition": [
+      "interactive small-batch",
+      "large-batch offline",
+      "vision inference"
+     ],
+     "excess_j": 20143.518554756418
+    },
+    {
+     "coalition": [
+      "interactive small-batch",
+      "large-batch offline",
+      "legacy fp32 research"
+     ],
+     "excess_j": 2140.0060051479377
+    },
+    {
+     "coalition": [
+      "LLM serving",
+      "large-batch offline",
+      "legacy fp32 research",
+      "vision inference"
+     ],
+     "excess_j": 40743.88009410165
+    },
+    {
+     "coalition": [
+      "LLM serving",
+      "interactive small-batch",
+      "legacy fp32 research",
+      "vision inference"
+     ],
+     "excess_j": 23107.3926437106
+    },
+    {
+     "coalition": [
+      "LLM serving",
+      "interactive small-batch",
+      "large-batch offline",
+      "vision inference"
+     ],
+     "excess_j": 40928.721257039346
+    },
+    {
+     "coalition": [
+      "LLM serving",
+      "interactive small-batch",
+      "large-batch offline",
+      "legacy fp32 research"
+     ],
+     "excess_j": 22925.20870742947
+    }
+   ]
+  },
+  "config": {
+   "rho": 0.94,
+   "penalty": 5.0,
+   "horizon_s": 3600.0,
+   "job_samples": 20000,
+   "size_cap": 60,
+   "size_scan_stall": 4,
+   "evaluator": "fluid LP recourse, B8 form"
+  }
+ },
+ "sanity": [
+  {
+   "check": "S0 local search reproduces exhaustive enumeration on the grand coalition",
+   "passed": true,
+   "detail": "exhaustive enumeration over sizes 18-24 gives (0, 21, 0, 0, 0) at 5,161,640 J; the search gives (0, 21, 0, 0, 0) at 5,161,640 J"
+  },
+  {
+   "check": "S1 efficiency: Shapley shares sum to the total bill",
+   "passed": true,
+   "detail": "sum 5,161,640.054 J vs c(N) 5,161,640.054 J"
+  },
+  {
+   "check": "S3 monotonicity: no coalition costs more than a superset of it",
+   "passed": true,
+   "detail": "0 violations out of 211 subset pairs"
+  },
+  {
+   "check": "S5 subadditivity: a merged facility never costs more than two separate ones",
+   "passed": true,
+   "detail": "0 violations, worst excess 0 J"
+  },
+  {
+   "check": "S6 every right-sized fleet is interior: not at the size cap and not improvable by one more slot",
+   "passed": true,
+   "detail": "0 of 31 coalitions at a boundary; the grand-coalition fleet holds 21 slots against a cap of 60"
+  },
+  {
+   "check": "S4 singleton game returns the stand-alone cost",
+   "passed": true,
+   "detail": "all five singletons match their stand-alone cost exactly"
+  },
+  {
+   "check": "S2 symmetry: two identical half-tenants receive identical shares",
+   "passed": true,
+   "detail": "773,087.5 J vs 773,087.5 J (difference 0.00e+00)"
+  },
+  {
+   "check": "S7 dummy: a zero-load tenant is charged exactly nothing",
+   "passed": true,
+   "detail": "share 0.000e+00 J"
+  },
+  {
+   "check": "C1 efficiency holds in the capacity-constrained game",
+   "passed": true,
+   "detail": "sum 6,349,823.147 J vs c(N) 6,349,823.147 J"
+  },
+  {
+   "check": "C2 monotonicity holds in the capacity-constrained game",
+   "passed": true,
+   "detail": "0 violations"
+  }
+ ]
+}

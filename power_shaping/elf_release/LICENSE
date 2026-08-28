@@ -1,0 +1,12 @@
+ELF dataset licensing
+=====================
+
+DATA (the CSV files under data/): Creative Commons Attribution 4.0 International
+(CC-BY-4.0). You are free to share and adapt the data for any purpose, provided
+you give appropriate credit. Full text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+CODE (the measurement scripts under code/): MIT License (see code/LICENSE).
+
+Attribution:
+  A. Apartsin, Y. Aperstein. "From GPUs to Joules: Scheduling AI Inference in the
+  Space of Energy and its Derivatives." 2026.

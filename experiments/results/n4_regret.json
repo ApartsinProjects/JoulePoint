@@ -1,0 +1,59 @@
+{
+ "results": {
+  "regret": {
+   "fixed ranking (additive)": {
+    "regret": 1.0459042479613225,
+    "top1": 80.64516129032258,
+    "infeasible_picks": 4,
+    "n": 31
+   },
+   "lowest TDP": {
+    "regret": 2.1544516152200783,
+    "top1": 9.67741935483871,
+    "infeasible_picks": 7,
+    "n": 31
+   },
+   "largest memory": {
+    "regret": 1.6620173440498267,
+    "top1": 19.35483870967742,
+    "infeasible_picks": 0,
+    "n": 31
+   },
+   "bilinear, configuration features": {
+    "regret": 1.0119725033666942,
+    "top1": 87.09677419354838,
+    "infeasible_picks": 4,
+    "n": 31
+   },
+   "oracle": {
+    "regret": 1.0,
+    "top1": 100.0,
+    "infeasible_picks": 0,
+    "n": 31
+   }
+  },
+  "winners": {
+   "L4": 23,
+   "A100-40GB": 7,
+   "L40S": 2
+  },
+  "infeasible_cells": 19
+ },
+ "sanity": [
+  {
+   "check": "more than one accelerator wins somewhere",
+   "passed": true,
+   "detail": "3 distinct winners: {'L4': 23, 'A100-40GB': 7, 'L40S': 2}"
+  },
+  {
+   "check": "regret now discriminates between methods",
+   "passed": true,
+   "detail": "spread 1.000 to 2.154"
+  },
+  {
+   "check": "the model beats a fixed ranking on regret",
+   "passed": true,
+   "detail": "bilinear 1.012 vs fixed 1.046"
+  }
+ ]
+}

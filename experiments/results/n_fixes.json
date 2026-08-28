@@ -1,0 +1,166 @@
+{
+ "results": {
+  "f1_consolidation": [
+   {
+    "threshold": null,
+    "wake_cost_j": 0,
+    "total_j": 2987930.6647309097,
+    "static_j": 2006640.0,
+    "dyn_j": 981290.6647309099,
+    "per_job": 9222.008224478117,
+    "mean_delay": 0.0,
+    "asleep_frac": 0.0,
+    "jobs": 324
+   },
+   {
+    "threshold": 600,
+    "wake_cost_j": 20000,
+    "total_j": 2651638.5735076456,
+    "static_j": 1610347.9087767354,
+    "dyn_j": 1041290.6647309101,
+    "per_job": 8184.069671319894,
+    "mean_delay": 0.2777777777777778,
+    "asleep_frac": 0.25457583820274093,
+    "jobs": 324
+   },
+   {
+    "threshold": 300,
+    "wake_cost_j": 20000,
+    "total_j": 2549016.1242896495,
+    "static_j": 1467725.4595587396,
+    "dyn_j": 1081290.6647309097,
+    "per_job": 7867.333716943363,
+    "mean_delay": 0.46296296296296297,
+    "asleep_frac": 0.32565538123923143,
+    "jobs": 324
+   },
+   {
+    "threshold": 120,
+    "wake_cost_j": 20000,
+    "total_j": 2974133.228012194,
+    "static_j": 1294103.25269518,
+    "dyn_j": 1680029.9753170141,
+    "per_job": 9179.423543247512,
+    "mean_delay": 3.2407407407407414,
+    "asleep_frac": 0.398123862393199,
+    "jobs": 324
+   },
+   {
+    "threshold": 60,
+    "wake_cost_j": 20000,
+    "total_j": 3367428.514570786,
+    "static_j": 1066507.8879530365,
+    "dyn_j": 2300920.6266177497,
+    "per_job": 10393.297884477735,
+    "mean_delay": 6.111111111111112,
+    "asleep_frac": 0.47840307245617764,
+    "jobs": 324
+   },
+   {
+    "threshold": 30,
+    "wake_cost_j": 20000,
+    "total_j": 4090649.684151356,
+    "static_j": 856420.3550309851,
+    "dyn_j": 3234229.329120371,
+    "per_job": 12625.46198812147,
+    "mean_delay": 10.37037037037037,
+    "asleep_frac": 0.5538247238502949,
+    "jobs": 324
+   },
+   {
+    "threshold": 30,
+    "wake_cost_j": 5000,
+    "total_j": 2410649.684151357,
+    "static_j": 856420.3550309851,
+    "dyn_j": 1554229.3291203717,
+    "per_job": 7440.276802936287,
+    "mean_delay": 10.37037037037037,
+    "asleep_frac": 0.5538247238502949,
+    "jobs": 324
+   },
+   {
+    "threshold": 30,
+    "wake_cost_j": 0,
+    "total_j": 1850649.6841513556,
+    "static_j": 856420.3550309851,
+    "dyn_j": 994229.3291203706,
+    "per_job": 5711.881741207888,
+    "mean_delay": 10.37037037037037,
+    "asleep_frac": 0.5538247238502949,
+    "jobs": 324
+   }
+  ],
+  "f2_descriptors": {
+   "A full (family + precision + batch)": 87.91666666666666,
+   "F precision + batch, NO family": 85.41666666666667,
+   "G family + batch, NO precision": 81.66666666666666,
+   "H precision only": 83.33333333333333,
+   "C observable (mem + batch)": 81.66666666666666,
+   "E nothing": 81.66666666666666
+  },
+  "f3_procurement": [
+   {
+    "lam": 0.1,
+    "best_fleet": {
+     "L4": 10
+    },
+    "best_j": 5304.525862843668,
+    "best_delay": 0.0,
+    "a100_j": 13698.300224576518,
+    "a100_delay": 0.0
+   },
+   {
+    "lam": 0.5,
+    "best_fleet": {
+     "L4": 10
+    },
+    "best_j": 2492.2913871125725,
+    "best_delay": 2141.7540136643665,
+    "a100_j": 6817.180442379689,
+    "a100_delay": 11.471335157790323
+   },
+   {
+    "lam": 1.0,
+    "best_fleet": {
+     "L4": 10
+    },
+    "best_j": 2185.7577490046974,
+    "best_delay": 6052.669292986945,
+    "a100_j": 6074.061754119338,
+    "a100_delay": 1545.5005070860382
+   },
+   {
+    "lam": 2.0,
+    "best_fleet": {
+     "L4": 10
+    },
+    "best_j": 2050.8984590199175,
+    "best_delay": 14345.507618577609,
+    "a100_j": 5785.778280648875,
+    "a100_delay": 5088.698124053398
+   }
+  ]
+ },
+ "sanity": [
+  {
+   "check": "unreachable threshold reproduces the no-sleep baseline",
+   "passed": true,
+   "detail": "2987931 J vs 2987931 J"
+  },
+  {
+   "check": "instant free sleep removes essentially all idle energy",
+   "passed": true,
+   "detail": "asleep 74% of slot-time, static 452553 vs 2006640 J"
+  },
+  {
+   "check": "removing precision costs more than removing family identity",
+   "passed": true,
+   "detail": "no-precision 81.7% vs no-family 85.4%"
+  },
+  {
+   "check": "queueing delay becomes non-zero as arrival rate rises",
+   "passed": true,
+   "detail": "delay at lam=2.0 is 14345.5s (was 0.0 at lam=0.1)"
+  }
+ ]
+}

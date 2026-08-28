@@ -1,0 +1,29 @@
+{
+  "model": "elasticity_response",
+  "target": "normalized_throughput",
+  "features": [
+    "relp",
+    "fam_compute",
+    "fam_hpc",
+    "fam_llm",
+    "fam_llm_decode",
+    "fam_memory",
+    "fam_nlp",
+    "fam_recommendation",
+    "fam_speech",
+    "fam_vision",
+    "src_aws_a10g",
+    "src_emerald",
+    "src_grid5000",
+    "src_zeus"
+  ],
+  "n_samples": 278,
+  "sources": [
+    "aws_a10g",
+    "emerald",
+    "grid5000",
+    "zeus"
+  ],
+  "n_workloads": 30,
+  "leave_one_workload_out_MAE": 0.04505596117992259
+}

@@ -1,0 +1,37 @@
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Variance share versus decision relevance">
+<defs><style>.lb{font:9.5px Georgia,serif;fill:#2c3138}.sm{font:8.5px Georgia,serif;fill:#5a626c}.ti{font:bold 9.5px Georgia,serif;fill:#111418}.bg{font:bold 11px Georgia,serif;fill:#111418}</style></defs>
+<text class="ti" x="10" y="16">(a) Where the variance is</text>
+<text class="ti" x="372" y="16">(b) Where the decision is</text>
+<text class="sm" x="167.0" y="36" text-anchor="middle">additive: workload effect + machine effect</text>
+<rect x="20" y="44" width="292.5" height="30" fill="#c9d2da" stroke="#8e99a4" stroke-width=".7"/>
+<rect x="312.5" y="44" width="7.5" height="30" fill="#7a2f3f" stroke="#5d232f" stroke-width=".7"/>
+<text class="bg" x="167.0" y="64" text-anchor="middle" fill="#3c454e">97.5%</text>
+<line x1="316.2" y1="74" x2="316.2" y2="86" stroke="#7a2f3f" stroke-width=".9"/>
+<text class="bg" x="314.2" y="99" text-anchor="middle" fill="#7a2f3f">2.5%</text>
+<text class="sm" x="282.2" y="99" text-anchor="end">interaction residual</text>
+<text class="lb" x="20" y="140">By Proposition 1 the shaded 97.5 per cent is exactly a fixed</text>
+<text class="lb" x="20" y="154">ranking over accelerators, identical for every workload, and</text>
+<text class="lb" x="20" y="168">so cannot change any placement decision. All of the decision</text>
+<text class="lb" x="20" y="182">content lies in the 2.5 per cent.</text>
+<rect x="20" y="196" width="300" height="42" fill="#f4f2ee" stroke="#ddd8cf" stroke-width=".7"/>
+<text class="sm" x="30" y="213">pairwise ranking accuracy, additive ceiling  81.7%</text>
+<text class="sm" x="30" y="229">pairwise ranking accuracy, interaction modelled  87.9%</text>
+<text class="sm" x="525.0" y="34" text-anchor="middle">energy per sample relative to T4 (Transformer, batch 32)</text>
+<line x1="445" y1="44" x2="445" y2="178" stroke="#c8cdd2" stroke-width=".8"/>
+<line x1="605" y1="44" x2="605" y2="178" stroke="#c8cdd2" stroke-width=".8"/>
+<text class="lb" x="445" y="192" text-anchor="middle">single precision</text>
+<text class="lb" x="605" y="192" text-anchor="middle">half precision</text>
+<line x1="445" y1="117.7" x2="605" y2="117.7" stroke="#e0e3e6" stroke-width=".8" stroke-dasharray="3,3"/>
+<line x1="445" y1="67.3" x2="605" y2="159.3" stroke="#7a2f3f" stroke-width="2"/>
+<circle cx="445" cy="67.3" r="4.5" fill="#7a2f3f" stroke="#fff" stroke-width="1.1"/>
+<circle cx="605" cy="159.3" r="4.5" fill="#7a2f3f" stroke="#fff" stroke-width="1.1"/>
+<text class="lb" x="437" y="70.3" text-anchor="end" fill="#7a2f3f">A100, 1.35x worse</text>
+<text class="lb" x="613" y="162.3" fill="#7a2f3f">A100, 1.41x better</text>
+<line x1="445" y1="117.7" x2="605" y2="117.7" stroke="#14385c" stroke-width="2"/>
+<circle cx="445" cy="117.7" r="4.5" fill="#14385c" stroke="#fff" stroke-width="1.1"/>
+<circle cx="605" cy="117.7" r="4.5" fill="#14385c" stroke="#fff" stroke-width="1.1"/>
+<text class="sm" x="613" y="120.7" fill="#14385c">T4, reference</text>
+<text class="lb" x="372" y="204">The hardware does not change; a single software flag moves,</text>
+<text class="lb" x="372" y="218">and the cheaper device swaps. Eighteen of forty accelerator</text>
+<text class="lb" x="372" y="232">pairs reverse somewhere in the grid.</text>
+</svg>

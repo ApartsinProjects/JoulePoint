@@ -1,0 +1,114 @@
+{
+ "shared_workloads": [
+  "resnet50",
+  "bert_large"
+ ],
+ "shared_accelerators": [
+  "A100",
+  "H100"
+ ],
+ "exact_part_bridge_failed": "H200-SXM-141GB has no power-measured resnet or bert submission; A100-SXM4-40GB has bert but no resnet; only H100-SXM-80GB carries both",
+ "mlperf_cells": {
+  "resnet50|H100": 159.14380714211697,
+  "resnet50|A100": 124.93499333081373,
+  "bert_large|H100": 13.072706869486279,
+  "bert_large|A100": 8.871296949775315
+ },
+ "mlperf_submission_counts": {
+  "resnet50|H100": 7,
+  "resnet50|A100": 3,
+  "bert_large|H100": 14,
+  "bert_large|A100": 19
+ },
+ "our_cells": {
+  "resnet50|A100": 66.6202,
+  "bert_large|A100": 688.5516,
+  "resnet50|H100": 59.8685,
+  "bert_large|H100": 527.3252
+ },
+ "raw_correlation": -0.9992076320827448,
+ "interaction_share": {
+  "mlperf": 0.07896188677014673,
+  "ours": 0.12464556240042479
+ },
+ "machine_effects": {
+  "mlperf": [
+   0.06837101294047865,
+   -0.06837101294047843
+  ],
+  "ours": [
+   0.04056638020983527,
+   -0.04056638020983483
+  ]
+ },
+ "accelerator_order": [
+  "A100",
+  "H100"
+ ],
+ "main_effect_pairs_agree": 1,
+ "main_effect_pairs_total": 1,
+ "interaction_correlation_uninformative_at_2x2": 1.0,
+ "interaction_sign_agreement": 4,
+ "interaction_collapsed_pct": 0.12464556240042479,
+ "interaction_full_pct": 0.04882247151910684,
+ "n_configs_retained": 6,
+ "residuals": {
+  "mlperf": [
+   [
+    -0.015818190256313036,
+    0.015818190256312814
+   ],
+   [
+    0.015818190256313036,
+    -0.015818190256313036
+   ]
+  ],
+  "ours": [
+   [
+    -0.017362602671165073,
+    0.01736260267116463
+   ],
+   [
+    0.01736260267116485,
+    -0.01736260267116485
+   ]
+  ]
+ },
+ "sanity": [
+  {
+   "check": "S1 shared sub-matrix is complete",
+   "passed": true,
+   "detail": "4 of 4 cells present in both corpora"
+  },
+  {
+   "check": "S2 efficiency and energy correlate negatively",
+   "passed": true,
+   "detail": "r = -0.999 over 4 shared cells"
+  },
+  {
+   "check": "S3 sums of squares decompose exactly, both corpora",
+   "passed": true,
+   "detail": "MLPerf 1.267524=1.267524, ours 0.967415=0.967415"
+  },
+  {
+   "check": "P1 main effects transfer between corpora",
+   "passed": true,
+   "detail": "1 of 1 accelerator pairs ordered identically"
+  },
+  {
+   "check": "P2a interaction is negligible in BOTH corpora at tuned optima",
+   "passed": true,
+   "detail": "MLPerf 0.08%, ours 0.12%. Both corpora are read at their per-cell best configuration here, so the max-over-configuration operation that Table 2 blames for MLPerf's 0.3% has been applied to our side too, and it removes ours as well."
+  },
+  {
+   "check": "P2b the corpora agree on the direction of what interaction remains",
+   "passed": true,
+   "detail": "4 of 4 cells agree in sign (r is uninformative at 2x2 and is not used)"
+  },
+  {
+   "check": "P3 the configuration collapse is what removes the interaction",
+   "passed": false,
+   "detail": "0.05% across 6 configurations versus 0.12% collapsed to the best one, a 0.4x reduction from the same cells and the same hardware"
+  }
+ ]
+}

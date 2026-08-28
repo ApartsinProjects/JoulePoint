@@ -1,0 +1,22 @@
+# public datasets: large and re-downloadable via experiments/fetch_datasets.py
+data/
+*.log
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+# scratch
+_paper_*.html
+
+# secrets: never commit credentials
+.env
+.env.*
+!.env.example
+*.modal.toml
+.modal.toml
+*credentials*.json
+*token*.json
+
+# html2doc build intermediates
+docs/_gpte*_mathml.html
+docs/GPTEnergy*_conv.docx
+docs/GPTEnergy_2col_src.html

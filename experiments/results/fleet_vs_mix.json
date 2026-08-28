@@ -1,0 +1,139 @@
+{
+ "results": {
+  "optimal_fleets": {
+   "uniform (all workloads)": {
+    "fleet": {
+     "L4": 4,
+     "L40S": 6
+    },
+    "per_job_j": 4391.351705007852,
+    "delay_s": 15.005849404876589
+   },
+   "LLM-serving-like (transformer)": {
+    "fleet": {
+     "L4": 10
+    },
+    "per_job_j": 3445.0161579568435,
+    "delay_s": 4183.97665105385
+   },
+   "vision inference (CNN + ViT)": {
+    "fleet": {
+     "L4": 6,
+     "L40S": 4
+    },
+    "per_job_j": 3474.790683049088,
+    "delay_s": 45.624531938580986
+   },
+   "modern precision only (fp16)": {
+    "fleet": {
+     "L4": 8,
+     "L40S": 1,
+     "A100-40GB": 1
+    },
+    "per_job_j": 2323.5754903932666,
+    "delay_s": 18.825480884336493
+   },
+   "legacy precision (fp32)": {
+    "fleet": {
+     "L4": 1,
+     "L40S": 9
+    },
+    "per_job_j": 6414.959494022587,
+    "delay_s": 55.62386699024764
+   },
+   "latency-sensitive (batch 8)": {
+    "fleet": {
+     "L4": 3,
+     "L40S": 7
+    },
+    "per_job_j": 4899.121257408875,
+    "delay_s": 34.668471296482934
+   },
+   "throughput-oriented (batch128)": {
+    "fleet": {
+     "L4": 5,
+     "L40S": 5
+    },
+    "per_job_j": 4119.950243218609,
+    "delay_s": 50.01559317878714
+   }
+  },
+  "misprovision_penalty_pct": {
+   "uniform (all workloads)": {
+    "uniform (all workloads)": 0.0,
+    "LLM-serving-like (transformer)": 80.1460253006132,
+    "vision inference (CNN + ViT)": 11.084348257596265,
+    "modern precision only (fp16)": 33.420439704849535,
+    "legacy precision (fp32)": -10.250192689817837,
+    "latency-sensitive (batch 8)": -4.385140319814255,
+    "throughput-oriented (batch128)": 4.883072764078924
+   },
+   "LLM-serving-like (transformer)": {
+    "uniform (all workloads)": -44.43549225261725,
+    "LLM-serving-like (transformer)": 0.0,
+    "vision inference (CNN + ViT)": -37.54029987017969,
+    "modern precision only (fp16)": -25.92329265388446,
+    "legacy precision (fp32)": -49.46416629231242,
+    "latency-sensitive (batch 8)": -47.82160588524434,
+    "throughput-oriented (batch128)": -42.045426454143545
+   },
+   "vision inference (CNN + ViT)": {
+    "uniform (all workloads)": -10.30600209282958,
+    "LLM-serving-like (transformer)": 62.879591263786146,
+    "vision inference (CNN + ViT)": 0.0,
+    "modern precision only (fp16)": 17.735530632709036,
+    "legacy precision (fp32)": -18.839615312093862,
+    "latency-sensitive (batch 8)": -14.75972118495573,
+    "throughput-oriented (batch128)": -5.770572839359821
+   },
+   "modern precision only (fp16)": {
+    "uniform (all workloads)": -18.52679196662111,
+    "LLM-serving-like (transformer)": 53.91781511021373,
+    "vision inference (CNN + ViT)": -10.683585633558227,
+    "modern precision only (fp16)": 0.0,
+    "legacy precision (fp32)": -23.22285179663511,
+    "latency-sensitive (batch 8)": -23.676183267784943,
+    "throughput-oriented (batch128)": -14.7939345573106
+   },
+   "legacy precision (fp32)": {
+    "uniform (all workloads)": 12.944145953890752,
+    "LLM-serving-like (transformer)": 100.41787246662292,
+    "vision inference (CNN + ViT)": 27.3168599018822,
+    "modern precision only (fp16)": 57.0560637207393,
+    "legacy precision (fp32)": 0.0,
+    "latency-sensitive (batch 8)": 8.116578416425162,
+    "throughput-oriented (batch128)": 18.765112276727503
+   },
+   "latency-sensitive (batch 8)": {
+    "uniform (all workloads)": 4.285421374082662,
+    "LLM-serving-like (transformer)": 87.39577713919624,
+    "vision inference (CNN + ViT)": 16.57993471873504,
+    "modern precision only (fp16)": 41.20040372952011,
+    "legacy precision (fp32)": -6.462188917688257,
+    "latency-sensitive (batch 8)": 0.0,
+    "throughput-oriented (batch128)": 9.57189176238845
+   },
+   "throughput-oriented (batch128)": {
+    "uniform (all workloads)": -4.819779612708778,
+    "LLM-serving-like (transformer)": 71.94742682708532,
+    "vision inference (CNN + ViT)": 5.7654763439505095,
+    "modern precision only (fp16)": 25.372878797078233,
+    "legacy precision (fp32)": -14.22527620802644,
+    "latency-sensitive (batch 8)": -9.292515342603057,
+    "throughput-oriented (batch128)": 0.0
+   }
+  }
+ },
+ "sanity": [
+  {
+   "check": "the energy-optimal fleet is not invariant to workload mix",
+   "passed": true,
+   "detail": "7 distinct optimal fleets across 7 mixes"
+  },
+  {
+   "check": "provisioning for the wrong mix carries a measurable penalty",
+   "passed": true,
+   "detail": "worst case 100.4%, fleet chosen for 'legacy precision (fp32)' running 'LLM-serving-like (transfor'"
+  }
+ ]
+}
