@@ -278,17 +278,18 @@ ol.contrib,ol.refs{font-size:10.5pt;padding-left:22px}ol.contrib li{margin:5px 0
 ul.consider{font-size:10.5pt;padding-left:22px;margin:6px 0}ul.consider li{margin:6px 0;text-align:justify;hyphens:auto}
 .foot{margin-top:40px;border-top:1px solid var(--rule);padding-top:10px;color:var(--muted);font-size:9pt}
 .key{background:#f7f9fb;border-left:3px solid var(--navy);padding:8px 12px;margin:14px 0;font-size:10.5pt}
-a.pdflink{position:fixed;top:14px;right:16px;z-index:10;font-size:9.5pt;font-weight:600;letter-spacing:.04em;
+.toplinks{position:fixed;top:14px;right:16px;z-index:10;display:flex;gap:8px}
+.toplinks a{font-size:9.5pt;font-weight:600;letter-spacing:.04em;
  color:var(--navy);text-decoration:none;border:1px solid var(--navy);border-radius:4px;padding:4px 10px;background:var(--bg)}
-a.pdflink:hover{background:var(--navy);color:#fff}
-@media print{a.pdflink{display:none}}
+.toplinks a:hover{background:var(--navy);color:#fff}
+@media print{.toplinks{display:none}}
 """
 
 html = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Joule Point</title>
 <style>{CSS}</style></head><body>
-<a class="pdflink" href="GPTEnergy_1col.pdf" download>PDF</a>
+<div class="toplinks"><a href="GPTEnergy_1col.pdf" download>PDF</a><a href="GPTEnergy_1col.docx" download>DOCX</a></div>
 <div class="wrap">
 
 <h1 class="title">The Joule Point: an Energy-Optimal Operating Point for AI Inference</h1>
