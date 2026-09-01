@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 """Build both Word/PDF deliverables from docs/GPTEnergy.html via the html2doc skill.
 
-  GPTEnergy_1col.docx/pdf  -- PRIMARY: single-column, horizontal multi-panel figures,
+  JoulePoint_1col.docx/pdf  -- PRIMARY: single-column, horizontal multi-panel figures,
                               figures height-capped so figure+caption bumps less (less white).
-  GPTEnergy_2col.docx/pdf  -- best-effort: two-column, multi-panel figures swapped to their
+  JoulePoint_2col.docx/pdf  -- best-effort: two-column, multi-panel figures swapped to their
                               VERTICAL stacked variants so they flow single-column (no float gaps).
 
 Run from docs/:  python build_docx.py
@@ -131,10 +131,10 @@ def render_pdf(docx, pdf):
 def main():
     # ---- 1-column (primary): horizontal figures, capped height to reduce page-bottom white ----
     stage1("GPTEnergy.html", "_gpte_1col_mathml.html")
-    stage2("_gpte_1col_mathml.html", "GPTEnergy_1col_conv.docx", "camera-ready-generic")
-    stage3("GPTEnergy_1col_conv.docx", "GPTEnergy_1col.docx", "camera-ready-generic",
+    stage2("_gpte_1col_mathml.html", "JoulePoint_1col_conv.docx", "camera-ready-generic")
+    stage3("JoulePoint_1col_conv.docx", "JoulePoint_1col.docx", "camera-ready-generic",
            ["--figure-max-height-in", "3.5"])
-    render_pdf("GPTEnergy_1col.docx", "GPTEnergy_1col.pdf")
+    render_pdf("JoulePoint_1col.docx", "JoulePoint_1col.pdf")
 
     # ---- 2-column (best-effort) ----
     # Layout choices for continuous columns (no half-empty columns):
@@ -149,7 +149,7 @@ def main():
     # Relocate in-column figures so the text after each one backfills the column it
     # would otherwise leave half-empty (2-col layout only; captions keep the numbers).
     MOVES = [
-        ("fig_energy_u",             "for 1.22&times; (Figure&nbsp;4).</p>"),
+        ("fig_energy_u",             "(Table&nbsp;1).</p>"),
         ("fig_frontier_stacked",     "</ul>"),
         ("fig_power_budget_stacked", "quantitative analysis.</p>"),
     ]
@@ -160,16 +160,16 @@ def main():
         html = html.replace(fig, "").replace(marker, marker + "\n" + fig)
     open(os.path.join(HERE, "GPTEnergy_2col_src.html"), "w", encoding="utf-8").write(html)
     stage1("GPTEnergy_2col_src.html", "_gpte_2col_mathml.html")
-    stage2("_gpte_2col_mathml.html", "GPTEnergy_2col_conv.docx", "two-column")
-    stage3("GPTEnergy_2col_conv.docx", "GPTEnergy_2col.docx", "two-column",
+    stage2("_gpte_2col_mathml.html", "JoulePoint_2col_conv.docx", "two-column")
+    stage3("JoulePoint_2col_conv.docx", "JoulePoint_2col.docx", "two-column",
            ["--max-span-height-frac", "0.32", "--figure-max-height-in", "3.0"])
-    polish_premium(os.path.join(HERE, "GPTEnergy_2col.docx"))
-    render_pdf("GPTEnergy_2col.docx", "GPTEnergy_2col.pdf")
+    polish_premium(os.path.join(HERE, "JoulePoint_2col.docx"))
+    render_pdf("JoulePoint_2col.docx", "JoulePoint_2col.pdf")
 
     # content canary
     from docx import Document
     import zipfile
-    for f in ("GPTEnergy_1col.docx", "GPTEnergy_2col.docx"):
+    for f in ("JoulePoint_1col.docx", "JoulePoint_2col.docx"):
         z = zipfile.ZipFile(os.path.join(HERE, f))
         media = len([n for n in z.namelist() if n.startswith("word/media/")])
         print(f"  {f}: {media} figures, {len(Document(os.path.join(HERE, f)).tables)} tables")

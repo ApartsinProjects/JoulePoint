@@ -5,8 +5,8 @@ harnesses, figures, fleet simulation, and review artifacts.
 
 **Paper (HTML):** [docs/GPTEnergy.html](docs/GPTEnergy.html) (GitHub Pages serves it as the site
 index, with a PDF link at the top right).
-**Paper (PDF/Word):** [docs/GPTEnergy_1col.pdf](docs/GPTEnergy_1col.pdf) (primary, single-column),
-[docs/GPTEnergy_2col.pdf](docs/GPTEnergy_2col.pdf), plus the matching `.docx` files.
+**Paper (PDF/Word):** [docs/JoulePoint_1col.pdf](docs/JoulePoint_1col.pdf) (primary, single-column),
+[docs/JoulePoint_2col.pdf](docs/JoulePoint_2col.pdf), plus the matching `.docx` files.
 **Dataset:** ELF (Energy-Latency Frontier), archived at Zenodo,
 [doi:10.5281/zenodo.22058568](https://doi.org/10.5281/zenodo.22058568), CC-BY-4.0 (data) and MIT (code).
 
