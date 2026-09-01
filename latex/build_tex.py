@@ -47,6 +47,14 @@ def main():
     tex = re.sub(r"\\begin\{abstract\}.*?\\end\{abstract\}",
                  lambda _: "\\begin{abstract}\n" + abstract + "\n\\end{abstract}",
                  tex, count=1, flags=re.S)
+    # Figure 6 (power budget) floats [b]: at [tbp] it takes the top of its
+    # column and splits the "Pricing" bullet, whose continuation then resumes
+    # under the caption; bottom placement keeps the bullet text contiguous
+    # above the figure.
+    fig6 = tex.index("fig_power_budget_stacked")
+    head = tex.rindex("\\begin{figure}[tbp]", 0, fig6)
+    tex = tex[:head] + "\\begin{figure}[b]" + tex[head + len("\\begin{figure}[tbp]"):]
+
     open(main_p, "w", encoding="utf-8").write(tex)
 
     sh([PY, os.path.join(SKILL, "scripts", "compile_local.py"), "--in-dir", "latex", "--auto-patch"])
