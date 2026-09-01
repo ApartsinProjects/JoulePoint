@@ -40,13 +40,29 @@ def main():
 
     tex = tex.replace("\\author{Anonymous Authors}\n\\address{Anonymous Affiliations}",
         "\\author[hit]{Alexander Apartsin}\n"
-        "\\author[afeka]{Yehudit Aperstein}\n"
+        "\\author[afeka]{Yehudit Aperstein\\corref{cor1}}\n"
+        "\\cortext[cor1]{Corresponding author}\n"
+        "\\ead{apersteiny@afeka.ac.il}\n"
         "\\address[hit]{Holon Institute of Technology, Holon, Israel}\n"
         "\\address[afeka]{Afeka Academic College of Engineering, Tel Aviv, Israel}")
     tex = tex.replace("__JOURNAL__", "Sustainable Computing: Informatics and Systems")
     tex = re.sub(r"\\begin\{abstract\}.*?\\end\{abstract\}",
                  lambda _: "\\begin{abstract}\n" + abstract + "\n\\end{abstract}",
                  tex, count=1, flags=re.S)
+    # Pull the title block up: the 3p title box otherwise leaves a tall white
+    # margin above the paper title on page 1.
+    tex = tex.replace("\\title{The Joule Point",
+                      "\\title{\\vspace*{-2\\baselineskip}The Joule Point")
+
+    # Journal (non-ACL) back matter: Limitations is a NUMBERED section here
+    # (the converter stars it per the ACL convention), Data availability is
+    # unnumbered back matter, and the \section{References} heading goes away
+    # entirely (thebibliography prints its own, so it would appear twice).
+    tex = tex.replace("\\section*{Limitations}", "\\section{Limitations}")
+    tex = tex.replace("\\section{Data and code availability}",
+                      "\\section*{Data and code availability}")
+    tex = re.sub(r"\\section\{References\}\\label\{references\}\n?", "", tex)
+
     # Figure 6 (power budget) floats [b]: at [tbp] it takes the top of its
     # column and splits the "Pricing" bullet, whose continuation then resumes
     # under the caption; bottom placement keeps the bullet text contiguous

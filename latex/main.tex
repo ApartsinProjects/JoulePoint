@@ -30,6 +30,19 @@
 % With rigid parskip the residual slack sits at the column bottom instead.
 \setlength{\parskip}{0pt}
 \AtBeginDocument{\setlength{\parskip}{0pt}}
+% Tighter heading skips than elsarticle's defaults (18pt/9pt): a heading plus
+% its first two lines then fits the tail of a column more often, so sections
+% continue at a column bottom instead of leaving it empty.
+\makeatletter
+\renewcommand\section{\@startsection{section}{1}{\z@}%
+           {12\p@ \@plus 3\p@ \@minus 4\p@}%
+           {6\p@ \@plus 2\p@ \@minus 2\p@}%
+           {\normalsize\bfseries\boldmath}}
+\renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
+           {10\p@ \@plus 3\p@ \@minus 3\p@}%
+           {3\p@ \@plus 2\p@ \@minus 1\p@}%
+           {\normalfont\normalsize\itshape}}
+\makeatother
 \setlength{\intextsep}{6pt plus 1pt minus 3pt}
 \setlength{\textfloatsep}{8pt plus 1pt minus 3pt}
 \setlength{\floatsep}{8pt plus 1pt minus 3pt}
@@ -38,12 +51,14 @@
 
 \begin{document}
 \begin{frontmatter}
-\title{The Joule Point: an Energy-Optimal Operating Point for AI Inference}
+\title{\vspace*{-2\baselineskip}The Joule Point: an Energy-Optimal Operating Point for AI Inference}
 
 % pack_tmlr_bundle.py fills anonymous placeholders; replace with the real
 % elsarticle author block (\author[label]{...} + \affiliation) for submission.
 \author[hit]{Alexander Apartsin}
-\author[afeka]{Yehudit Aperstein}
+\author[afeka]{Yehudit Aperstein\corref{cor1}}
+\cortext[cor1]{Corresponding author}
+\ead{apersteiny@afeka.ac.il}
 \address[hit]{Holon Institute of Technology, Holon, Israel}
 \address[afeka]{Afeka Academic College of Engineering, Tel Aviv, Israel}
 
@@ -469,7 +484,7 @@ point below is a hypothesis to test against a given fleet.
 \caption{\textbf{Figure 6.} When power, not capital, is the binding constraint, the Joule Point is the interior optimum. Behind a fixed 1 MW feed (illustrated on the A100 running ViT-B/32 at batch 64), installing more GPUs forces each to a deeper cap (top axis), shifting the megawatt from dynamic, useful compute (blue) to the static idle floor (grey, taken as the least measured board draw). Served inferences per MW (red) peak at the Joule Point, near 5,500 cards, about 50 per cent above running the same megawatt uncapped; installing more cards is strictly dominated, serving fewer inferences at higher per-request latency (orange, right axis, log scale). Both served throughput and latency are relative to the uncapped operating point (= 1.0, the 100 per cent-TDP reference). This is the power-limited, demand-saturated regime; where demand is limited instead, one installs only enough cards to meet it and caps to the least SLO-feasible power (Section~7).}
 \end{figure}
 
-\section*{Limitations}\label{limitations}
+\section{Limitations}\label{limitations}
 
 What this paper establishes, it establishes by direct measurement: a superlinear power-response law across 20 models on three NVIDIA inference GPUs, a Joule Point that under load is a per-card constant, and a fleet result driven end to end by measured curves. These findings hold for the workloads, cards, and loaded regime we swept, one model per GPU at fixed batch and precision, and that scope maps directly onto the extensions we set out below. The closed-form Joule Point explains the physics, why an energy minimum exists and why the shared floor {\(P_0\)} makes it a per-card constant, while the deployed cap is set directly from the measured sweep; on the high-exponent cards the analytic optimum lands within about ten percentage points of TDP of that measured cap, and since the deployed cap uses the measurement the gap costs nothing. The cross-card relationships are scaling observations over three GPUs, so a fitted transfer model to unmeasured cards is future work, and the cap-sweep protocol that would build it carries over unchanged. That protocol extends directly to more workloads, more GPU generations and vendors, and a production serving engine such as vLLM or TensorRT-LLM (Section~10), where co-location, iteration-level batching, and a shifting prefill/decode mix would be exercised under live load. The economic analysis uses stated illustrative prices, card cost, electricity, and a four-year life, so its break-even figures scale transparently with those inputs.
 
@@ -481,7 +496,7 @@ Hardware-space scheduling allocates GPUs; the cost that matters is joules, and j
 
 Two extensions follow directly. The measured cross-card regularities rest on three GPUs, so the first is a fitted transfer model that places the Joule Point on unmeasured cards, built by running the unchanged cap-sweep protocol on more generations and vendors. The second is validation under a production serving engine such as vLLM or TensorRT-LLM, where iteration-level batching and a shifting prefill/decode mix would test whether the law persists under live load; bursty regimes, where the power floor moves, would also test whether the static cap needs an online supervisor. Orthogonally, adaptive-inference methods, early exit \cite{ref5, ref11}, conditional computation \cite{ref6, ref7}, and speculative decoding \cite{ref8}, vary the computation per request while the cap varies the power of that computation; the two knobs compose in the same coordinate system, and measuring their joint surface is a natural sequel.
 
-\section{Data and code availability}\label{data-and-code-availability}
+\section*{Data and code availability}\label{data-and-code-availability}
 
 The ELF dataset, twenty inference models swept over the board power cap on four NVIDIA GPUs, together with
 the exact AWS measurement harnesses that produced it, is archived at Zenodo,
@@ -489,7 +504,6 @@ the exact AWS measurement harnesses that produced it, is archived at Zenodo,
 MIT (code). Every empirical figure and measurement-derived number in this paper is computed from that dataset by the accompanying
 build script.
 
-\section{References}\label{references}
 
 
 \begin{thebibliography}{99}
