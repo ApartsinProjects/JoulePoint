@@ -132,12 +132,15 @@ def main():
 
     # ---- 2-column (best-effort): swap multi-panel figures to their stacked variants ----
     html = open(os.path.join(HERE, "GPTEnergy.html"), encoding="utf-8").read()
-    html = html.replace("fig_law_fit.png", "fig_law_fit_stacked.png").replace("fig_frontier.png", "fig_frontier_stacked.png")
+    # fig_law_fit stays HORIZONTAL: wide+short, it spans both columns as a full-width
+    # float and text flows on (the stacked variant is taller than a column's free space,
+    # so it bumped to the next column and left half a column of white).
+    html = html.replace("fig_frontier.png", "fig_frontier_stacked.png")
     open(os.path.join(HERE, "GPTEnergy_2col_src.html"), "w", encoding="utf-8").write(html)
     stage1("GPTEnergy_2col_src.html", "_gpte_2col_mathml.html")
     stage2("_gpte_2col_mathml.html", "GPTEnergy_2col_conv.docx", "two-column")
     stage3("GPTEnergy_2col_conv.docx", "GPTEnergy_2col.docx", "two-column",
-           ["--max-span-height-frac", "0.30"])
+           ["--max-span-height-frac", "0.30", "--figure-max-height-in", "3.0"])
     polish_premium(os.path.join(HERE, "GPTEnergy_2col.docx"))
     render_pdf("GPTEnergy_2col.docx", "GPTEnergy_2col.pdf")
 
