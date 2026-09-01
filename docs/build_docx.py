@@ -49,9 +49,11 @@ def polish_premium(path):
 
     doc = Document(path)
 
+    BLACK = (0x00, 0x00, 0x00)
+
     def tint(runs, rgb):
         for r in runs:
-            r.font.color.rgb = RGBColor(*rgb)
+            r.font.color.rgb = RGBColor(*BLACK)
 
     for p in doc.paragraphs:
         name = p.style.name
@@ -66,9 +68,9 @@ def polish_premium(path):
         elif name in ("Image Caption", "Table Caption"):
             for r in p.runs:
                 if r.bold:
-                    r.font.color.rgb = RGBColor(*NAVY)
+                    r.font.color.rgb = RGBColor(*BLACK)
                 else:
-                    r.font.color.rgb = RGBColor(0x3D, 0x43, 0x4B)
+                    r.font.color.rgb = RGBColor(*BLACK)
         if p.text.startswith("Under load, one static cap per card"):
             ppr = p._p.get_or_add_pPr()
             borders = OxmlElement("w:pBdr")
@@ -81,7 +83,7 @@ def polish_premium(path):
             ppr.append(shd)
             p.paragraph_format.left_indent = Pt(6)
             for r in p.runs:
-                r.font.color.rgb = RGBColor(*SOFT)
+                r.font.color.rgb = RGBColor(*BLACK)
                 r.font.italic = True
 
     # author/affiliation front matter lives in a borderless table
@@ -92,10 +94,14 @@ def polish_premium(path):
                 for c in row.cells:
                     for p in c.paragraphs:
                         for r in p.runs:
-                            if r.font.superscript or not r.bold:
-                                r.font.color.rgb = RGBColor(*MUTED)
-                            else:
-                                r.font.color.rgb = RGBColor(*SOFT)
+                            r.font.color.rgb = RGBColor(*BLACK)
+    # tighten references so the list does not spill two entries onto a final page
+    from docx.shared import Pt as _Pt
+    try:
+        doc.styles["Reference Entry"].font.size = _Pt(8.5)
+    except KeyError:
+        pass
+
     # balance the final page's columns: end the last columned section with a
     # continuous break so Word levels the reference list across both columns
     from docx.enum.section import WD_SECTION_START
@@ -130,17 +136,33 @@ def main():
            ["--figure-max-height-in", "3.5"])
     render_pdf("GPTEnergy_1col.docx", "GPTEnergy_1col.pdf")
 
-    # ---- 2-column (best-effort): swap multi-panel figures to their stacked variants ----
+    # ---- 2-column (best-effort) ----
+    # Layout choices for continuous columns (no half-empty columns):
+    #  * fig_law_fit and fig_frontier stay HORIZONTAL: wide+short, they span both
+    #    columns as full-width floats and text flows on (their stacked variants are
+    #    taller than a column's free space, bump to the next column, and leave white).
+    #  * fig_energy_u (Figure 3) moves three paragraphs later so the text after it
+    #    backfills page 5's right column instead of the figure bumping early.
+    import re
     html = open(os.path.join(HERE, "GPTEnergy.html"), encoding="utf-8").read()
-    # fig_law_fit stays HORIZONTAL: wide+short, it spans both columns as a full-width
-    # float and text flows on (the stacked variant is taller than a column's free space,
-    # so it bumped to the next column and left half a column of white).
     html = html.replace("fig_frontier.png", "fig_frontier_stacked.png")
+    # Relocate in-column figures so the text after each one backfills the column it
+    # would otherwise leave half-empty (2-col layout only; captions keep the numbers).
+    MOVES = [
+        ("fig_energy_u",             "for 1.22&times; (Figure&nbsp;4).</p>"),
+        ("fig_frontier_stacked",     "</ul>"),
+        ("fig_power_budget_stacked", "quantitative analysis.</p>"),
+    ]
+    for png, marker in MOVES:
+        m = re.search(r'<figure><img [^>]*' + png + r'\.png.*?</figure>', html, re.S)
+        assert m and html.count(marker) == 1, f"relocation anchor changed: {png}"
+        fig = m.group(0)
+        html = html.replace(fig, "").replace(marker, marker + "\n" + fig)
     open(os.path.join(HERE, "GPTEnergy_2col_src.html"), "w", encoding="utf-8").write(html)
     stage1("GPTEnergy_2col_src.html", "_gpte_2col_mathml.html")
     stage2("_gpte_2col_mathml.html", "GPTEnergy_2col_conv.docx", "two-column")
     stage3("GPTEnergy_2col_conv.docx", "GPTEnergy_2col.docx", "two-column",
-           ["--max-span-height-frac", "0.30", "--figure-max-height-in", "3.0"])
+           ["--max-span-height-frac", "0.32", "--figure-max-height-in", "3.0"])
     polish_premium(os.path.join(HERE, "GPTEnergy_2col.docx"))
     render_pdf("GPTEnergy_2col.docx", "GPTEnergy_2col.pdf")
 
