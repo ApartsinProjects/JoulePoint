@@ -289,7 +289,7 @@ html = f"""<!doctype html><html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>The Joule Point</title>
 <style>{CSS}</style></head><body>
-<div class="toplinks"><a href="JoulePoint_1col.pdf" download>PDF 1-col</a><a href="JoulePoint_1col.docx" download>DOCX 1-col</a><a href="JoulePoint_2col.pdf" download>PDF 2-col</a><a href="JoulePoint_2col.docx" download>DOCX 2-col</a></div>
+<div class="toplinks"><a href="JoulePoint_1col.pdf" download>PDF 1-col</a><a href="JoulePoint_1col.docx" download>DOCX 1-col</a><a href="JoulePoint_2col_latex.pdf" download>PDF 2-col</a><a href="JoulePoint_2col.docx" download>DOCX 2-col</a></div>
 <div class="wrap">
 
 <h1 class="title">The Joule Point: an Energy-Optimal Operating Point for AI Inference</h1>
