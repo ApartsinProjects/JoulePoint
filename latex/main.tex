@@ -22,6 +22,14 @@
 % \flushbottom justifies both columns to full height, the dense journal look.
 \flushbottom
 \AtBeginDocument{\flushbottom}
+% Uniform paragraph spacing (journal convention: first-line indent, NO
+% inter-paragraph space). \parskip must be RIGID zero: with stretchable
+% parskip glue, \flushbottom distributes column slack at paragraph
+% boundaries, so a column with few paragraphs shows visible blank lines
+% between them while dense columns look tight (inconsistent spacing).
+% With rigid parskip the residual slack sits at the column bottom instead.
+\setlength{\parskip}{0pt}
+\AtBeginDocument{\setlength{\parskip}{0pt}}
 \setlength{\intextsep}{6pt plus 1pt minus 3pt}
 \setlength{\textfloatsep}{8pt plus 1pt minus 3pt}
 \setlength{\floatsep}{8pt plus 1pt minus 3pt}
@@ -335,14 +343,11 @@ Because power is superlinear in rate while the floor {\(P_0\)} is paid regardles
 
 \textbf{The Joule Point in closed form.} With the rate written normalized, {\(\theta\in(0,1]\)}, energy per inference is proportional to {\(P/\theta\)} up to fixed per-job constants (the work per inference and the rate ceiling {\(R_{\max}\)}), which scale the energy but not the location of its minimum. Dividing the law by the rate splits energy into a floor term that falls with rate and a dynamic term that rises with it,
 
-{\(e(\theta)=P(\theta)/\theta=P_0/\theta+a\theta^{\beta-1}\)} ~~(1)
-
+\begin{equation*}e(\theta)=P(\theta)/\theta=P_0/\theta+a\theta^{\beta-1}\tag{1}\end{equation*}
 Setting {\(de/d\theta=0\)} gives the energy-optimal rate, and substituting it back into the law gives the Joule-point power,
 
-{\(\theta^{*}=\left(P_0/\left(a(\beta-1)\right)\right)^{1/\beta}\)} ~~(2)
-
-{\(P^{*}=P_0\,\beta/(\beta-1)\)} ~~(3)
-
+\begin{equation*}\theta^{*}=\left(P_0/\left(a(\beta-1)\right)\right)^{1/\beta}\tag{2}\end{equation*}
+\begin{equation*}P^{*}=P_0\,\beta/(\beta-1)\tag{3}\end{equation*}
 The coefficient {\(a\)} cancels: the Joule-point power depends only on the floor and the exponent. A minimum exists only for {\(\beta>1\)}; real cards keep {\(\beta\)} above one, so an energy minimum exists on every card we measure.
 
 \textbf{The price of reaching it is exact.} Energy per inference is work-normalized, so serving the same aggregate throughput at the efficient cap by adding cards costs exactly the energy-per-step ratio; the card count cancels and the saving is real, not an accounting artifact. What it costs is capital and per-request latency, and these are the same number, because the card multiplier equals the latency ratio (both equal {\(1/\theta^{*}\)}, uncapped over capped throughput). The A100 saves 29 per cent energy for 1.24$\times$ cards and latency; the A10G, 31 per cent for 1.22$\times$ (Figure~4).
