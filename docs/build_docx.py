@@ -35,6 +35,81 @@ def stage3(src, out, profile, extra):
         "--profile", profile, "--font-family", "Georgia"] + extra)
 
 
+NAVY, SOFT, MUTED = (0x14, 0x38, 0x5C), (0x2C, 0x31, 0x38), (0x5A, 0x62, 0x6C)
+
+
+def polish_premium(path):
+    """House-palette pass on a built DOCX: navy title/headings/caption labels,
+    small-caps abstract label, muted affiliations and caption bodies, and the
+    key-finding paragraph as a navy-ruled shaded callout box."""
+    from docx import Document
+    from docx.shared import RGBColor, Pt
+    from docx.oxml.ns import qn
+    from docx.oxml import OxmlElement
+
+    doc = Document(path)
+
+    def tint(runs, rgb):
+        for r in runs:
+            r.font.color.rgb = RGBColor(*rgb)
+
+    for p in doc.paragraphs:
+        name = p.style.name
+        if name == "Title":
+            tint(p.runs, NAVY)
+        elif name.startswith("Heading") or name == "References Heading":
+            tint(p.runs, NAVY)
+        elif name == "Abstract Label":
+            tint(p.runs, NAVY)
+            for r in p.runs:
+                r.font.small_caps = True
+        elif name in ("Image Caption", "Table Caption"):
+            for r in p.runs:
+                if r.bold:
+                    r.font.color.rgb = RGBColor(*NAVY)
+                else:
+                    r.font.color.rgb = RGBColor(0x3D, 0x43, 0x4B)
+        if p.text.startswith("Under load, one static cap per card"):
+            ppr = p._p.get_or_add_pPr()
+            borders = OxmlElement("w:pBdr")
+            left = OxmlElement("w:left")
+            left.set(qn("w:val"), "single"); left.set(qn("w:sz"), "18")
+            left.set(qn("w:space"), "6"); left.set(qn("w:color"), "14385C")
+            borders.append(left); ppr.append(borders)
+            shd = OxmlElement("w:shd")
+            shd.set(qn("w:val"), "clear"); shd.set(qn("w:fill"), "F2F5F8")
+            ppr.append(shd)
+            p.paragraph_format.left_indent = Pt(6)
+            for r in p.runs:
+                r.font.color.rgb = RGBColor(*SOFT)
+                r.font.italic = True
+
+    # author/affiliation front matter lives in a borderless table
+    for t in doc.tables:
+        cell_text = " ".join(c.text for row in t.rows for c in row.cells)
+        if "Apartsin" in cell_text and "Holon" in cell_text:
+            for row in t.rows:
+                for c in row.cells:
+                    for p in c.paragraphs:
+                        for r in p.runs:
+                            if r.font.superscript or not r.bold:
+                                r.font.color.rgb = RGBColor(*MUTED)
+                            else:
+                                r.font.color.rgb = RGBColor(*SOFT)
+    # balance the final page's columns: end the last columned section with a
+    # continuous break so Word levels the reference list across both columns
+    from docx.enum.section import WD_SECTION_START
+    doc.add_section(WD_SECTION_START.CONTINUOUS)
+
+    for attempt in (1, 2):
+        try:
+            doc.save(path); break
+        except MemoryError:
+            if attempt == 2:
+                raise
+    print("  polished (premium palette)", path)
+
+
 def render_pdf(docx, pdf):
     try:
         import win32com.client as w, pythoncom
@@ -63,6 +138,7 @@ def main():
     stage2("_gpte_2col_mathml.html", "GPTEnergy_2col_conv.docx", "two-column")
     stage3("GPTEnergy_2col_conv.docx", "GPTEnergy_2col.docx", "two-column",
            ["--max-span-height-frac", "0.30"])
+    polish_premium(os.path.join(HERE, "GPTEnergy_2col.docx"))
     render_pdf("GPTEnergy_2col.docx", "GPTEnergy_2col.pdf")
 
     # content canary
