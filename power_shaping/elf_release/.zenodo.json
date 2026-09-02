@@ -1,13 +1,39 @@
 {
   "title": "ELF: the Energy-Latency Frontier dataset for GPU inference",
   "upload_type": "dataset",
-  "description": "A dense power-response dataset for AI inference on data-center GPUs. For 20 inference models (LLM decode, Stable-Diffusion UNet, ViT, and CNNs) across four NVIDIA GPUs (T4, L4, A10G, A100), it sweeps the board power limit from the driver floor to TDP, and, via a graphics-clock (DVFS) sweep, reaches below that floor, recording measured board power, achieved throughput, and a four-phase latency split, at a fixed batch and an auto-calibrated saturating batch, plus a high-rate power-cap actuation trace. The headline artifact is data/elf_master.csv: a consolidated master table with one row per measured operating point (card x workload x actuator setting), spanning both actuators (power cap and clock/DVFS) and both load regimes (saturated and non-saturated), fully labelled with provenance, saturation flags, canonical-subset flags, card specs, workload features, and fitted response-law parameters; every column is documented in data/elf_master_dictionary.md. About 6500 measured rows across the sweep collections (each operating point measured two to three times) are consolidated into the 2636-row master table. Companion to the paper 'From GPUs to Joules: Scheduling AI Inference in the Space of Energy and its Derivatives'. Includes the exact AWS measurement scripts plus the consolidation and verification code. See README.md for schema and known limitations.",
+  "description": "A dense power-response dataset for AI inference on data-center GPUs. For 20 inference models (LLM decode, Stable-Diffusion UNet, ViT, and CNNs) across four NVIDIA GPUs (T4, L4, A10G, A100), it sweeps the board power limit from the driver floor to TDP, and, via a graphics-clock (DVFS) sweep, reaches below that floor, recording measured board power, achieved throughput, and a four-phase latency split, at a fixed batch and an auto-calibrated saturating batch, plus a high-rate power-cap actuation trace. The headline artifact is data/elf_master.csv: a consolidated master table with one row per measured operating point (card x workload x actuator setting), spanning both actuators (power cap and clock/DVFS) and both load regimes (saturated and non-saturated), fully labelled with provenance, saturation flags, canonical-subset flags, card specs, workload features, and fitted response-law parameters; every column is documented in data/elf_master_dictionary.md. About 6500 measured rows across the sweep collections (each operating point measured two to three times) are consolidated into the 2636-row master table. Companion to the paper 'The Joule Point: an Energy-Optimal Operating Point for AI Inference' (Apartsin and Aperstein). Includes the exact AWS measurement scripts plus the consolidation and verification code. See README.md for schema and known limitations.",
   "creators": [
-    {"name": "Apartsin, Alexander", "affiliation": "Holon Institute of Technology, Holon, Israel"},
-    {"name": "Aperstein, Yehudit", "affiliation": "Afeka Academic College of Engineering, Tel Aviv, Israel"}
+    {
+      "name": "Apartsin, Alexander",
+      "affiliation": "Holon Institute of Technology, Holon, Israel"
+    },
+    {
+      "name": "Aperstein, Yehudit",
+      "affiliation": "Afeka Academic College of Engineering, Tel Aviv, Israel"
+    }
   ],
-  "keywords": ["GPU", "energy efficiency", "power capping", "AI inference", "DVFS", "data center",
-               "energy-aware scheduling", "LLM inference", "benchmark", "power-performance"],
+  "keywords": [
+    "GPU",
+    "energy efficiency",
+    "power capping",
+    "AI inference",
+    "DVFS",
+    "data center",
+    "energy-aware scheduling",
+    "LLM inference",
+    "benchmark",
+    "power-performance"
+  ],
   "license": "cc-by-4.0",
-  "access_right": "open"
+  "access_right": "open",
+  "related_identifiers": [
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://apartsinprojects.github.io/JoulePoint/"
+    },
+    {
+      "relation": "isSupplementTo",
+      "identifier": "https://github.com/ApartsinProjects/JoulePoint"
+    }
+  ]
 }
