@@ -71,6 +71,7 @@ job, a gain that comes from each job's own operating point, not the hardware mix
 data-center energy as a schedulable resource an operator can adapt to a budget, an electricity price, or a
 carbon signal while meeting its service targets.</p>
 </div>
+<div class="affil" style="margin-top:6px"><b>Keywords:</b> GPU energy efficiency; power capping; AI inference; DVFS; energy-aware scheduling; data centers</div>
 
 <h2>1. Introduction</h2>
 <p class="lead">Inference dominates the lifetime compute of a widely deployed AI model, and the electricity it
@@ -411,6 +412,12 @@ point below is a hypothesis to test against a given fleet.</p>
 <h2>10. Conclusion and future work</h2>
 <p>Hardware-space scheduling allocates GPUs; the cost that matters is joules, and joules are set by the operating point, not the device. Measuring that surface for 20 models on three GPUs gave a superlinear power-response law (median <span>\(R^2\)</span> of 0.99), and the law gave a Joule Point: a cap at 43 to 46 per cent of TDP on the large cards that cuts energy per inference by a quarter to a third while each request runs about 1.2 times slower, a cost that is exact because the card multiplier to hold throughput equals the latency ratio. Under load the Joule Point is nearly a per-card constant, so a single static cap set once captures what prior systems search for per job at runtime, at a mean penalty under one per cent; a fleet controller replaying measured curves serves equal work for 18 to 45 per cent less energy, and behind a fixed power feed the same cap becomes a capacity lever, maximizing inferences served per megawatt. The physics is favorable and the actuation is a one-line command; what stands in the way is per-hour pricing, which rewards the renter for running at the energy-worst point. That obstacle is economic, not technical, and Section&nbsp;8 lays out the structural remedies that would remove it.</p>
 <p>Two extensions follow directly. The measured cross-card regularities rest on three GPUs, so the first is a fitted transfer model that places the Joule Point on unmeasured cards, built by running the unchanged cap-sweep protocol on more generations and vendors. The second is validation under a production serving engine such as vLLM or TensorRT-LLM, where iteration-level batching and a shifting prefill/decode mix would test whether the law persists under live load; bursty regimes, where the power floor moves, would also test whether the static cap needs an online supervisor. Orthogonally, adaptive-inference methods, early exit [5, 11], conditional computation [6, 7], and speculative decoding [8], vary the computation per request while the cap varies the power of that computation; the two knobs compose in the same coordinate system, and measuring their joint surface is a natural sequel.</p>
+<h2>CRediT authorship contribution statement</h2>
+<p><b>Alexander Apartsin:</b> Conceptualization, Methodology, Software, Investigation, Data curation, Writing - original draft. <b>Yehudit Aperstein:</b> Conceptualization, Methodology, Validation, Writing - review and editing, Supervision.</p>
+
+<h2>Declaration of competing interest</h2>
+<p>The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.</p>
+
 <h2>Data and code availability</h2>
 <p>The ELF dataset, twenty inference models swept over the board power cap on four NVIDIA GPUs, together with
 the exact AWS measurement harnesses that produced it, is archived at Zenodo,

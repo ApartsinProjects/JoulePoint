@@ -1,0 +1,7 @@
+Highlights
+
+- GPU board power follows P0 + a*theta^beta over the operating point (GPU, cap)
+- Energy per inference is U-shaped; its minimum, the Joule Point, sits at 43-46% TDP
+- Capping to the Joule Point cuts energy per inference by 29-31% on large GPUs
+- Under load one static per-card cap is near-optimal; no per-job search is needed
+- A fleet scheduler on measured curves serves equal work for 18-45% less energy

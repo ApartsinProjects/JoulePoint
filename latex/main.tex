@@ -10,6 +10,7 @@
 % fonts"); newtx text+math are fully scalable.
 \usepackage{newtxtext}
 \usepackage{hyperref}
+\usepackage{etoolbox}
 
 % Shared html2tex compatibility preamble (tables, floats, graphics,
 % verbatim, pandoc helper macros, numeric citations).
@@ -18,34 +19,78 @@
 % amssymb-after-newtxmath dies with "\Bbbk already defined".
 \usepackage{newtxmath}
 
-% Two-column venue: floats use [tbp]/table* (convert_to_tex.py --columns 2);
-% \flushbottom justifies both columns to full height, the dense journal look.
+% ---------------------------------------------------------------------------
+% Column-fill strategy — the FOUR settings below are coupled; changing any
+% one in isolation reintroduces a visible defect somewhere else. Written
+% together because they were learned together by a full render-and-measure
+% pass over a 20-page 2-col paper.
+%
+% (1) \flushbottom: columns stretch to text-area bottom. Alone with rigid
+%     \parskip this leaves visible whitespace at the right-column bottom
+%     whenever a \section/\subsection is immediately followed by a full-width
+%     [t] table*/figure* — LaTeX cannot split the heading from its float and
+%     cannot bottom-place a full-width float in 2-col, so the whole chunk
+%     kicks to the next page, leaving the current column short.
+% (2) \parskip = 0pt plus 1pt: tiny per-paragraph stretch budget. Invisible
+%     individually (~1pt across a 12pt paragraph baseline); cumulative
+%     ~30pt/page across the ~30 paragraphs of a body page. This is the pool
+%     that (1) draws from to fill columns uniformly.
+% (3) Rigid \intextsep / \textfloatsep / \floatsep (no plus/minus glue): forces
+%     stretch to distribute across parskips only, NEVER as inflated space
+%     around a figure/table. Without this, (1) puts most slack into the
+%     larger \textfloatsep and produces visible bands around figures.
+% (4) Tightened \section (12pt/6pt, was 18pt/9pt) and \subsection (8pt/2pt,
+%     was 12pt/3pt) skips: saves ~1 line of vertical budget per heading, so
+%     a heading + its first paragraph fits into a shorter column tail. This
+%     directly reduces the frequency of case (1) — many section-heading
+%     pages that used to kick can now hold the heading in the current
+%     column.
+%
+% Verify: PyMuPDF column-fill audit (max y1 per half-column, footer
+% excluded); target L-R diff < 20pt on every non-final page.
+% ---------------------------------------------------------------------------
 \flushbottom
 \AtBeginDocument{\flushbottom}
-% Uniform paragraph spacing (journal convention: first-line indent, NO
-% inter-paragraph space). \parskip must be RIGID zero: with stretchable
-% parskip glue, \flushbottom distributes column slack at paragraph
-% boundaries, so a column with few paragraphs shows visible blank lines
-% between them while dense columns look tight (inconsistent spacing).
-% With rigid parskip the residual slack sits at the column bottom instead.
-\setlength{\parskip}{0pt}
-\AtBeginDocument{\setlength{\parskip}{0pt}}
-% Tighter heading skips than elsarticle's defaults (18pt/9pt): a heading plus
-% its first two lines then fits the tail of a column more often, so sections
-% continue at a column bottom instead of leaving it empty.
+\setlength{\parskip}{0pt plus 1pt}
+\AtBeginDocument{\setlength{\parskip}{0pt plus 1pt}}
 \makeatletter
 \renewcommand\section{\@startsection{section}{1}{\z@}%
-           {12\p@ \@plus 3\p@ \@minus 4\p@}%
-           {6\p@ \@plus 2\p@ \@minus 2\p@}%
+           {12\p@ \@plus 4\p@ \@minus 4\p@}%
+           {6\p@ \@plus 4\p@ \@minus 3\p@}%
            {\normalsize\bfseries\boldmath}}
 \renewcommand\subsection{\@startsection{subsection}{2}{\z@}%
-           {10\p@ \@plus 3\p@ \@minus 3\p@}%
-           {3\p@ \@plus 2\p@ \@minus 1\p@}%
+           {8\p@ \@plus 4\p@ \@minus 4\p@}%
+           {2\p@ \@plus 4\p@ \@minus 3\p@}%
            {\normalfont\normalsize\itshape}}
 \makeatother
-\setlength{\intextsep}{6pt plus 1pt minus 3pt}
-\setlength{\textfloatsep}{8pt plus 1pt minus 3pt}
-\setlength{\floatsep}{8pt plus 1pt minus 3pt}
+\setlength{\intextsep}{8pt}
+\setlength{\textfloatsep}{8pt}
+\setlength{\floatsep}{8pt}
+
+% Float-only pages (a lone full-width table*/figure* on a page with no body
+% text before it, e.g. a licensing table at the very end of the paper)
+% otherwise render with the float vertically centered. Move the elastic glue
+% to \@fpbot / \@dblfpbot so floats sit at the page TOP. Full-width
+% (table*/figure*) floats use the \@dblfp* skips; single-column ones use
+% \@fp*; set both so any float-only page renders the same way.
+\makeatletter
+\setlength{\@fptop}{0pt}
+\setlength{\@fpsep}{8pt plus 0pt}
+\setlength{\@fpbot}{0pt plus 1fil}
+\setlength{\@dblfptop}{0pt}
+\setlength{\@dblfpsep}{8pt plus 0pt}
+\setlength{\@dblfpbot}{0pt plus 1fil}
+\makeatother
+
+% Reduce elsarticle 3p top-of-title white margin. The default \pprintMaketitle
+% starts with \clearpage, then \printFirstPageNotes and generous vskips before
+% the \title emission, placing the title well below the top of page 1. Patch
+% the emitter to insert a negative vspace right after its \clearpage, so the
+% title sits close to the top of the first page. -2.2cm is calibrated for
+% [3p,twocolumn]; adjust if a different documentclass option is chosen.
+\makeatletter
+\patchcmd{\pprintMaketitle}{\clearpage}{\clearpage\vspace*{-2.2cm}}{}{}
+\makeatother
 
 \journal{Sustainable Computing: Informatics and Systems}
 
@@ -83,6 +128,10 @@ job, a gain that comes from each job\textquotesingle s own operating point, not 
 data-center energy as a schedulable resource an operator can adapt to a budget, an electricity price, or a
 carbon signal while meeting its service targets.
 \end{abstract}
+
+\begin{keyword}
+GPU energy efficiency \sep power capping \sep AI inference \sep DVFS \sep energy-aware scheduling \sep data centers
+\end{keyword}
 
 \end{frontmatter}
 
@@ -495,6 +544,14 @@ The measurement scope is equally definite. Each load-regime operating point is a
 Hardware-space scheduling allocates GPUs; the cost that matters is joules, and joules are set by the operating point, not the device. Measuring that surface for 20 models on three GPUs gave a superlinear power-response law (median {\(R^2\)} of 0.99), and the law gave a Joule Point: a cap at 43 to 46 per cent of TDP on the large cards that cuts energy per inference by a quarter to a third while each request runs about 1.2 times slower, a cost that is exact because the card multiplier to hold throughput equals the latency ratio. Under load the Joule Point is nearly a per-card constant, so a single static cap set once captures what prior systems search for per job at runtime, at a mean penalty under one per cent; a fleet controller replaying measured curves serves equal work for 18 to 45 per cent less energy, and behind a fixed power feed the same cap becomes a capacity lever, maximizing inferences served per megawatt. The physics is favorable and the actuation is a one-line command; what stands in the way is per-hour pricing, which rewards the renter for running at the energy-worst point. That obstacle is economic, not technical, and Section~8 lays out the structural remedies that would remove it.
 
 Two extensions follow directly. The measured cross-card regularities rest on three GPUs, so the first is a fitted transfer model that places the Joule Point on unmeasured cards, built by running the unchanged cap-sweep protocol on more generations and vendors. The second is validation under a production serving engine such as vLLM or TensorRT-LLM, where iteration-level batching and a shifting prefill/decode mix would test whether the law persists under live load; bursty regimes, where the power floor moves, would also test whether the static cap needs an online supervisor. Orthogonally, adaptive-inference methods, early exit \cite{ref5, ref11}, conditional computation \cite{ref6, ref7}, and speculative decoding \cite{ref8}, vary the computation per request while the cap varies the power of that computation; the two knobs compose in the same coordinate system, and measuring their joint surface is a natural sequel.
+
+\section*{CRediT authorship contribution statement}\label{credit-authorship-contribution-statement}
+
+\textbf{Alexander Apartsin:} Conceptualization, Methodology, Software, Investigation, Data curation, Writing - original draft. \textbf{Yehudit Aperstein:} Conceptualization, Methodology, Validation, Writing - review and editing, Supervision.
+
+\section*{Declaration of competing interest}\label{declaration-of-competing-interest}
+
+The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.
 
 \section*{Data and code availability}\label{data-and-code-availability}
 

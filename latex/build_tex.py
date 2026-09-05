@@ -35,6 +35,9 @@ def main():
     front_seg = tex[fm_end:intro]
     m = re.search(r"^Abstract\s*$(.*)", front_seg, re.M | re.S)
     abstract = m.group(1).strip() if m else ""
+    # the keywords line follows the abstract in the HTML front matter; keep it
+    # out of the abstract body (it goes into elsarticle's keyword block below)
+    abstract = re.split(r"\\textbf\{Keywords:", abstract)[0].strip()
     assert len(abstract) > 500, "abstract extraction failed"
     tex = tex[:fm_end] + "\n\n" + tex[intro:]
 
@@ -49,6 +52,15 @@ def main():
     tex = re.sub(r"\\begin\{abstract\}.*?\\end\{abstract\}",
                  lambda _: "\\begin{abstract}\n" + abstract + "\n\\end{abstract}",
                  tex, count=1, flags=re.S)
+
+    # keywords: authored in the HTML front matter ("Keywords: a; b; c"), carved
+    # out with the byline above; re-emit as elsarticle's keyword block.
+    mkw = re.search(r"Keywords:\}?\s*(.+)", front_seg)
+    assert mkw, "keywords line not found in front matter"
+    kws = [k.strip().rstrip(".") for k in mkw.group(1).split(";") if k.strip()]
+    tex = tex.replace("\\end{abstract}",
+                      "\\end{abstract}\n\n\\begin{keyword}\n" +
+                      " \\sep ".join(kws) + "\n\\end{keyword}", 1)
     # Pull the title block up: the 3p title box otherwise leaves a tall white
     # margin above the paper title on page 1.
     tex = tex.replace("\\title{The Joule Point",
@@ -61,6 +73,10 @@ def main():
     tex = tex.replace("\\section*{Limitations}", "\\section{Limitations}")
     tex = tex.replace("\\section{Data and code availability}",
                       "\\section*{Data and code availability}")
+    tex = tex.replace("\\section{CRediT authorship contribution statement}",
+                      "\\section*{CRediT authorship contribution statement}")
+    tex = tex.replace("\\section{Declaration of competing interest}",
+                      "\\section*{Declaration of competing interest}")
     tex = re.sub(r"\\section\{References\}\\label\{references\}\n?", "", tex)
 
     # Figure 6 (power budget) floats [b]: at [tbp] it takes the top of its
